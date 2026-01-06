@@ -1,0 +1,255 @@
+\documentclass[a4paper]{article}
+\usepackage[margin=1.5cm,top=1.5cm,bottom=1.5cm,a4paper]{geometry}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{titlesec} % Required for customizing section titles
+\usepackage[margin=1.5cm,top=1.5cm, bottom=1.5cm]{geometry} % Ajusta los márgenes aquí
+\usepackage{multicol} % Required for multicols environment
+\usepackage{parskip}
+\usepackage{etoolbox}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{dingbat}
+\usepackage{booktabs} 
+\usepackage{caption}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amssymb}
+
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+
+\usepackage[
+  backend=biber,
+  style=apa,
+  citestyle=apa
+]{biblatex}
+
+\addbibresource{referencias.bib}
+
+
+
+%\captionsetup[table]{name = Tabla}
+ 
+% Redefinir el comando \thesection para usar números romanos
+%\renewcommand{\thesection}{\Roman{section}}
+% Redefinir el comando \thesubsection para usar números romanos
+%\renewcommand{\thesubsection}{\thesection.\Roman{subsection}}
+
+
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
+
+
+% Personalización de la sección para que comience desde la izquierda
+\titleformat{\section}[hang]{\normalfont\Large\bfseries}{\thesection}{1em}{}
+
+\begin{document}
+\setcounter{page}{1}
+\begin{minipage}[h]{1\textwidth}
+
+\title{\includegraphics[height = 1.5cm]{logofiuba.png} % Logo en la izquierda del encabezado  
+\\(TB070) Dispositivos Semiconductores \\Trabajo Práctico Final : Transistor MESFET }
+\author{106213 Sebastián Lazo  ( slazo@fi.uba.ar ) }
+\date{26 de Febrero 2026}
+
+\maketitle
+
+ \end{minipage}
+
+\section{Resumen}
+
+En el siguiente informe se utilizan los conocimientos adquiridos a lo largo de la materia Dispositivos Semiconductores con el objetivo de realizar una investigación y análisis en torno al dispositivo conocido como MESFET ( Metal-Semiconductor Field-Effect Transistor ). Se aborda su estructura, parámetros característicos y aplicaciones típicas, modos de operación. Ademas, se presentan diagramas de bandas para cada modo de operación, curvas características y se discute los efectos no ideales que influyen en su comportamiento real.
+
+\section{Descripción del Dispositivo}
+
+El transistor MESFET es un dispositivo multi-juntura que permite el control de una corriente de salida a través de una tensión entre dos de sus terminales. Puede clasificarse como una variación del transistor MOSFET con la diferencia de no poseer una capa de óxido entre la compuerta y el sustrato, característica también presente en el transistor JFET. Con respecto a este último, difieren en el material de la compuerta, ya que en el caso del MESFET no es de material semiconductor, sino de metal usándose metales como Aluminio, Titanio, Oro, Níquel o Platino.
+
+Los transistores MOSFET pueden no ser apropiados si se desea fabricar transistores utilizando ciertos materiales semiconductores, como en el caso del arseniuro de galio (GaAs), dado que en la interfase entre el GaAs y un aislante como el oxido se forman un gran número de trampas superficiales que inhiben la acción compuerta. Además, las compuertas de unión no se difunden con tanta facilidad dentro del GaAs debido a la inestabilidad del material semiconductor a altas temperaturas, por lo tanto no se realizan uniones P-N con facilidad. Sin embargo, dado que el GaAs tiene una mayor movilidad que el Silicio, su empleo es aconsejable en aplicaciones que requieren rápidas velocidades de conmutación. Por consiguiente, se utilizan estructuras del tipo MESFET para cubrir esas necesidades \parencite{belove_enciclopedia}.
+
+El MESFET fue propuesto y demostrado por primera vez por Mead en 1966. Poco después, Hooper y Lehrer informaron sobre su rendimiento en las microondas en 1967, utilizando una capa epitaxial de GaAs sobre un sustrato de GaAs semiaislante \parencite{sze2021}.
+
+\subsection{Estructura}
+
+Los MESFET se construyen a partir de una delgada capa epitaxial de GaAs depositada sobre un sustrato semi-aislante. Sobre esta capa se definen las tres terminales del dispositivo: \textit{source}, \textit{drain} y \textit{gate} (fuente, drenaje y compuerta), como se aprecia en la Figura \ref{fig:estr_Belove_MESFET}.
+
+
+\begin{figure}[H]
+    \centering
+
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Img/estructura_MESFET.png}
+        \caption{Estructura del transistor MESFET de GaAs \parencite{belove_enciclopedia}.}
+        \label{fig:estr_Belove_MESFET}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Img/estructura_MESFET_SZE.png}
+        \caption{Estructura del transistor MESFET, se observa la apertura neta del canal $b$ controlada por el ancho de agotamiento $W_D$ \parencite{sze2021}.}
+        \label{fig:estr_Sze_MESFET}
+    \end{minipage}
+
+\end{figure}
+
+Sobre el sustrato semi-aislante se encuentra la región activa del dispositivo, conformada por una capa de GaAs dopada ligeramente tipo n, que constituye el canal por el cual circulan los portadores mayoritarios cuando el dispositivo está en conducción, esto se aprecia en la figura \ref{fig:neamen_strucutre}.
+
+En las zonas correspondientes a \textit{source} y \textit{drain}, esta misma capa se dopa fuertemente tipo n+ para obtener contactos óhmicos de baja resistencia, facilitando así la inyección y recolección de portadores.
+
+Finalmente, en la región correspondiente a la terminal \textit{gate}, se deposita un metal en contacto directo con el canal, formando una unión metal-semiconductor que permite controlar la conducción modulando la anchura de la región de agotaiento en el canal. Una diferencia crucial con respecto de los transistores de unión bipolar es que los transistores de efecto de campo no requieren de corriente de polarización y son controlados por tensión.
+
+\begin{figure}[H]
+    \centering
+
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Img/neamen_structure.png}
+        \caption{Estructura del transistor MESFET de GaAs \parencite{neamen2012}.}
+       \label{fig:neamen_strucutre}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Img/estructura_microwave.png}
+        \caption{Estructura del transistor MESFET \parencite{giannini2009high}.}
+       \label{fig:giannini_MESFET_structure}
+    \end{minipage}
+
+\end{figure}
+
+
+
+\begin{figure}[H]
+    \centering
+
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Img/6W_MESFET_circuito_integrado.png}
+         \caption{Imagen donde se observa un arreglo integrado de MESFET's de GaAs \parencite{giannini2009high} .}
+    \label{fig:giannini_MESFETs}
+
+    \includegraphics[width=\linewidth]{Img/3d_mishra_MESFET.png}
+         \caption{Gráfico tridimensional del transistor MESFET \parencite{mishra_semiconductor_2008} .}
+    \label{fig:mishra_microscopio_MESFET_3D}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.4\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Img/Microscopio_MESFET_MISHRA.png}
+         \caption{(Arriba) Una sección transversal de corte de un MESFET de 0,1 $\mu m$. (Abajo) Vista superior de la MESFET \parencite{mishra_semiconductor_2008}.}
+    \label{fig:mishra_microscopio}
+    \end{minipage}
+
+\end{figure}
+
+
+
+
+\subsubsection{Unión Schottky}
+La compuerta de unión metal semiconductor es conocida como unión Schottky, en el semiconductor a diferencia del metal puede existir un campo eléctrico en el interior. Por esta razón, la caída de potencial de contacto entre el metal y el semiconductor puede producirse dentro del semiconductor, en lugar de hacerlo en la interfaz de contacto. Si el cuerpo semiconductor está dopado con impurezas tipo N, solamente los portadores tipo n (electrones móviles) desempeñarán un papel significativo en la operación de la unión y no se realizará la recombinación aleatoria y lenta de portadores tipo n y p que tiene lugar en las uniones pn, con lo que la operación del dispositivo será mucho más rápida. 
+
+\subsection{Parámetros Característicos}
+
+Para explicar el comportamiento del dispositivo es necesario presentar y definir diferentes parámetros del mismo. A continuación se definen dichos parámetros agrupándolos de acuerdo a sus características generales.
+
+
+\subsubsection*{Parámetros geométricos}
+
+Se tratan de las variables numéricas que definen las características geométricas de la estructura.
+
+\begin{itemize}
+    \item $h$: Espesor del canal conductor dopado.
+    \item $a$: Altura total del semiconductor activo .
+    \item $L$: Longitud del canal.
+    \item $W$: Ancho del canal.
+\end{itemize}
+
+\subsubsection*{Parámetros eléctricos}
+
+Se determina para cada tensión, corriente y resistencia característica del dispositivo una denominación consistente.
+\begin{itemize}
+    \item $V_{GS}$, $V_{GD}$, $V_{DS}$: Tensiones aplicadas entre las terminales del dispositivo.
+    \item $I_D$,$I_S$, $I_G$: Corrientes en los terminales \textit{drain}, \textit{source} y \textit{gate}.
+    \item $V_T$: Tensión umbral para el inicio de conducción del canal.
+    \item $V_p$: Tensión de \textit{pinch-off}, valor de $V_{GS}$ para el agotamiento total del canal.
+    \item $V_{bi}$: Tensión de Juntura (\textit{built-in voltage}) asociada a la unión metal–semiconductor.
+    \item $R_{on}$: Resistencia del dispositivo en conducción (si se considera operación como interruptor).
+\end{itemize}
+
+\subsubsection*{Parámetros de agotamiento y campo}
+A medida que el dispositivo cambia de modo y transición, se definen variables para poder comprender y analizar dichos cambios.
+
+\begin{itemize}
+    \item $W_D$: Ancho de agotamiento generado por la barrera Schottky en el canal.
+\end{itemize}
+
+\subsubsection*{Parámetros energéticos}
+Dentro del análisis de bandas se definen rangos de esta y diferentes variables útiles para el análisis.
+\begin{itemize}
+    \item $\chi_s$: Afinidad electrónica del semiconductor.
+    \item $E_g$: Banda prohibida (\textit{bandgap}) del semiconductor.
+    \item $\Phi_m$: Función de trabajo del metal utilizado en la compuerta.
+    \item $\Phi_{Bn} = \Phi_m - \chi_s$: Altura de barrera Schottky para un semiconductor de tipo $n$.
+\end{itemize}
+
+
+\subsection{Aplicaciones Típicas}
+
+Es empleado en sistemas de comunicación por microondas, desde radiotelescopios hasta antenas parabólicas domésticas, sistemas satélitales y teléfonos celulares. En la actualidad los transistores MESFET han sido reemplazados en gran medida por transistores de alta movilidad de electrones (HEMT : High-electron-mobility transistors) y alternativas basadas en silicio Utilizando materiales diseñados para la banda prohibida. A pesar de esto, la tecnología MESFET sigue siendo relevante en aplicaciones especializadas de alta potencia y alta temperatura.
+
+\section{Modos de Operación}
+%modos de funcionamiento
+
+\section{Diagrama de Bandas}
+
+Para formar una unión metal-semiconductor, en condiciones ideales, se debe cumplir la relación de función trabajo entre el metal y el semiconductor $\phi_m > \phi_s$ los electrones fluyen desde el semiconductor hacia el metal formando la barrera de Schottky, en el caso contrario  $\phi_m < \phi_s$  formara una unión óhmica ya que el semiconductor estará fuertemente dopado y los electrones fluyen desde el metal hacia el semiconductor reduciendo o idealmente eliminando la barrera.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{Img/bandas_energia_mishra.png}
+    \caption{Esquema de un GaAs MESFET. También se muestra el perfil de banda de energía debajo de la
+Región de la puerta y algunos parámetros importantes del dispositivo \parencite{mishra_semiconductor_2008}.}
+    \label{fig:placeholder}
+\end{figure}
+
+\section{Corriente de Salida}
+
+\section{Comparación}
+
+\section{Simulación de Curvas}
+
+\subsection{Curva de Transferencia}
+\subsection{Curva de Salida}
+
+\section{Efectos No Ideales}
+
+\subsection{Modulación del largo del Canal}
+\subsection{Saturación de la velocidad de Arrastre }
+\subsection{Región Subumbral}
+\subsection{Efectos de corriente de Gate}
+
+\section{Conclusión} 
+
+
+Ejemplo referenicias\\
+El comportamiento del MOSFET en saturación está bien modelado
+por la ecuación cuadrática \parencite{sedra2015}.
+
+Según \textcite{boylestad2013}, la tensión umbral depende del dopado.
+El comportamiento de los portadores en semiconductores puede
+modelarse a partir de principios cuánticos \parencite{neamen2012}.
+
+Según \textcite{sze2021}, el MOSFET moderno requiere modelos
+avanzados de canal corto.
+
+El nivel de Fermi se introduce naturalmente desde la física
+del estado sólido \parencite{mckelvey1996}.
+
+\printbibliography
+
+\section{Apéndice}
+
+\subsection{Código}
+
+\end{document}
