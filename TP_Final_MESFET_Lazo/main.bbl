@@ -19,37 +19,6 @@
 
 \refsection{0}
   \datalist[entry]{apa/apasortcite//global/global}
-    \entry{belove_enciclopedia}{book}{}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=058c5bb961d2e836a7df1376eb5a3992}{%
-           family={Belove},
-           familyi={B\bibinitperiod},
-           given={Charles},
-           giveni={C\bibinitperiod},
-           givenun=0}}%
-      }
-      \list{location}{1}{%
-        {México}%
-      }
-      \list{publisher}{1}{%
-        {McGraw-Hill}%
-      }
-      \strng{namehash}{058c5bb961d2e836a7df1376eb5a3992}
-      \strng{fullhash}{058c5bb961d2e836a7df1376eb5a3992}
-      \strng{bibnamehash}{058c5bb961d2e836a7df1376eb5a3992}
-      \strng{authorbibnamehash}{058c5bb961d2e836a7df1376eb5a3992}
-      \strng{authornamehash}{058c5bb961d2e836a7df1376eb5a3992}
-      \strng{authorfullhash}{058c5bb961d2e836a7df1376eb5a3992}
-      \field{sortinit}{B}
-      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{year}
-      \true{uniqueprimaryauthor}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Enciclopedia de la Electrónica, Ingeniería y Técnica}
-      \field{year}{1998}
-    \endentry
     \entry{boylestad2013}{book}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=8badf6f5cd034153c1b8f209f1d539ca}{%
@@ -84,35 +53,6 @@
       \field{edition}{11}
       \field{title}{Electronic Devices and Circuit Theory}
       \field{year}{2013}
-    \endentry
-    \entry{electronics_notes_mesfet}{online}{}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=b1a8a6afb077cb830a97c121696950b7}{%
-           family={Electronics-Notes},
-           familyi={E\bibinithyphendelim N\bibinitperiod}}}%
-      }
-      \strng{namehash}{b1a8a6afb077cb830a97c121696950b7}
-      \strng{fullhash}{b1a8a6afb077cb830a97c121696950b7}
-      \strng{bibnamehash}{b1a8a6afb077cb830a97c121696950b7}
-      \strng{authorbibnamehash}{b1a8a6afb077cb830a97c121696950b7}
-      \strng{authornamehash}{b1a8a6afb077cb830a97c121696950b7}
-      \strng{authorfullhash}{b1a8a6afb077cb830a97c121696950b7}
-      \field{sortinit}{E}
-      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{year}
-      \true{uniqueprimaryauthor}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{note}{by Ian Poole}
-      \field{title}{MESFET \& GaAs FET}
-      \field{year}{2025}
-      \verb{urlraw}
-      \verb https://www.electronics-notes.com/articles/electronic_components/fet-field-effect-transistor/mesfet-gaasfet.php
-      \endverb
-      \verb{url}
-      \verb https://www.electronics-notes.com/articles/electronic_components/fet-field-effect-transistor/mesfet-gaasfet.php
-      \endverb
     \endentry
     \entry{giannini2009high}{book}{}
       \name{author}{3}{}{%
@@ -287,6 +227,45 @@
       \field{edition}{7}
       \field{title}{Microelectronic Circuits}
       \field{year}{2015}
+    \endentry
+    \entry{StreetmanBanerjee_SolidStateDevices_2006}{book}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=5c0f3b6f5f00aacd939aa8302ca31834}{%
+           family={Streetman},
+           familyi={S\bibinitperiod},
+           given={Ben\bibnamedelima G.},
+           giveni={B\bibinitperiod\bibinitdelim G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=98361e70160d223316680a9e59ed2423}{%
+           family={Banerjee},
+           familyi={B\bibinitperiod},
+           given={Sanjay\bibnamedelima Kumar},
+           giveni={S\bibinitperiod\bibinitdelim K\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Upper Saddle River, NJ, USA}%
+      }
+      \list{publisher}{1}{%
+        {Pearson Prentice Hall}%
+      }
+      \strng{namehash}{b5bff8c38ee8d538aa1339c4eecf3b39}
+      \strng{fullhash}{b5bff8c38ee8d538aa1339c4eecf3b39}
+      \strng{bibnamehash}{b5bff8c38ee8d538aa1339c4eecf3b39}
+      \strng{authorbibnamehash}{b5bff8c38ee8d538aa1339c4eecf3b39}
+      \strng{authornamehash}{b5bff8c38ee8d538aa1339c4eecf3b39}
+      \strng{authorfullhash}{b5bff8c38ee8d538aa1339c4eecf3b39}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{6th}
+      \field{isbn}{978-0131497269}
+      \field{title}{Solid State Electronic Devices}
+      \field{year}{2006}
     \endentry
     \entry{sze2021}{book}{}
       \name{author}{3}{}{%
@@ -331,37 +310,6 @@
     \endentry
   \enddatalist
   \datalist[entry]{apa/global//global/global}
-    \entry{belove_enciclopedia}{book}{}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=058c5bb961d2e836a7df1376eb5a3992}{%
-           family={Belove},
-           familyi={B\bibinitperiod},
-           given={Charles},
-           giveni={C\bibinitperiod},
-           givenun=0}}%
-      }
-      \list{location}{1}{%
-        {México}%
-      }
-      \list{publisher}{1}{%
-        {McGraw-Hill}%
-      }
-      \strng{namehash}{058c5bb961d2e836a7df1376eb5a3992}
-      \strng{fullhash}{058c5bb961d2e836a7df1376eb5a3992}
-      \strng{bibnamehash}{058c5bb961d2e836a7df1376eb5a3992}
-      \strng{authorbibnamehash}{058c5bb961d2e836a7df1376eb5a3992}
-      \strng{authornamehash}{058c5bb961d2e836a7df1376eb5a3992}
-      \strng{authorfullhash}{058c5bb961d2e836a7df1376eb5a3992}
-      \field{sortinit}{B}
-      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{year}
-      \true{uniqueprimaryauthor}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Enciclopedia de la Electrónica, Ingeniería y Técnica}
-      \field{year}{1998}
-    \endentry
     \entry{boylestad2013}{book}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=8badf6f5cd034153c1b8f209f1d539ca}{%
@@ -396,35 +344,6 @@
       \field{edition}{11}
       \field{title}{Electronic Devices and Circuit Theory}
       \field{year}{2013}
-    \endentry
-    \entry{electronics_notes_mesfet}{online}{}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=b1a8a6afb077cb830a97c121696950b7}{%
-           family={Electronics-Notes},
-           familyi={E\bibinithyphendelim N\bibinitperiod}}}%
-      }
-      \strng{namehash}{b1a8a6afb077cb830a97c121696950b7}
-      \strng{fullhash}{b1a8a6afb077cb830a97c121696950b7}
-      \strng{bibnamehash}{b1a8a6afb077cb830a97c121696950b7}
-      \strng{authorbibnamehash}{b1a8a6afb077cb830a97c121696950b7}
-      \strng{authornamehash}{b1a8a6afb077cb830a97c121696950b7}
-      \strng{authorfullhash}{b1a8a6afb077cb830a97c121696950b7}
-      \field{sortinit}{E}
-      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{year}
-      \true{uniqueprimaryauthor}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{note}{by Ian Poole}
-      \field{title}{MESFET \& GaAs FET}
-      \field{year}{2025}
-      \verb{urlraw}
-      \verb https://www.electronics-notes.com/articles/electronic_components/fet-field-effect-transistor/mesfet-gaasfet.php
-      \endverb
-      \verb{url}
-      \verb https://www.electronics-notes.com/articles/electronic_components/fet-field-effect-transistor/mesfet-gaasfet.php
-      \endverb
     \endentry
     \entry{giannini2009high}{book}{}
       \name{author}{3}{}{%
@@ -599,6 +518,45 @@
       \field{edition}{7}
       \field{title}{Microelectronic Circuits}
       \field{year}{2015}
+    \endentry
+    \entry{StreetmanBanerjee_SolidStateDevices_2006}{book}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=5c0f3b6f5f00aacd939aa8302ca31834}{%
+           family={Streetman},
+           familyi={S\bibinitperiod},
+           given={Ben\bibnamedelima G.},
+           giveni={B\bibinitperiod\bibinitdelim G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=98361e70160d223316680a9e59ed2423}{%
+           family={Banerjee},
+           familyi={B\bibinitperiod},
+           given={Sanjay\bibnamedelima Kumar},
+           giveni={S\bibinitperiod\bibinitdelim K\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Upper Saddle River, NJ, USA}%
+      }
+      \list{publisher}{1}{%
+        {Pearson Prentice Hall}%
+      }
+      \strng{namehash}{b5bff8c38ee8d538aa1339c4eecf3b39}
+      \strng{fullhash}{b5bff8c38ee8d538aa1339c4eecf3b39}
+      \strng{bibnamehash}{b5bff8c38ee8d538aa1339c4eecf3b39}
+      \strng{authorbibnamehash}{b5bff8c38ee8d538aa1339c4eecf3b39}
+      \strng{authornamehash}{b5bff8c38ee8d538aa1339c4eecf3b39}
+      \strng{authorfullhash}{b5bff8c38ee8d538aa1339c4eecf3b39}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{6th}
+      \field{isbn}{978-0131497269}
+      \field{title}{Solid State Electronic Devices}
+      \field{year}{2006}
     \endentry
     \entry{sze2021}{book}{}
       \name{author}{3}{}{%
