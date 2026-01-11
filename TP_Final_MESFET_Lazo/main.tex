@@ -14,9 +14,12 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{amssymb}
+\usepackage[spanish]{babel}
+
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta, positioning}
-\usepackage[spanish]{babel}
+\usetikzlibrary{babel}
+
 \usepackage{csquotes}
 
 \usepackage[
@@ -131,24 +134,23 @@ Finalmente, en la región correspondiente a la terminal \textit{gate}, se deposi
 \end{figure}
 
 
-En las figuras \ref{fig:mishra_microscopio_MESFET_3D} y \ref{fig:giannini_MESFET_structure} se detalla su estructura en tres dimensiones, en la ultima también se detalla una capa opcional de material tipo p conocido como \textit{p-buffer} con el propósito de mejorar el acople, aislando mejor el canal, reduciendo corrientes de fuga hacia el sustrato y mejorando la estabilidad del dispositivo.
+En la figura \ref{fig:giannini_MESFET_structure} se detalla su estructura en tres dimensiones, también se detalla una capa opcional de material tipo p conocido como \textit{p-buffer} con el propósito de mejorar el acople, aislando mejor el canal, reduciendo corrientes de fuga hacia el sustrato y mejorando la estabilidad del dispositivo. Mientras que en la figura \ref{fig:simbologia_tipica} se detalla la simbología típica junto con referencias de tensión y corriente para esta clase de dispositivos.
 
 
 \begin{figure}[H]
     \centering
 
-    \begin{minipage}{0.48\textwidth}
+    \begin{minipage}{0.45\textwidth}
         \centering
         \includegraphics[width=\linewidth]{Img/6W_MESFET_circuito_integrado.png}
          \caption{Imagen donde se observa un arreglo integrado de MESFET's de GaAs \parencite{giannini2009high} .}
     \label{fig:giannini_MESFETs}
-
-    \includegraphics[width=\linewidth]{Img/3d_mishra_MESFET.png}
-         \caption{Gráfico tridimensional del transistor MESFET \parencite{mishra_semiconductor_2008} .}
-    \label{fig:mishra_microscopio_MESFET_3D}
+    \includegraphics[width=\linewidth]{../Imagenes/MESFET_Simbolo}
+         \caption{Simbología típica de transistor de efecto de campo.}
+    \label{fig:simbologia_tipica}
     \end{minipage}
     \hfill
-    \begin{minipage}{0.4\textwidth}
+    \begin{minipage}{0.45\textwidth}
         \centering
         \includegraphics[width=\linewidth]{Img/Microscopio_MESFET_MISHRA.png}
          \caption{(Arriba) Una sección transversal de corte de un MESFET de 0,1 $\mu m$. (Abajo) Vista superior de la MESFET \parencite{mishra_semiconductor_2008}.}
@@ -157,7 +159,10 @@ En las figuras \ref{fig:mishra_microscopio_MESFET_3D} y \ref{fig:giannini_MESFET
 
 \end{figure}
 
-El dispositivo frente a una elevada temperatura disminuye su corriente evitando un descontrol térmico, esto permite conectar fácilmente varios MESFET en paralelo, creando así un dispositivo más grande, como se detalla, por ejemplo, en la figura \ref{fig:giannini_MESFETs}. Mientras que en la figura \ref{fig:mishra_microscopio} se aprecian dos imágenes reales del dispositivo mediante un microscopio, la primera mediante un corte trasversal y la segunda una visual superior. En el informe se tomara como objeto de estudio el transistor MESFET formado por GaAs, con Si como impureza dopante en el canal y titanio como el metal de la compuerta.
+
+
+
+El dispositivo frente a una elevada temperatura disminuye su corriente evitando un descontrol térmico, esto permite conectar fácilmente varios MESFET en paralelo, creando así un dispositivo más grande, como se detalla, por ejemplo, en la figura \ref{fig:giannini_MESFETs}. Mientras que en la figura \ref{fig:mishra_microscopio} se aprecian dos imágenes reales del dispositivo mediante un microscopio, la primera mediante un corte trasversal y la segunda una visual superior.
 
 
 
@@ -203,42 +208,226 @@ Al igual que en los diodos rectificadores polarizados en inversa, la unión Scho
 
 \subsection{Parámetros Característicos}
 
-Utilizando la siguiente notación, inspirada en la figura \ref{fig:mishra_microscopio_MESFET_3D} tomando la referencia espacial $y = 0$ en la unión metal-semiconductor y tomando validas ciertas hipótesis, se pueden comenzar a definir distintos parámetros característicos del dispositivo y magnitudes electrostáticas del dispositivo:
+En el informe se tomara como objeto de estudio un transistor MESFET formado por GaAs, con silicio como impureza dopante en el canal y titanio como el metal de la compuerta.
 
-\begin{itemize}
-	\item $h : $ Espesor de la capa levemente dopado tipo N .
-	\item $W_D(x):$ Espesor de la zona de vaciamiento, depende de $x$, ya que no necesariamente es uniforme.
-	\item $V(x): $ Potencial eléctrico en la posición $x$ del GaAs tipo N.
-	\item $N_D: $ Concentración de impurezas donadoras.
-	\item $V_{bi}: $ Potencial de juntura.
-	\item $q:$ Carga eléctrica del electrón.
-\end{itemize}
+Utilizando la siguiente notación, inspirada en la figura \ref{fig:sistcoordmesfetb}, tomando la referencia espacial $y = 0$ en la unión metal-semiconductor y asumiendo ciertas hipótesis, se definen los parámetros característicos del dispositivo:
 
+\begin{figure}[H]
+	\centering
+	\begin{minipage}[t]{0.52\textwidth}
+		\vspace{1.25 cm}
+		\begin{itemize}
+			\item $h:$ Espesor de la capa levemente dopada tipo N.
+			\item $L:$ Longitud de la capa levemente dopada tipo N.
+			\item $Z:$ Profundidad del dispositivo.
+			\item $W_D(x):$ Espesor de la zona de vaciamiento, dependiente de $x$.
+			\item $V(x) \in [V_S, V_{DS}]:$ Potencial eléctrico en la posición $x$.
+			\item $N_D:$ Concentración de impurezas donadoras.
+			\item $V_{bi}:$ Potencial de juntura.
+			\item $q:$ Carga eléctrica del electrón.
+			\item $\mu_n:$ Movilidad de electrones.
+		\end{itemize}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.43\textwidth}
+		\vspace{0pt}
+		\centering
+		\includegraphics[width=\linewidth]{Img/3d_mishra_MESFET.png}
+		\caption{Sistema de coordenadas propuesto.}
+		\label{fig:sistcoordmesfetb}
+		\vspace{0pt}
+	\end{minipage}
+\end{figure}
+\texttt{Hipotesis [1] : ${N_D}^+ = N_D $ (impurezas totalmente ionizadas) y semiconductor no degenerado.}
 
-\texttt{Hipotesis 1 : ${N_D}^+ = N_D $ (impurezas totalmente ionizadas) y semiconductor no degenerado.}
-\texttt{Hipotesis 2 : Solo hay carga en la región de vaciamiento.}
+\texttt{Hipotesis [2] : Solo hay carga en la región de vaciamiento.}
 
 
 
 \subsubsection{Densidad de Carga}
 
-La carga se formara en el semiconductor y en la superficie del metal, formando una región superficial con carga negativa y una región en el semiconductor de carga positiva de acuerdo a \ref{equation:def_densidad_carga} utilizando las hipotesis 1 y 2.
+La carga se formara en el semiconductor y en la superficie del metal, formando una región superficial con carga negativa y una región en el semiconductor de carga positiva de acuerdo a (\ref{equation:def_densidad_carga}) utilizando las hipótesis [1] y [2].
 
-\begin{equation}\label{equation:def_densidad_carga}
-	\rho(x,y) = \begin{cases} 
-		0 & y < 0 \\
-		-q N_d  W(x)  & y = 0 \\
-		q N_d  W(x)  & 0 < y \le W(x) \\
-		0 & y >  W(x) 
-	\end{cases}
-\end{equation}
-
+\begin{figure}[H]
+	\centering
+	
+	% --------- Expresión analítica (izquierda) ----------
+	\begin{minipage}[c]{0.45\textwidth}
+		\centering
+		\begin{equation}\label{equation:def_densidad_carga}
+			\rho(x,y) =
+			\begin{cases}
+				0 & y < 0 \\[4pt]
+				-q N_d W(x) & y = 0 \\[4pt]
+				q N_d W(x) & 0 < y \le W(x) \\[4pt]
+				0 & y > W(x)
+			\end{cases}
+		\end{equation}
+	\end{minipage}
+	\hfill
+	% --------- Gráfico (derecha) ----------
+	\begin{minipage}[c]{0.5\textwidth}
+		\centering
+		\begin{tikzpicture}[
+			>=Latex,
+			axis/.style={->, thick},
+			charge/.style={fill=gray!40, draw=black},
+			annot/.style={font=\small}
+			]
+			
+			% Ejes
+			\draw[axis] (-3,0) -- (3,0) node[right] {$y$};
+			\draw[axis] (0,-3) -- (0,3) node[above] {$\rho(y)$};
+			
+			% Región positiva
+			\draw[charge] (0,0) rectangle (2.5,2);
+			\node[annot] at (1.25,1) {$qN_d W(x)$};
+			
+			% Región negativa (carga superficial)
+			\draw[charge] (-0.1,-3) rectangle (0,0);
+			\node[annot,left] at (-0.15,-1.3) {$-qN_d W(x)$};
+			
+			
+			% Etiquetas de materiales
+			\node[annot, anchor=east] at (-0.8,2.5) {Metal: Ti};
+			\node[annot, anchor=west] at (0.8,2.5) {SC: GaAs tipo N};
+			
+			
+			% W(x)
+			\draw[<->] (0,-0.2) -- (2.5,-0.2)
+			node[midway,below] {$W(x)$};
+			
+		\end{tikzpicture}
+	\end{minipage}
+	
+	\caption{Expresión analítica y representación gráfica de la densidad de carga $\rho(x,y)$.}
+\end{figure}
 
 
 
 \subsubsection{Campo Eléctrico}
 
+Para obtener el campo eléctrico (\ref{equation:campo_electrico}), utilizamos la ley de Gauss (\ref{equation:ley_gauss}):
+
+\begin{equation}\label{equation:ley_gauss}
+	\mathcal{E} = \frac{Q}{\epsilon_s}
+\end{equation} 
+
+\begin{figure}[h]
+	\centering
+	
+	% --------- Expresión analítica (izquierda) ----------
+	\begin{minipage}[c]{0.45\textwidth}
+		\centering
+		\begin{equation}\label{equation:campo_electrico}
+			\mathcal{E}(x,y) =
+			\begin{cases}
+				0 & y \le 0 \\[4pt]
+				\dfrac{q N_d}{\epsilon_s}\,[y - W(x)] 
+				& 0 < y \le W(x) \\[6pt]
+				0 & y > W(x)
+			\end{cases}
+		\end{equation}
+	\end{minipage}
+	\hfill
+	% --------- Gráfico (derecha) ----------
+	\begin{minipage}[c]{0.5\textwidth}
+		\centering
+		\begin{tikzpicture}[
+			>=Latex,
+			axis/.style={->, thick},
+			annot/.style={font=\small}
+			]
+			
+			% Ejes
+			\draw[axis] (-3,0) -- (3,0) node[right] {$y$};
+			\draw[axis] (0,-3) -- (0,2) node[above] {$\mathcal{E}(y)$};
+			
+			% Campo eléctrico en la región de vaciamiento (lineal)
+			\draw[thick] (0,-2) -- (2.5,0);
+			
+			% Línea de referencia en y = W(x)
+		%	\draw[dashed] (2.5,-2) -- (2.5,0);
+			\node[annot, below] at (2.5,0.5) {$W(x)$};
+			
+			% Etiquetas de materiales (posiciones solicitadas)
+			\node[annot, anchor=east] at (-0.8,1.2) {Metal: Ti};
+				\node[annot, anchor=east] at (-0.1,-2) {$\mathcal{E}_{MAX}$};
+			\node[annot, anchor=west] at (0.8,1.2) {SC: GaAs tipo N};
+			
+			% Pendiente
+			\node[annot] at (1.8,-1.2)
+			{$\displaystyle \frac{qN_d}{\epsilon_s}$};
+			
+		\end{tikzpicture}
+	\end{minipage}
+	
+	\caption{Expresión analítica y representación gráfica del campo eléctrico $\mathcal{E}(x,y)$ en la unión metal--GaAs.}
+\end{figure}
+
 \subsubsection{Potencial Eléctrico}
+
+Dada la relación entre el campo eléctrico y el gradiente del potencial eléctrico (\ref{equation:relacion_P_E}) se obtiene el potencial eléctrico, al integrar el potencial se debe tener en consideración una referencia inicial conveniente como $\phi (y = 0 ) = 0$ y teniendo en cuenta el potencial de juntura  $\phi [y = W(x) ] = \phi_{bi}$, analizado en mas profundidad en la sección de bandas de energía del informe.  
+
+\begin{equation}\label{equation:relacion_P_E}
+	\mathcal{E} = - \nabla \phi
+\end{equation}
+
+\begin{figure}[H]
+	\centering
+	
+	% --------- Expresión analítica (izquierda) ----------
+	\begin{minipage}[c]{0.45\textwidth}
+		\centering
+		\begin{equation}\label{equation:potencial_electrostatico}
+			\phi(x,y) =
+			\begin{cases}
+				0 & y \le 0 \\[4pt]
+				-\dfrac{q N_d}{2\epsilon_s}\,[y - W(x)]^2 + \phi_{bi}
+				& 0 < y \le W(x) \\[6pt]
+				\phi_{bi} & y > W(x)
+			\end{cases}
+		\end{equation}
+	\end{minipage}
+	\hfill
+	% --------- Gráfico (derecha) ----------
+	\begin{minipage}[c]{0.5\textwidth}
+		\centering
+		\begin{tikzpicture}[
+			>=Latex,
+			axis/.style={->, thick},
+			annot/.style={font=\small},
+			scale=1
+			]
+			
+			% Ejes
+			\draw[axis] (-3,0) -- (4,0) node[right] {$y$};
+			\draw[axis] (0,-0.5) -- (0,2.5) node[above] {$\phi(y)$};
+			
+			% Potencial en la región de vaciamiento (parábola)
+			\draw[thick, domain=0:3.5, samples=100]
+			plot (\x, -{0.08*(\x-3.5)^2 + 1});
+			
+			% Línea constante para y > W(x)
+			\draw[thick] (3,1) -- (3,1);
+			\node[annot, right] at (3.3,1.3) {$\phi_{bi}$};
+			
+			% Línea vertical en W(x)
+			\draw[dashed] (3,0) -- (3,1);
+			\node[annot, below] at (3,0) {$W(x)$};
+			
+			% Etiquetas de materiales (posiciones solicitadas)
+			\node[annot, anchor=east] at (-0.8,2) {Metal: Ti};
+			\node[annot, anchor=west] at (0.8,2) {SC: GaAs tipo N};
+			
+			% Valor en y = 0
+			\node[annot, below left] at (0,0) {$0$};
+			
+		\end{tikzpicture}
+	\end{minipage}
+	
+	\caption{Expresión analítica y representación gráfica del potencial electrostático $\phi(x,y)$ en la unión metal--GaAs.}
+\end{figure}
 
 
 \section{Modos de Operación}
