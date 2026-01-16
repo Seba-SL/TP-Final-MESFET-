@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2026.1.2)  11 JAN 2026 10:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2026.1.2)  16 JAN 2026 08:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -943,8 +943,8 @@ Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'spanish'.
 
 (./main.aux
-LaTeX Info: Redefining \. on input line 21.
-LaTeX Info: Redefining \% on input line 21.
+LaTeX Info: Redefining \. on input line 24.
+LaTeX Info: Redefining \% on input line 24.
 )
 \openout1 = `main.aux'.
 
@@ -1078,92 +1078,133 @@ C_transistores.png  used on input line 77.
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./logofiuba.png> <../../..
 /../Imágenes/Capturas de pantalla/TablaProp_SC_transistores.png>]
-<Img/estructura_MESFET.png, id=18, 1606.0pt x 673.51625pt>
+<Img/primer_Mesfet.png, id=18, 853.1875pt x 463.7325pt>
+File: Img/primer_Mesfet.png Graphic file (type png)
+<use Img/primer_Mesfet.png>
+Package pdftex.def Info: Img/primer_Mesfet.png  used on input line 98.
+(pdftex.def)             Requested size: 230.46576pt x 125.26605pt.
+<Img/estructura_MESFET.png, id=19, 1606.0pt x 673.51625pt>
 File: Img/estructura_MESFET.png Graphic file (type png)
 <use Img/estructura_MESFET.png>
-Package pdftex.def Info: Img/estructura_MESFET.png  used on input line 97.
+Package pdftex.def Info: Img/estructura_MESFET.png  used on input line 120.
 (pdftex.def)             Requested size: 245.82962pt x 103.08875pt.
-<Img/estructura_MESFET_SZE.png, id=19, 479.7925pt x 284.06125pt>
+<Img/estructura_MESFET_SZE.png, id=20, 479.7925pt x 284.06125pt>
 File: Img/estructura_MESFET_SZE.png Graphic file (type png)
 <use Img/estructura_MESFET_SZE.png>
-Package pdftex.def Info: Img/estructura_MESFET_SZE.png  used on input line 104.
+Package pdftex.def Info: Img/estructura_MESFET_SZE.png  used on input line 127.
 
 (pdftex.def)             Requested size: 245.82962pt x 145.54547pt.
-<Img/neamen_structure.png, id=20, 341.275pt x 288.07625pt>
+ [2 <./Img/primer_Mesfet.png> <./Img/estructura_MESFET.png> <./Img/estructura_M
+ESFET_SZE.png>]
+<Img/neamen_structure.png, id=31, 341.275pt x 288.07625pt>
 File: Img/neamen_structure.png Graphic file (type png)
 <use Img/neamen_structure.png>
-Package pdftex.def Info: Img/neamen_structure.png  used on input line 122.
+Package pdftex.def Info: Img/neamen_structure.png  used on input line 145.
 (pdftex.def)             Requested size: 245.82962pt x 207.51143pt.
-<Img/estructura_microwave.png, id=21, 619.31375pt x 490.83376pt>
+<Img/estructura_microwave.png, id=32, 619.31375pt x 490.83376pt>
 File: Img/estructura_microwave.png Graphic file (type png)
 <use Img/estructura_microwave.png>
-Package pdftex.def Info: Img/estructura_microwave.png  used on input line 129.
+Package pdftex.def Info: Img/estructura_microwave.png  used on input line 152.
 (pdftex.def)             Requested size: 245.82962pt x 194.8321pt.
- [2 <./Img/estructura_MESFET.png> <./Img/estructura_MESFET_SZE.png> <./Img/neam
-en_structure.png> <./Img/estructura_microwave.png>]
-<Img/6W_MESFET_circuito_integrado.png, id=34, 757.83125pt x 211.79124pt>
+<Img/6W_MESFET_circuito_integrado.png, id=33, 757.83125pt x 211.79124pt>
 File: Img/6W_MESFET_circuito_integrado.png Graphic file (type png)
 <use Img/6W_MESFET_circuito_integrado.png>
 Package pdftex.def Info: Img/6W_MESFET_circuito_integrado.png  used on input li
-ne 145.
+ne 170.
 (pdftex.def)             Requested size: 230.46576pt x 64.40718pt.
-<../Imagenes/MESFET_Simbolo.png, id=35, 281.05pt x 238.8925pt>
-File: ../Imagenes/MESFET_Simbolo.png Graphic file (type png)
-<use ../Imagenes/MESFET_Simbolo.png>
-Package pdftex.def Info: ../Imagenes/MESFET_Simbolo.png  used on input line 148
-.
-(pdftex.def)             Requested size: 230.46576pt x 195.89674pt.
-<Img/Microscopio_MESFET_MISHRA.png, id=36, 352.31625pt x 502.87875pt>
+<Img/esquematico_de_paper.png, id=34, 365.365pt x 207.77625pt>
+File: Img/esquematico_de_paper.png Graphic file (type png)
+<use Img/esquematico_de_paper.png>
+Package pdftex.def Info: Img/esquematico_de_paper.png  used on input line 174.
+(pdftex.def)             Requested size: 230.46576pt x 131.0614pt.
+<Img/Microscopio_MESFET_MISHRA.png, id=35, 352.31625pt x 502.87875pt>
 File: Img/Microscopio_MESFET_MISHRA.png Graphic file (type png)
 <use Img/Microscopio_MESFET_MISHRA.png>
 Package pdftex.def Info: Img/Microscopio_MESFET_MISHRA.png  used on input line 
-155.
+182.
 (pdftex.def)             Requested size: 230.46576pt x 328.95445pt.
-<../../../../Imágenes/Capturas de pantalla/zincblenda.png, id=37, 507.8975pt x
+ [3 <./Img/neamen_structure.png> <./Img/estructura_microwave.png>]
+<../../../../Imágenes/Capturas de pantalla/zincblenda.png, id=41, 507.8975pt x
  421.575pt>
 File: ../../../../Imágenes/Capturas de pantalla/zincblenda.png Graphic file (t
 ype png)
 <use ../../../../Imágenes/Capturas de pantalla/zincblenda.png>
 Package pdftex.def Info: ../../../../Imágenes/Capturas de pantalla/zincblenda.
-png  used on input line 176.
+png  used on input line 211.
 (pdftex.def)             Requested size: 179.2555pt x 148.78853pt.
- [3 <./Img/6W_MESFET_circuito_integrado.png> <../Imagenes/MESFET_Simbolo.png> <
-./Img/microscopio_MESFET_MISHRA.png> <../../../../Imágenes/Capturas de pantall
-a/zincblenda.png>]
-<Img/3d_mishra_MESFET.png, id=46, 796.9775pt x 561.09625pt>
-File: Img/3d_mishra_MESFET.png Graphic file (type png)
-<use Img/3d_mishra_MESFET.png>
-Package pdftex.def Info: Img/3d_mishra_MESFET.png  used on input line 235.
-(pdftex.def)             Requested size: 220.22058pt x 155.04253pt.
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 2
-41.
+<Img/red_GaAs.png, id=42, 437.635pt x 479.7925pt>
+File: Img/red_GaAs.png Graphic file (type png)
+<use Img/red_GaAs.png>
+Package pdftex.def Info: Img/red_GaAs.png  used on input line 218.
+(pdftex.def)             Requested size: 140.84192pt x 154.40793pt.
+ [4 <./Img/6W_MESFET_circuito_integrado.png> <./Img/esquematico_de_paper.png> <
+./Img/microscopio_MESFET_MISHRA.png>]
+<../Imagenes/GaAs-MESFET-Class-AB-RFPA-schematic-diagram.png, id=50, 853.1875pt
+ x 514.92375pt>
+File: ../Imagenes/GaAs-MESFET-Class-AB-RFPA-schematic-diagram.png Graphic file 
+(type png)
+<use ../Imagenes/GaAs-MESFET-Class-AB-RFPA-schematic-diagram.png>
+Package pdftex.def Info: ../Imagenes/GaAs-MESFET-Class-AB-RFPA-schematic-diagra
+m.png  used on input line 253.
+(pdftex.def)             Requested size: 220.22058pt x 132.91058pt.
+ [5 <../../../../Imágenes/Capturas de pantalla/zincblenda.png> <./Img/red_GaAs
+.png> <../Imagenes/GaAs-MESFET-Class-AB-RFPA-schematic-diagram.png>]
+Overfull \hbox (1.3809pt too wide) in paragraph at lines 315--327
+ [][] 
+ []
 
+
+Overfull \hbox (19.00328pt too wide) in paragraph at lines 338--353
+ [][] 
+ []
+
+
+Overfull \hbox (23.7831pt too wide) in paragraph at lines 366--382
+ [][] 
+ []
+
+[6]
+<Img/simbolo_mas_esquema.jpg, id=62, 1071.0414pt x 489.9906pt>
+File: Img/simbolo_mas_esquema.jpg Graphic file (type jpg)
+<use Img/simbolo_mas_esquema.jpg>
+Package pdftex.def Info: Img/simbolo_mas_esquema.jpg  used on input line 396.
+(pdftex.def)             Requested size: 358.50317pt x 164.00768pt.
+
+
+LaTeX Warning: Reference `fig:sistcoordmesfetb' on page 7 undefined on input li
+ne 421.
+
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 4
+23.
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
-) [4 <./Img/3d_mishra_MESFET.png>] [5]
-<Img/bandas_energia_mishra.png, id=62, 367.3725pt x 437.635pt>
+) [7 <./Img/simbolo_mas_esquema.jpg>] [8]
+<Img/bandas_energia_mishra.png, id=78, 367.3725pt x 437.635pt>
 File: Img/bandas_energia_mishra.png Graphic file (type png)
 <use Img/bandas_energia_mishra.png>
-Package pdftex.def Info: Img/bandas_energia_mishra.png  used on input line 459.
+Package pdftex.def Info: Img/bandas_energia_mishra.png  used on input line 665.
 
 (pdftex.def)             Requested size: 256.07481pt x 305.07362pt.
- [6 <./Img/bandas_energia_mishra.png>] [7] (./main.aux
-LaTeX Info: Redefining \sptext on input line 21.
-LaTeX Info: Redefining \. on input line 21.
-LaTeX Info: Redefining \% on input line 21.
+ [9] [10 <./Img/bandas_energia_mishra.png>] [11] (./main.aux
+LaTeX Info: Redefining \sptext on input line 24.
+LaTeX Info: Redefining \. on input line 24.
+LaTeX Info: Redefining \% on input line 24.
 )
+
+LaTeX Warning: There were undefined references.
+
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 27122 strings out of 476091
- 535281 string characters out of 5794082
- 1871330 words of memory out of 5000000
- 47089 multiletter control sequences out of 15000+600000
- 528098 words of font info for 75 fonts, out of 8000000 for 9000
+ 27209 strings out of 476091
+ 538288 string characters out of 5794082
+ 1882330 words of memory out of 5000000
+ 47171 multiletter control sequences out of 15000+600000
+ 528864 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,12n,89p,1210b,2809s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,13n,89p,1674b,2809s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
@@ -1175,19 +1216,20 @@ msfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></
 usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf/fonts
-/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/type1/public/cm-sup
-er/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></us
-r/share/texmf/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf/fonts/
-type1/public/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/type1/public/cm-supe
-r/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr
-/share/texmf/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf/fonts/t
-ype1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-super
-/sftt1000.pfb>
-Output written on main.pdf (7 pages, 1001615 bytes).
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf/fonts/type1/
+public/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx
+1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share
+/texmf/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf/fonts/type1/p
+ublic/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1
+000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/
+texmf/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf/fonts/type1/pu
+blic/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt10
+00.pfb>
+Output written on main.pdf (11 pages, 1280463 bytes).
 PDF statistics:
- 166 PDF objects out of 1000 (max. 8388607)
- 89 compressed objects within 1 object stream
+ 187 PDF objects out of 1000 (max. 8388607)
+ 100 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 73 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 88 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -63,13 +63,13 @@
 
 \section{Resumen}
 
-En el siguiente informe se utilizan los conocimientos adquiridos a lo largo de la materia Dispositivos Semiconductores con el objetivo de realizar una investigación y análisis en torno al dispositivo conocido como MESFET ( Metal-Semiconductor Field-Effect Transistor ). Se aborda su estructura, parámetros característicos y aplicaciones típicas, modos de operación. Ademas, se presentan diagramas de bandas para cada modo de operación, curvas características y se discute los efectos no ideales que influyen en su comportamiento real.
+En el siguiente informe se utilizan los conocimientos adquiridos a lo largo de la materia Dispositivos Semiconductores con el objetivo de realizar una presentación, investigación y análisis en torno al dispositivo conocido como MESFET ( Metal-Semiconductor Field-Effect Transistor ). Se aborda su estructura, parámetros característicos y aplicaciones típicas, modos de operación. Ademas, se presentan diagramas de bandas para cada modo de operación, curvas características y se discute los efectos no ideales que influyen en su comportamiento real.
 
 \section{Descripción del Dispositivo}
 
-El transistor MESFET es un dispositivo multijuntura de tres terminales: fuente, drenaje y compuerta, cuya estructura forma un canal por el cual fluyen los portadores desde el terminal fuente hacia el terminal de drenaje. La conductividad del canal es modulada por el potencial eléctrico aplicado en el terminal de compuerta. Puede clasificarse como una variación del transistor MOSFET, con la diferencia de que no posee una capa de óxido entre la compuerta y el sustrato, característica que también comparte con el transistor JFET. Con respecto a este último, difieren en el material de la compuerta, ya que en el MESFET no es de material semiconductor, sino metálica, empleándose metales como aluminio, titanio, oro, níquel o platino.
+El transistor MESFET es un dispositivo multijuntura de tres terminales: fuente, drenaje y compuerta, cuya estructura forma un canal por el cual fluyen los portadores desde el terminal fuente hacia el terminal de drenaje. La conductividad del canal es modulada por el potencial eléctrico aplicado en el terminal de compuerta. Puede clasificarse como una variación del transistor MOSFET, con la diferencia de que no posee una capa de óxido aislante entre la compuerta y el sustrato, característica que también comparte con el transistor JFET. Con respecto a este último, difieren en el material de la compuerta, ya que en el MESFET no es de material semiconductor, sino metálica, empleándose metales como aluminio, titanio, oro, níquel o platino.
 
-Los transistores MOSFET pueden no ser apropiados si se desea fabricar un transistor utilizando ciertos materiales semiconductores, como en el caso del arseniuro de galio (GaAs), dado que en la interfase entre el GaAs y un aislante como el oxido se forman un gran número de trampas superficiales que inhiben la acción compuerta. Además, las compuertas de unión no se difunden con tanta facilidad dentro del GaAs debido a la inestabilidad del material semiconductor a altas temperaturas, por lo tanto no se realizan uniones P-N con facilidad. Sin embargo, dado que el GaAs tiene una mayor movilidad que el silicio, su empleo es aconsejable en aplicaciones que requieren rápidas velocidades de conmutación. Por consiguiente, se utilizan estructuras del tipo MESFET para cubrir esas necesidades \parencite{StreetmanBanerjee_SolidStateDevices_2006}. Otros semiconductores utilizados para fabricar MESFET's son nitruro de galio (GaN), carburo de silicio de estructura cristalina (4H-SiC) y fosforo de indio (InP), las caracteristicas de los mismos se encuentran en la tabla de la figura \ref{fig:tablapropsctransistores}.
+Para comprender la necesidad de esta clase de transistor es necesario conocer una limitación en los transistores MOSFET, estos pueden no ser apropiados si se desea fabricar un transistor utilizando ciertos materiales semiconductores, como en el caso del arseniuro de galio (GaAs), dado que en la interfase, entre el GaAs y un aislante como el oxido, se forman un gran número de trampas superficiales que inhiben la acción compuerta. Además, las compuertas de unión no se difunden con tanta facilidad dentro del GaAs debido a la inestabilidad del material a altas temperaturas, por lo tanto no se realizan uniones P-N con facilidad. Sin embargo, dado que el GaAs tiene una mayor movilidad que el silicio para sus portadores libres, su empleo es aconsejable en aplicaciones que requieren rápidas velocidades de conmutación. La mayoría de las aplicaciones utilizan el MESFET de canal N en lugar del de canal P debido a la mayor movilidad de las portadoras en los dispositivos de canal N \parencite{sze2002semiconductor}. Por consiguiente, se utilizan estructuras del tipo MESFET de canal N para cubrir esas necesidades \parencite{StreetmanBanerjee_SolidStateDevices_2006}. Otros semiconductores utilizados para fabricar MESFET's son nitruro de galio (GaN), carburo de silicio de estructura cristalina (4H-SiC) y fosforo de indio (InP), las caracteristicas de los mismos se encuentran en la tabla de la figura \ref{fig:tablapropsctransistores}. 
 
 
 \begin{figure}[H]
@@ -79,7 +79,30 @@ Los transistores MOSFET pueden no ser apropiados si se desea fabricar un transis
 	\label{fig:tablapropsctransistores}
 \end{figure}
 
-El MESFET fue propuesto y demostrado por primera vez por Mead en 1966. Poco después, Hooper y Lehrer informaron sobre su rendimiento en dispositivos de microondas en 1967, utilizando una capa epitaxial de GaAs sobre un sustrato de GaAs semiaislante \parencite{sze2021}.
+\subsection{Primer Prototipo}
+
+	El MESFET fue propuesto y demostrado por primera vez por Carver Mead en 1966, se puede observar una imagen de el primer prototipo en la figura \ref{fig:primermesfet}. Poco después, Hooper y Lehrer informaron sobre su rendimiento en dispositivos de microondas en 1967 \parencite{sze2021}. Carver Mead recibió una pequeña muestra de GaAs de tipo N formado epitaxialmente sobre una oblea semiaislante y comenzo a trabajar en el laboratorio grabando la capa epitaxial de su diminuta muestra de oblea, paso a paso, hasta que pudo ver la perforación desde un contacto metálico a una tension de 10 V. El proceso que estaba usando era un grabado químico de tiempo aproximado con metanol y bromo, y aunque 10 V era un poco alto, ya había pasado por varios pasos de grabado, metalización y medición (usando la relación entre capacitancia y tensión para obtener la concentración de dopaje del canal y espesor de agotamiento) para llegar a este punto. Decidió detenerse y, usando un rapidógrafo calentado (un bolígrafo de dibujo de tinta líquida de estilo antiguo) lleno de cera negra, dibujó una franja a lo largo de la oblea para definir el área activa de lo que sería la región de fuente-drenaje, y luego grabó cuidadosamente a través de la región epitaxial hasta el GaAs semiaislante en el resto. A continuación, e increíblemente, soldó por puntos dos hojas de afeitar de filo recto a pequeñas piezas transversales para hacer una máscara para una puerta muy estrecha. Los bordes de las hojas estaban tan juntos que formaban un patrón de difracción a lo largo de sus bordes casi en contacto. 
+
+\begin{figure}[H]
+	\centering
+	
+	\begin{minipage}{0.45\textwidth}	
+		
+		 Usando esta máscara improvisada, evaporó un electrodo de compuerta de aluminio muy fino (de unas pocas micras de ancho) a través del hueco entre las aspas y a lo largo del punto medio de la mesa. Después, soldó contactos óhmicos de indio-mercurio a la mesa, en lados opuestos de la compuerta, para formar la fuente y el drenador. Sorprendentemente, el dispositivo funcionó y Carver pudo registrar curvas I-V del FET, dado que el transistor operaba a 10 V. Redactó el breve artículo y lo presentó a las Actas del IEEE en diciembre, denominándolo Transistor de Efecto de Campo de Puerta de Barrera Schottky, que posteriormente se convertiría en el MESFET \parencite{Siegel2021Mead}.
+		
+		
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/primer_Mesfet}
+		\caption{Fotografía del primer prototipo de MESFET de GaAs, tal como está conectado a un portaobjetos de microscopio \parencite{Siegel2021Mead}.}
+		\label{fig:primermesfet}
+	\end{minipage}
+	
+\end{figure}
+
+
 
 
 
@@ -134,8 +157,10 @@ Finalmente, en la región correspondiente a la terminal \textit{gate}, se deposi
 \end{figure}
 
 
-En la figura \ref{fig:giannini_MESFET_structure} se detalla su estructura en tres dimensiones, también se detalla una capa opcional de material tipo p conocido como \textit{p-buffer} con el propósito de mejorar el acople, aislando mejor el canal, reduciendo corrientes de fuga hacia el sustrato y mejorando la estabilidad del dispositivo. Mientras que en la figura \ref{fig:simbologia_tipica} se detalla la simbología típica junto con referencias de tensión y corriente para esta clase de dispositivos.
 
+
+
+En la figura \ref{fig:giannini_MESFET_structure} se detalla su estructura en tres dimensiones, también se detalla una capa opcional de material tipo p conocido como \textit{p-buffer} con el propósito de mejorar el acople, aislando mejor el canal, reduciendo corrientes de fuga hacia el sustrato y mejorando la estabilidad del dispositivo.
 
 \begin{figure}[H]
     \centering
@@ -145,10 +170,12 @@ En la figura \ref{fig:giannini_MESFET_structure} se detalla su estructura en tre
         \includegraphics[width=\linewidth]{Img/6W_MESFET_circuito_integrado.png}
          \caption{Imagen donde se observa un arreglo integrado de MESFET's de GaAs \parencite{giannini2009high} .}
     \label{fig:giannini_MESFETs}
-    \includegraphics[width=\linewidth]{../Imagenes/MESFET_Simbolo}
-         \caption{Simbología típica de transistor de efecto de campo.}
-    \label{fig:simbologia_tipica}
-    \end{minipage}
+   
+    \includegraphics[width=\linewidth]{Img/esquematico_de_paper}
+         \caption{ Esquema conceptual de polarización del MESFET \parencite{Belgat2004_MESFET_Interface}.}
+    \label{fig:esquematico_de_paper}
+    
+	\end{minipage}
     \hfill
     \begin{minipage}{0.45\textwidth}
         \centering
@@ -160,13 +187,21 @@ En la figura \ref{fig:giannini_MESFET_structure} se detalla su estructura en tre
 \end{figure}
 
 
-
-
 El dispositivo frente a una elevada temperatura disminuye su corriente evitando un descontrol térmico, esto permite conectar fácilmente varios MESFET en paralelo, creando así un dispositivo más grande, como se detalla, por ejemplo, en la figura \ref{fig:giannini_MESFETs}. Mientras que en la figura \ref{fig:mishra_microscopio} se aprecian dos imágenes reales del dispositivo mediante un microscopio, la primera mediante un corte trasversal y la segunda una visual superior.
 
 
 
 \subsubsection{Características del Semiconductor y su Dopaje}
+
+	En el caso del Arseniuro de Galio, es un solido cuya red cristalina forma una estructura conocida como
+\textit{zincblenda} (Figura~\ref{fig:zincblenda}), compuesta por arsénico del grupo V y galio
+del grupo III (Figura~\ref{fig:red_GaAs}). Al agregar una impureza, esta reemplaza a alguno de los átomos en la red
+cristalina. Para obtener material tipo N, la impureza donadora debe aportar un electrón
+adicional respecto del átomo que reemplaza. Cuando se emplea silicio como impureza, este
+sustituye al galio, que posee tres electrones de valencia, mientras que el silicio posee
+cuatro, actuando como donador. Por otro lado, el azufre y el selenio poseen seis electrones
+de valencia, por lo que al reemplazar al arsénico, que posee cinco, aportan un electrón
+adicional, dando lugar a material tipo N \parencite{neamen2012}.
 
 \begin{figure}[H]
 	\centering
@@ -179,23 +214,50 @@ El dispositivo frente a una elevada temperatura disminuye su corriente evitando 
 	\end{minipage}
 	\hfill
 	\begin{minipage}{0.55\textwidth}
-		En el caso del Arseniuro de Galio, es un solido cuya red cristalina forma una estructura conocida como
-		\textit{zincblenda} (Figura~\ref{fig:zincblenda}), compuesta por arsénico del grupo V y galio
-		del grupo III. Al agregar una impureza, esta reemplaza a alguno de los átomos en la red
-		cristalina. Para obtener material tipo N, la impureza donadora debe aportar un electrón
-		adicional respecto del átomo que reemplaza. Cuando se emplea silicio como impureza, este
-		sustituye al galio, que posee tres electrones de valencia, mientras que el silicio posee
-		cuatro, actuando como donador. Por otro lado, el azufre y el selenio poseen seis electrones
-		de valencia, por lo que al reemplazar al arsénico, que posee cinco, aportan un electrón
-		adicional, dando lugar a material tipo N \parencite{neamen2012}.
-		\vspace{1cm}
+		\centering
+		\includegraphics[width=0.5\linewidth]{Img/red_GaAs}
+		\caption{Enlace covalente del cristal del GaAs. \parencite{BoylestadNashelsky2015}.}
+		\label{fig:red_GaAs}
 	\end{minipage}
 \end{figure}
 
 
 \subsection{Aplicaciones Típicas}
+	
+	
+	Es empleado en sistemas de comunicación por microondas, amplificadores, radiotelescopios hasta antenas parabólicas domésticas, sistemas satélitales y teléfonos celulares operando en frecuencias por encima de 3 GHz. En la figura \ref{fig:gaas-mesfet-class-ab-rfpa-schematic-diagram} se implementa un MESFET en un amplificador clase AB.
+	
 
-Es empleado en sistemas de comunicación por microondas, desde radiotelescopios hasta antenas parabólicas domésticas, sistemas satélitales y teléfonos celulares. En la actualidad los transistores MESFET han sido reemplazados en gran medida por transistores de alta movilidad de electrones (HEMT : High-electron-mobility transistors) y alternativas basadas en silicio Utilizando materiales diseñados para la banda prohibida. A pesar de esto, la tecnología MESFET sigue siendo relevante en aplicaciones especializadas de alta potencia y alta temperatura. Los dispositivos MESFET se suelen adoptar para frecuencias de hasta 18-20 GHz, mientras que la adopción de dispositivos de heterojunción (principalmente del tipo HEMT) se hace obligatoria para frecuencias de operación más altas \parencite{giannini2009high}.
+\begin{figure}[H]
+	\centering
+	\begin{minipage}[t]{0.52\textwidth}
+		\vspace{0.5 cm}
+		 A pesar de esto, la tecnología MESFET sigue siendo relevante en aplicaciones especializadas de alta potencia y alta temperatura. Los dispositivos MESFET se suelen adoptar para frecuencias de hasta 18-20 GHz, mientras que la adopción de dispositivos de heterojunción (principalmente del tipo HEMT) se hace obligatoria para frecuencias de operación más altas \parencite{giannini2009high}.
+		 
+		 \vspace{1cm}
+		 	
+		 \begin{itemize}
+		 	\item 	Radares
+		 	\item 	Equipos de radiocomunicación
+		 	\item 	Tacómetros
+		 	\item 	Satélites
+		 	\item 	Microondas
+		 \end{itemize}
+		 
+	
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.43\textwidth}
+		\vspace{0pt}
+		\centering
+		\includegraphics[width=1\linewidth]{../Imagenes/GaAs-MESFET-Class-AB-RFPA-schematic-diagram}
+		\caption{Diagrama esquemático de un amplificador Class-AB RFPA implementando un GaAs MESFET.}
+		\label{fig:gaas-mesfet-class-ab-rfpa-schematic-diagram}
+		\vspace{0pt}
+	\end{minipage}
+\end{figure}
+
+
 
 \section{Principio de Funcionamiento}
 
@@ -203,48 +265,170 @@ Una unión metal–semiconductor puede dar lugar a dos tipos de contacto, depend
 
 El segundo caso corresponde a la formación de una unión rectificante del tipo \textit{Schottky}, para la cual rige la relación $\phi_m > \phi_{SC}$. Esta situación se presenta cuando el semiconductor tipo N se encuentra levemente dopado y es la empleada en el terminal \textit{gate}. Este tipo de unión es también característico de los diodos rectificadores de rápida conmutación.
 
-Al igual que en los diodos rectificadores polarizados en inversa, la unión Schottky forma, bajo determinada polarización, una región de vaciamiento de portadores libres en el semiconductor. En el transistor MESFET, la extensión de dicha región es modulada para permitir el estrangulamiento o la conducción del canal, siendo este el principio fundamental de su funcionamiento.
+Al igual que en los diodos Schottky polarizados en inversa, esta unión da lugar a la formación de una región de vaciamiento de portadores libres en el semiconductor. En el transistor MESFET, la extensión de dicha región es modulada mediante la tensión aplicada entre \textit{gate} y \textit{source}, permitiendo el estrangulamiento o la apertura del canal conductor. De esta forma, se controla la corriente que circula entre \textit{drain} y \textit{source}, constituyendo este mecanismo el principio fundamental de funcionamiento del dispositivo.
 
 
-\subsection{Parámetros Característicos}
+\subsection{Tipos de MESFET}
 
-En el informe se tomara como objeto de estudio un transistor MESFET formado por GaAs, con silicio como impureza dopante en el canal y titanio como el metal de la compuerta.
+A la hora de fabricar estos transistores, se puede optar por un tipo de dopaje del canal tal que requiera tensiones umbrales negativas para el funcionamiento, el cual se conoce como modo empobrecimiento ( Depletion mode ) o tensiones de control positivas, este ultimo nombrado como modo enriquecimiento ( Enhancement mode).
 
-Utilizando la siguiente notación, inspirada en la figura \ref{fig:sistcoordmesfetb}, tomando la referencia espacial $y = 0$ en la unión metal-semiconductor y asumiendo ciertas hipótesis, se definen los parámetros característicos del dispositivo:
+\subsubsection{D-MESFET (Depletion-mode MESFET)}
+
+\subsubsection{E-MESFET (Enhancement-mode MESFET}
+
+\section{Parámetros Característicos}
+
+En el informe se tomara como objeto de estudio un transistor MESFET formado por GaAs de canal n, con silicio como impureza dopante en el canal y titanio como el metal de la compuerta a una temperatura de 300 K. A continuación se presentaran los diferentes parámetros de referencia utilizados en el informe.
+
+
+\subsection{Parámetros Físicos}
+
+Los materiales que forman el dispositivo desprenden diferentes características descriptas por los siguientes parámetros (\ref{tab:param_fis_mesfet}). Tales parámetros determinan propiedades fundamentales del dispositivo, como la formación de la barrera \textit{Scottky}, la zona de vaciamiento, el transporte de portadores, etc.
+
+
+\begin{table}[h]
+	\centering
+	\caption{Parámetros físicos característicos de los materiales utilizados en el análisis del MESFET}
+	\label{tab:param_fis_mesfet}
+	\begin{tabular}{|l|c|c|c|c|}
+		\hline
+		\textbf{Parámetro} & \textbf{GaAs} & \textbf{Si (dopante)} & \textbf{Ti} & \textbf{Cr} \\ \hline
+		Tipo de material & Semiconductor & Semiconductor & Metal & Metal \\ \hline
+		Energía de banda prohibida $E_g$ [eV] & 1.42 & 1.12 & -- & -- \\ \hline
+		Constante dieléctrica relativa $\epsilon_r$ & 12.9 & 11.7 & -- & -- \\ \hline
+		Afinidad electrónica $\chi$ [eV] & 4.07 & -- & -- & -- \\ \hline
+		Función trabajo $\phi_m$ [eV] & -- & -- & 4.33 & 4.50 \\ \hline
+		Movilidad electrónica $\mu_n$ [cm$^2$/Vs] & 8500 & -- & -- & -- \\ \hline
+		Concentración  $N_D$ [cm$^{-3}$] & -- & $N_D$ [cm$^{-3}$] & -- & -- \\ \hline
+		Tipo de contacto en MESFET & Canal & Dopaje & Schottky / Óhmico & Aislante \\ \hline
+	\end{tabular}
+\end{table}
+
+\subsection{Parámetros Geométricos}
+
+En la siguiente tabla se presentan los parámetros que describen las dimensiones geométricas del dispositivo (\ref{tab:param_geom_mesfet}). 
+
+\begin{table}[H]
+	\centering
+	\caption{Parámetros geométricos característicos utilizados en el análisis del MESFET}
+	\label{tab:param_geom_mesfet}
+	\begin{tabular}{|l|c|l|}
+		\hline
+		\textbf{Parámetro} & \textbf{Símbolo} & \textbf{Descripción} \\ \hline
+		Longitud de la compuerta & $L$ & Longitud del canal en la dirección $x$ (source--drain)   \\ \hline
+		Ancho del dispositivo & $Z$ & Dimensión del canal en la dirección $z$ (profundidad del dispositivo) \\ \hline
+		Espesor del canal & $d$ & Altura del canal en la dirección $y$ \\ \hline
+		Ancho de la zona de vaciamiento & $W_d$ & Extensión de la región de vaciamiento bajo la compuerta \\ \hline
+		Espesor efectivo del canal & $d_{eff}$ & Espesor del canal conductor: $d_{eff}=d-W_d$ \\ \hline
+		Área efectiva del canal & $A_{ch}$ & Área transversal del canal: $A_{ch}=Z\cdot d_{eff}$ \\ \hline
+		Posición longitudinal & $x$ & Coordenada a lo largo del canal \\ \hline
+		Posición vertical & $y$ & Coordenada perpendicular a la superficie \\ \hline
+	\end{tabular}
+\end{table}
+
+
+\subsection{Parámetros Eléctricos}
+
+El comportamiento eléctrico del dispositivo se podrá describir con ayuda de las definiciónes de diferentes tensiones, corrientes, resistencias, capacitancias y otros parámetros eléctricos para facilitar el análisis del dispositivo (\ref{tab:param_elec_mesfet}). 
+
+\begin{table}[H]
+	\centering
+	\caption{Parámetros eléctricos característicos utilizados en el análisis del MESFET}
+	\label{tab:param_elec_mesfet}
+	\begin{tabular}{|l|c|c|l|}
+		\hline
+		\textbf{Parámetro} & \textbf{Símbolo} & \textbf{Unidad} & \textbf{Descripción} \\ \hline
+		Tensión compuerta--fuente & $V_{GS}$ & V & Tensión aplicada a la unión Schottky de la compuerta \\ \hline
+		Tensión drenaje--fuente & $V_{DS}$ & V & Tensión aplicada entre drenaje y fuente \\ \hline
+		Corriente de drenaje & $I_D$ & A & Corriente que circula por el canal del MESFET \\ \hline
+		Corriente de compuerta & $I_G$ & A & Corriente de fuga de la unión Schottky \\ \hline
+		Tensión de umbral (pinch--off) & $V_T$ & V & Tensión $V_{GS}$ para la cual el canal se estrangula \\ \hline
+		Corriente de saturación & $I_{DSS}$ & A & Corriente de drenaje para $V_{GS} = 0$ (D-MESFET)\\ \hline
+		Transconductancia & $g_m$ & $ \Omega^{-1}$ & Variación de $I_D$ respecto de $V_{GS}$ \\ \hline
+		Resistencia de salida & $r_o$ & $\Omega$ & Inversa de la pendiente $I_D$--$V_{DS}$ en saturación \\ \hline
+		Capacitancia compuerta--fuente & $C_{GS}$ & F & Capacitancia de la región de vaciamiento bajo la compuerta \\ \hline
+		Capacitancia compuerta--drenaje & $C_{GD}$ & F & Capacitancia parásita asociada al solapamiento \\ \hline
+		Campo eléctrico crítico & $xi_{crit}$ & V/cm & Campo máximo antes de ruptura del GaAs \\ \hline
+	\end{tabular}
+\end{table}
+
+
+\subsection{Parámetros de Rendimiento}
+
+Para un posterior análisis de funcionamiento detallado contemplando posibles condiciones no ideales, es necesario detallar parámetros de rendimiento como los descriptos por la siguiente tabla (\ref{tab:param_rend_mesfet}). 
+
+
+
+\begin{table}[H]
+	\centering
+	\caption{Parámetros de rendimiento característicos del transistor MESFET}
+	\label{tab:param_rend_mesfet}
+	\begin{tabular}{|l|c|l|}
+		\hline
+		\textbf{Parámetro} & \textbf{Símbolo} & \textbf{Descripción} \\ \hline
+		Frecuencia de transición & $f_T$ & Frecuencia para la cual la ganancia de corriente es unitaria \\ \hline
+		Frecuencia máxima de oscilación & $f_{max}$ & Frecuencia límite para ganancia de potencia unitaria \\ \hline
+		Ancho de banda útil & $BW$ & Rango de frecuencias de operación efectiva \\ \hline
+		Factor de ruido & $NF$ & Degradación de la relación señal--ruido introducida por el dispositivo \\ \hline
+		Temperatura de operación & $T_{op}$ & Rango de temperatura en condiciones nominales \\ \hline
+		Rango de tensión compuerta--fuente & $V_{GS}$ & Intervalo de polarización segura de la compuerta \\ \hline
+		Rango de tensión drenaje--fuente & $V_{DS}$ & Intervalo de operación sin ruptura \\ \hline
+		Rango de corriente de drenaje & $I_D$ & Corriente admisible en régimen continuo \\ \hline
+		Región de operación recomendada & -- & Lineal, saturación o corte \\ \hline
+		Linealidad & IP3, $P_{1\text{dB}}$ & Capacidad de mantener proporcionalidad señal--salida \\ \hline
+		Potencia disipada máxima & $P_{max}$ & Potencia máxima admisible sin degradación \\ \hline
+		Estabilidad & $K$ & Factor de estabilidad (Rollet) \\ \hline
+	\end{tabular}
+\end{table}
+
+
+
+	%	\includegraphics[width=\linewidth]{Img/3d_mishra_MESFET.png}
+	%	\caption{Sistema de coordenadas propuesto \parencite{mishra_semiconductor_2008}.}
+	%	\label{fig:sistcoordmesfetb}
+	
+
+
+\section{Operación Básica}
 
 \begin{figure}[H]
 	\centering
-	\begin{minipage}[t]{0.52\textwidth}
-		\vspace{1.25 cm}
-		\begin{itemize}
-			\item $h:$ Espesor de la capa levemente dopada tipo N.
-			\item $L:$ Longitud de la capa levemente dopada tipo N.
-			\item $Z:$ Profundidad del dispositivo.
-			\item $W_D(x):$ Espesor de la zona de vaciamiento, dependiente de $x$.
-			\item $V(x) \in [V_S, V_{DS}]:$ Potencial eléctrico en la posición $x$.
-			\item $N_D:$ Concentración de impurezas donadoras.
-			\item $V_{bi}:$ Potencial de juntura.
-			\item $q:$ Carga eléctrica del electrón.
-			\item $\mu_n:$ Movilidad de electrones.
-		\end{itemize}
-	\end{minipage}
-	\hfill
-	\begin{minipage}[t]{0.43\textwidth}
-		\vspace{0pt}
-		\centering
-		\includegraphics[width=\linewidth]{Img/3d_mishra_MESFET.png}
-		\caption{Sistema de coordenadas propuesto.}
-		\label{fig:sistcoordmesfetb}
-		\vspace{0pt}
-	\end{minipage}
+	\includegraphics[width=0.7\linewidth]{Img/simbolo_mas_esquema}
+	\caption{Simbología tipica y esquema \parencite{Sharma_Metal_Semiconductor}. }
+	\label{fig:simbolomasesquema}
 \end{figure}
+
+
+
+
+
+\subsection{Polarización}
+
+
+\subsection{Modo Corte}
+\subsection{Modo en Estrangulación}
+\subsection{Modo Óhmico}
+
+\section{Diagrama de Bandas}
+
+
+\subsection{Modo Corte}
+\subsection{Modo en Estrangulación}
+\subsection{Modo Óhmico}
+
+\section{Obtención del Modelo Completo}
+
+Utilizando el sistema de coordenadas y notación inspirados en la figura \ref{fig:sistcoordmesfetb}, tomando la referencia espacial $y = 0$ en la unión metal-semiconductor y asumiendo ciertas hipótesis, se puede hallar la expresión de la corriente partiendo :
+
 \texttt{Hipotesis [1] : ${N_D}^+ = N_D $ (impurezas totalmente ionizadas) y semiconductor no degenerado.}
 
 \texttt{Hipotesis [2] : Solo hay carga en la región de vaciamiento.}
 
 
+ Los electrones libres del semiconductor en las inmediaciones de la unión se transfieren hacia la superficie del metal, formando una carga superficial negativa. En el semiconductor se establece una zona de átomos donadores ionizados que conforman una carga positiva. Este proceso al alcanzar el equilibrio termodinámico (ETD) permite determinar, en reposo, la densidad de carga, el campo electrostático que se forma y el potencial eléctrico.
 
-\subsubsection{Densidad de Carga}
+
+\subsection{Densidad de Carga}
 
 La carga se formara en el semiconductor y en la superficie del metal, formando una región superficial con carga negativa y una región en el semiconductor de carga positiva de acuerdo a (\ref{equation:def_densidad_carga}) utilizando las hipótesis [1] y [2].
 
@@ -305,7 +489,7 @@ La carga se formara en el semiconductor y en la superficie del metal, formando u
 
 
 
-\subsubsection{Campo Eléctrico}
+\subsection{Campo Eléctrico}
 
 Para obtener el campo eléctrico (\ref{equation:campo_electrico}), utilizamos la ley de Gauss (\ref{equation:ley_gauss}):
 
@@ -365,9 +549,9 @@ Para obtener el campo eléctrico (\ref{equation:campo_electrico}), utilizamos la
 	\caption{Expresión analítica y representación gráfica del campo eléctrico $\mathcal{E}(x,y)$ en la unión metal--GaAs.}
 \end{figure}
 
-\subsubsection{Potencial Eléctrico}
+\subsection{Potencial Eléctrico}
 
-Dada la relación entre el campo eléctrico y el gradiente del potencial eléctrico (\ref{equation:relacion_P_E}) se obtiene el potencial eléctrico, al integrar el potencial se debe tener en consideración una referencia inicial conveniente como $\phi (y = 0 ) = 0$ y teniendo en cuenta el potencial de juntura  $\phi [y = W(x) ] = \phi_{bi}$, analizado en mas profundidad en la sección de bandas de energía del informe.  
+Dada la relación entre el campo eléctrico y el gradiente del potencial eléctrico (\ref{equation:relacion_P_E}) se obtiene el potencial eléctrico, al integrar el potencial se debe tener en consideración una referencia inicial conveniente como $\phi (y = 0 ) = 0$ y inicialmente teniendo solo en consideración el potencial de juntura $\phi [y = W(x) ] = \phi_{bi}$, analizado en mas profundidad en la sección de bandas de energía del informe. 
 
 \begin{equation}\label{equation:relacion_P_E}
 	\mathcal{E} = - \nabla \phi
@@ -428,6 +612,28 @@ Dada la relación entre el campo eléctrico y el gradiente del potencial eléctr
 	
 	\caption{Expresión analítica y representación gráfica del potencial electrostático $\phi(x,y)$ en la unión metal--GaAs.}
 \end{figure}
+
+\subsection{Ancho de Zona de Vaciamiento}
+
+Relacionando el campo eléctrico (\ref{equation:campo_electrico}) junto con el potencial (\ref{equation:potencial_electrostatico}) se puede despejar el ancho de la zona de agotamiento o vaciamiento en reposo y equilibrio térmico.
+
+\begin{equation}\label{equation: W_d_reposo}
+	W_d = \sqrt{\frac{2 \cdot \epsilon_s \cdot \phi_{bi}}{q\cdot N_d}}
+\end{equation} 
+
+
+Al considerar la polarización del dispositivo se produce un potencial longitudinal $V(x)$ y el potencial externo trasversal al canal entre \textit{gate} y \textit{source} que afectaran a la modulación de la zona de vaciamiento.
+
+\begin{equation}\label{equation: W_d_polarizado}
+	W_d(x) = \sqrt{\frac{2 \cdot \epsilon_s \cdot [  \phi_{bi} - V_{GS} - V(x)] }{q\cdot N_d}}
+\end{equation} 
+
+
+\section{Corriente}
+
+Para determinar la corriente en un dispositivo semiconductor se consideran dos fenómenos de transporte, arrastre y difusión de los portadores.
+
+
 
 
 \section{Modos de Operación}

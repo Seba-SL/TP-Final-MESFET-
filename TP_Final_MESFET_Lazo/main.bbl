@@ -19,6 +19,63 @@
 
 \refsection{0}
   \datalist[entry]{apa/apasortcite//global/global}
+    \entry{Belgat2004_MESFET_Interface}{article}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=81862c77e43407ff814e83cb7d569ca2}{%
+           family={Belgat},
+           familyi={B\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=92254f5f2abeb19c56e6c6035037ddb3}{%
+           family={Merabtine},
+           familyi={M\bibinitperiod},
+           given={N.},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=cf56f297813e35a79c188bd0576a91b2}{%
+           family={Zaabat},
+           familyi={Z\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=280f86da61357e92aab3301a1f1e7585}{%
+           family={Kenzai},
+           familyi={K\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7a4d2fbcf1222e388709d5cbcb041586}{%
+           family={Saidi},
+           familyi={S\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {V. Lashkaryov Institute of Semiconductor Physics, National Academy of Sciences of Ukraine}%
+      }
+      \strng{namehash}{6439bfc4cc5662ee563496074790b64c}
+      \strng{fullhash}{2710335fd6b3e396b7d72657a63fd61c}
+      \strng{bibnamehash}{2710335fd6b3e396b7d72657a63fd61c}
+      \strng{authorbibnamehash}{2710335fd6b3e396b7d72657a63fd61c}
+      \strng{authornamehash}{6439bfc4cc5662ee563496074790b64c}
+      \strng{authorfullhash}{2710335fd6b3e396b7d72657a63fd61c}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Semiconductor Physics, Quantum Electronics \& Optoelectronics}
+      \field{number}{4}
+      \field{title}{Active layer--semi-insulating substrate interface effect on {GaAs} {MESFET} components}
+      \field{volume}{7}
+      \field{year}{2004}
+      \field{pages}{368\bibrangedash 371}
+      \range{pages}{4}
+    \endentry
     \entry{boylestad2013}{book}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=8badf6f5cd034153c1b8f209f1d539ca}{%
@@ -43,6 +100,7 @@
       \strng{authorbibnamehash}{ec1c6a27869deb4d710aba450b8f07c9}
       \strng{authornamehash}{ec1c6a27869deb4d710aba450b8f07c9}
       \strng{authorfullhash}{ec1c6a27869deb4d710aba450b8f07c9}
+      \field{extraname}{1}
       \field{sortinit}{B}
       \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
       \field{extradatescope}{labelyear}
@@ -53,6 +111,45 @@
       \field{edition}{11}
       \field{title}{Electronic Devices and Circuit Theory}
       \field{year}{2013}
+    \endentry
+    \entry{BoylestadNashelsky2015}{book}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=8badf6f5cd034153c1b8f209f1d539ca}{%
+           family={Boylestad},
+           familyi={B\bibinitperiod},
+           given={Robert\bibnamedelima L.},
+           giveni={R\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=73f3ba640ee56c4e4ebc64767f679796}{%
+           family={Nashelsky},
+           familyi={N\bibinitperiod},
+           given={Louis},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {México}%
+      }
+      \list{publisher}{1}{%
+        {Pearson Education}%
+      }
+      \strng{namehash}{ec1c6a27869deb4d710aba450b8f07c9}
+      \strng{fullhash}{ec1c6a27869deb4d710aba450b8f07c9}
+      \strng{bibnamehash}{ec1c6a27869deb4d710aba450b8f07c9}
+      \strng{authorbibnamehash}{ec1c6a27869deb4d710aba450b8f07c9}
+      \strng{authornamehash}{ec1c6a27869deb4d710aba450b8f07c9}
+      \strng{authorfullhash}{ec1c6a27869deb4d710aba450b8f07c9}
+      \field{extraname}{2}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{10}
+      \field{title}{Electrónica: Teoría de Circuitos y Dispositivos Electrónicos}
+      \field{year}{2015}
     \endentry
     \entry{giannini2009high}{book}{}
       \name{author}{3}{}{%
@@ -228,6 +325,71 @@
       \field{title}{Microelectronic Circuits}
       \field{year}{2015}
     \endentry
+    \entry{Sharma_Metal_Semiconductor}{book}{}
+      \name{editor}{1}{}{%
+        {{un=0,uniquepart=base,hash=c7dd617ebd24d18c986b9006da5917a1}{%
+           family={Sharma},
+           familyi={S\bibinitperiod},
+           given={B.\bibnamedelimi L.},
+           giveni={B\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Delhi, India}%
+      }
+      \list{publisher}{1}{%
+        {Solid State Physics Laboratory, Delhi, India}%
+      }
+      \strng{namehash}{c7dd617ebd24d18c986b9006da5917a1}
+      \strng{fullhash}{c7dd617ebd24d18c986b9006da5917a1}
+      \strng{bibnamehash}{c7dd617ebd24d18c986b9006da5917a1}
+      \strng{editorbibnamehash}{c7dd617ebd24d18c986b9006da5917a1}
+      \strng{editornamehash}{c7dd617ebd24d18c986b9006da5917a1}
+      \strng{editorfullhash}{c7dd617ebd24d18c986b9006da5917a1}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{editor}
+      \field{labeltitlesource}{title}
+      \field{title}{Metal‐Semiconductor Schottky Barrier Junctions and Their Applications}
+      \field{year}{1984}
+    \endentry
+    \entry{Siegel2021Mead}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=4afc91a63678f0110e2b985d0f2609c7}{%
+           family={Siegel},
+           familyi={S\bibinitperiod},
+           given={Peter\bibnamedelima H.},
+           giveni={P\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{4afc91a63678f0110e2b985d0f2609c7}
+      \strng{fullhash}{4afc91a63678f0110e2b985d0f2609c7}
+      \strng{bibnamehash}{4afc91a63678f0110e2b985d0f2609c7}
+      \strng{authorbibnamehash}{4afc91a63678f0110e2b985d0f2609c7}
+      \strng{authornamehash}{4afc91a63678f0110e2b985d0f2609c7}
+      \strng{authorfullhash}{4afc91a63678f0110e2b985d0f2609c7}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Journal of Microwaves}
+      \field{note}{Special Series Paper}
+      \field{number}{1}
+      \field{title}{{Carver Mead: ``It's All About Thinking,'' A Personal Account Leading up to the First Microwave Transistor}}
+      \field{volume}{1}
+      \field{year}{2021}
+      \field{pages}{12\bibrangedash 22}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1109/JMW.2020.3028277
+      \endverb
+    \endentry
     \entry{StreetmanBanerjee_SolidStateDevices_2006}{book}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=5c0f3b6f5f00aacd939aa8302ca31834}{%
@@ -267,6 +429,44 @@
       \field{title}{Solid State Electronic Devices}
       \field{year}{2006}
     \endentry
+    \entry{sze2002semiconductor}{book}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=f349932f80e2a572d66ce8bc5d583f93}{%
+           family={Sze},
+           familyi={S\bibinitperiod},
+           given={S.\bibnamedelimi M.},
+           giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=95265b25d19369364d25d4b9dfcf00e5}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={M.\bibnamedelimi K.},
+           giveni={M\bibinitperiod\bibinitdelim K\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Hoboken, NJ, USA}%
+      }
+      \list{publisher}{1}{%
+        {John Wiley \& Sons}%
+      }
+      \strng{namehash}{5b674890c3247047d34e970ba9dc5a2f}
+      \strng{fullhash}{5b674890c3247047d34e970ba9dc5a2f}
+      \strng{bibnamehash}{5b674890c3247047d34e970ba9dc5a2f}
+      \strng{authorbibnamehash}{5b674890c3247047d34e970ba9dc5a2f}
+      \strng{authornamehash}{5b674890c3247047d34e970ba9dc5a2f}
+      \strng{authorfullhash}{5b674890c3247047d34e970ba9dc5a2f}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2nd}
+      \field{isbn}{9780471333722}
+      \field{title}{Semiconductor Devices: Physics and Technology}
+      \field{year}{2002}
+    \endentry
     \entry{sze2021}{book}{}
       \name{author}{3}{}{%
         {{un=0,uniquepart=base,hash=0368503a4c8dbadc87fba75b046d54c9}{%
@@ -301,7 +501,6 @@
       \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{year}
-      \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{4}
@@ -310,6 +509,63 @@
     \endentry
   \enddatalist
   \datalist[entry]{apa/global//global/global}
+    \entry{Belgat2004_MESFET_Interface}{article}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=81862c77e43407ff814e83cb7d569ca2}{%
+           family={Belgat},
+           familyi={B\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=92254f5f2abeb19c56e6c6035037ddb3}{%
+           family={Merabtine},
+           familyi={M\bibinitperiod},
+           given={N.},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=cf56f297813e35a79c188bd0576a91b2}{%
+           family={Zaabat},
+           familyi={Z\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=280f86da61357e92aab3301a1f1e7585}{%
+           family={Kenzai},
+           familyi={K\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7a4d2fbcf1222e388709d5cbcb041586}{%
+           family={Saidi},
+           familyi={S\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {V. Lashkaryov Institute of Semiconductor Physics, National Academy of Sciences of Ukraine}%
+      }
+      \strng{namehash}{6439bfc4cc5662ee563496074790b64c}
+      \strng{fullhash}{2710335fd6b3e396b7d72657a63fd61c}
+      \strng{bibnamehash}{2710335fd6b3e396b7d72657a63fd61c}
+      \strng{authorbibnamehash}{2710335fd6b3e396b7d72657a63fd61c}
+      \strng{authornamehash}{6439bfc4cc5662ee563496074790b64c}
+      \strng{authorfullhash}{2710335fd6b3e396b7d72657a63fd61c}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Semiconductor Physics, Quantum Electronics \& Optoelectronics}
+      \field{number}{4}
+      \field{title}{Active layer--semi-insulating substrate interface effect on {GaAs} {MESFET} components}
+      \field{volume}{7}
+      \field{year}{2004}
+      \field{pages}{368\bibrangedash 371}
+      \range{pages}{4}
+    \endentry
     \entry{boylestad2013}{book}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=8badf6f5cd034153c1b8f209f1d539ca}{%
@@ -334,6 +590,7 @@
       \strng{authorbibnamehash}{ec1c6a27869deb4d710aba450b8f07c9}
       \strng{authornamehash}{ec1c6a27869deb4d710aba450b8f07c9}
       \strng{authorfullhash}{ec1c6a27869deb4d710aba450b8f07c9}
+      \field{extraname}{1}
       \field{sortinit}{B}
       \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
       \field{extradatescope}{labelyear}
@@ -344,6 +601,45 @@
       \field{edition}{11}
       \field{title}{Electronic Devices and Circuit Theory}
       \field{year}{2013}
+    \endentry
+    \entry{BoylestadNashelsky2015}{book}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=8badf6f5cd034153c1b8f209f1d539ca}{%
+           family={Boylestad},
+           familyi={B\bibinitperiod},
+           given={Robert\bibnamedelima L.},
+           giveni={R\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=73f3ba640ee56c4e4ebc64767f679796}{%
+           family={Nashelsky},
+           familyi={N\bibinitperiod},
+           given={Louis},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {México}%
+      }
+      \list{publisher}{1}{%
+        {Pearson Education}%
+      }
+      \strng{namehash}{ec1c6a27869deb4d710aba450b8f07c9}
+      \strng{fullhash}{ec1c6a27869deb4d710aba450b8f07c9}
+      \strng{bibnamehash}{ec1c6a27869deb4d710aba450b8f07c9}
+      \strng{authorbibnamehash}{ec1c6a27869deb4d710aba450b8f07c9}
+      \strng{authornamehash}{ec1c6a27869deb4d710aba450b8f07c9}
+      \strng{authorfullhash}{ec1c6a27869deb4d710aba450b8f07c9}
+      \field{extraname}{2}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{10}
+      \field{title}{Electrónica: Teoría de Circuitos y Dispositivos Electrónicos}
+      \field{year}{2015}
     \endentry
     \entry{giannini2009high}{book}{}
       \name{author}{3}{}{%
@@ -519,6 +815,71 @@
       \field{title}{Microelectronic Circuits}
       \field{year}{2015}
     \endentry
+    \entry{Sharma_Metal_Semiconductor}{book}{}
+      \name{editor}{1}{}{%
+        {{un=0,uniquepart=base,hash=c7dd617ebd24d18c986b9006da5917a1}{%
+           family={Sharma},
+           familyi={S\bibinitperiod},
+           given={B.\bibnamedelimi L.},
+           giveni={B\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Delhi, India}%
+      }
+      \list{publisher}{1}{%
+        {Solid State Physics Laboratory, Delhi, India}%
+      }
+      \strng{namehash}{c7dd617ebd24d18c986b9006da5917a1}
+      \strng{fullhash}{c7dd617ebd24d18c986b9006da5917a1}
+      \strng{bibnamehash}{c7dd617ebd24d18c986b9006da5917a1}
+      \strng{editorbibnamehash}{c7dd617ebd24d18c986b9006da5917a1}
+      \strng{editornamehash}{c7dd617ebd24d18c986b9006da5917a1}
+      \strng{editorfullhash}{c7dd617ebd24d18c986b9006da5917a1}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{editor}
+      \field{labeltitlesource}{title}
+      \field{title}{Metal‐Semiconductor Schottky Barrier Junctions and Their Applications}
+      \field{year}{1984}
+    \endentry
+    \entry{Siegel2021Mead}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=4afc91a63678f0110e2b985d0f2609c7}{%
+           family={Siegel},
+           familyi={S\bibinitperiod},
+           given={Peter\bibnamedelima H.},
+           giveni={P\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{4afc91a63678f0110e2b985d0f2609c7}
+      \strng{fullhash}{4afc91a63678f0110e2b985d0f2609c7}
+      \strng{bibnamehash}{4afc91a63678f0110e2b985d0f2609c7}
+      \strng{authorbibnamehash}{4afc91a63678f0110e2b985d0f2609c7}
+      \strng{authornamehash}{4afc91a63678f0110e2b985d0f2609c7}
+      \strng{authorfullhash}{4afc91a63678f0110e2b985d0f2609c7}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Journal of Microwaves}
+      \field{note}{Special Series Paper}
+      \field{number}{1}
+      \field{title}{{Carver Mead: ``It's All About Thinking,'' A Personal Account Leading up to the First Microwave Transistor}}
+      \field{volume}{1}
+      \field{year}{2021}
+      \field{pages}{12\bibrangedash 22}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1109/JMW.2020.3028277
+      \endverb
+    \endentry
     \entry{StreetmanBanerjee_SolidStateDevices_2006}{book}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=5c0f3b6f5f00aacd939aa8302ca31834}{%
@@ -558,6 +919,44 @@
       \field{title}{Solid State Electronic Devices}
       \field{year}{2006}
     \endentry
+    \entry{sze2002semiconductor}{book}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=f349932f80e2a572d66ce8bc5d583f93}{%
+           family={Sze},
+           familyi={S\bibinitperiod},
+           given={S.\bibnamedelimi M.},
+           giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=95265b25d19369364d25d4b9dfcf00e5}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={M.\bibnamedelimi K.},
+           giveni={M\bibinitperiod\bibinitdelim K\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Hoboken, NJ, USA}%
+      }
+      \list{publisher}{1}{%
+        {John Wiley \& Sons}%
+      }
+      \strng{namehash}{5b674890c3247047d34e970ba9dc5a2f}
+      \strng{fullhash}{5b674890c3247047d34e970ba9dc5a2f}
+      \strng{bibnamehash}{5b674890c3247047d34e970ba9dc5a2f}
+      \strng{authorbibnamehash}{5b674890c3247047d34e970ba9dc5a2f}
+      \strng{authornamehash}{5b674890c3247047d34e970ba9dc5a2f}
+      \strng{authorfullhash}{5b674890c3247047d34e970ba9dc5a2f}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2nd}
+      \field{isbn}{9780471333722}
+      \field{title}{Semiconductor Devices: Physics and Technology}
+      \field{year}{2002}
+    \endentry
     \entry{sze2021}{book}{}
       \name{author}{3}{}{%
         {{un=0,uniquepart=base,hash=0368503a4c8dbadc87fba75b046d54c9}{%
@@ -592,7 +991,6 @@
       \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{year}
-      \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{4}
