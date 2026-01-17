@@ -81,7 +81,7 @@ Para comprender la necesidad de esta clase de transistor es necesario conocer un
 
 \subsection{Primer Prototipo}
 
-	El MESFET fue propuesto y demostrado por primera vez por Carver Mead en 1966, se puede observar una imagen de el primer prototipo en la figura \ref{fig:primermesfet}. Poco después, Hooper y Lehrer informaron sobre su rendimiento en dispositivos de microondas en 1967 \parencite{sze2021}. Carver Mead recibió una pequeña muestra de GaAs de tipo N formado epitaxialmente sobre una oblea semiaislante y comenzo a trabajar en el laboratorio grabando la capa epitaxial de su diminuta muestra de oblea, paso a paso, hasta que pudo ver la perforación desde un contacto metálico a una tension de 10 V. El proceso que estaba usando era un grabado químico de tiempo aproximado con metanol y bromo, y aunque 10 V era un poco alto, ya había pasado por varios pasos de grabado, metalización y medición (usando la relación entre capacitancia y tensión para obtener la concentración de dopaje del canal y espesor de agotamiento) para llegar a este punto. Decidió detenerse y, usando un rapidógrafo calentado (un bolígrafo de dibujo de tinta líquida de estilo antiguo) lleno de cera negra, dibujó una franja a lo largo de la oblea para definir el área activa de lo que sería la región de fuente-drenaje, y luego grabó cuidadosamente a través de la región epitaxial hasta el GaAs semiaislante en el resto. A continuación, e increíblemente, soldó por puntos dos hojas de afeitar de filo recto a pequeñas piezas transversales para hacer una máscara para una puerta muy estrecha. Los bordes de las hojas estaban tan juntos que formaban un patrón de difracción a lo largo de sus bordes casi en contacto. 
+	El MESFET fue propuesto y demostrado por primera vez por Carver Mead en 1966, se puede observar una imagen de el primer prototipo en la figura \ref{fig:primermesfet}. Poco después, Hooper y Lehrer informaron sobre su rendimiento en dispositivos de microondas en 1967 \parencite{sze2021}. Carver Mead recibió una pequeña muestra de GaAs de tipo N formado epitaxialmente sobre una oblea semiaislante y comenzo a trabajar en el laboratorio grabando la capa epitaxial de su diminuta muestra de oblea, paso a paso, hasta que pudo ver la perforación desde un contacto metálico a una tensión de 10 V. El proceso que estaba usando era un grabado químico de tiempo aproximado con metanol y bromo, y aunque 10 V era un poco alto, ya había pasado por varios pasos de grabado, metalización y medición (usando la relación entre capacitancia y tensión para obtener la concentración de dopaje del canal y espesor de agotamiento) para llegar a este punto. Decidió detenerse y, usando un rapidógrafo calentado (un bolígrafo de dibujo de tinta líquida de estilo antiguo) lleno de cera negra, dibujó una franja a lo largo de la oblea para definir el área activa de lo que sería la región de fuente-drenaje, y luego grabó cuidadosamente a través de la región epitaxial hasta el GaAs semiaislante en el resto. A continuación, e increíblemente, soldó por puntos dos hojas de afeitar de filo recto a pequeñas piezas transversales para hacer una máscara para una puerta muy estrecha. Los bordes de las hojas estaban tan juntos que formaban un patrón de difracción a lo largo de sus bordes casi en contacto. 
 
 \begin{figure}[H]
 	\centering
@@ -108,7 +108,7 @@ Para comprender la necesidad de esta clase de transistor es necesario conocer un
 
 \subsection{Estructura}
 
-Los MESFET's se construyen a partir de una delgada capa epitaxial de GaAs de tipo N dopada con impurezas donadoras como pueden llegar a ser Silicio, Azufre o Selenio depositada sobre un sustrato semi-aislante tambien de GaAs pero dopado intencionalmente con Cromo, que se comporta como un único aceptor cerca del centro de la banda prohibida de energía, con el objetivo de obtener un semi-aislante con una resistividad de ordenes de hasta hasta $10^9 \frac{\Omega}{cm}$ \parencite{neamen2012}. Sobre esta capa se definen las tres terminales del dispositivo: \textit{source}, \textit{drain} y \textit{gate} (fuente, drenaje y compuerta), como se aprecia en la Figura \ref{fig:estr_Belove_MESFET}.
+Los MESFET's se construyen a partir de una delgada capa epitaxial de GaAs de tipo n dopada con impurezas donadoras como pueden llegar a ser Silicio, Azufre o Selenio depositada sobre un sustrato semi-aislante tambien de GaAs pero dopado intencionalmente con Cromo, que se comporta como un único aceptor cerca del centro de la banda prohibida de energía, con el objetivo de obtener un semi-aislante con una resistividad de ordenes de hasta hasta $10^9 \frac{\Omega}{cm}$ \parencite{neamen2012}. Sobre esta capa se definen las tres terminales del dispositivo: \textit{source}, \textit{drain} y \textit{gate} (fuente, drenaje y compuerta), como se aprecia en la Figura \ref{fig:estr_Belove_MESFET} y \ref{fig:estr_Sze_MESFET}.
 
 
 
@@ -117,23 +117,25 @@ Los MESFET's se construyen a partir de una delgada capa epitaxial de GaAs de tip
 
     \begin{minipage}{0.48\textwidth}
         \centering
-        \includegraphics[width=\linewidth]{Img/estructura_MESFET.png}
-        \caption{Estructura del transistor MESFET de GaAs \parencite{StreetmanBanerjee_SolidStateDevices_2006}.}
+        \includegraphics[width=\linewidth]{Img/estr_S_M_ SZE.png}
+        \caption{Estructura tridimensional del transistor MESFET \parencite{sze2021}.}
         \label{fig:estr_Belove_MESFET}
     \end{minipage}
     \hfill
     \begin{minipage}{0.48\textwidth}
         \centering
         \includegraphics[width=\linewidth]{Img/estructura_MESFET_SZE.png}
-        \caption{Estructura del transistor MESFET, se observa la apertura neta del canal $b$ controlada por el ancho de agotamiento $W_D$ \parencite{sze2021}.}
+        \caption{Estructura del transistor MESFET, se observa la apertura neta del canal $b$ controlada por el ancho de agotamiento $W_D$ \parencite{sze2002semiconductor}.}
         \label{fig:estr_Sze_MESFET}
     \end{minipage}
 
 \end{figure}
 
+
+
 Sobre el sustrato semi-aislante se encuentra la región activa del dispositivo, conformada por la capa de GaAs dopada ligeramente, en ella se forma el canal por el cual circulan los portadores mayoritarios cuando el dispositivo está en conducción, esto se aprecia en la figura \ref{fig:neamen_strucutre}.
 
-En las zonas correspondientes a \textit{source} y \textit{drain}, esta misma capa se dopa fuertemente con las mismas impurezas de tipo N para obtener contactos óhmicos de baja resistencia, facilitando así la inyección y recolección de portadores.
+En las zonas correspondientes a \textit{source} y \textit{drain}, esta misma capa se dopa fuertemente con las mismas impurezas de tipo n para obtener contactos óhmicos de baja resistencia, facilitando así la inyección y recolección de portadores.
 
 Finalmente, en la región correspondiente a la terminal \textit{gate}, se deposita un metal en contacto directo con el canal, formando una unión metal-semiconductor que permite controlar la conducción modulando la anchura de la región de agotamiento en el canal definida como $W_D$, esto se detalla en la figura \ref{fig:estr_Sze_MESFET}. Una diferencia crucial con respecto de los transistores de unión bipolar es que los transistores de efecto de campo no requieren de corriente de polarización y son controlados por tensión. Además, el hecho de que su funcionamiento responde a la corriente de portadores mayoritarios se los designa como transistores unipolares.
 
@@ -231,7 +233,7 @@ adicional, dando lugar a material tipo N \parencite{neamen2012}.
 \begin{figure}[H]
 	\centering
 	\begin{minipage}[t]{0.52\textwidth}
-		\vspace{0.5 cm}
+r		\vspace{0.5 cm}
 		 A pesar de esto, la tecnología MESFET sigue siendo relevante en aplicaciones especializadas de alta potencia y alta temperatura. Los dispositivos MESFET se suelen adoptar para frecuencias de hasta 18-20 GHz, mientras que la adopción de dispositivos de heterojunción (principalmente del tipo HEMT) se hace obligatoria para frecuencias de operación más altas \parencite{giannini2009high}.
 		 
 		 \vspace{1cm}
@@ -270,15 +272,25 @@ Al igual que en los diodos Schottky polarizados en inversa, esta unión da lugar
 
 \subsection{Tipos de MESFET}
 
-A la hora de fabricar estos transistores, se puede optar por un tipo de dopaje del canal tal que requiera tensiones umbrales negativas para el funcionamiento, el cual se conoce como modo empobrecimiento ( Depletion mode ) o tensiones de control positivas, este ultimo nombrado como modo enriquecimiento ( Enhancement mode).
+Al diseñar un MESFET canal n, se puede optar por una determinada concentración de impurezas y geometría del canal tal que requiera tensiones de compuerta negativas para modular o interrumpir la conducción, el cual se conoce como modo empobrecimiento (D-MESFET o Depletion-mode MESFET) o tensiones de control positivas, este ultimo nombrado como modo enriquecimiento (E-MESFET o Enhancement-mode MESFET). De esta forma se pueden clasificar en dos tipos de MESFET por cada tipo de canal, los mismos comúnmente se diferencian con ayuda de los símbolos que se presentan en la tabla de la figura (\ref{fig:tiposmesfet}).
 
-\subsubsection{D-MESFET (Depletion-mode MESFET)}
+Es importante tener en cuenta, sin embargo, que el canal debe ser de material tipo n en un MESFET. La movilidad de los huecos en GaAs es relativamente baja comparada con la de portadores de carga negativa por lo que se pierde la ventaja de utilizar GaAs en aplicaciones de alta velocidad. El resultado es:
+Los MESFET tipo empobrecimiento y tipo enriquecimiento se hacen con un canal n entre el drenaje y la fuente y, por consiguiente, sólo los MESFET tipo n son comerciales \parencite{BoylestadNashelsky2015}.
 
-\subsubsection{E-MESFET (Enhancement-mode MESFET}
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\linewidth]{Img/Tipos_MESFET}
+	\caption{ Tabla resumen de las características de cada tipo de MESFET de canal n \parencite{BoylestadNashelsky2015}.}
+	\label{fig:tiposmesfet}
+\end{figure}
+
+
 
 \section{Parámetros Característicos}
 
-En el informe se tomara como objeto de estudio un transistor MESFET formado por GaAs de canal n, con silicio como impureza dopante en el canal y titanio como el metal de la compuerta a una temperatura de 300 K. A continuación se presentaran los diferentes parámetros de referencia utilizados en el informe.
+En el informe se tomara como objeto de estudio un transistor MESFET formado por GaAs de canal n de empobrecimiento (D-MESFET), con silicio como impureza dopante en el canal y titanio como el metal de la compuerta a una temperatura de 300 K. A continuación se presentaran los diferentes parámetros de referencia utilizados en el informe.
 
 
 \subsection{Parámetros Físicos}
@@ -388,8 +400,20 @@ Para un posterior análisis de funcionamiento detallado contemplando posibles co
 	%	\label{fig:sistcoordmesfetb}
 	
 
-
 \section{Operación Básica}
+
+El dispositivo se opera generalmente como conmutador o como parte de un circuito amplificador de señal. A partir de las referencias de tensión y corriente inspiradas en la figura \ref{fig:simbolomasesquema}, se introduce a continuación el principio de operación del MESFET, mientras que en las secciones siguientes se desarrollará su funcionamiento en mayor detalle.
+
+Para el análisis del comportamiento del dispositivo se utilizará una nomenclatura que permita distinguir entre señales continuas y señales alternas en el tiempo. De este modo, cualquier magnitud eléctrica podrá descomponerse en una componente continua (DC) y una componente alterna (AC). 
+
+Como ejemplo, la tensión entre \textit{gate} y \textit{source} puede expresarse como la suma de una componente continua, denotada mediante notación mayúscula \( V_{GS} \), y una componente alterna, representada en minúscula \( v_{gs} \). La señal total dependiente del tiempo resulta de la superposición de ambas componentes.
+
+\begin{itemize}
+	\item Tensión entre \textit{gate} y \textit{source}:\hspace{0.5cm} $ \  v_{GS} =  V_{GS} + v_{gs} $
+	\item Tensión entre \textit{drain} y \textit{source}:\hspace{0.5cm} $   v_{DS} =  V_{DS} + v_{ds} $
+	\item Corriente en rama \textit{drain}:\hspace{1cm} $   i_{D} =  I_{D} + i_{d} $
+\end{itemize}
+
 
 \begin{figure}[H]
 	\centering
@@ -404,10 +428,58 @@ Para un posterior análisis de funcionamiento detallado contemplando posibles co
 
 \subsection{Polarización}
 
+La polarización del transistor forma parte de la operación del mismo, consiste en establecer las condiciones de tensión y corriente necesarias para fijar un punto de operación, comúnmente denominado punto $Q$, definido por el conjunto de valores $\{ V_{GS}, V_{DS}, I_D \}$. Dicho punto de operación determina la región de funcionamiento del dispositivo y condiciona su comportamiento frente a pequeñas variaciones de señal.
+
+La elección del punto $Q$ depende de la aplicación específica del MESFET, ya sea como conmutador o como amplificador, y se realiza de manera tal que el dispositivo opere en una región adecuada de sus características estáticas.
+
 
 \subsection{Modo Corte}
+
+El modo corte sucede cuando la tensión $V_{GS}$ no supera la tensión $V_p$ o tensión umbral, y el transistor idealmente no tendra corriente a travez de la rama del \textit{drain}, tal como indican las expresiones (\ref{equation:modo_corte}).
+
+\begin{equation}\label{equation:modo_corte}
+		V_{GS} \le V_P \quad \Rightarrow \quad I_D = 0
+\end{equation}
+
 \subsection{Modo en Estrangulación}
+
+El modo estrangulación es el rango en el cual la corriente de \textit{drain} se puede controlar mediante la tensión $V_{GS}$, es buscado en aplicaciones de amplificación de señal. En la expresión (\ref{equation:modo_estrangulacion}) se encuentran las condiciones de polarización y la corriente $I_D$ en función de $V_{GS}$.
+
+
+\begin{equation}\label{equation:modo_estrangulacion}
+		\begin{cases}
+			V_{GS} > V_P \\
+			V_{DS} \ge V_{GS} - V_P
+		\end{cases} \quad
+		I_D = I_{DSS}
+		\left(
+		1 - \frac{V_{GS}}{V_P}
+		\right)^2
+\end{equation}
+
+
+
 \subsection{Modo Óhmico}
+
+
+El modo lineal o óhmico responde linealmente tal como lo haria un resistor y su corriente de \textit{drain} se rige por las condiciones de la expresión (\ref{equation: modo_lineal}).
+ 
+\begin{equation}\label{equation: modo_lineal}
+	\begin{aligned}
+		\text{para } \quad
+		\begin{cases}
+			V_{GS} > V_P \\
+			0 \le V_{DS} < V_{GS} - V_P
+		\end{cases}
+		\qquad
+		I_D &=
+		\frac{2 I_{DSS}}{V_P^2}
+		\left[
+		\left( V_{GS} - V_P \right) V_{DS}
+		- \frac{V_{DS}^2}{2}
+		\right]
+	\end{aligned}
+\end{equation}
 
 \section{Diagrama de Bandas}
 

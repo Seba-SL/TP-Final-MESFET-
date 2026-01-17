@@ -2821,10 +2821,10 @@
     <bcf:citekey order="7" intorder="1">Siegel2021Mead</bcf:citekey>
     <bcf:citekey order="8" intorder="1">Siegel2021Mead</bcf:citekey>
     <bcf:citekey order="9" intorder="1">neamen2012</bcf:citekey>
-    <bcf:citekey order="10" intorder="1">StreetmanBanerjee_SolidStateDevices_2006</bcf:citekey>
-    <bcf:citekey order="11" intorder="1">StreetmanBanerjee_SolidStateDevices_2006</bcf:citekey>
-    <bcf:citekey order="12" intorder="1">sze2021</bcf:citekey>
-    <bcf:citekey order="13" intorder="1">sze2021</bcf:citekey>
+    <bcf:citekey order="10" intorder="1">sze2021</bcf:citekey>
+    <bcf:citekey order="11" intorder="1">sze2021</bcf:citekey>
+    <bcf:citekey order="12" intorder="1">sze2002semiconductor</bcf:citekey>
+    <bcf:citekey order="13" intorder="1">sze2002semiconductor</bcf:citekey>
     <bcf:citekey order="14" intorder="1">neamen2012</bcf:citekey>
     <bcf:citekey order="15" intorder="1">neamen2012</bcf:citekey>
     <bcf:citekey order="16" intorder="1">giannini2009high</bcf:citekey>
@@ -2841,17 +2841,20 @@
     <bcf:citekey order="27" intorder="1">BoylestadNashelsky2015</bcf:citekey>
     <bcf:citekey order="28" intorder="1">BoylestadNashelsky2015</bcf:citekey>
     <bcf:citekey order="29" intorder="1">giannini2009high</bcf:citekey>
-    <bcf:citekey order="30" intorder="1">Sharma_Metal_Semiconductor</bcf:citekey>
-    <bcf:citekey order="31" intorder="1">Sharma_Metal_Semiconductor</bcf:citekey>
-    <bcf:citekey order="32" intorder="1">mishra_semiconductor_2008</bcf:citekey>
-    <bcf:citekey order="33" intorder="1">mishra_semiconductor_2008</bcf:citekey>
-    <bcf:citekey order="34" intorder="1">sedra2015</bcf:citekey>
-    <bcf:citekey order="35" intorder="1">boylestad2013</bcf:citekey>
-    <bcf:citekey order="36" intorder="1">boylestad2013</bcf:citekey>
-    <bcf:citekey order="37" intorder="1">neamen2012</bcf:citekey>
-    <bcf:citekey order="38" intorder="1">sze2021</bcf:citekey>
-    <bcf:citekey order="39" intorder="1">sze2021</bcf:citekey>
-    <bcf:citekey order="40" intorder="1">mckelvey1996</bcf:citekey>
+    <bcf:citekey order="30" intorder="1">BoylestadNashelsky2015</bcf:citekey>
+    <bcf:citekey order="31" intorder="1">BoylestadNashelsky2015</bcf:citekey>
+    <bcf:citekey order="32" intorder="1">BoylestadNashelsky2015</bcf:citekey>
+    <bcf:citekey order="33" intorder="1">Sharma_Metal_Semiconductor</bcf:citekey>
+    <bcf:citekey order="34" intorder="1">Sharma_Metal_Semiconductor</bcf:citekey>
+    <bcf:citekey order="35" intorder="1">mishra_semiconductor_2008</bcf:citekey>
+    <bcf:citekey order="36" intorder="1">mishra_semiconductor_2008</bcf:citekey>
+    <bcf:citekey order="37" intorder="1">sedra2015</bcf:citekey>
+    <bcf:citekey order="38" intorder="1">boylestad2013</bcf:citekey>
+    <bcf:citekey order="39" intorder="1">boylestad2013</bcf:citekey>
+    <bcf:citekey order="40" intorder="1">neamen2012</bcf:citekey>
+    <bcf:citekey order="41" intorder="1">sze2021</bcf:citekey>
+    <bcf:citekey order="42" intorder="1">sze2021</bcf:citekey>
+    <bcf:citekey order="43" intorder="1">mckelvey1996</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="apa">
