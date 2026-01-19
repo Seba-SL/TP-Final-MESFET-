@@ -483,10 +483,188 @@ El modo lineal o óhmico responde linealmente tal como lo haria un resistor y su
 
 \section{Diagrama de Bandas}
 
+El análisis en profundidad parte de las bandas de energía de los materiales que conforman el dispositivo, como se comportan en las interfases entre ellos, en equilibrio termodinámico y bajo potenciales externos.
+
+En la física del estado sólido, los átomos se modelan mediante niveles de energía en donde es probable encontrar sus electrones, pero cuando estos átomos forman redes cristalinas periódicas, como en el caso de los solidos usados en dispositivos semiconductores, los niveles mas alejados del núcleo de cada átomo individual se solapan con los del resto formando el concepto de bandas de energía con el cual se estudiaran los fenómenos físicos de los dispositivos. Para esta sección se hará uso de los valores indicados en la tabla \ref{tab:param_fis_mesfet}.
+
+
+\begin{itemize}
+	\item $E_o$ : Energía de un electrón libre en el vacío.
+	\item $E_f$ : Energía de Fermi (nivel de energía con probabilidad de ocupación $\frac{1}{2}$ en equilibrio térmico).
+	\item $\chi$ = $E_o$ - $E_c$: Afinidad electrónica, energía necesaria para llevar un electrón desde el borde inferior de la banda de conducción hasta el vacío.
+	\item $\phi = E_o - E_f$ : Función trabajo 
+	\item $ E_v$ : Nivel de energía superior de la banda de valencia, usualmente usado de referencia.
+	\item $ E_c$ : Nivel de energía inferior de la banda de conducción.
+	\item $E_g = E_c - E_v$ : La energía de \textit{gap} es la diferencia entre la banda de valencia y de conducción.
+\end{itemize}
+
+
+Existen tres clasificaciones principales para los solidos: Aislantes, semiconductores y conductores, y sus diagramas de bandas se encuentran en la figura \ref{fig:bandasindividuales}, se puede observar como en un aislante la diferencia de energía entre la banda de valencia y de conducción es considerablemente mayor que en la de un semiconductor, mientras que en el caso del conductor ambas bandas se encuentran solapadas.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\linewidth]{Img/Bandas_individuales}
+	\caption{ Diagramas de bandas de los tres principales tipos de solidos \parencite{boylestad2013}.}
+	\label{fig:bandasindividuales}
+\end{figure}
+
+Cuando un solido no es impurificado, se dice que es un material intrínseco, al añadirle impurezas el diagrama de bandas de este solido se modifica de acuerdo a la concentración y el tipo de estas impurezas. A su vez un semiconductor en el que los huecos y los electrones se crean exclusivamente mediante una excitación térmica a través de la banda prohibida de energía, se conoce como semiconductor intrínseco \parencite{neamen2012}.
+
+Como ya se menciono el MESFET se forma principalmente con metal (conductor), semiconductor dopado tipo n, y un semi-aislante (Semiconductor GaAs con Cromo como impureza).
+
+
+
+
+\subsubsection{Conductor: Titanio}
+
+\begin{tikzpicture}[
+	>=Latex,
+	axis/.style={->, thick},
+	band/.style={thick},
+	level/.style={dashed, thick},
+	annot/.style={font=\small}
+	]
+	
+	% Ejes
+	\draw[axis] (0,-3) -- (0,2.5) node[above] {Energía};
+	
+	% Nivel de vacío
+	\draw[level] (-2.5,2) -- (2.5,2);
+	\node[annot, right] at (2.5,2) {$E_0$};
+	
+	% Nivel de Fermi
+	\draw[level] (-2.5,0) -- (2.5,0);
+	\node[annot, right] at (2.5,0) {$E_f$};
+	
+	% Banda metálica (ocupada)
+	\fill[gray!40] (-2.5,-2) rectangle (2.5,0);
+	\node[annot] at (0,-1) {Estados ocupados};
+	
+	% Banda metálica (desocupada)
+	\fill[gray!20] (-2.5,0) rectangle (2.5,1.2);
+	\node[annot] at (0,0.6) {Estados vacíos};
+	
+	% Función trabajo
+	\draw[<->, thick] (-2.2,0) -- (-2.2,2);
+	\node[annot, left] at (-2.2,1) {$\phi_m$};
+	
+	% Etiqueta material
+	\node[annot] at (0,-4) {Metal: Titanio (Ti)};
+	
+\end{tikzpicture}
+
+
+
+\subsubsection{Semiconductor dopado tipo n: GaAs-Si}
+\begin{tikzpicture}[
+	>=Latex,
+	axis/.style={->, thick},
+	band/.style={thick},
+	level/.style={dashed, thick},
+	annot/.style={font=\small}
+	]
+	
+	% Ejes
+	\draw[axis] (-3,0) -- (3,0) node[right] {posición};
+	\draw[axis] (0,-3) -- (0,2.8) node[above] {Energía};
+	
+	% Nivel de vacío
+	\draw[level] (-2.5,2.3) -- (2.5,2.3);
+	\node[annot, right] at (2.5,2.3) {$E_0$};
+	
+	% Banda de conducción
+	\draw[band] (-2.5,1.0) -- (2.5,1.0);
+	\node[annot, right] at (2.5,1.0) {$E_c$};
+	
+	% Banda de valencia
+	\draw[band] (-2.5,-1.2) -- (2.5,-1.2);
+	\node[annot, right] at (2.5,-1.2) {$E_v$};
+	
+	% Nivel de Fermi (tipo N, cercano a Ec)
+	\draw[level] (-2.5,0.7) -- (2.5,0.7);
+	\node[annot, right] at (2.5,0.7) {$E_f$};
+	
+	% Gap
+	\draw[<->, thick] (-2.1,-1.2) -- (-2.1,1.0);
+	\node[annot, left] at (-2.1,-0.5) {$E_g$};
+	
+	% Afinidad electrónica
+	\draw[<->, thick] (2.1,1.0) -- (2.1,2.3);
+	\node[annot, right] at (2.1,1.65) {$\chi$};
+	
+	% Etiqueta material
+	\node[annot] at (0,-4) {Semiconductor: GaAs tipo N};
+	
+\end{tikzpicture}
+
+
+\subsubsection{Semi-aislante: GaAs-Cr}
+
+\begin{tikzpicture}[
+	>=Latex,
+	axis/.style={->, thick},
+	band/.style={thick},
+	level/.style={dashed, thick},
+	deep/.style={dotted, thick},
+	annot/.style={font=\small}
+	]
+	
+	% Ejes
+	\draw[axis] (-3,0) -- (3,0) node[right] {posición};
+	\draw[axis] (0,-3) -- (0,3) node[above] {Energía};
+	
+	% Nivel de vacío
+	\draw[level] (-2.5,2.6) -- (2.5,2.6);
+	\node[annot, right] at (2.5,2.6) {$E_0$};
+	
+	% Banda de conducción
+	\draw[band] (-2.5,1.2) -- (2.5,1.2);
+	\node[annot, right] at (2.5,1.2) {$E_c$};
+	
+	% Banda de valencia
+	\draw[band] (-2.5,-1.4) -- (2.5,-1.4);
+	\node[annot, right] at (2.5,-1.4) {$E_v$};
+	
+	% Nivel profundo del Cr
+	\draw[deep] (-2.5,-0.1) -- (2.5,-0.1);
+	\node[annot, right] at (2.5,-0.1) {$E_{Cr}$};
+	
+	% Nivel de Fermi (casi centrado en el gap)
+	\draw[level] (-2.5,-0.2) -- (2.5,-0.2);
+	\node[annot, right] at (2.5,-0.2) {$E_f$};
+	
+	% Gap
+	\draw[<->, thick] (-2.1,-1.4) -- (-2.1,1.2);
+	\node[annot, left] at (-2.1,-0.1) {$E_g$};
+	
+	% Afinidad electrónica
+	\draw[<->, thick] (2.1,1.2) -- (2.1,2.6);
+	\node[annot, right] at (2.1,1.9) {$\chi$};
+	
+	% Etiqueta material
+	\node[annot] at (0,2.85) {Semiconductor: GaAs semi-aislante (Cr)};
+	
+\end{tikzpicture}
+
+
+
+
+\textbf{Si dos o más sistemas en ponen contacto y alcanzan el ETD  sus $E_f$ deben ser iguales.}
+
+\subsection{Equilibrio}
+En equilibrio termodinamico 
+
 
 \subsection{Modo Corte}
 \subsection{Modo en Estrangulación}
 \subsection{Modo Óhmico}
+
+\section{Conducción Eléctrica}
+
+\subsection{Corriente de Difusión}
+
+\subsection{Corriente de Arrastre}
+
 
 \section{Obtención del Modelo Completo}
 
@@ -705,43 +883,6 @@ Al considerar la polarización del dispositivo se produce un potencial longitudi
 
 Para determinar la corriente en un dispositivo semiconductor se consideran dos fenómenos de transporte, arrastre y difusión de los portadores.
 
-
-
-
-\section{Modos de Operación}
-%modos de funcionamiento
-En función de la tensión aplicada al los terminales \textit{gate} y  \textit{drain}, referidas al potencial del terminal \textit{source}, las condiciones eléctricas impuestas al dispositivo permiten definir tres regiones de operación.
-
-
-\subsection{Régimen Corte}
-
-Se da cuando $V_{GS} < V_T$, no se forma un canal considerable y el dispositivo no conduce corriente apreciable.
-
-\subsection{Régimen de Estrangulación}
-
-
-Se da cuando $V_{GS} > V_T$ y $V_{DS} > V_{DS_{[sat]}} $, el dispositivo conduce corriente de forma controlada en función de $V_{GS}$. En este modo de op
-
-
-\subsection{Régimen Óhmico}
-
-Se da cuando $V_{GS} > V_T$ y $V_{DS} < V_{DS_{[sat]}} $, el dispositivo comienza a comportarse como un resistor, esto ayuda a controlar los incrementos de temperatura.
-
-
-\section{Diagrama de Bandas}
-
-Para formar una unión metal-semiconductor, en condiciones ideales, se debe cumplir la relación de función trabajo entre el metal y el semiconductor $\phi_m > \phi_s$ los electrones fluyen desde el semiconductor hacia el metal formando la barrera de Schottky, en el caso contrario  $\phi_m < \phi_s$  formara una unión óhmica ya que el semiconductor estará fuertemente dopado y los electrones fluyen desde el metal hacia el semiconductor reduciendo o idealmente eliminando la barrera.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.5\linewidth]{Img/bandas_energia_mishra.png}
-	\caption{Esquema de un GaAs MESFET. También se muestra el perfil de banda de energía debajo de la
-		Región de la puerta y algunos parámetros importantes del dispositivo \parencite{mishra_semiconductor_2008}.}
-	\label{fig:placeholder}
-\end{figure}
-
-
-\section{Corriente de Salida}
 
 \section{Comparación}
 
