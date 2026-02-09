@@ -6,6 +6,7 @@
 \usepackage{multicol} % Required for multicols environment
 \usepackage{parskip}
 \usepackage{etoolbox}
+\usepackage{tcolorbox}
 \usepackage{float}
 \usepackage{amsmath}
 \usepackage{dingbat}
@@ -15,6 +16,10 @@
 \usepackage[T1]{fontenc}
 \usepackage{amssymb}
 \usepackage[spanish]{babel}
+
+\addto\captionsspanish{
+	\renewcommand{\tablename}{Tabla}
+}
 
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta, positioning}
@@ -54,7 +59,7 @@
 
 \title{\includegraphics[height = 1.5cm]{logofiuba.png} % Logo en la izquierda del encabezado  
 \\(TB070) Dispositivos Semiconductores \\Trabajo Práctico Final : Transistor MESFET }
-\author{106213 Sebastián Lazo  ( slazo@fi.uba.ar ) }
+\author{106213 Sebastián Lazo  (slazo@fi.uba.ar) }
 \date{26 de Febrero 2026}
 
 \maketitle
@@ -63,25 +68,28 @@
 
 \section{Resumen}
 
-En el siguiente informe se utilizan los conocimientos adquiridos a lo largo de la materia Dispositivos Semiconductores con el objetivo de realizar una presentación, investigación y análisis en torno al dispositivo conocido como MESFET ( Metal-Semiconductor Field-Effect Transistor ). Se aborda su estructura, parámetros característicos y aplicaciones típicas, modos de operación. Ademas, se presentan diagramas de bandas para cada modo de operación, curvas características y se discute los efectos no ideales que influyen en su comportamiento real.
+En el presente informe se aplican los conocimientos adquiridos en la materia Dispositivos Semiconductores para el estudió y análisis del dispositivo conocido como MESFET (Metal Semiconductor Field Effect Transistor). Se abordan su estructura, parámetros característicos, aplicaciones típicas, modos de operación, así como su modelo clásico y su modelo completo. Se presentan diagramas de bandas para cada modo de operación, curvas características y se discuten los efectos no ideales que influyen en su comportamiento real. 
 
-\section{Descripción del Dispositivo}
+\section{Introducción al dispositivo}
 
-El transistor MESFET es un dispositivo multijuntura de tres terminales: fuente, drenaje y compuerta, cuya estructura forma un canal por el cual fluyen los portadores desde el terminal fuente hacia el terminal de drenaje. La conductividad del canal es modulada por el potencial eléctrico aplicado en el terminal de compuerta. Puede clasificarse como una variación del transistor MOSFET, con la diferencia de que no posee una capa de óxido aislante entre la compuerta y el sustrato, característica que también comparte con el transistor JFET. Con respecto a este último, difieren en el material de la compuerta, ya que en el MESFET no es de material semiconductor, sino metálica, empleándose metales como aluminio, titanio, oro, níquel o platino.
+El transistor MESFET es un dispositivo multijuntura de tres terminales: fuente, drenaje y compuerta, su estructura forma un canal por el cual fluyen los portadores desde el terminal fuente hacia el terminal de drenaje. La conductividad del canal es modulada por el potencial eléctrico aplicado en el terminal de compuerta. Puede clasificarse como una variación del transistor MOSFET, con la diferencia de que no posee una capa de óxido aislante entre la compuerta y el sustrato, característica que también comparte con el transistor JFET. Con respecto a este último, difieren en el material de la compuerta, ya que en el MESFET no es de material semiconductor, sino metálica, empleándose metales como aluminio, titanio, oro, níquel o platino.
 
-Para comprender la necesidad de esta clase de transistor es necesario conocer una limitación en los transistores MOSFET, estos pueden no ser apropiados si se desea fabricar un transistor utilizando ciertos materiales semiconductores, como en el caso del arseniuro de galio (GaAs), dado que en la interfase, entre el GaAs y un aislante como el oxido, se forman un gran número de trampas superficiales que inhiben la acción compuerta. Además, las compuertas de unión no se difunden con tanta facilidad dentro del GaAs debido a la inestabilidad del material a altas temperaturas, por lo tanto no se realizan uniones P-N con facilidad. Sin embargo, dado que el GaAs tiene una mayor movilidad que el silicio para sus portadores libres, su empleo es aconsejable en aplicaciones que requieren rápidas velocidades de conmutación. La mayoría de las aplicaciones utilizan el MESFET de canal N en lugar del de canal P debido a la mayor movilidad de las portadoras en los dispositivos de canal N \parencite{sze2002semiconductor}. Por consiguiente, se utilizan estructuras del tipo MESFET de canal N para cubrir esas necesidades \parencite{StreetmanBanerjee_SolidStateDevices_2006}. Otros semiconductores utilizados para fabricar MESFET's son nitruro de galio (GaN), carburo de silicio de estructura cristalina (4H-SiC) y fosforo de indio (InP), las caracteristicas de los mismos se encuentran en la tabla de la figura \ref{fig:tablapropsctransistores}. 
+
+\subsection{Motivación de su desarrollo}
+
+Para comprender la necesidad de esta clase de transistor es necesario conocer una limitación en los transistores MOSFET, estos pueden no ser apropiados si se desea fabricar un transistor utilizando ciertos materiales semiconductores, como en el caso del arseniuro de galio (GaAs), dado que en la interfase, entre el GaAs y un aislante como el oxido, se forman un gran número de trampas superficiales que inhiben la acción compuerta. Además, las compuertas de unión no se difunden con tanta facilidad dentro del GaAs debido a la inestabilidad del material a altas temperaturas, por lo tanto no se realizan uniones P-N con facilidad. Sin embargo, dado que el GaAs tiene una mayor movilidad que el silicio para sus portadores libres, su empleo es aconsejable en aplicaciones que requieren rápidas velocidades de conmutación. La mayoría de las aplicaciones utilizan el MESFET de canal n en lugar del de canal p debido a la mayor movilidad de los portadores en los dispositivos de canal n \parencite{sze2002semiconductor}. Por consiguiente, se utilizan estructuras del tipo MESFET de canal n para cubrir esas necesidades \parencite{StreetmanBanerjee_SolidStateDevices_2006}. Otros semiconductores utilizados para fabricar MESFET's son nitruro de galio (GaN), carburo de silicio de estructura cristalina (4H-SiC) y fosforo de indio (InP), las caracteristicas de los mismos se encuentran en la tabla de la figura \ref{fig:tablapropsctransistores}. 
 
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.7\linewidth]{"../../../../Imágenes/Capturas de pantalla/TablaProp_SC_transistores"}
+	\includegraphics[width=0.6\linewidth]{"../../../../Imágenes/Capturas de pantalla/TablaProp_SC_transistores"}
 	\caption{Tabla con las caracteristicas princiáles de los semiconductores y el tipo de transistor fabricado con ellos \parencite{giannini2009high}.}
 	\label{fig:tablapropsctransistores}
 \end{figure}
 
-\subsection{Primer Prototipo}
+\subsection{Primer prototipo}
 
-	El MESFET fue propuesto y demostrado por primera vez por Carver Mead en 1966, se puede observar una imagen de el primer prototipo en la figura \ref{fig:primermesfet}. Poco después, Hooper y Lehrer informaron sobre su rendimiento en dispositivos de microondas en 1967 \parencite{sze2021}. Carver Mead recibió una pequeña muestra de GaAs de tipo N formado epitaxialmente sobre una oblea semiaislante y comenzo a trabajar en el laboratorio grabando la capa epitaxial de su diminuta muestra de oblea, paso a paso, hasta que pudo ver la perforación desde un contacto metálico a una tensión de 10 V. El proceso que estaba usando era un grabado químico de tiempo aproximado con metanol y bromo, y aunque 10 V era un poco alto, ya había pasado por varios pasos de grabado, metalización y medición (usando la relación entre capacitancia y tensión para obtener la concentración de dopaje del canal y espesor de agotamiento) para llegar a este punto. Decidió detenerse y, usando un rapidógrafo calentado (un bolígrafo de dibujo de tinta líquida de estilo antiguo) lleno de cera negra, dibujó una franja a lo largo de la oblea para definir el área activa de lo que sería la región de fuente-drenaje, y luego grabó cuidadosamente a través de la región epitaxial hasta el GaAs semiaislante en el resto. A continuación, e increíblemente, soldó por puntos dos hojas de afeitar de filo recto a pequeñas piezas transversales para hacer una máscara para una puerta muy estrecha. Los bordes de las hojas estaban tan juntos que formaban un patrón de difracción a lo largo de sus bordes casi en contacto. 
+	El MESFET fue propuesto y demostrado por primera vez por Carver Mead en 1966, se puede observar una imagen de el primer prototipo en la figura \ref{fig:primermesfet}. Poco después, Hooper y Lehrer informaron sobre su rendimiento en dispositivos de microondas en 1967 \parencite{sze2021}. Carver Mead recibió una pequeña muestra de GaAs de tipo n formado epitaxialmente (crecimiento cristalino ordenado) sobre una oblea semiaislante y comenzo a trabajar en el laboratorio grabando la capa epitaxial de su diminuta muestra de oblea, paso a paso, hasta que pudo ver la perforación desde un contacto metálico a una tensión de 10 V. El proceso que estaba usando era un grabado químico de tiempo aproximado con metanol y bromo, y aunque la tensión de 10 V era un poco alto comparado con experiencias similares, ya había pasado por varios pasos de grabado, metalización y medición (usando la relación entre capacitancia y tensión para obtener la concentración de dopaje del canal y espesor de agotamiento) para llegar a este punto. Decidió detenerse y, usando un rapidógrafo calentado (un bolígrafo de dibujo de tinta líquida de estilo antiguo) lleno de cera negra, dibujó una franja a lo largo de la oblea para definir el área activa de lo que sería la región de fuente-drenaje, y luego grabó cuidadosamente a través de la región epitaxial hasta el GaAs semiaislante en el resto. A continuación, soldó por puntos dos hojas de afeitar de filo recto a pequeñas piezas transversales para hacer una máscara para una puerta muy estrecha. Los bordes de las hojas estaban tan juntos que formaban un patrón de difracción a lo largo de sus bordes casi en contacto \parencite{Siegel2021Mead}.
 
 \begin{figure}[H]
 	\centering
@@ -108,7 +116,7 @@ Para comprender la necesidad de esta clase de transistor es necesario conocer un
 
 \subsection{Estructura}
 
-Los MESFET's se construyen a partir de una delgada capa epitaxial de GaAs de tipo n dopada con impurezas donadoras como pueden llegar a ser Silicio, Azufre o Selenio depositada sobre un sustrato semi-aislante tambien de GaAs pero dopado intencionalmente con Cromo, que se comporta como un único aceptor cerca del centro de la banda prohibida de energía, con el objetivo de obtener un semi-aislante con una resistividad de ordenes de hasta hasta $10^9 \frac{\Omega}{cm}$ \parencite{neamen2012}. Sobre esta capa se definen las tres terminales del dispositivo: \textit{source}, \textit{drain} y \textit{gate} (fuente, drenaje y compuerta), como se aprecia en la Figura \ref{fig:estr_Belove_MESFET} y \ref{fig:estr_Sze_MESFET}.
+Los MESFET's se construyen a partir de una delgada capa epitaxial de GaAs de tipo n dopada con impurezas donadoras como pueden llegar a ser silicio, azufre o selenio depositada sobre un sustrato semi-aislante tambien de GaAs pero dopado intencionalmente con cromo, que se comporta como un único aceptor cerca del centro de la banda prohibida de energía, con el objetivo de obtener un semi-aislante con una resistividad de ordenes de hasta hasta $10^9 \frac{\Omega}{cm}$ \parencite{neamen2012}. Sobre esta capa se definen las tres terminales del dispositivo: \textit{source}, \textit{drain} y \textit{gate} (fuente, drenaje y compuerta), como se aprecia en la Figura \ref{fig:estr_Belove_MESFET} y \ref{fig:estr_Sze_MESFET}.
 
 
 
@@ -137,20 +145,19 @@ Sobre el sustrato semi-aislante se encuentra la región activa del dispositivo, 
 
 En las zonas correspondientes a \textit{source} y \textit{drain}, esta misma capa se dopa fuertemente con las mismas impurezas de tipo n para obtener contactos óhmicos de baja resistencia, facilitando así la inyección y recolección de portadores.
 
-Finalmente, en la región correspondiente a la terminal \textit{gate}, se deposita un metal en contacto directo con el canal, formando una unión metal-semiconductor que permite controlar la conducción modulando la anchura de la región de agotamiento en el canal definida como $W_D$, esto se detalla en la figura \ref{fig:estr_Sze_MESFET}. Una diferencia crucial con respecto de los transistores de unión bipolar es que los transistores de efecto de campo no requieren de corriente de polarización y son controlados por tensión. Además, el hecho de que su funcionamiento responde a la corriente de portadores mayoritarios se los designa como transistores unipolares.
-
 \begin{figure}[H]
     \centering
 
-    \begin{minipage}{0.48\textwidth}
+    \begin{minipage}{0.4\textwidth}
         \centering
         \includegraphics[width=\linewidth]{Img/neamen_structure.png}
         \caption{Estructura del transistor MESFET de GaAs \parencite{neamen2012}.}
        \label{fig:neamen_strucutre}
+       
     \end{minipage}
     \hfill
-    \begin{minipage}{0.48\textwidth}
-        \centering
+    \begin{minipage}{0.4\textwidth}
+    
         \includegraphics[width=\linewidth]{Img/estructura_microwave.png}
         \caption{Estructura del transistor MESFET \parencite{giannini2009high}.}
        \label{fig:giannini_MESFET_structure}
@@ -160,9 +167,17 @@ Finalmente, en la región correspondiente a la terminal \textit{gate}, se deposi
 
 
 
+Finalmente, en la región correspondiente a la terminal \textit{gate}, se deposita un metal en contacto directo con el canal, formando una unión metal-semiconductor que permite controlar la conducción modulando la anchura de la región de agotamiento en el canal definida como $W_D$, esto se detalla en la figura \ref{fig:estr_Sze_MESFET}. Una diferencia crucial con respecto de los transistores de unión bipolar es que los transistores de efecto de campo no requieren de corriente de polarización y son controlados por tensión. Además, el hecho de que su funcionamiento responde a la corriente de portadores mayoritarios se los designa como transistores unipolares.
+
 
 
 En la figura \ref{fig:giannini_MESFET_structure} se detalla su estructura en tres dimensiones, también se detalla una capa opcional de material tipo p conocido como \textit{p-buffer} con el propósito de mejorar el acople, aislando mejor el canal, reduciendo corrientes de fuga hacia el sustrato y mejorando la estabilidad del dispositivo.
+
+
+
+El dispositivo frente a una elevada temperatura disminuye su corriente evitando un descontrol térmico, esto permite conectar fácilmente varios MESFET en paralelo, creando así un dispositivo más grande, como se detalla, por ejemplo, en la figura \ref{fig:giannini_MESFETs}. En la figura \ref{fig:mishra_microscopio} se aprecian dos imágenes reales del dispositivo mediante un microscopio, la primera mediante un corte trasversal y la segunda una visual superior. Por último, en la figura \ref{fig:esquematico_de_paper} se detalla conceptualmente la polarización usual del dispositivo.
+
+
 
 \begin{figure}[H]
     \centering
@@ -188,22 +203,11 @@ En la figura \ref{fig:giannini_MESFET_structure} se detalla su estructura en tre
 
 \end{figure}
 
+\subsubsection{Características del semiconductor y su dopaje}
 
-El dispositivo frente a una elevada temperatura disminuye su corriente evitando un descontrol térmico, esto permite conectar fácilmente varios MESFET en paralelo, creando así un dispositivo más grande, como se detalla, por ejemplo, en la figura \ref{fig:giannini_MESFETs}. Mientras que en la figura \ref{fig:mishra_microscopio} se aprecian dos imágenes reales del dispositivo mediante un microscopio, la primera mediante un corte trasversal y la segunda una visual superior.
+En el caso del arseniuro de galio, es un solido semiconductor compuesto cuya red cristalina forma una estructura conocida como \textit{zincblenda} apreciable en la figura \ref{fig:zincblenda}, compuesta por arsénico del grupo V y galio del grupo III union detallada en la figura \ref{fig:red_GaAs}. Al agregar una impureza, esta reemplaza a alguno de los átomos en la red cristalina. Para obtener material tipo n, la impureza donadora debe aportar un electrón adicional respecto del átomo que reemplaza. Cuando se emplea silicio como impureza, este sustituye al galio, que posee tres electrones de valencia, mientras que el silicio posee cuatro, actuando como donador. Por otro lado, el azufre y el selenio poseen seis electrones de valencia, por lo que al reemplazar al arsénico, que posee cinco, aportan un electrón adicional, dando lugar a material tipo N \parencite{neamen2012}. 
 
 
-
-\subsubsection{Características del Semiconductor y su Dopaje}
-
-	En el caso del Arseniuro de Galio, es un solido cuya red cristalina forma una estructura conocida como
-\textit{zincblenda} (Figura~\ref{fig:zincblenda}), compuesta por arsénico del grupo V y galio
-del grupo III (Figura~\ref{fig:red_GaAs}). Al agregar una impureza, esta reemplaza a alguno de los átomos en la red
-cristalina. Para obtener material tipo N, la impureza donadora debe aportar un electrón
-adicional respecto del átomo que reemplaza. Cuando se emplea silicio como impureza, este
-sustituye al galio, que posee tres electrones de valencia, mientras que el silicio posee
-cuatro, actuando como donador. Por otro lado, el azufre y el selenio poseen seis electrones
-de valencia, por lo que al reemplazar al arsénico, que posee cinco, aportan un electrón
-adicional, dando lugar a material tipo N \parencite{neamen2012}.
 
 \begin{figure}[H]
 	\centering
@@ -224,7 +228,7 @@ adicional, dando lugar a material tipo N \parencite{neamen2012}.
 \end{figure}
 
 
-\subsection{Aplicaciones Típicas}
+\subsection{Aplicaciones típicas}
 	
 	
 	Es empleado en sistemas de comunicación por microondas, amplificadores, radiotelescopios hasta antenas parabólicas domésticas, sistemas satélitales y teléfonos celulares operando en frecuencias por encima de 3 GHz. En la figura \ref{fig:gaas-mesfet-class-ab-rfpa-schematic-diagram} se implementa un MESFET en un amplificador clase AB.
@@ -233,8 +237,9 @@ adicional, dando lugar a material tipo N \parencite{neamen2012}.
 \begin{figure}[H]
 	\centering
 	\begin{minipage}[t]{0.52\textwidth}
-r		\vspace{0.5 cm}
-		 A pesar de esto, la tecnología MESFET sigue siendo relevante en aplicaciones especializadas de alta potencia y alta temperatura. Los dispositivos MESFET se suelen adoptar para frecuencias de hasta 18-20 GHz, mientras que la adopción de dispositivos de heterojunción (principalmente del tipo HEMT) se hace obligatoria para frecuencias de operación más altas \parencite{giannini2009high}.
+		\vspace{0.5 cm}
+		 
+		 La tecnología MESFET es relevante en aplicaciones especializadas de alta potencia y alta temperatura, se suelen adoptar para frecuencias de hasta 18-20 GHz, mientras que la adopción de dispositivos de heterojunción (principalmente del tipo HEMT) se hace obligatoria para frecuencias de operación más altas \parencite{giannini2009high}.
 		 
 		 \vspace{1cm}
 		 	
@@ -260,45 +265,45 @@ r		\vspace{0.5 cm}
 \end{figure}
 
 
-
-\section{Principio de Funcionamiento}
-
-Una unión metal–semiconductor puede dar lugar a dos tipos de contacto, dependiendo de la relación entre las funciones trabajo de los materiales que la conforman y del nivel de dopaje del semiconductor. El contacto óhmico, presente en los terminales \textit{drain} y \textit{source}, se obtiene utilizando un semiconductor tipo N fuertemente dopado, lo que permite una baja resistencia de contacto y condiciones cercanas a $\phi_m < \phi_{SC}$.
-
-El segundo caso corresponde a la formación de una unión rectificante del tipo \textit{Schottky}, para la cual rige la relación $\phi_m > \phi_{SC}$. Esta situación se presenta cuando el semiconductor tipo N se encuentra levemente dopado y es la empleada en el terminal \textit{gate}. Este tipo de unión es también característico de los diodos rectificadores de rápida conmutación.
-
-Al igual que en los diodos Schottky polarizados en inversa, esta unión da lugar a la formación de una región de vaciamiento de portadores libres en el semiconductor. En el transistor MESFET, la extensión de dicha región es modulada mediante la tensión aplicada entre \textit{gate} y \textit{source}, permitiendo el estrangulamiento o la apertura del canal conductor. De esta forma, se controla la corriente que circula entre \textit{drain} y \textit{source}, constituyendo este mecanismo el principio fundamental de funcionamiento del dispositivo.
-
-
 \subsection{Tipos de MESFET}
 
-Al diseñar un MESFET canal n, se puede optar por una determinada concentración de impurezas y geometría del canal tal que requiera tensiones de compuerta negativas para modular o interrumpir la conducción, el cual se conoce como modo empobrecimiento (D-MESFET o Depletion-mode MESFET) o tensiones de control positivas, este ultimo nombrado como modo enriquecimiento (E-MESFET o Enhancement-mode MESFET). De esta forma se pueden clasificar en dos tipos de MESFET por cada tipo de canal, los mismos comúnmente se diferencian con ayuda de los símbolos que se presentan en la tabla de la figura (\ref{fig:tiposmesfet}).
-
-Es importante tener en cuenta, sin embargo, que el canal debe ser de material tipo n en un MESFET. La movilidad de los huecos en GaAs es relativamente baja comparada con la de portadores de carga negativa por lo que se pierde la ventaja de utilizar GaAs en aplicaciones de alta velocidad. El resultado es:
-Los MESFET tipo empobrecimiento y tipo enriquecimiento se hacen con un canal n entre el drenaje y la fuente y, por consiguiente, sólo los MESFET tipo n son comerciales \parencite{BoylestadNashelsky2015}.
-
+Al diseñar un MESFET canal n, se puede optar por una determinada concentración de impurezas y geometría del canal tal que requiera tensiones de compuerta negativas para modular o interrumpir la conducción, el cual se conoce como modo empobrecimiento (D-MESFET o Depletion-mode MESFET) o tensiones de control positivas, este ultimo nombrado como modo enriquecimiento (E-MESFET o Enhancement-mode MESFET).
 
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.9\linewidth]{Img/Tipos_MESFET}
-	\caption{ Tabla resumen de las características de cada tipo de MESFET de canal n \parencite{BoylestadNashelsky2015}.}
-	\label{fig:tiposmesfet}
+	\begin{minipage}[t]{0.3\textwidth}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.85\linewidth]{Img/Tipos_MESFET}
+			\caption{ Simbología típica de cada MESFET de canal n.}
+			\label{fig:tiposmesfet}
+		\end{figure}
+		
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.65\textwidth}
+	De esta forma se pueden clasificar en dos tipos de MESFET por cada tipo de canal, los mismos comúnmente se diferencian con ayuda de los símbolos que se presentan en la figura \ref{fig:tiposmesfet}.
+	Es importante tener en cuenta, sin embargo, que el canal debe ser de material tipo n en un MESFET. La movilidad de los huecos en GaAs es relativamente baja comparada con la de portadores de carga negativa por lo que se pierde la ventaja de utilizar GaAs en aplicaciones de alta velocidad. El resultado es:
+	Los MESFET tipo empobrecimiento y tipo enriquecimiento se hacen con un canal n entre el drenaje y la fuente y, por consiguiente, sólo los MESFET tipo n son comerciales \parencite{BoylestadNashelsky2015}.
+	
+	\end{minipage}
 \end{figure}
+
 
 
 
 \section{Parámetros Característicos}
 
-En el informe se tomara como objeto de estudio un transistor MESFET formado por GaAs de canal n de empobrecimiento (D-MESFET), con silicio como impureza dopante en el canal y titanio como el metal de la compuerta a una temperatura de 300 K. A continuación se presentaran los diferentes parámetros de referencia utilizados en el informe.
+En el informe se tomara como objeto de estudio un transistor MESFET formado por GaAs de canal n de empobrecimiento (D-MESFET), con silicio como impureza dopante en el canal y titanio como el metal de la compuerta a una temperatura de 300 K. A continuación se presentaran los diferentes parámetros típicos de referencia utilizados en el informe.
 
 
-\subsection{Parámetros Físicos}
+\subsection{Parámetros físicos}
 
-Los materiales que forman el dispositivo desprenden diferentes características descriptas por los siguientes parámetros (\ref{tab:param_fis_mesfet}). Tales parámetros determinan propiedades fundamentales del dispositivo, como la formación de la barrera \textit{Scottky}, la zona de vaciamiento, el transporte de portadores, etc.
+Los materiales que forman el dispositivo desprenden diferentes características descriptas por los siguientes parámetros (\ref{tab:param_fis_mesfet}), tales determinan propiedades fundamentales del dispositivo, como la formación de la barrera \textit{Schottky}, la zona de vaciamiento, el transporte de portadores, etc.
 
 
-\begin{table}[h]
+\begin{table}[H]
 	\centering
 	\caption{Parámetros físicos característicos de los materiales utilizados en el análisis del MESFET}
 	\label{tab:param_fis_mesfet}
@@ -307,14 +312,20 @@ Los materiales que forman el dispositivo desprenden diferentes características 
 		\textbf{Parámetro} & \textbf{GaAs} & \textbf{Si (dopante)} & \textbf{Ti} & \textbf{Cr} \\ \hline
 		Tipo de material & Semiconductor & Semiconductor & Metal & Metal \\ \hline
 		Energía de banda prohibida $E_g$ [eV] & 1.42 & 1.12 & -- & -- \\ \hline
-		Constante dieléctrica relativa $\epsilon_r$ & 12.9 & 11.7 & -- & -- \\ \hline
+		Constante dieléctrica relativa $\epsilon_s$ & $12.9\cdot \epsilon_0$ & $11.7\cdot \epsilon_0$ & -- & -- \\ \hline
 		Afinidad electrónica $\chi$ [eV] & 4.07 & -- & -- & -- \\ \hline
-		Función trabajo $\phi_m$ [eV] & -- & -- & 4.33 & 4.50 \\ \hline
+		Función trabajo $\Phi_M$ [eV] & -- & -- & 4.33 & 4.50 \\ \hline
 		Movilidad electrónica $\mu_n$ [cm$^2$/Vs] & 8500 & -- & -- & -- \\ \hline
-		Concentración  $N_D$ [cm$^{-3}$] & -- & $N_D$ [cm$^{-3}$] & -- & -- \\ \hline
-		Tipo de contacto en MESFET & Canal & Dopaje & Schottky / Óhmico & Aislante \\ \hline
+		Masa efectiva ${m}^*_n$ &$0,0067\cdot m_o$ & -- & -- & -- \\ \hline
+		Masa efectiva ${m}^*_p$  &$0,47\cdot m_o$& -- & -- & -- \\ \hline
+		Concentración intrínseca de portadores $n_i$ [cm$^{-3}$] & $1,79 \cdot 10^{6}$ &  $1,45 \cdot 10^{10}$ & -- & -- \\ \hline
+		Concentración  $N_D$ [cm$^{-3}$] & $2 \cdot 10 ^{15}$ & -- & -- & -- \\ \hline
+		Concentración  $N_A$ [cm$^{-3}$] & 0 &--& -- & -- \\ \hline
+		Comportamiento en el MESFET & Canal & Dopaje & Schottky / Óhmico & Aislante \\ \hline
 	\end{tabular}
 \end{table}
+
+Siendo $m_o$ = $9,109 \cdot 10^{-31} \,Kg $.
 
 \subsection{Parámetros Geométricos}
 
@@ -324,22 +335,46 @@ En la siguiente tabla se presentan los parámetros que describen las dimensiones
 	\centering
 	\caption{Parámetros geométricos característicos utilizados en el análisis del MESFET}
 	\label{tab:param_geom_mesfet}
-	\begin{tabular}{|l|c|l|}
+	\begin{tabular}{|l|c|c|l|}
 		\hline
-		\textbf{Parámetro} & \textbf{Símbolo} & \textbf{Descripción} \\ \hline
-		Longitud de la compuerta & $L$ & Longitud del canal en la dirección $x$ (source--drain)   \\ \hline
-		Ancho del dispositivo & $Z$ & Dimensión del canal en la dirección $z$ (profundidad del dispositivo) \\ \hline
-		Espesor del canal & $d$ & Altura del canal en la dirección $y$ \\ \hline
-		Ancho de la zona de vaciamiento & $W_d$ & Extensión de la región de vaciamiento bajo la compuerta \\ \hline
-		Espesor efectivo del canal & $d_{eff}$ & Espesor del canal conductor: $d_{eff}=d-W_d$ \\ \hline
-		Área efectiva del canal & $A_{ch}$ & Área transversal del canal: $A_{ch}=Z\cdot d_{eff}$ \\ \hline
-		Posición longitudinal & $x$ & Coordenada a lo largo del canal \\ \hline
-		Posición vertical & $y$ & Coordenada perpendicular a la superficie \\ \hline
+		\textbf{Parámetro} & \textbf{Símbolo} & \textbf{Valor} & \textbf{Descripción} \\ \hline
+		Longitud de la compuerta 
+		& $L$ 
+		& $0,9 \,\mu m$
+		& Longitud del canal en la dirección $x$ (source--drain) \\ \hline
+		
+		Ancho del dispositivo 
+		& $Z$ 
+		& $300 \,\mu m$
+		& Dimensión del canal en la dirección $z$ (ancho del dispositivo) \\ \hline
+		
+		Espesor del canal 
+		& $a$ 
+		& $0,3 \,\mu m$
+		& Altura física del canal en la dirección $y$ \\ \hline
+		
+		Ancho de la zona de vaciamiento 
+		& $W_d$ 
+		& -
+		& Extensión de la región de vaciamiento bajo la compuerta \\ \hline
+		
+		Espesor efectivo del canal 
+		& $d_{\text{eff}}$ 
+		& -
+		& Espesor del canal conductor: $d_{\text{eff}} = a - W_d$ \\ \hline
+		
+		Área efectiva del canal 
+		& $A_{\text{ch}}$ 
+		& -
+		& Área transversal del canal: $A_{\text{ch}} = Z \cdot d_{\text{eff}}$ \\ \hline
+		
+	
 	\end{tabular}
 \end{table}
 
 
-\subsection{Parámetros Eléctricos}
+
+\subsection{Parámetros eléctricos}
 
 El comportamiento eléctrico del dispositivo se podrá describir con ayuda de las definiciónes de diferentes tensiones, corrientes, resistencias, capacitancias y otros parámetros eléctricos para facilitar el análisis del dispositivo (\ref{tab:param_elec_mesfet}). 
 
@@ -350,22 +385,17 @@ El comportamiento eléctrico del dispositivo se podrá describir con ayuda de la
 	\begin{tabular}{|l|c|c|l|}
 		\hline
 		\textbf{Parámetro} & \textbf{Símbolo} & \textbf{Unidad} & \textbf{Descripción} \\ \hline
-		Tensión compuerta--fuente & $V_{GS}$ & V & Tensión aplicada a la unión Schottky de la compuerta \\ \hline
-		Tensión drenaje--fuente & $V_{DS}$ & V & Tensión aplicada entre drenaje y fuente \\ \hline
-		Corriente de drenaje & $I_D$ & A & Corriente que circula por el canal del MESFET \\ \hline
-		Corriente de compuerta & $I_G$ & A & Corriente de fuga de la unión Schottky \\ \hline
-		Tensión de umbral (pinch--off) & $V_T$ & V & Tensión $V_{GS}$ para la cual el canal se estrangula \\ \hline
-		Corriente de saturación & $I_{DSS}$ & A & Corriente de drenaje para $V_{GS} = 0$ (D-MESFET)\\ \hline
-		Transconductancia & $g_m$ & $ \Omega^{-1}$ & Variación de $I_D$ respecto de $V_{GS}$ \\ \hline
-		Resistencia de salida & $r_o$ & $\Omega$ & Inversa de la pendiente $I_D$--$V_{DS}$ en saturación \\ \hline
-		Capacitancia compuerta--fuente & $C_{GS}$ & F & Capacitancia de la región de vaciamiento bajo la compuerta \\ \hline
-		Capacitancia compuerta--drenaje & $C_{GD}$ & F & Capacitancia parásita asociada al solapamiento \\ \hline
-		Campo eléctrico crítico & $xi_{crit}$ & V/cm & Campo máximo antes de ruptura del GaAs \\ \hline
+		Tensión compuerta--fuente & $V_{GS}$ & V & Tensión aplicada a la unión Schottky de la compuerta.\\ \hline
+		Tensión drenaje--fuente & $V_{DS}$ & V & Tensión aplicada entre drenaje y fuente. \\ \hline
+		Corriente de drenaje & $I_D$ & A & Corriente que circula por el canal del MESFET. \\ \hline
+		Corriente de compuerta & $I_G$ & A & Corriente de fuga de la unión Schottky.\\ \hline
+		Tensión de umbral (pinch--off) & $V_P$ & V & Tensión $V_{GS}$ para la cual el canal se estrangula por completo. \\ \hline
+		Corriente de saturación & $I_{DSS}$ & A & Corriente de drenaje para $V_{GS} = 0$ (D-MESFET).\\ \hline
 	\end{tabular}
 \end{table}
 
 
-\subsection{Parámetros de Rendimiento}
+\subsection{Parámetros de rendimiento}
 
 Para un posterior análisis de funcionamiento detallado contemplando posibles condiciones no ideales, es necesario detallar parámetros de rendimiento como los descriptos por la siguiente tabla (\ref{tab:param_rend_mesfet}). 
 
@@ -378,29 +408,29 @@ Para un posterior análisis de funcionamiento detallado contemplando posibles co
 	\begin{tabular}{|l|c|l|}
 		\hline
 		\textbf{Parámetro} & \textbf{Símbolo} & \textbf{Descripción} \\ \hline
-		Frecuencia de transición & $f_T$ & Frecuencia para la cual la ganancia de corriente es unitaria \\ \hline
-		Frecuencia máxima de oscilación & $f_{max}$ & Frecuencia límite para ganancia de potencia unitaria \\ \hline
-		Ancho de banda útil & $BW$ & Rango de frecuencias de operación efectiva \\ \hline
-		Factor de ruido & $NF$ & Degradación de la relación señal--ruido introducida por el dispositivo \\ \hline
-		Temperatura de operación & $T_{op}$ & Rango de temperatura en condiciones nominales \\ \hline
-		Rango de tensión compuerta--fuente & $V_{GS}$ & Intervalo de polarización segura de la compuerta \\ \hline
-		Rango de tensión drenaje--fuente & $V_{DS}$ & Intervalo de operación sin ruptura \\ \hline
-		Rango de corriente de drenaje & $I_D$ & Corriente admisible en régimen continuo \\ \hline
-		Región de operación recomendada & -- & Lineal, saturación o corte \\ \hline
-		Linealidad & IP3, $P_{1\text{dB}}$ & Capacidad de mantener proporcionalidad señal--salida \\ \hline
-		Potencia disipada máxima & $P_{max}$ & Potencia máxima admisible sin degradación \\ \hline
-		Estabilidad & $K$ & Factor de estabilidad (Rollet) \\ \hline
+		Ancho de banda útil & $BW$ & Rango de frecuencias de operación efectiva. \\ \hline
+		Factor de ruido & $NF$ & Degradación de la relación señal--ruido introducida por el dispositivo. \\ \hline
+		Temperatura de operación & $T_{op}$ & Rango de temperatura en condiciones nominales. \\ \hline
+		Rango de tensión compuerta--fuente & $V_{GS}$ & Intervalo de polarización segura de la compuerta. \\ \hline
+		Rango de tensión drenaje--fuente & $V_{DS}$ & Intervalo de operación sin ruptura. \\ \hline
+		Rango de corriente de drenaje & $I_D$ & Corriente admisible en régimen continuo. \\ \hline
+		Región de operación recomendada & -- & Lineal, saturación o corte. \\ \hline
+		Potencia máxima disipada  & $P_{max}$ & Potencia máxima admisible sin degradación. \\ \hline
 	\end{tabular}
 \end{table}
 
 
 
-	%	\includegraphics[width=\linewidth]{Img/3d_mishra_MESFET.png}
-	%	\caption{Sistema de coordenadas propuesto \parencite{mishra_semiconductor_2008}.}
-	%	\label{fig:sistcoordmesfetb}
-	
+\section{Principio de Funcionamiento}
 
-\section{Operación Básica}
+Una unión metal–semiconductor puede dar lugar a dos tipos de contacto, dependiendo de la relación entre las funciones trabajo de los materiales que la conforman y del nivel de dopaje del semiconductor. El contacto óhmico, presente en los terminales \textit{drain} y \textit{source}, se obtiene utilizando un semiconductor tipo n fuertemente dopado, lo que permite una baja resistencia de contacto y condiciones cercanas a $\phi_m < \phi_{SC}$.
+
+El segundo caso corresponde a la formación de una unión rectificante del tipo \textit{Schottky}, para la cual rige la relación $\phi_m > \phi_{SC}$. Esta situación se presenta cuando el semiconductor tipo n se encuentra levemente dopado y es la empleada en el terminal \textit{gate}. Este tipo de unión es también característica en los diodos rectificadores de rápida conmutación.
+
+Al igual que en los diodos Schottky polarizados en inversa, esta unión da lugar a la formación de una región de vaciamiento de portadores libres en el semiconductor. En el transistor MESFET, la extensión de dicha región es modulada mediante la tensión aplicada entre \textit{gate} y \textit{source}, permitiendo el estrangulamiento o la apertura del canal conductor. De esta forma, se controla la corriente que circula entre \textit{drain} y \textit{source}, constituyendo este mecanismo el principio fundamental de funcionamiento del dispositivo.
+
+
+\section{Operación básica}
 
 El dispositivo se opera generalmente como conmutador o como parte de un circuito amplificador de señal. A partir de las referencias de tensión y corriente inspiradas en la figura \ref{fig:simbolomasesquema}, se introduce a continuación el principio de operación del MESFET, mientras que en las secciones siguientes se desarrollará su funcionamiento en mayor detalle.
 
@@ -433,7 +463,7 @@ La polarización del transistor forma parte de la operación del mismo, consiste
 La elección del punto $Q$ depende de la aplicación específica del MESFET, ya sea como conmutador o como amplificador, y se realiza de manera tal que el dispositivo opere en una región adecuada de sus características estáticas.
 
 
-\subsection{Modo Corte}
+\subsection{Modo corte}
 
 El modo corte sucede cuando la tensión $V_{GS}$ no supera la tensión $V_p$ o tensión umbral, y el transistor idealmente no tendra corriente a travez de la rama del \textit{drain}, tal como indican las expresiones (\ref{equation:modo_corte}).
 
@@ -441,7 +471,7 @@ El modo corte sucede cuando la tensión $V_{GS}$ no supera la tensión $V_p$ o t
 		V_{GS} \le V_P \quad \Rightarrow \quad I_D = 0
 \end{equation}
 
-\subsection{Modo en Estrangulación}
+\subsection{Modo en estrangulación}
 
 El modo estrangulación es el rango en el cual la corriente de \textit{drain} se puede controlar mediante la tensión $V_{GS}$, es buscado en aplicaciones de amplificación de señal. En la expresión (\ref{equation:modo_estrangulacion}) se encuentran las condiciones de polarización y la corriente $I_D$ en función de $V_{GS}$.
 
@@ -459,7 +489,7 @@ El modo estrangulación es el rango en el cual la corriente de \textit{drain} se
 
 
 
-\subsection{Modo Óhmico}
+\subsection{Modo óhmico}
 
 
 El modo lineal o óhmico responde linealmente tal como lo haria un resistor y su corriente de \textit{drain} se rige por las condiciones de la expresión (\ref{equation: modo_lineal}).
@@ -481,11 +511,11 @@ El modo lineal o óhmico responde linealmente tal como lo haria un resistor y su
 	\end{aligned}
 \end{equation}
 
-\section{Diagrama de Bandas}
+\section{Diagrama de bandas}
 
 El análisis en profundidad parte de las bandas de energía de los materiales que conforman el dispositivo, como se comportan en las interfases entre ellos, en equilibrio termodinámico y bajo potenciales externos.
 
-En la física del estado sólido, los átomos se modelan mediante niveles de energía en donde es probable encontrar sus electrones, pero cuando estos átomos forman redes cristalinas periódicas, como en el caso de los solidos usados en dispositivos semiconductores, los niveles mas alejados del núcleo de cada átomo individual se solapan con los del resto formando el concepto de bandas de energía con el cual se estudiaran los fenómenos físicos de los dispositivos. Para esta sección se hará uso de los valores indicados en la tabla \ref{tab:param_fis_mesfet}.
+En la física del estado sólido, los átomos se modelan mediante niveles de energía en donde es probable encontrar sus electrones, pero cuando estos átomos forman redes cristalinas periódicas, como en el caso de los solidos usados en dispositivos semiconductores, los niveles mas alejados del núcleo de cada átomo individual se solapan con los del resto formando el concepto de bandas de energía con el cual se estudiaran los fenómenos físicos de los dispositivos. Se definen dos bandas características en el caso de los semiconductores y aislantes separadas por una banda prohibida (\textit{bandgap}), donde en principio idealmente no hay niveles de energía disponibles para portadores libres. La banda donde los electrones están más ligados al sólido es la banda de valencia, esta se encuentra normalmente llena de electrones y separada por la banda prohibida se encuentra la banda de conducción, normalmente vacía. Para esta sección se hará uso de los valores indicados en la tabla \ref{tab:param_fis_mesfet}.
 
 
 \begin{itemize}
@@ -499,7 +529,7 @@ En la física del estado sólido, los átomos se modelan mediante niveles de ene
 \end{itemize}
 
 
-Existen tres clasificaciones principales para los solidos: Aislantes, semiconductores y conductores, y sus diagramas de bandas se encuentran en la figura \ref{fig:bandasindividuales}, se puede observar como en un aislante la diferencia de energía entre la banda de valencia y de conducción es considerablemente mayor que en la de un semiconductor, mientras que en el caso del conductor ambas bandas se encuentran solapadas.
+Existen tres clasificaciones principales para los solidos: Aislantes, semiconductores y conductores, y sus diagramas de bandas típicos se encuentran en la figura \ref{fig:bandasindividuales}, se puede observar como en un aislante la diferencia de energía entre la banda de valencia y de conducción es considerablemente mayor que en la de un semiconductor, mientras que en el caso del conductor ambas bandas se encuentran solapadas siendo indistinguible un $E_{g}$.
 
 \begin{figure}[H]
 	\centering
@@ -508,156 +538,1141 @@ Existen tres clasificaciones principales para los solidos: Aislantes, semiconduc
 	\label{fig:bandasindividuales}
 \end{figure}
 
-Cuando un solido no es impurificado, se dice que es un material intrínseco, al añadirle impurezas el diagrama de bandas de este solido se modifica de acuerdo a la concentración y el tipo de estas impurezas. A su vez un semiconductor en el que los huecos y los electrones se crean exclusivamente mediante una excitación térmica a través de la banda prohibida de energía, se conoce como semiconductor intrínseco \parencite{neamen2012}.
+Cuando un solido no es dopado, se dice que es un material intrínseco, al añadirle impurezas el diagrama de bandas de este solido se modifica de acuerdo a la concentración y el tipo de estas impurezas. 
 
-Como ya se menciono el MESFET se forma principalmente con metal (conductor), semiconductor dopado tipo n, y un semi-aislante (Semiconductor GaAs con Cromo como impureza).
+Como ya se menciono el MESFET se forma principalmente con metal (conductor), semiconductor dopado tipo n, y un semi-aislante (Semiconductor GaAs con cromo como impureza). Al doparse el semiconductor, se forma un nivel donor y/o aceptor dentro de la banda prohibida de acuerdo al tipo de dopaje.
+
+\subsection{Portadores}
+
+Un electrón excitado (por ejemplo, mediante agitación térmica) dentro de la banda de conducción es una carga libre negativa que se mueve a través de todo el cristal bajo la influencia de gradientes de temperatura o potencial, normalmente denotada como \textit{n}. La deficiencia de carga de valencia producida en la banda de conducción por la excitación de un electrón es su contratarte como carga positiva, denominada hueco o \textit{p}.
 
 
 
+\subsection{Distribución de energía en un solido }
 
-\subsubsection{Conductor: Titanio}
+La distribución más probable de energía de un conjunto de portadores libres en equilibrio térmico, sujetos al principio de exclusión de Pauli que establece que no pueden existir dos electrones que tengan un conjunto de números cuánticos idéntico, es la distribución de Fermi. La probabilidad $f_n$ de que un nivel de energía E, esté ocupado en equilibrio térmico por un electrón esta dada por la función de Fermi-Dirac.
+\\
+\begin{equation}
+	f_n(E) = \frac{1}{1 + e^{\frac{(E- E_f)}{kT}}}
+\end{equation}
 
-\begin{tikzpicture}[
-	>=Latex,
-	axis/.style={->, thick},
-	band/.style={thick},
-	level/.style={dashed, thick},
-	annot/.style={font=\small}
-	]
+Donde $k = 8,617 \cdot 10^{-5} \, \frac{qV}{K}$ es la constante de Boltzmann y $E_f$ se conoce como nivel de Fermi, es el nivel de energía a la cual un estado cuántico tiene una probabilidad de $f_n(E_f) = \frac{1}{2}$.
+
+
+Mientras que la probabilidad $f_p$ de que un nivel E se encuentre ocupado por un hueco se define como $f_p = 1 - f_n$.
+
+\subsubsection{Energía de Fermi intrínseca}
+
+Para un semiconductor intrínseco, es decir sin impurezas, se puede llegar a conocer su energía de Fermi intrínseca utilizando la expresión (\ref{equation:E_fi}) que la relaciona con las masas efectivas de los portadores libres.
+
+\begin{equation}\label{equation:E_fi}
+	E_{i} = \frac{1}{2}\left(E_g\right) + \frac{3}{4} k T \cdot \ln\left(\frac{m_p^{*}}{m_n^{*}}\right)
+\end{equation}
+
+Cuando el semiconductor tiene impurezas ya sean de tipo p o de tipo n, su nivel de Fermi se ya no sera el intrínseco, seguirá la relación en función de las concentraciones de átomos donadores $N_D$ o aceptadores $N_A$ como indica la expresión \ref{equation:E_f}, donde se asumirá que el total de impurezas aporto portadores libres: 
+
+\begin{equation}\label{equation:E_f}
+	E_f =
+	\begin{cases}
+		E_{i} + kT \ln\!\left(\dfrac{N_D - N_A}{n_i}\right), & \text{si } N_D > N_A \\[6pt]
+		E_{i} - kT \ln\!\left(\dfrac{N_D - N_A}{n_i}\right), & \text{si } N_D < N_A
+	\end{cases}
+\end{equation}
+
+\subsection{Diagramas de banda aislados}
+A continuación se presentan los diagramas de los distintos materiales que componen las junturas del transistor de forma aislada.
+
+\subsubsection{Diagrama de banda del conductor: Titanio}
+
+\begin{figure}[H]
+% --------- Texto (izquierda) ----------
+\begin{minipage}[c]{0.45\textwidth}
+
+El titanio no tiene brecha entre bandas de conducción y valencia ya que se solapan (no se distingue su $E_g$), esto permite el movimiento de electrones libres entre ambas bandas obteniendo alta conductividad. La función trabajo ($\Phi_M $) es la energía mínima, medida en electronvoltios (\(eV\)), necesaria para extraer un electrón desde el nivel de Fermi (\(E_{F}\)) del interior del titanio al vacío justo fuera de su superficie. 
+
+\begin{equation}
+	\Phi_M = 4,33 \; eV 
+\end{equation}
+
+\end{minipage}
+\hfill
+% --------- Gráfico (derecha) ----------
+\begin{minipage}[c]{0.5\textwidth}
+	\centering
+	\begin{tikzpicture}[
+		>=Latex,
+		axis/.style={->, thick},
+		band/.style={thick},
+		level/.style={dashed, thick},
+		annot/.style={font=\small}
+		]
+		
 	
-	% Ejes
-	\draw[axis] (0,-3) -- (0,2.5) node[above] {Energía};
 	
-	% Nivel de vacío
-	\draw[level] (-2.5,2) -- (2.5,2);
-	\node[annot, right] at (2.5,2) {$E_0$};
+		% Banda metálica (ocupada)
+		\fill[gray!40] (-3,-2) rectangle (2.5,0);
+		\node[annot] at (0,-1) {Banda de Valencia};
+		
+		% Banda metálica (desocupada)
+		\fill[gray!20] (-3,0) rectangle (2.5,1.99);
+		\node[annot] at (0,0.6) {Banda de Conducción};
+		
+			% Ejes
+		\draw[axis] (-3,-3) -- (-3,3) node[above] {Energía};
+		% Ejes
+		\draw[axis] (-3,-2) -- (3,-2) node[right] {Posición};
+		
+		
+		
+		% Nivel de Fermi
+		\draw[level] (-3,0) -- (3,0);
+		\node[annot, right] at (3.2,0) {$E_f$};
+		
+		% Nivel de vacío
+		\draw[level] (-3,2) -- (3,2);
+		\node[annot, right] at (3.5,2) {$E_0$};
+		
+		
+		
+		% Función trabajo
+		\draw[<->, thick] (-2.2,0) -- (-2.2,2);
+		\node[annot, left] at (-1.2,1) {$q\Phi_M$};
+		
+		% Etiqueta material
+		\node[annot] at (0,-4) {Metal
+			: Titanio (Ti)};
+		
+	\end{tikzpicture}
 	
-	% Nivel de Fermi
-	\draw[level] (-2.5,0) -- (2.5,0);
-	\node[annot, right] at (2.5,0) {$E_f$};
-	
-	% Banda metálica (ocupada)
-	\fill[gray!40] (-2.5,-2) rectangle (2.5,0);
-	\node[annot] at (0,-1) {Estados ocupados};
-	
-	% Banda metálica (desocupada)
-	\fill[gray!20] (-2.5,0) rectangle (2.5,1.2);
-	\node[annot] at (0,0.6) {Estados vacíos};
-	
-	% Función trabajo
-	\draw[<->, thick] (-2.2,0) -- (-2.2,2);
-	\node[annot, left] at (-2.2,1) {$\phi_m$};
-	
-	% Etiqueta material
-	\node[annot] at (0,-4) {Metal: Titanio (Ti)};
-	
-\end{tikzpicture}
+\end{minipage}
+
+\caption{Completar.}
+\end{figure}
+
 
 
 
 \subsubsection{Semiconductor dopado tipo n: GaAs-Si}
-\begin{tikzpicture}[
-	>=Latex,
-	axis/.style={->, thick},
-	band/.style={thick},
-	level/.style={dashed, thick},
-	annot/.style={font=\small}
-	]
+
+\begin{figure}[H]
+	% --------- Texto (izquierda) ----------
+	\begin{minipage}[c]{0.45\textwidth}
+		
+		El semiconductor dopado con impurezas tipo n, formara un nivel cercano e $E_c$ en la banda prohibida conocido como nivel donor, también el nivel de Fermi en equilibrio se colocara en una posición mas cercana a la banda de conducción a comparación del intrínseco (\ref{equation:nivel_fermi_intrinseca}). Se puede hallar el nivel de Fermi por medio de la relación (\ref{equation:nivel_fermi_tipon}) tomando como referencia $E_v = 0$ y se cumplira con el metal la relación $\phi_M > \phi_{SC_{n}}$ :
+		
+		\begin{equation}\label{equation:nivel_fermi_intrinseca}
+			E_i =  \frac{1}{2}\left(E_g\right) + \frac{3}{4} k T \cdot \ln\left(\frac{m_p^{*}}{m_n^{*}}\right) = 0,71 \; eV
+		\end{equation}
+		
+		\begin{equation}\label{equation:nivel_fermi_tipon}
+			E_f = \frac{1,42}{2}\, eV + kT\cdot \ln\!\left(\frac{2\cdot 10^{15}}{1.79\cdot 10^{6}}\right) = 1,25 \; eV
+		\end{equation}
 	
-	% Ejes
-	\draw[axis] (-3,0) -- (3,0) node[right] {posición};
-	\draw[axis] (0,-3) -- (0,2.8) node[above] {Energía};
+		Para el caso del GaAs fuertemente dopado para las uniones óhmicas de los terminales \textit{drain} y \textit{source} el diagrama sera similar pero con un nivel de Fermi mayor, lo que dara una relación con el metal de $\phi_M < \phi_{SC_{n^+}}$. 
+		
+		 
+	\end{minipage}
+	\hfill
+	% --------- Gráfico (derecha) ----------
+	\begin{minipage}[c]{0.5\textwidth}
+		\centering
+		\begin{tikzpicture}[
+			>=Latex,
+			axis/.style={->, thick},
+			band/.style={thick},
+			level/.style={dashed, thick},
+			annot/.style={font=\small}
+			]
+			
+			
+			
+			% Banda metálica (ocupada)
+			\fill[gray!40](-3,-2) rectangle (2.5,-1.11);
+			\node[annot] at (0,-1.5) {Banda de Valencia};
+			
+			% Banda metálica (desocupada)
+			\fill[gray!20] (-3,1) rectangle (2.5,2);
+			\node[annot] at (0,1.5) {Banda de Conducción};
+			
+			% Ejes
+			\draw[axis] (-3,-3) -- (-3,3) node[above] {Energía};
+			% Ejes
+			\draw[axis] (-3,-2) -- (3,-2) node[right] {Posición};
+			
+			
+			% Nivel de vacío
+			\draw[level] (-3,2) -- (3,2);
+			\node[annot, right] at (3.5,2) {$E_0$};
+				
+			% Nivel de Fermi (tipo N, cercano a Ec)
+			\draw[level] (-3,0.7) -- (2.5,0.7);
+			\node[annot, right] at (2.5,0.7) {$E_f$};
+			
+			% Nivel de Fermi intrinseco
+			\draw[level] (-3,-0.1) -- (2.5,-0.1);
+			\node[annot, right] at (2.5,-0.1) {$E_i$};
+			
+			
+			% Gap
+			\draw[<->, thick] (-2.1,-1.2) -- (-2.1,1.0);
+			\node[annot, left] at (-2.1,-0.5) {$E_g$};
+			
+			% Afinidad electrónica
+			\draw[<->, thick] (2,1) -- (2,2);
+			\node[annot, right] at (2.1,1.65) {$q\chi$};
+			
+			% Etiqueta material
+			\node[annot] at (0,-4) {Semiconductor: GaAs tipo N};
+		\end{tikzpicture}
+		
+	\end{minipage}
 	
-	% Nivel de vacío
-	\draw[level] (-2.5,2.3) -- (2.5,2.3);
-	\node[annot, right] at (2.5,2.3) {$E_0$};
-	
-	% Banda de conducción
-	\draw[band] (-2.5,1.0) -- (2.5,1.0);
-	\node[annot, right] at (2.5,1.0) {$E_c$};
-	
-	% Banda de valencia
-	\draw[band] (-2.5,-1.2) -- (2.5,-1.2);
-	\node[annot, right] at (2.5,-1.2) {$E_v$};
-	
-	% Nivel de Fermi (tipo N, cercano a Ec)
-	\draw[level] (-2.5,0.7) -- (2.5,0.7);
-	\node[annot, right] at (2.5,0.7) {$E_f$};
-	
-	% Gap
-	\draw[<->, thick] (-2.1,-1.2) -- (-2.1,1.0);
-	\node[annot, left] at (-2.1,-0.5) {$E_g$};
-	
-	% Afinidad electrónica
-	\draw[<->, thick] (2.1,1.0) -- (2.1,2.3);
-	\node[annot, right] at (2.1,1.65) {$\chi$};
-	
-	% Etiqueta material
-	\node[annot] at (0,-4) {Semiconductor: GaAs tipo N};
-	
-\end{tikzpicture}
+	\caption{Completar.}
+\end{figure}
+
+
 
 
 \subsubsection{Semi-aislante: GaAs-Cr}
 
+
+\begin{figure}[H]
+	% --------- Texto (izquierda) ----------
+	\begin{minipage}[c]{0.45\textwidth}
+		Para lograr un semiconductor actuando como semi aislante se le añade como impurezas un metal, en este caso cromo, que forma un nivel en la banda prohibida que recolecta los portadores libres impidiendo que se formen, este nivel se conoce como nivel profundo (\textit{deep level}) que se forma cerca del centro energético, si un electrón llega a la banda de conducción, puede ser capturado por el nivel profundo del Cr, quedando localizado (no contribuye a conducción).
+	\end{minipage}
+	\hfill
+	% --------- Gráfico (derecha) ----------
+	\begin{minipage}[c]{0.5\textwidth}
+		\centering
+		\begin{tikzpicture}[
+			>=Latex,
+			axis/.style={->, thick},
+			band/.style={thick},
+			level/.style={dashed, thick},
+			annot/.style={font=\small}
+			]
+			
+			
+			
+			% Banda metálica (ocupada)
+			\fill[gray!40](-3,-2) rectangle (2.5,-1.4);
+			\node[annot] at (0,-1.8) {Banda de Valencia};
+			
+			% Banda metálica (desocupada)
+			\fill[gray!20] (-3,1.2) rectangle (2.6,2.6);
+			\node[annot] at (0,1.5) {Banda de Conducción};
+			
+			% Ejes
+			\draw[axis] (-3,-3) -- (-3,3) node[above] {Energía};
+			% Ejes
+			\draw[axis] (-3,-2) -- (3,-2) node[right] {Posición};
+				% Nivel de vacío
+			\draw[level] (-3,2.6) -- (2.5,2.6);
+			\node[annot, right] at (2.5,2.6) {$E_0$};
+			
+			% Banda de conducción
+			\draw[band] (-3,1.2) -- (2.5,1.2);
+			\node[annot, right] at (2.5,1.2) {$E_c$};
+			
+			% Banda de valencia
+			\draw[band] (-3,-1.4) -- (2.5,-1.4);
+			\node[annot, right] at (2.5,-1.4) {$E_v$};
+			
+			% Nivel profundo del Cr
+			\draw[band] (-3,-0.3) -- (2.5,-0.3);
+			\node[annot, right] at (2.5,-0.45) {$E_{Cr}$};
+			
+			% Nivel de Fermi (casi centrado en el gap)
+			\draw[level] (-3,-0.2) -- (3.4,-0.2);
+			\node[annot, right] at (3.5,-0.2) {$E_i$};
+			
+			% Gap
+			\draw[<->, thick] (-2.1,-1.4) -- (-2.1,1.2);
+			\node[annot, left] at (-2.1,0.5) {$E_g$};
+			
+			% Afinidad electrónica
+			\draw[<->, thick] (2.1,1.2) -- (2.1,2.6);
+			\node[annot, right] at (2.1,1.9) {$q\chi$};
+			
+			% Etiqueta material
+			\node[annot] at (0,-4) {Semiconductor: GaAs semi-aislante (Cr)};
+		\end{tikzpicture}
+		
+	\end{minipage}
+	
+	\caption{Completar.}
+\end{figure}
+
+
+
+
+
+
+\subsection{Diagrama de bandas en equilibrio}
+
+\textbf{Si dos o más sistemas en ponen contacto y alcanzan el ETD  sus $E_f$ deben ser iguales.}
+
+En equilibrio termodinámico la juntura Schottky, formada por el metal-semiconductor ($\Phi_M > \Phi_S$), se comporta formando en tres regiones:
+
+\begin{itemize}
+	\item Región plana del M (en ETD el metal no soporta carga en volumen).
+	\item Región de flexión en el SC.
+	\item Región plana en el SC.
+\end{itemize}
+
+Se definen la barrera de potencial entre el metal y el semiconductor $\Phi_B$ = ($\Phi_M - \chi$) y barrera de juntura $\Phi_{bi}$ = $\Phi_B - \frac{1}{q} (E_c - E_f)$, también se puede apreciar como la flexión determina la zona de vaciamiento $W_d$ en equilibrio definida como $W_d0$.
+
+
+Unión de barrera Schottky:
+\begin{figure}[H]
+\begin{tikzpicture}
+	[
+	>=Latex,
+	axis/.style={->, thick},
+	band/.style={thick},
+	level/.style={dashed, thick},
+	annot/.style={font=\small}
+	]
+
+	% --------------------
+	% BANDA DE CONDUCCIÓN
+	% --------------------
+	\fill[gray!20]
+	(3,2.0)
+	.. controls (3.2,2.0) and (4.4,1.2) ..
+	(6,1.2)
+	-- (10,1.2)
+	-- (10,0.0)
+	-- (6,0.0)
+	.. controls (4.4,0.0) and (3.2,0.6) ..
+	(3,0.6)
+	-- cycle;
+	
+	\draw[band]
+	(3,0.6)
+	.. controls (3.2,0.6) and (4.4,0.0) ..
+	(6,0.0)
+	-- (10,0.0);
+	
+	\node[annot] at (10.3,0) {$E_C$};
+	
+	% --------------------
+	% NIVEL DE FERMI
+	% --------------------
+	\draw[level] (-3,-0.8) -- (10.3,-0.8);
+	\node[annot, right] at (10.5,-0.8) {$E_F$};
+	
+	% --------------------
+	% BANDA DE VALENCIA (MÁS ABAJO)
+	% --------------------
+	\fill[gray!40]
+	(3,-4)
+	-- (3,-1.6)
+	.. controls (3.2,-1.6) and (4.4,-2.3) ..
+	(6,-2.3)
+	-- (10,-2.3)
+	-- (10,-4)
+	-- cycle;
+	
+	\draw[band]
+	(3,-1.6)
+	.. controls (3.2,-1.6) and (4.4,-2.3) ..
+	(6,-2.3)
+	-- (10,-2.3);
+	
+	\node[annot, right] at (10.3,-2.3) {$E_V$};
+	
+	% --------------------
+	% INTERFAZ
+	% --------------------
+	\draw[thick] (3,-4.2) -- (3,2.4);
+	\node[annot, above] at (3,2.4) {Interfaz};
+	\node[annot, below] at (3,-4.2) {$y=0$};
+	
+	% --------------------
+	% ALTURA DE BARRERA SCHOTTKY ΦB
+	% --------------------
+	\draw[level] (3,0.6) -- (6.5,0.6);
+	\draw[<->, thick] (2.8,0.6) -- (2.8,-0.8);
+	\node[annot, left] at (2.7,0) {$q\cdot \Phi_B$};
+	
+	
+		% --------------------
+	% \phi_X
+	% --------------------
+
+	\draw[<->, thick] (9.5,0) -- (9.5,1.2);
+	\node[annot, left] at (9.4,0.5) {$q\cdot \chi$};
+	
+	% -----------------
+	
+	% --------------------
+	% POTENCIAL INTERNO φ_bi
+	% --------------------
+	\draw[<->, thick] (6.5,0.0) -- (6.5,0.6);
+	\node[annot, right] at (6.6,0.3) {$q \cdot \phi_{bi}$};
+	
+	% --------------------
+	% ANCHO DE AGOTAMIENTO W
+	% --------------------
+	
+	\draw[level] (6,-4.2) -- (6,2.4);
+
+	\draw[<->, thick] (3,-3.2) -- (6,-3.2);
+	\node[annot, below] at (4.5,-3.2) {$W_{d0}$};
+	
+	% --------------------
+	% FUNCIÓN TRABAJO METAL
+	% --------------------
+	\draw[<->, thick] (-2.4,-0.8) -- (-2.4,2.0);
+	\node[annot,left] at (-1.3,0.6) {$q \cdot \Phi_M$};
+	
+	
+		% --------------------
+	% FUNCIÓN TRABAJO GaAs
+	% --------------------
+	\draw[<->, thick] (8,-0.8) -- (8,1.2);
+	\node[annot,left] at (9,-0.4) {$q\cdot \Phi_S$};
+	
+	
+	% --------------------
+	% EJES
+	% --------------------
+	\draw[axis] (-3,-4) -- (-3,2.4) node[above] {Energía};
+	\draw[axis] (-3,-4) -- (10.4,-4) node[right] {Posición y};
+	
+		
+	% --------------------
+	% NIVEL DE VACÍO E0
+	% --------------------
+	\draw[thick] (-3,2.0) -- (3,2.0);
+	\draw[band]
+	(3,2.0)
+	.. controls (3.2,2.0) and (4.4,1.2) ..
+	(6,1.2)
+	-- (10.3,1.2);
+	\node[annot, right] at (10.4,1.2) {$E_0$};
+	
+	
+	% --------------------
+	% MATERIALES
+	% --------------------
+	\node[annot] at (-1,-4.6) {Metal: Titanio (Ti)};
+	\node[annot] at (7,-4.6) {Semiconductor: GaAs tipo N};
+	
+\end{tikzpicture}
+
+\end{figure}
+
+
+Unión de contacto óhmico: (**********modificar****)
+\begin{figure}[H]
+	\begin{tikzpicture}
+		[
+		>=Latex,
+		axis/.style={->, thick},
+		band/.style={thick},
+		level/.style={dashed, thick},
+		annot/.style={font=\small}
+		]
+		
+		% --------------------
+		% BANDA DE CONDUCCIÓN
+		% --------------------
+		\fill[gray!20]
+		(3,2.0)
+		.. controls (3.2,2.0) and (4.4,1.2) ..
+		(6,1.2)
+		-- (10,1.2)
+		-- (10,0.0)
+		-- (6,0.0)
+		.. controls (4.4,0.0) and (3.2,0.6) ..
+		(3,0.6)
+		-- cycle;
+		
+		\draw[band]
+		(3,0.6)
+		.. controls (3.2,0.6) and (4.4,0.0) ..
+		(6,0.0)
+		-- (10,0.0);
+		
+		\node[annot] at (10.3,0) {$E_C$};
+		
+		% --------------------
+		% NIVEL DE FERMI
+		% --------------------
+		\draw[level] (-3,-0.8) -- (10.3,-0.8);
+		\node[annot, right] at (10.5,-0.8) {$E_F$};
+		
+		% --------------------
+		% BANDA DE VALENCIA (MÁS ABAJO)
+		% --------------------
+		\fill[gray!40]
+		(3,-4)
+		-- (3,-1.6)
+		.. controls (3.2,-1.6) and (4.4,-2.3) ..
+		(6,-2.3)
+		-- (10,-2.3)
+		-- (10,-4)
+		-- cycle;
+		
+		\draw[band]
+		(3,-1.6)
+		.. controls (3.2,-1.6) and (4.4,-2.3) ..
+		(6,-2.3)
+		-- (10,-2.3);
+		
+		\node[annot, right] at (10.3,-2.3) {$E_V$};
+		
+		% --------------------
+		% INTERFAZ
+		% --------------------
+		\draw[thick] (3,-4.2) -- (3,2.4);
+		\node[annot, above] at (3,2.4) {Interfaz};
+		\node[annot, below] at (3,-4.2) {$y=0$};
+		
+		% --------------------
+		% ALTURA DE BARRERA SCHOTTKY ΦB
+		% --------------------
+		\draw[level] (3,0.6) -- (6.5,0.6);
+		\draw[<->, thick] (2.8,0.6) -- (2.8,-0.8);
+		\node[annot, left] at (2.7,0) {$q\cdot \Phi_B$};
+		
+		
+		% --------------------
+		% \phi_X
+		% --------------------
+		
+		\draw[<->, thick] (9.5,0) -- (9.5,1.2);
+		\node[annot, left] at (9.4,0.5) {$q\cdot \chi$};
+		
+		% -----------------
+		
+		% --------------------
+		% POTENCIAL INTERNO φ_bi
+		% --------------------
+		\draw[<->, thick] (6.5,0.0) -- (6.5,0.6);
+		\node[annot, right] at (6.6,0.3) {$q \cdot \phi_{bi}$};
+		
+		% --------------------
+		% ANCHO DE AGOTAMIENTO W
+		% --------------------
+		
+		\draw[level] (6,-4.2) -- (6,2.4);
+		
+		\draw[<->, thick] (3,-3.2) -- (6,-3.2);
+		\node[annot, below] at (4.5,-3.2) {$W_{d0}$};
+		
+		% --------------------
+		% FUNCIÓN TRABAJO METAL
+		% --------------------
+		\draw[<->, thick] (-2.4,-0.8) -- (-2.4,2.0);
+		\node[annot,left] at (-1.3,0.6) {$q \cdot \Phi_M$};
+		
+		
+		% --------------------
+		% FUNCIÓN TRABAJO GaAs
+		% --------------------
+		\draw[<->, thick] (8,-0.8) -- (8,1.2);
+		\node[annot,left] at (9,-0.4) {$q\cdot \Phi_S$};
+		
+		
+		% --------------------
+		% EJES
+		% --------------------
+		\draw[axis] (-3,-4) -- (-3,2.4) node[above] {Energía};
+		\draw[axis] (-3,-4) -- (10.4,-4) node[right] {Posición y};
+		
+		
+		
+		% --------------------
+		% NIVEL DE VACÍO E0
+		% --------------------
+		\draw[thick] (-3,2.0) -- (3,2.0);
+		\draw[band]
+		(3,2.0)
+		.. controls (3.2,2.0) and (4.4,1.2) ..
+		(6,1.2)
+		-- (10.3,1.2);
+		\node[annot, right] at (10.4,1.2) {$E_0$};
+		
+		
+			
+		% --------------------
+		% MATERIALES
+		% --------------------
+		\node[annot] at (-1,-4.6) {Metal: Titanio (Ti)};
+		\node[annot] at (7,-4.6) {Semiconductor: GaAs tipo $N^+$};
+		
+	\end{tikzpicture}
+	
+\end{figure}
+
+
+
+\subsection{Diagrama de bandas bajo régimen de corte}
+
+La puerta está polarizada tan inversamente que el ancho del canal se hace nulo $d_{eff} = a - W_d(x) = 0 \,$ ya que se cumple $W_d(x) = a \wedge W_d(x) > W_{d0}$, se define $V_P$ como la tensión $V_{GS}$ donde esto comienza a cumplirse. 
+
+Se introduce la tensión $V_R =  V(x) - V_{GS} $ que es la responsable de aumentar la flexión en las bandas. Donde se define como referencia $V_S = 0 $ , por lo tanto $V(x) \in [0 , V_{DS}]$ y $V_{GS} = V_{G}$. A su vez al estar fuera del equilibrio el nivel de Fermi varia entre materiales, se introduce el concepto de cuasi-nivel de Fermi para cada nivel, $E_{f_{sc}}$ para el semiconductor y $E_{f_{m}}$ para el metal. 
+
+\begin{figure}[H]
+	\begin{tikzpicture}
+		[
+		>=Latex,
+		axis/.style={->, thick},
+		band/.style={thick},
+		level/.style={dashed, thick},
+		annot/.style={font=\small}
+		]
+		
+		% --------------------
+		% BANDA DE CONDUCCIÓN
+		% --------------------
+		\fill[gray!20]
+		(3,2)
+		.. controls (3.2,2) and (4.4,0.2) ..
+		(7,0.2)
+		-- (10,0.2)
+		-- (10,-1)
+		-- (7,-1)
+		.. controls (4.4,-1) and (3.2,0.8) ..
+		(3,0.8)
+		-- cycle;
+		
+		\draw[band]
+		(3,0.8)
+		.. controls (3.2,0.8) and (4.4,-1) ..
+		(7,-1)
+		-- (10,-1);
+		
+		\node[annot] at (10.3,-1) {$E_C$};
+		
+		% --------------------
+		% NIVEL DE FERMI SC
+		% --------------------
+		\draw[level] (3,-1.8) -- (10.3,-1.8);
+		\node[annot, right] at (10.5,-1.8) {$E_{f_{sc}}$};
+		
+		% --------------------
+		% NIVEL DE FERMI M
+		% --------------------
+		\draw[level] (-3,-0.6) -- (3,-0.6);
+		\node[annot, right] at (-1.4,-0.3) {$E_{f_{m}}$};
+		
+		
+		% --------------------
+		% Altura barrera VR
+		% --------------------
+		\draw[<->, thick] (1.5,-1.8) -- (1.5,-0.6);
+		\node[annot, right] at (0.5,-1.4) {$q \cdot V_R $};
+		
+		
+		% --------------------
+		% BANDA DE VALENCIA (MÁS ABAJO)
+		% --------------------
+		\fill[gray!40]
+		(3,-4)
+		-- (3,-2)
+		.. controls (3.2,-2) and (4.4,-3.9) ..
+		(7,-3.9)
+		-- (10,-3.9)
+		-- (10,-4)
+		-- cycle;
+		
+		\draw[band]
+		(3,-2)
+		.. controls (3.2,-2) and (4.4,-3.9) ..
+		(7,-3.9)
+		-- (10,-3.9);
+		
+		\node[annot, right] at (10,-3.7) {$E_V$};
+		
+		% --------------------
+		% INTERFAZ
+		% --------------------
+		\draw[thick] (3,-4.2) -- (3,2.4);
+		\node[annot, above] at (3,2.4) {Interfaz};
+		\node[annot, below] at (3,-4.2) {$y=0$};
+		
+		% --------------------
+		% ALTURA DE BARRERA SCHOTTKY ΦB
+		% --------------------
+		\draw[level] (3,0.8) -- (7,0.8);
+		\draw[<->, thick] (2.8,0.8) -- (2.8,-0.6);
+		\node[annot, left] at (2.7,0) {$q\cdot \Phi_B$};
+	
+		% --------------------
+		% \phi_X
+		% --------------------
+		
+		\draw[<->, thick] (9.5,-1) -- (9.5,0.2);
+		\node[annot, left] at (10.5,-0.5) {$q\cdot \chi$};
+		
+		% -----------------
+		
+		% --------------------
+		% POTENCIAL INTERNO φ_bi
+		% --------------------
+		
+		
+		\draw[<->, thick] (7.5,-1) -- (7.5,0.8);
+		\node[annot, right] at (7,0.9) {$q \cdot (\phi_{bi} + V_R )$};
+		
+		% --------------------
+		% ANCHO DE AGOTAMIENTO W
+		% --------------------
+		
+		\draw[level] (7,-4.2) -- (7,2.4);
+		
+		\draw[<->, thick] (3,-3.2) -- (7,-3.2);
+		\node[annot, below] at (6,-3.2) {$W_d = a$};
+		
+			
+		% --------------------
+		% FUNCIÓN TRABAJO METAL
+		% --------------------
+		\draw[<->, thick] (-2.4,-0.6) -- (-2.4,2.0);
+		\node[annot,left] at (-1.3,0.6) {$q \cdot \Phi_M$};
+		
+			
+		% --------------------
+		% FUNCIÓN TRABAJO GaAs
+		% --------------------
+		\draw[<->, thick] (8.5,-1.8) -- (8.5,0.2);
+		\node[annot,left] at (9.5,-0.5) {$q\cdot \Phi_S$};
+		
+		
+		% --------------------
+		% EJES
+		% --------------------
+		\draw[axis] (-3,-4) -- (-3,2.4) node[above] {Energía};
+		\draw[axis] (-3,-4) -- (10.4,-4) node[right] {Posición y};
+		
+		
+		% --------------------
+		% NIVEL DE VACÍO E0
+		% --------------------
+		\draw[thick] (-3,2) -- (3,2);
+		\draw[band]
+		(3,2)
+		.. controls (3.2,2) and (4.4,0.2) ..
+		(7,0.2)
+		-- (10.3,0.2);
+		\node[annot, right] at (10.4,0.2) {$E_0$};
+		
+		
+		% --------------------
+		% MATERIALES
+		% --------------------
+		\node[annot] at (-1,-4.6) {Metal: Titanio (Ti)};
+		\node[annot] at (7,-4.6) {Semiconductor: GaAs tipo N};
+		
+	\end{tikzpicture}
+	
+	\caption{MESFET en modo corte: el canal queda completamente agotado.}
+\end{figure}
+
+
+
+\subsection{Diagrama de bandas bajo régimen de estrangulación}
+
+En este régimen se cumple $V_{GS} > V_P \quad \wedge \quad V_{DS} > V_{DS_{[SAT]}} = V_P + V_{GS} - V_{bi}$, por lo tanto el canal es controlado por $V_{GS}$. 
+Se puede observar como el ancho de la zona de vaciamiento se encuentra en el rango de $ W_{d0} < W_d(0) < a$ mientras que $ W_d(L) = a $ . A medida que  $V_{DS}$ aumenta más allá de  $V_{DS_{[SAT]}}$, la longitud de la región de empobrecimiento crece a lo largo del canal, pero el nivel de $I_D$ permanece igual, es por eso que en esta región $V_{DS}$ no incide en $I_D$. Los portadores atraviesan la región de empobrecimiento debido a el arrastre generado por el campo externo longitudinal.
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\linewidth]{Img/diagrama_bandas_alolargodelcanal}
+	\caption{Diagrama de bandas en $W_D(0) = W_{Ds}$ y $W_D(L) = W_{Dd}$ \parencite{mishra_semiconductor_2008}. }
+	\label{fig:diagramabandasalolargodelcanal}
+\end{figure}
+
+\begin{figure}[H]
+		\begin{tikzpicture}
+		[
+		>=Latex,
+		axis/.style={->, thick},
+		band/.style={thick},
+		level/.style={dashed, thick},
+		annot/.style={font=\small}
+		]
+		
+		% --------------------
+		% BANDA DE CONDUCCIÓN
+		% --------------------
+		\fill[gray!20]
+		(3,2.0)
+		.. controls (3.2,2.0) and (4.4,1.2) ..
+		(6.5,1.2)
+		-- (10,1.2)
+		-- (10,-0.6)
+		-- (6.5,-0.6)
+		.. controls (4.4,-0.6) and (3.2,0.6) ..
+		(3,0.6)
+		-- cycle;
+		
+		\draw[band]
+		(3,0.6)
+		.. controls (3.2,0.6) and (4.4,-0.6) ..
+		(6.5,-0.6)
+		-- (10,-0.6);
+		
+		\node[annot] at (10.3,-0.6) {$E_C$};
+		
+			% --------------------
+		% NIVEL DE FERMI SC
+		% --------------------
+		\draw[level] (3,-1.5) -- (10.3,-1.5);
+		\node[annot, right] at (10.5,-1.5) {$E_{f_{sc}}$};
+		
+		% --------------------
+		% NIVEL DE FERMI M
+		% --------------------
+		\draw[level] (-3,-0.8) -- (3,-0.8);
+		\node[annot, right] at (-1.4,-0.6) {$E_{f_{m}}$};
+		
+		
+		% --------------------
+		% Altura barrera VR
+		% --------------------
+		\draw[<->, thick] (1.5,-0.8) -- (1.5,-1.5);
+		\node[annot, right] at (1.6,-1.4) {$q \cdot V_R$};
+	
+		% --------------------
+		% BANDA DE VALENCIA (MÁS ABAJO)
+		% --------------------
+		\fill[gray!40]
+		(3,-4)
+		-- (3,-1.6)
+		.. controls (3.2,-1.6) and (4.4,-2.9) ..
+		(6.5,-2.9)
+		-- (10,-2.9)
+		-- (10,-4)
+		-- cycle;
+		
+		\draw[band]
+		(3,-1.6)
+		.. controls (3.2,-1.6) and (4.4,-2.9) ..
+		(6.5,-2.9)
+		-- (10,-2.9);
+		
+		\node[annot, right] at (10.3,-2.9) {$E_V$};
+		
+		% --------------------
+		% INTERFAZ
+		% --------------------
+		\draw[thick] (3,-4.2) -- (3,2.4);
+		\node[annot, above] at (3,2.4) {Interfaz};
+		\node[annot, below] at (3,-4.2) {$y=0$};
+		
+		% --------------------
+		% ALTURA DE BARRERA SCHOTTKY ΦB
+		% --------------------
+		\draw[level] (3,0.6) -- (6.5,0.6);
+		\draw[<->, thick] (2.8,0.6) -- (2.8,-0.8);
+		\node[annot, left] at (2.7,0) {$q\cdot \Phi_B$};
+		
+		
+		% --------------------
+		% \phi_X
+		% --------------------
+		
+		\draw[<->, thick] (9.5,-0.6) -- (9.5,1.2);
+		\node[annot, left] at (10.35,0.5) {$q\cdot \chi$};
+		
+		% -----------------
+		
+		% --------------------
+		% POTENCIAL INTERNO φ_bi
+		% --------------------
+		
+		
+		\draw[<->, thick] (6.5,-0.6) -- (6.5,0.6);
+		\node[annot, right] at (6.6,0.3) {$q \cdot (\phi_{bi} + V_R )$};
+		
+		% --------------------
+		% ANCHO DE AGOTAMIENTO W
+		% --------------------
+		
+		\draw[level] (6.5,-4.2) -- (6.5,2.4);
+		
+		\draw[<->, thick] (3,-3.2) -- (6.5,-3.2);
+		\node[annot, below] at (4.5,-3.2) {$W_d$};
+		
+		% --------------------
+		% FUNCIÓN TRABAJO METAL
+		% --------------------
+		\draw[<->, thick] (-2.4,-0.8) -- (-2.4,2.0);
+		\node[annot,left] at (-1.3,0.6) {$q \cdot \Phi_M$};
+		
+		
+		% --------------------
+		% FUNCIÓN TRABAJO GaAs
+		% --------------------
+		\draw[<->, thick] (8,-1.5) -- (8,1.2);
+		\node[annot,left] at (9,-1) {$q\cdot \Phi_S$};
+		
+		
+		% --------------------
+		% EJES
+		% --------------------
+		\draw[axis] (-3,-4) -- (-3,2.4) node[above] {Energía};
+		\draw[axis] (-3,-4) -- (10.4,-4) node[right] {Posición y};
+		
+		
+		% --------------------
+		% NIVEL DE VACÍO E0
+		% --------------------
+		\draw[thick] (-3,2.0) -- (3,2.0);
+		\draw[band]
+		(3,2.0)
+		.. controls (3.2,2.0) and (4.4,1.2) ..
+		(6,1.2)
+		-- (10.3,1.2);
+		\node[annot, right] at (10.4,1.2) {$E_0$};
+		
+		
+		% --------------------
+		% MATERIALES
+		% --------------------
+		\node[annot] at (-1,-4.6) {Metal: Titanio (Ti)};
+		\node[annot] at (7,-4.6) {Semiconductor: GaAs tipo N};
+		
+	\end{tikzpicture}
+	\caption{MESFET en modo estrangulación: inicio de saturación del canal.}
+\end{figure}
+
+
+\subsection{Diagrama de bandas bajo régimen óhmico}
+
+Cuando ocurre $0 < V_{DS} < V_{DS_{[SAT]}} $ y $V_{GS} > V_P$, en este escenario el ancho de vaciamiento cumple $ 0 < W_d(x) < W_{d0} < a$ para todo el canal.
+
+\begin{figure}[H]
+	\begin{tikzpicture}
+	[
+	>=Latex,
+	axis/.style={->, thick},
+	band/.style={thick},
+	level/.style={dashed, thick},
+	annot/.style={font=\small}
+	]
+	
+	% --------------------
+	% BANDA DE CONDUCCIÓN
+	% --------------------
+	\fill[gray!20]
+	(3,2)
+	.. controls (3.2,2) and (4.4,1.7) ..
+	(6.5,1.7)
+	-- (10,1.7)
+	-- (10,0.3)
+	-- (6.5,0.3)
+	.. controls (4.4,0.3) and (3.2,0.6) ..
+	(3,0.6)
+	-- cycle;
+	
+	\draw[band]
+	(3,0.6)
+	.. controls (3.2,0.6) and (4.4,0.3) ..
+	(6.5,0.3)
+	-- (10,0.3);
+	
+	\node[annot] at (10.3,0.3) {$E_C$};
+	
+	% --------------------
+	% NIVEL DE FERMI SC
+	% --------------------
+	\draw[level] (3,-0.3) -- (10.3,-0.3);
+	\node[annot, right] at (10.5,-0.3) {$E_{f_{sc}}$};
+	
+	% --------------------
+	% NIVEL DE FERMI M
+	% --------------------
+	\draw[level] (-3,-0.8) -- (3,-0.8);
+	\node[annot, right] at (-1.4,-0.6) {$E_{f_{m}}$};
+	
+	
+	% --------------------
+	% Altura barrera VR
+	% --------------------
+	\draw[<->, thick] (1.5,-0.8) -- (1.5,-1.5);
+	\node[annot, right] at (1.6,-1.4) {$q \cdot V_R$};
+	
+	% --------------------
+	% BANDA DE VALENCIA (MÁS ABAJO)
+	% --------------------
+	\fill[gray!40]
+	(3,-4)
+	-- (3,-1.6)
+	.. controls (3.2,-1.6) and (4.4,-1.9) ..
+	(6.5,-1.9)
+	-- (10,-1.9)
+	-- (10,-4)
+	-- cycle;
+	
+	\draw[band]
+	(3,-1.6)
+	.. controls (3.2,-1.6) and (4.4,-1.9) ..
+	(6.5,-1.9)
+	-- (10,-1.9);
+	
+	\node[annot, right] at (10.3,-2.9) {$E_V$};
+	
+	% --------------------
+	% INTERFAZ
+	% --------------------
+	\draw[thick] (3,-4.2) -- (3,2.4);
+	\node[annot, above] at (3,2.4) {Interfaz};
+	\node[annot, below] at (3,-4.2) {$y=0$};
+	
+	% --------------------
+	% ALTURA DE BARRERA SCHOTTKY ΦB
+	% --------------------
+	\draw[level] (3,0.6) -- (6.5,0.6);
+	\draw[<->, thick] (2.8,0.6) -- (2.8,-0.8);
+	\node[annot, left] at (2.7,0) {$q\cdot \Phi_B$};
+	
+	
+	% --------------------
+	% \phi_X
+	% --------------------
+	
+	\draw[<->, thick] (9.5,-0.6) -- (9.5,1.2);
+	\node[annot, left] at (10.35,0.5) {$q\cdot \chi$};
+	
+	% -----------------
+	
+	% --------------------
+	% POTENCIAL INTERNO φ_bi
+	% --------------------
+	
+	
+	\draw[<->, thick] (6.5,-0.6) -- (6.5,0.6);
+	\node[annot, right] at (6.6,0.3) {$q \cdot (\phi_{bi} + V_R )$};
+	
+	% --------------------
+	% ANCHO DE AGOTAMIENTO W
+	% --------------------
+	
+	\draw[level] (6.5,-4.2) -- (6.5,2.4);
+	
+	\draw[<->, thick] (3,-3.2) -- (6.5,-3.2);
+	\node[annot, below] at (4.5,-3.2) {$W_d$};
+	
+	% --------------------
+	% FUNCIÓN TRABAJO METAL
+	% --------------------
+	\draw[<->, thick] (-2.4,-0.8) -- (-2.4,2.0);
+	\node[annot,left] at (-1.3,0.6) {$q \cdot \Phi_M$};
+	
+	
+	% --------------------
+	% FUNCIÓN TRABAJO GaAs
+	% --------------------
+	\draw[<->, thick] (8,-1.5) -- (8,1.2);
+	\node[annot,left] at (9,-1) {$q\cdot \Phi_S$};
+	
+	
+	% --------------------
+	% EJES
+	% --------------------
+	\draw[axis] (-3,-4) -- (-3,2.4) node[above] {Energía};
+	\draw[axis] (-3,-4) -- (10.4,-4) node[right] {Posición y};
+	
+	
+	% --------------------
+	% NIVEL DE VACÍO E0
+	% --------------------
+	\draw[thick] (-3,2.0) -- (3,2.0);
+	\draw[band]
+	(3,2.0)
+	.. controls (3.2,2.0) and (4.4,1.7) ..
+	(6,1.7)
+	-- (10.3,1.7);
+	\node[annot, right] at (10.4,1.7) {$E_0$};
+	
+	
+	% --------------------
+	% MATERIALES
+	% --------------------
+	\node[annot] at (-1,-4.6) {Metal: Titanio (Ti)};
+	\node[annot] at (7,-4.6) {Semiconductor: GaAs tipo N};
+	
+\end{tikzpicture}
+	\caption{MESFET en modo óhmico: conducción lineal del canal.}
+\end{figure}
+
+
+
+\subsection{Flexión dentro del Canal}
+
+A lo largo del canal, la aplicación de un potencial $V_{DS}$ introduce un potencial longitudinal V(x) que se manifiesta como una inclinación cuasi-lineal de las bandas del semiconductor. Este efecto no está asociado a la juntura Schottky, sino al campo eléctrico longitudinal responsable del transporte de portadores entre source y drain.
+
+
 \begin{tikzpicture}[
 	>=Latex,
 	axis/.style={->, thick},
 	band/.style={thick},
 	level/.style={dashed, thick},
-	deep/.style={dotted, thick},
 	annot/.style={font=\small}
 	]
 	
-	% Ejes
-	\draw[axis] (-3,0) -- (3,0) node[right] {posición};
-	\draw[axis] (0,-3) -- (0,3) node[above] {Energía};
+	% --------------------
+	% EJE ENERGÍA
+	% --------------------
+	\draw[axis] (0,-0.5) -- (0,3.5) node[above] {Energía};
+	\draw[axis] (0,0) -- (10,0) node[right] {Posición $x$};
 	
-	% Nivel de vacío
-	\draw[level] (-2.5,2.6) -- (2.5,2.6);
-	\node[annot, right] at (2.5,2.6) {$E_0$};
+	% --------------------
+	% BANDA DE CONDUCCIÓN Ec(x)
+	% --------------------
+	\draw[band]
+	(0,2.8)
+	-- (3,2.6)
+	-- (7,2.0)
+	-- (10,1.8);
 	
-	% Banda de conducción
-	\draw[band] (-2.5,1.2) -- (2.5,1.2);
-	\node[annot, right] at (2.5,1.2) {$E_c$};
+	\node[annot] at (9.7,2.0) {$E_C(x)$};
 	
-	% Banda de valencia
-	\draw[band] (-2.5,-1.4) -- (2.5,-1.4);
-	\node[annot, right] at (2.5,-1.4) {$E_v$};
+	% --------------------
+	% BANDA DE VALENCIA Ev(x)
+	% --------------------
+	\draw[band]
+	(0,0.8)
+	-- (3,0.6)
+	-- (7,0.0)
+	-- (10,-0.2);
 	
-	% Nivel profundo del Cr
-	\draw[deep] (-2.5,-0.1) -- (2.5,-0.1);
-	\node[annot, right] at (2.5,-0.1) {$E_{Cr}$};
+	\node[annot] at (9.7,0.2) {$E_V(x)$};
 	
-	% Nivel de Fermi (casi centrado en el gap)
-	\draw[level] (-2.5,-0.2) -- (2.5,-0.2);
-	\node[annot, right] at (2.5,-0.2) {$E_f$};
+	% --------------------
+	% CUASI NIVEL DE FERMI ELECTRONES
+	% --------------------
+	\draw[level]
+	(0,2.4)
+	-- (3,2.2)
+	-- (7,1.6)
+	-- (10,1.4);
 	
-	% Gap
-	\draw[<->, thick] (-2.1,-1.4) -- (-2.1,1.2);
-	\node[annot, left] at (-2.1,-0.1) {$E_g$};
+	\node[annot] at (9.7,1.6) {$E_{Fn}(x)$};
 	
-	% Afinidad electrónica
-	\draw[<->, thick] (2.1,1.2) -- (2.1,2.6);
-	\node[annot, right] at (2.1,1.9) {$\chi$};
+	% --------------------
+	% ANOTACIONES SOURCE / DRAIN
+	% --------------------
+	\node[annot, below] at (0,0) {Source};
+	\node[annot, below] at (10,0) {Drain};
 	
-	% Etiqueta material
-	\node[annot] at (0,2.85) {Semiconductor: GaAs semi-aislante (Cr)};
+	% --------------------
+	% POTENCIAL V(x)
+	% --------------------
+	\draw[<->, thick]
+	(5,1.8) -- (5,2.4);
+	\node[annot, right] at (5.1,2.1) {$qV(x)$};
 	
 \end{tikzpicture}
 
-
-
-
-\textbf{Si dos o más sistemas en ponen contacto y alcanzan el ETD  sus $E_f$ deben ser iguales.}
-
-\subsection{Equilibrio}
-En equilibrio termodinamico 
-
-
-\subsection{Modo Corte}
-\subsection{Modo en Estrangulación}
-\subsection{Modo Óhmico}
 
 \section{Conducción Eléctrica}
 
@@ -666,9 +1681,9 @@ En equilibrio termodinamico
 \subsection{Corriente de Arrastre}
 
 
-\section{Obtención del Modelo Completo}
+\section{Obtención del modelo completo}
 
-Utilizando el sistema de coordenadas y notación inspirados en la figura \ref{fig:sistcoordmesfetb}, tomando la referencia espacial $y = 0$ en la unión metal-semiconductor y asumiendo ciertas hipótesis, se puede hallar la expresión de la corriente partiendo :
+Utilizando el sistema de coordenadas y notación inspirados en la figura \ref{fig:simbolomasesquema}, tomando la referencia espacial $y = 0$ en la unión metal-semiconductor y asumiendo ciertas hipótesis, se puede hallar la expresión de la corriente partiendo :
 
 \texttt{Hipotesis [1] : ${N_D}^+ = N_D $ (impurezas totalmente ionizadas) y semiconductor no degenerado.}
 
@@ -677,8 +1692,16 @@ Utilizando el sistema de coordenadas y notación inspirados en la figura \ref{fi
 
  Los electrones libres del semiconductor en las inmediaciones de la unión se transfieren hacia la superficie del metal, formando una carga superficial negativa. En el semiconductor se establece una zona de átomos donadores ionizados que conforman una carga positiva. Este proceso al alcanzar el equilibrio termodinámico (ETD) permite determinar, en reposo, la densidad de carga, el campo electrostático que se forma y el potencial eléctrico.
 
+\subsection{Condición de neutralidad}
 
-\subsection{Densidad de Carga}
+Considerando el semiconductor tipo n dopado uniformemente en ETD, se supone que la concentración de aceptadores es cero $N_a = 0$ y que el total de los átomos de Si donadores libero su electrón $ {N_d}^{+} = N_d$ y $p_0 \ll N_d$.
+
+\begin{equation}
+	\rho(x) = q\left( {N_d}^{+} + p_0 - N_a^{-} - n_0 \right)
+	\simeq q\left( N_d - n_0 \right) = 0
+\end{equation}
+
+\subsection{Densidad de carga}
 
 La carga se formara en el semiconductor y en la superficie del metal, formando una región superficial con carga negativa y una región en el semiconductor de carga positiva de acuerdo a (\ref{equation:def_densidad_carga}) utilizando las hipótesis [1] y [2].
 
@@ -739,7 +1762,7 @@ La carga se formara en el semiconductor y en la superficie del metal, formando u
 
 
 
-\subsection{Campo Eléctrico}
+\subsection{Campo eléctrico}
 
 Para obtener el campo eléctrico (\ref{equation:campo_electrico}), utilizamos la ley de Gauss (\ref{equation:ley_gauss}):
 
@@ -757,7 +1780,7 @@ Para obtener el campo eléctrico (\ref{equation:campo_electrico}), utilizamos la
 			\mathcal{E}(x,y) =
 			\begin{cases}
 				0 & y \le 0 \\[4pt]
-				\dfrac{q N_d}{\epsilon_s}\,[y - W(x)] 
+				\dfrac{q N_D}{\epsilon_s}\,[y - W(x)] 
 				& 0 < y \le W(x) \\[6pt]
 				0 & y > W(x)
 			\end{cases}
@@ -791,7 +1814,7 @@ Para obtener el campo eléctrico (\ref{equation:campo_electrico}), utilizamos la
 			
 			% Pendiente
 			\node[annot] at (1.8,-1.2)
-			{$\displaystyle \frac{qN_d}{\epsilon_s}$};
+			{$\displaystyle \frac{qN_D}{\epsilon_s}$};
 			
 		\end{tikzpicture}
 	\end{minipage}
@@ -799,7 +1822,7 @@ Para obtener el campo eléctrico (\ref{equation:campo_electrico}), utilizamos la
 	\caption{Expresión analítica y representación gráfica del campo eléctrico $\mathcal{E}(x,y)$ en la unión metal--GaAs.}
 \end{figure}
 
-\subsection{Potencial Eléctrico}
+\subsection{Potencial eléctrico}
 
 Dada la relación entre el campo eléctrico y el gradiente del potencial eléctrico (\ref{equation:relacion_P_E}) se obtiene el potencial eléctrico, al integrar el potencial se debe tener en consideración una referencia inicial conveniente como $\phi (y = 0 ) = 0$ y inicialmente teniendo solo en consideración el potencial de juntura $\phi [y = W(x) ] = \phi_{bi}$, analizado en mas profundidad en la sección de bandas de energía del informe. 
 
@@ -817,7 +1840,7 @@ Dada la relación entre el campo eléctrico y el gradiente del potencial eléctr
 			\phi(x,y) =
 			\begin{cases}
 				0 & y \le 0 \\[4pt]
-				-\dfrac{q N_d}{2\epsilon_s}\,[y - W(x)]^2 + \phi_{bi}
+				-\dfrac{q N_D}{2\epsilon_s}\,[y - W(x)]^2 + \phi_{bi}
 				& 0 < y \le W(x) \\[6pt]
 				\phi_{bi} & y > W(x)
 			\end{cases}
@@ -863,40 +1886,150 @@ Dada la relación entre el campo eléctrico y el gradiente del potencial eléctr
 	\caption{Expresión analítica y representación gráfica del potencial electrostático $\phi(x,y)$ en la unión metal--GaAs.}
 \end{figure}
 
-\subsection{Ancho de Zona de Vaciamiento}
+\subsection{Ancho de zona de vaciamiento}
 
 Relacionando el campo eléctrico (\ref{equation:campo_electrico}) junto con el potencial (\ref{equation:potencial_electrostatico}) se puede despejar el ancho de la zona de agotamiento o vaciamiento en reposo y equilibrio térmico.
 
 \begin{equation}\label{equation: W_d_reposo}
-	W_d = \sqrt{\frac{2 \cdot \epsilon_s \cdot \phi_{bi}}{q\cdot N_d}}
+	W_d = \sqrt{\frac{2 \cdot \epsilon_s \cdot \phi_{bi}}{q\cdot N_D}}
 \end{equation} 
 
 
 Al considerar la polarización del dispositivo se produce un potencial longitudinal $V(x)$ y el potencial externo trasversal al canal entre \textit{gate} y \textit{source} que afectaran a la modulación de la zona de vaciamiento.
 
 \begin{equation}\label{equation: W_d_polarizado}
-	W_d(x) = \sqrt{\frac{2 \cdot \epsilon_s \cdot [  \phi_{bi} - V_{GS} - V(x)] }{q\cdot N_d}}
+	W_d(x) = \sqrt{\frac{2 \cdot \epsilon_s \cdot [  \phi_{bi} - V_{GS} + V(x)] }{q\cdot N_D}}
 \end{equation} 
 
 
 \section{Corriente}
 
-Para determinar la corriente en un dispositivo semiconductor se consideran dos fenómenos de transporte, arrastre y difusión de los portadores.
+El dispositivo bajo conducción forma una densidad de corriente de arrastre de portadores mayoritarios $	J_{arr, n} $ en el eje \textit{x} , debido al campo aplicado $\xi$, de acuerdo a la expresión (\ref{equation:J_corriente_deduccion_1}):
 
+\begin{equation}\label{equation:J_corriente_deduccion_1}
+	J_{arr, n} = q \cdot n \cdot \mu_n \cdot \xi  =  q \cdot N_D \cdot \mu_n \cdot (- \frac{dV}{dx})
+\end{equation}
+
+Se puede utilizar nuevamente la relación (\ref{equation:relacion_P_E}) y utilizar el gradiente del potencial.
+
+De la densidad de corriente, se puede despejar la corriente que atraviesa el canal, la cual denominaremos como $I_D$, si conocemos su área $A_{ch} = Z \cdot d_eff = Z\cdot [a - W(x)]$.
+
+\begin{equation}
+	I_D =A_{ch}\cdot J_{arr, n} = (Z\cdot [a - W(x)]) \cdot J_{arr, n} 
+\end{equation}
+
+Reemplazando $W(x)$ , por su expresión en (\ref{equation: W_d_polarizado}), se llega a .
+
+\begin{equation}
+	I_D
+	=
+	Z \, q \, \mu_n \, N_D
+	\left[
+	a -
+	\sqrt{
+		\frac{2\,\epsilon_s}{q N_D}
+		\left( \phi_{bi} - V_{GS} + V(x) \right)
+	}
+	\right]
+	\left( - \frac{dV(x)}{dx} \right)
+\end{equation}
+
+Se puede operar la expresión para integrar ambos lados 
+
+\begin{equation}
+	I_D dx
+	=
+	Z \, q \, \mu_n \, N_D
+	\left[
+	a -
+	\sqrt{
+		\frac{2\,\epsilon_s}{q N_D}
+		\left( \phi_{bi} - V_{GS} + V(x) \right)
+	}
+	\right]
+	\left( - dV(x) \right)
+\end{equation}
+
+
+\begin{equation}
+	I_D \int_{0}^{L} dx
+	=
+	q \, \mu_n \, N_D \, Z
+	\int_{0}^{V_{DS}}
+	\left[
+	a
+	-
+	\left(
+	\frac{2 \epsilon }{q N_D}
+	\left( V(x) + V_{bi} - V_{GS} \right)
+	\right)^{1/2}
+	\right]
+	\, dV
+\end{equation}
+
+Finalmente se llega a la expresión completa en función de los parámetros de control y del circuito externo.
+
+
+
+\begin{tcolorbox}[colback=black!5!white, colframe=black!75!black, title=Expresión de la corriente ID completa en función de los parámetros de control y del circuito externo]
+
+
+		\begin{equation}
+				I_D
+				=
+				\frac{q \, \mu_n \, N_D \, Z \, a}{L}
+				\left\{
+				V_{DS}
+				-
+				\frac{2}{3}
+				\frac{
+					\left( V_{DS} + V_{bi} - V_{GS} \right)^{3/2}
+					-
+					\left( V_{bi} - V_{GS} \right)^{3/2}
+				}{
+					\left( \dfrac{e N_D a^2}{2 \epsilon_s } \right)^{1/2}
+				}
+				\right\}
+		\end{equation}
+	
+
+\end{tcolorbox}
+
+Comunmente se define la conductancia de canal completo $g_o =\frac{q \, \mu_n \, N_d \, Z \, h}{L}  $ y ya conociendo la expresión de tensión $V_p = \frac{q N_D a^2}{2 \epsilon } $, la expresión se puede reescribir como:
+
+
+
+\begin{equation}
+	I_D
+	=
+	g_o
+	\left\{
+	V_{DS}
+	-
+	\frac{2}{3}
+	\frac{
+		\left( V_{DS} + V_{bi} - V_{GS} \right)^{3/2}
+		-
+		\left( V_{bi} - V_{GS} \right)^{3/2}
+	}{
+		\left( V_p  \right)^{1/2}
+	}
+	\right\}
+\end{equation}
 
 \section{Comparación}
 
-\section{Simulación de Curvas}
+\section{Simulación de curvas}
 
-\subsection{Curva de Transferencia}
-\subsection{Curva de Salida}
+\subsection{Curva de transferencia}
+\subsection{Curva de salida}
 
-\section{Efectos No Ideales}
+\section{Efectos no ideales}
 
-\subsection{Modulación del largo del Canal}
-\subsection{Saturación de la velocidad de Arrastre }
-\subsection{Región Subumbral}
-\subsection{Efectos de corriente de Gate}
+\subsection{Modulación del largo del canal}
+\subsection{Saturación de la velocidad de arrastre }
+\subsection{Región subumbral}
+\subsection{Efectos de corriente de gate}
 
 \section{Conclusión} 
 
