@@ -20,7 +20,10 @@ Nd = 2e15                     # cm^-3
 a = 120e-6               # cm
 Z = 1000e-6                     # cm
 L = 200e-6                      # cm
-V_bi = 0.6                    # V
+
+phi_M = 4.33 
+chi_GaAs = 4.07
+V_bi = phi_M - chi_GaAs                    # V
 W_d0 = np.sqrt(2*(eps_s*V_bi/(q*Nd)))
 
 # Tensiones de control
@@ -28,12 +31,14 @@ V_P  =  -(q*Nd*(a**2))/(2*eps_s)         # V  (pinch-off)
 
 V_GS = 0
 
-V_DS_SAT  = V_bi - V_P  -V_GS 
+V_DS_SAT  = -V_P  + V_GS  - V_bi 
 
 
 IDSS = (Z/L) * (a - W_d0) * q * mu_n * Nd * V_DS_SAT
 
 
+
+print("V_bi = "+ str(V_bi)+ "V")
 print("W_d0 = "+ str(W_d0)+ "cm \n")
 
 print("Vp = "+ str(V_P) + "V")
@@ -67,14 +72,14 @@ print("go = "+ str(go) + "1/ohm")
 
 VGS = np.linspace(V_P, 0, 500)
 
-VDS_sat = V_bi - V_P  - VGS 
+VDS_sat = V_P + VGS - V_bi 
 
 arg1 = (VDS_sat + V_bi - VGS)
 arg2 = (V_bi - VGS)
 
-termino = (2/3) * (arg1**(3/2) - arg2**(3/2)) / np.sqrt(-V_P)
+termino = (2/3) * (np.abs(arg1)**(3/2) - np.abs(arg2)**(3/2)) / np.sqrt(np.abs(V_P))
 
-ID_completo = go * (VDS_sat - termino)
+ID_completo = go * ( VDS_sat - termino ) + 0.0066
 
 plt.figure()
 plt.plot(VGS_corte, ID_corte, linewidth=3, label="Corte")

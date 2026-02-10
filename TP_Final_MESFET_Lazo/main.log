@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2026.1.2)  10 FEB 2026 08:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2026.1.2)  10 FEB 2026 11:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1183,23 +1183,23 @@ File: Img/Tipos_MESFET.png Graphic file (type png)
 Package pdftex.def Info: Img/Tipos_MESFET.png  used on input line 278.
 (pdftex.def)             Requested size: 130.6004pt x 111.97813pt.
 
-Overfull \hbox (12.58742pt too wide) in paragraph at lines 310--326
+Overfull \hbox (12.58742pt too wide) in paragraph at lines 310--327
  [][] 
  []
 
 [5 <../Imagenes/GaAs-MESFET-Class-AB-RFPA-schematic-diagram.png> <./Img/Tipos_M
 ESFET.png>]
-Overfull \hbox (17.05444pt too wide) in paragraph at lines 338--373
+Overfull \hbox (17.05444pt too wide) in paragraph at lines 339--374
  [][] 
  []
 
 
-Overfull \hbox (15.63863pt too wide) in paragraph at lines 385--395
+Overfull \hbox (15.63863pt too wide) in paragraph at lines 386--396
  [][] 
  []
 
 
-Overfull \hbox (24.36708pt too wide) in paragraph at lines 408--420
+Overfull \hbox (24.36708pt too wide) in paragraph at lines 409--421
  [][] 
  []
 
@@ -1207,16 +1207,16 @@ Overfull \hbox (24.36708pt too wide) in paragraph at lines 408--420
 <Img/simbolo_mas_esquema.jpg, id=66, 1071.0414pt x 489.9906pt>
 File: Img/simbolo_mas_esquema.jpg Graphic file (type jpg)
 <use Img/simbolo_mas_esquema.jpg>
-Package pdftex.def Info: Img/simbolo_mas_esquema.jpg  used on input line 450.
+Package pdftex.def Info: Img/simbolo_mas_esquema.jpg  used on input line 451.
 (pdftex.def)             Requested size: 358.50317pt x 164.00768pt.
  [7 <./Img/simbolo_mas_esquema.jpg>] [8]
 <Img/Bandas_individuales.png, id=75, 981.6675pt x 397.485pt>
 File: Img/Bandas_individuales.png Graphic file (type png)
 <use Img/Bandas_individuales.png>
-Package pdftex.def Info: Img/Bandas_individuales.png  used on input line 536.
+Package pdftex.def Info: Img/Bandas_individuales.png  used on input line 537.
 (pdftex.def)             Requested size: 512.14963pt x 207.37874pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 553--555
+Underfull \hbox (badness 10000) in paragraph at lines 554--556
 
  []
 
@@ -1225,22 +1225,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 553--555
 File: Img/diagrama_bandas_alolargodelcanal.png Graphic file (type png)
 <use Img/diagrama_bandas_alolargodelcanal.png>
 Package pdftex.def Info: Img/diagrama_bandas_alolargodelcanal.png  used on inpu
-t line 1279.
+t line 1280.
 (pdftex.def)             Requested size: 230.46576pt x 131.02654pt.
  [13 <./Img/diagrama_bandas_alolargodelcanal.png>]
 <Img/inclinación_bandas_debido_aVDS.png, id=105, 678.535pt x 137.51375pt>
 File: Img/inclinación_bandas_debido_aVDS.png Graphic file (type png)
 <use Img/inclinación_bandas_debido_aVDS.png>
 Package pdftex.def Info: Img/inclinación_bandas_debido_aVDS.png  used on input
- line 1617.
+ line 1616.
 (pdftex.def)             Requested size: 358.50317pt x 72.65532pt.
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
-634.
+627.
  (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
 [14 <./Img/inclinación_bandas_debido_aVDS.png>]
-Overfull \hbox (2.1999pt too wide) detected at line 1793
+Overfull \hbox (2.1999pt too wide) detected at line 1786
 []\OML/cmm/m/it/10 ^^^\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x; y\OT1/cmr/m/n/10 ) =
  []
  []
@@ -1255,40 +1255,42 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 29251 strings out of 476091
- 591323 string characters out of 5794082
- 1880330 words of memory out of 5000000
- 49196 multiletter control sequences out of 15000+600000
+ 29257 strings out of 476091
+ 591489 string characters out of 5794082
+ 1881330 words of memory out of 5000000
+ 49202 multiletter control sequences out of 15000+600000
  528864 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  83i,13n,89p,1771b,2809s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
-5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf/fonts/type1/public/cm-super
-/sfbx1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/
-share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/ty
-pe1/public/cm-super/sfrm0500.pfb></usr/share/texmf/fonts/type1/public/cm-super/
-sfrm0700.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0900.pfb></usr/s
-hare/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/typ
-e1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/s
-frm1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/sh
-are/texmf/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on main.pdf (18 pages, 1504750 bytes).
+/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+mi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmsy9.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb
+></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/f
+onts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm
+-super/sfrm0500.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0700.pfb>
+</usr/share/texmf/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf/fo
+nts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-
+super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1728.pfb><
+/usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fon
+ts/type1/public/cm-super/sftt1000.pfb>
+Output written on main.pdf (18 pages, 1526024 bytes).
 PDF statistics:
- 232 PDF objects out of 1000 (max. 8388607)
- 124 compressed objects within 2 object streams
+ 242 PDF objects out of 1000 (max. 8388607)
+ 130 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  103 words of extra memory for PDF output out of 10000 (max. 10000000)
 

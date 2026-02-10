@@ -316,6 +316,7 @@ Los materiales que forman el dispositivo desprenden diferentes características 
 		Afinidad electrónica $\chi$ [eV] & 4.07 & -- & -- & -- \\ \hline
 		Función trabajo $\Phi_M$ [eV] & -- & -- & 4.33 & 4.50 \\ \hline
 		Movilidad electrónica $\mu_n$ [cm$^2$/Vs] & 8500 & -- & -- & -- \\ \hline
+		Campo critico $\xi_{max}$ [$\frac{kV}{cm}$] & $300$ & $300$ & -- & -- \\ \hline
 		Masa efectiva ${m}^*_n$ &$0,0067\cdot m_o$ & -- & -- & -- \\ \hline
 		Masa efectiva ${m}^*_p$  &$0,47\cdot m_o$& -- & -- & -- \\ \hline
 		Concentración intrínseca de portadores $n_i$ [cm$^{-3}$] & $1,79 \cdot 10^{6}$ &  $1,45 \cdot 10^{10}$ & -- & -- \\ \hline
@@ -473,7 +474,7 @@ El modo corte sucede cuando la tensión $V_{GS}$ no supera la tensión $V_p$ o t
 
 \subsection{Modo en estrangulación}
 
-El modo estrangulación es el rango en el cual la corriente de \textit{drain} se puede controlar mediante la tensión $V_{GS}$, es buscado en aplicaciones de amplificación de señal. En la expresión (\ref{equation:modo_estrangulacion}) se encuentran las condiciones de polarización y la corriente $I_D$ en función de $V_{GS}$.
+El modo estrangulación es el rango en el cual la corriente de \textit{drain} se puede controlar mediante la tensión $V_{GS}$, es buscado en aplicaciones de amplificación de señal. En la expresión (\ref{equation:modo_estrangulacion}) se encuentran las condiciones de polarización y la corriente $I_D$ en función de $V_{GS}$ obtenida.
 
 
 \begin{equation}\label{equation:modo_estrangulacion}
@@ -1103,9 +1104,9 @@ Unión de contacto óhmico: Para el caso donde $\Phi_m < \Phi_{s} $ (tipo n), al
 
 \subsection{Diagrama de bandas bajo régimen de corte}
 
-La puerta está polarizada tan inversamente que el ancho del canal se hace nulo $d_{eff} = a - W_d(x) = 0 \,$ ya que se cumple $W_d(x) = a \wedge W_d(x) > W_{d0}$, se define $V_P$ como la tensión $V_{GS}$ donde esto comienza a cumplirse. 
+La puerta está polarizada tan inversamente que el ancho del canal se hace nulo $d_{eff} = a - W_d(x) = 0 \,$ ya que se cumple $W_d(x) = a$, se define $V_P$ como la tensión $V_{GS}$ donde esto comienza a cumplirse. 
 
-Se introduce la tensión $V_R =  V(x) - V_{GS} $ que es la responsable de aumentar la flexión en las bandas. Donde se define como referencia $V_S = 0 $ , por lo tanto $V(x) \in [0 , V_{DS}]$ y $V_{GS} = V_{G}$. A su vez al estar fuera del equilibrio el nivel de Fermi varia entre materiales, se introduce el concepto de cuasi-nivel de Fermi para cada nivel, $E_{f_{sc}}$ para el semiconductor y $E_{f_{m}}$ para el metal. 
+Se introduce la tensión $V_R =  V(x) - V_{GS} $ que es la responsable de aumentar la flexión en las bandas. Donde se define como referencia $V_S = 0 $ , por lo tanto $V(x) \in [0 , V_{DS}]$ y $V_{GS} = V_{G}$. A su vez al estar fuera del equilibrio el nivel de Fermi varia entre materiales, se introduce el concepto de cuasi-nivel de Fermi para cada nivel, $E_{f_{sc}}$ para el semiconductor y $E_{f_{m}}$ para el metal. El dispositivo no conducirá siempre y cuando las tensiones no sean excesivamente grandes, es decir no se supere el campo critico del semiconductor. 
 
 \begin{figure}[H]
 	\begin{tikzpicture}
@@ -1284,12 +1285,10 @@ Se introduce la tensión $V_R =  V(x) - V_{GS} $ que es la responsable de aument
 	% ---------- Texto (derecha) ----------
 	\begin{minipage}[c]{0.5\textwidth}
 	
-		Se observa que el ancho de la zona de vaciamiento cumple
+		Se observa en la figura \ref{fig:diagramabandasalolargodelcanal} que el ancho de la zona de vaciamiento cumple
 		$W_{d0} < W_d(0) < a$, mientras que $W_d(L) = a$.
 		A medida que $V_{DS}$ aumenta más allá de $V_{DS_{\text{SAT}}}$,
-		la longitud de la región de empobrecimiento crece a lo largo del canal,
-		pero el nivel de $I_D$ permanece constante, razón por la cual
-		$V_{DS}$ no incide en $I_D$ en esta región.
+		la longitud de la región de empobrecimiento crece a lo largo del canal, pero el nivel de $I_D$ permanece constante, razón por la cual $V_{DS}$ idealmente no incide en $I_D$ en esta región.
 		
 		Los portadores atraviesan la región de empobrecimiento debido
 		al arrastre generado por el campo eléctrico longitudinal.
@@ -1620,12 +1619,6 @@ A lo largo del canal, la aplicación de un potencial $V_{DS}$ introduce un poten
 \end{figure}
 
 
-\section{Conducción Eléctrica}
-
-\subsection{Corriente de Difusión}
-
-\subsection{Corriente de Arrastre}
-
 
 \section{Obtención del modelo completo}
 
@@ -1837,14 +1830,50 @@ Dada la relación entre el campo eléctrico y el gradiente del potencial eléctr
 Relacionando el campo eléctrico (\ref{equation:campo_electrico}) junto con el potencial (\ref{equation:potencial_electrostatico}) se puede despejar el ancho de la zona de agotamiento o vaciamiento en reposo y equilibrio térmico.
 
 \begin{equation}\label{equation: W_d_reposo}
-	W_d = \sqrt{\frac{2 \cdot \epsilon_s \cdot \phi_{bi}}{q\cdot N_D}}
+	W_{d0} = \sqrt{\frac{2 \cdot \epsilon_s \cdot \phi_{bi}}{q\cdot N_D}}
 \end{equation} 
 
 
-Al considerar la polarización del dispositivo se produce un potencial longitudinal $V(x)$ y el potencial externo trasversal al canal entre \textit{gate} y \textit{source} que afectaran a la modulación de la zona de vaciamiento.
+Al considerar la polarización del dispositivo se produce un potencial longitudinal $V(x) \in [0 ,V_{DS}]$ y el potencial externo trasversal al canal entre \textit{gate} y \textit{source} $V_{GS}$, que afectaran a la modulación de la zona de vaciamiento, nombramos $ \phi_{bi} = V_{bi}$.
 
 \begin{equation}\label{equation: W_d_polarizado}
-	W_d(x) = \sqrt{\frac{2 \cdot \epsilon_s \cdot [  \phi_{bi} - V_{GS} + V(x)] }{q\cdot N_D}}
+	W_d(x) = \sqrt{\frac{2 \cdot \epsilon_s \cdot [  V_{bi} - V_{GS} + V(x)] }{q\cdot N_D}}
+\end{equation} 
+
+\subsection{Obtención de $V_{P}$}
+
+Partiendo de (\ref{equation: W_d_reposo}) reemplazando $W_d(x) = a $ se obtiene la tensión para la cual el dispositivo comienza a conducir: 
+
+\begin{equation}\label{equation:obtenicon_VP}
+	W_d = \sqrt{\frac{2 \cdot \epsilon_s \cdot V_P }{q\cdot N_D}} = a 
+\end{equation} 
+
+Llegando finalmente a (\ref{equation:obtenicon_VP_2})
+\begin{equation}\label{equation:obtenicon_VP_2}
+		 V_P = \frac{a^2 \cdot q\cdot N_D}{2 \cdot \epsilon_s }
+\end{equation}
+
+
+
+\subsection{Obtención de $V_{DS_{[sat]}}$}
+Mientras que evaluando la expresión del ancho de vaciamiento (\ref{equation: W_d_polarizado}) en la región del terminal \textit{drain} se obtiene la tensión de saturación, ya que se debe cumplir $V(x = L ) = V_{DS} \quad \wedge \quad W_d(x = L ) = a$:
+
+\begin{equation}\label{equation:obtension_VDS_SAT}
+	W_d(x = L ) = \sqrt{\frac{2 \cdot \epsilon_s \cdot [  V_{bi} - V_{GS} + V_{DS }] }{q\cdot N_D}} = a 
+\end{equation} 
+
+\begin{equation}\label{equation:obtension_VDS_SAT_2}
+	 [  V_{bi} - V_{GS} + V_{DS }]  = \frac{a^2 \cdot q\cdot N_D}{2 \cdot \epsilon_s}
+\end{equation} 
+
+\begin{equation}\label{equation:obtension_VDS_SAT_3}
+	 V_{DS}  = \frac{a^2 \cdot q\cdot N_D}{2 \cdot \epsilon_s} + V_{GS} -  V_{bi}
+\end{equation} 
+
+Se puede apreciar que se forma la tensión de umbral $V_P = \frac{a^2 \cdot q\cdot N_D}{2 \cdot \epsilon_s}$, llegando finalmente a la expresión (\ref{equation:obtension_VDS_SAT_4}):
+
+\begin{equation}\label{equation:obtension_VDS_SAT_4}
+	V_{DS_{[sat]}} = V_P + V_{GS} -  V_{bi}
 \end{equation} 
 
 
@@ -1864,6 +1893,19 @@ De la densidad de corriente, se puede despejar la corriente que atraviesa el can
 	I_D =A_{ch}\cdot J_{arr, n} = (Z\cdot [a - W(x)]) \cdot J_{arr, n} 
 \end{equation}
 
+
+\begin{equation}
+	I_D =A_{ch}\cdot J_{arr, n} = (Z\cdot [a - W(x)]) \cdot q \cdot n \cdot \mu_n \cdot \xi  =  q \cdot N_D \cdot \mu_n \cdot (- \frac{dV}{dx})
+\end{equation}
+
+
+
+\begin{equation}
+	I_D =A_{ch}\cdot J_{arr, n} = (Z\cdot [a - W(x)]) \cdot q \cdot n \cdot \mu_n \cdot \xi  =  q \cdot N_D \cdot \mu_n \cdot (- \frac{dV}{dx})
+\end{equation}
+
+
+
 Reemplazando $W(x)$ , por su expresión en (\ref{equation: W_d_polarizado}), se llega a .
 
 \begin{equation}
@@ -1874,7 +1916,7 @@ Reemplazando $W(x)$ , por su expresión en (\ref{equation: W_d_polarizado}), se 
 	a -
 	\sqrt{
 		\frac{2\,\epsilon_s}{q N_D}
-		\left( \phi_{bi} - V_{GS} + V(x) \right)
+		\left( V_{bi} - V_{GS} + V(x) \right)
 	}
 	\right]
 	\left( - \frac{dV(x)}{dx} \right)
@@ -1883,24 +1925,24 @@ Reemplazando $W(x)$ , por su expresión en (\ref{equation: W_d_polarizado}), se 
 Se puede operar la expresión para integrar ambos lados 
 
 \begin{equation}
-	I_D dx
+	I_D \cdot dx
 	=
-	Z \, q \, \mu_n \, N_D
+	- Z \, q \, \mu_n \, N_D
 	\left[
 	a -
 	\sqrt{
 		\frac{2\,\epsilon_s}{q N_D}
-		\left( \phi_{bi} - V_{GS} + V(x) \right)
+		\left( V_{bi} - V_{GS} + V(x) \right)
 	}
 	\right]
-	\left( - dV(x) \right)
+	  dV(x)
 \end{equation}
 
 
 \begin{equation}
 	I_D \int_{0}^{L} dx
 	=
-	q \, \mu_n \, N_D \, Z
+	-Z \cdot q \, \mu_n \, N_D \,
 	\int_{0}^{V_{DS}}
 	\left[
 	a
@@ -1923,7 +1965,7 @@ Finalmente se llega a la expresión completa en función de los parámetros de c
 		\begin{equation}
 				I_D
 				=
-				\frac{q \, \mu_n \, N_D \, Z \, a}{L}
+				- \frac{Z \, q \, \mu_n \, N_D \, a}{L}
 				\left\{
 				V_{DS}
 				-
@@ -1933,7 +1975,7 @@ Finalmente se llega a la expresión completa en función de los parámetros de c
 					-
 					\left( V_{bi} - V_{GS} \right)^{3/2}
 				}{
-					\left( \dfrac{e N_D a^2}{2 \epsilon_s } \right)^{1/2}
+					\left( \dfrac{q N_D a^2}{2 \epsilon_s } \right)^{1/2}
 				}
 				\right\}
 		\end{equation}
@@ -1941,7 +1983,7 @@ Finalmente se llega a la expresión completa en función de los parámetros de c
 
 \end{tcolorbox}
 
-Comunmente se define la conductancia de canal completo $g_o =\frac{q \, \mu_n \, N_d \, Z \, h}{L}  $ y ya conociendo la expresión de tensión $V_p = \frac{q N_D a^2}{2 \epsilon } $, la expresión se puede reescribir como:
+Comunmente se define la conductancia de canal completo $g_o = \frac{Z \, q \, \mu_n \, N_D \, a}{L}  $ y ya conociendo la expresión de tensión $V_p = \frac{q N_D a^2}{2 \epsilon } $, la expresión se puede reescribir como:
 
 
 
