@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2026.1.2)  9 FEB 2026 12:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2026.1.2)  10 FEB 2026 08:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1225,21 +1225,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 553--555
 File: Img/diagrama_bandas_alolargodelcanal.png Graphic file (type png)
 <use Img/diagrama_bandas_alolargodelcanal.png>
 Package pdftex.def Info: Img/diagrama_bandas_alolargodelcanal.png  used on inpu
-t line 1287.
-(pdftex.def)             Requested size: 256.07481pt x 145.5902pt.
- [13 <./Img/diagrama_bandas_alolargodelcanal.png>] [14]
+t line 1279.
+(pdftex.def)             Requested size: 230.46576pt x 131.02654pt.
+ [13 <./Img/diagrama_bandas_alolargodelcanal.png>]
+<Img/inclinación_bandas_debido_aVDS.png, id=105, 678.535pt x 137.51375pt>
+File: Img/inclinación_bandas_debido_aVDS.png Graphic file (type png)
+<use Img/inclinación_bandas_debido_aVDS.png>
+Package pdftex.def Info: Img/inclinación_bandas_debido_aVDS.png  used on input
+ line 1617.
+(pdftex.def)             Requested size: 358.50317pt x 72.65532pt.
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
-688.
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+634.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
-) [15]
-Overfull \hbox (2.1999pt too wide) detected at line 1847
+)
+[14 <./Img/inclinación_bandas_debido_aVDS.png>]
+Overfull \hbox (2.1999pt too wide) detected at line 1793
 []\OML/cmm/m/it/10 ^^^\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x; y\OT1/cmr/m/n/10 ) =
  []
  []
 
-[16] [17] [18] (./main.aux
+[15] [16] [17] [18] (./main.aux
 LaTeX Info: Redefining \sptext on input line 27.
 LaTeX Info: Redefining \. on input line 27.
 LaTeX Info: Redefining \% on input line 27.
@@ -1249,10 +1255,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 29237 strings out of 476091
- 590781 string characters out of 5794082
+ 29251 strings out of 476091
+ 591323 string characters out of 5794082
  1880330 words of memory out of 5000000
- 49183 multiletter control sequences out of 15000+600000
+ 49196 multiletter control sequences out of 15000+600000
  528864 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  83i,13n,89p,1771b,2809s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1273,15 +1279,16 @@ fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf/fonts/type1/public/cm-super
 /sfbx1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/
 share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/ty
-pe1/public/cm-super/sfrm0700.pfb></usr/share/texmf/fonts/type1/public/cm-super/
-sfrm0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/s
-hare/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/typ
-e1/public/cm-super/sfrm1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/s
-fti1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on main.pdf (18 pages, 1488470 bytes).
+pe1/public/cm-super/sfrm0500.pfb></usr/share/texmf/fonts/type1/public/cm-super/
+sfrm0700.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0900.pfb></usr/s
+hare/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/typ
+e1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/s
+frm1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/sh
+are/texmf/fonts/type1/public/cm-super/sftt1000.pfb>
+Output written on main.pdf (18 pages, 1504750 bytes).
 PDF statistics:
- 225 PDF objects out of 1000 (max. 8388607)
- 121 compressed objects within 2 object streams
+ 232 PDF objects out of 1000 (max. 8388607)
+ 124 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 98 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 103 words of extra memory for PDF output out of 10000 (max. 10000000)
 

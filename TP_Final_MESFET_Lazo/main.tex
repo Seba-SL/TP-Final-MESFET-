@@ -614,7 +614,7 @@ El titanio no tiene brecha entre bandas de conducción y valencia ya que se sola
 		\node[annot] at (0,-1) {Banda de Valencia};
 		
 		% Banda metálica (desocupada)
-		\fill[gray!20] (-3,0) rectangle (2.5,1.99);
+		\fill[gray!20] (-3,0) rectangle (2.5,2.165);
 		\node[annot] at (0,0.6) {Banda de Conducción};
 		
 			% Ejes
@@ -629,13 +629,13 @@ El titanio no tiene brecha entre bandas de conducción y valencia ya que se sola
 		\node[annot, right] at (3.2,0) {$E_f$};
 		
 		% Nivel de vacío
-		\draw[level] (-3,2) -- (3,2);
+		\draw[level] (-3,2.165) -- (3,2.165);
 		\node[annot, right] at (3.5,2) {$E_0$};
 		
 		
 		
 		% Función trabajo
-		\draw[<->, thick] (-2.2,0) -- (-2.2,2);
+		\draw[<->, thick] (-2.2,0) -- (-2.2,2.165);
 		\node[annot, left] at (-1.2,1) {$q\Phi_M$};
 		
 		% Etiqueta material
@@ -646,7 +646,7 @@ El titanio no tiene brecha entre bandas de conducción y valencia ya que se sola
 	
 \end{minipage}
 
-\caption{Completar.}
+\caption{Diagrama de banda del conductor, en el caso de estudio titanio.}
 \end{figure}
 
 
@@ -727,7 +727,7 @@ El titanio no tiene brecha entre bandas de conducción y valencia ya que se sola
 		
 	\end{minipage}
 	
-	\caption{Completar.}
+	\caption{Diagrama de bandas del semiconductor GaAs tipo n levemente dopado.}
 \end{figure}
 
 
@@ -801,7 +801,7 @@ El titanio no tiene brecha entre bandas de conducción y valencia ya que se sola
 		
 	\end{minipage}
 	
-	\caption{Completar.}
+	\caption{Diagrama de bandas del sustrato semi-aislante de GaAs dopado con Cr.}
 \end{figure}
 
 
@@ -810,6 +810,7 @@ El titanio no tiene brecha entre bandas de conducción y valencia ya que se sola
 
 
 \subsection{Diagrama de bandas en equilibrio}
+
 
 \textbf{Si dos o más sistemas en ponen contacto y alcanzan el ETD  sus $E_f$ deben ser iguales.}
 
@@ -966,7 +967,8 @@ Unión de barrera Schottky:
 \end{figure}
 
 
-Unión de contacto óhmico: (**********modificar****)
+Unión de contacto óhmico: Para el caso donde $\Phi_m < \Phi_{s} $ (tipo n), al poner en contacto ambos materiales, hay un flujo de electrones  desde el metal hacia el semiconductor. Siendo el semiconductor mas dopado cercano al contacto.
+
 \begin{figure}[H]
 	\begin{tikzpicture}
 		[
@@ -981,129 +983,117 @@ Unión de contacto óhmico: (**********modificar****)
 		% BANDA DE CONDUCCIÓN
 		% --------------------
 		\fill[gray!20]
-		(3,2.0)
-		.. controls (3.2,2.0) and (4.4,1.2) ..
-		(6,1.2)
-		-- (10,1.2)
-		-- (10,0.0)
-		-- (6,0.0)
-		.. controls (4.4,0.0) and (3.2,0.6) ..
-		(3,0.6)
+		(3,1.165)
+		.. controls (3.2,1.165) and (4.4,1.8) ..
+		(6,1.8)
+		-- (10,1.8)
+		-- (10,0.8)
+		-- (6,0.8)
+		.. controls (4.4,0.8) and (3.2,0.165) ..
+		(3,0.165)
 		-- cycle;
 		
 		\draw[band]
-		(3,0.6)
-		.. controls (3.2,0.6) and (4.4,0.0) ..
-		(6,0.0)
-		-- (10,0.0);
+		(3,0.165)
+		.. controls (3.2,0.165) and (4.4,0.8) ..
+		(6,0.8)
+		-- (10,0.8);
 		
-		\node[annot] at (10.3,0) {$E_C$};
+		\node[annot] at (10.3,0.8) {$E_C$};
 		
 		% --------------------
 		% NIVEL DE FERMI
 		% --------------------
-		\draw[level] (-3,-0.8) -- (10.3,-0.8);
-		\node[annot, right] at (10.5,-0.8) {$E_F$};
+		\draw[level] (-3,0) -- (10.3,0);
+		\node[annot, right] at (10.5,0) {$E_F$};
 		
 		% --------------------
 		% BANDA DE VALENCIA (MÁS ABAJO)
 		% --------------------
 		\fill[gray!40]
-		(3,-4)
-		-- (3,-1.6)
-		.. controls (3.2,-1.6) and (4.4,-2.3) ..
-		(6,-2.3)
-		-- (10,-2.3)
-		-- (10,-4)
+		(3,-3)
+		-- (3,-2.135)
+		.. controls (3.2,-2.135) and (4.4,-1.5) ..
+		(6,-1.5)
+		-- (10,-1.5)
+		-- (10,-3)
 		-- cycle;
 		
 		\draw[band]
-		(3,-1.6)
-		.. controls (3.2,-1.6) and (4.4,-2.3) ..
-		(6,-2.3)
-		-- (10,-2.3);
+		(3,-2.135)
+		.. controls (3.2,-2.135) and (4.4,-1.5) ..
+		(6,-1.5)
+		-- (10,-1.5);
 		
-		\node[annot, right] at (10.3,-2.3) {$E_V$};
+		\node[annot, right] at (10.3,-1.5) {$E_V$};
 		
 		% --------------------
 		% INTERFAZ
 		% --------------------
-		\draw[thick] (3,-4.2) -- (3,2.4);
+		\draw[thick] (3,-3.2) -- (3,2.4);
 		\node[annot, above] at (3,2.4) {Interfaz};
-		\node[annot, below] at (3,-4.2) {$y=0$};
+		\node[annot, below] at (3,-3.2) {$y=0$};
 		
 		% --------------------
 		% ALTURA DE BARRERA SCHOTTKY ΦB
 		% --------------------
-		\draw[level] (3,0.6) -- (6.5,0.6);
-		\draw[<->, thick] (2.8,0.6) -- (2.8,-0.8);
-		\node[annot, left] at (2.7,0) {$q\cdot \Phi_B$};
+		\draw[level] (3,1.8) -- (6.5,1.8);
+		\draw[<->, thick] (2.8,1.165) -- (2.8,1.8);
+		\node[annot, left] at (2.7,1.8) {$q\cdot \Phi_B$};
 		
 		
 		% --------------------
 		% \phi_X
 		% --------------------
 		
-		\draw[<->, thick] (9.5,0) -- (9.5,1.2);
-		\node[annot, left] at (9.4,0.5) {$q\cdot \chi$};
+		\draw[<->, thick] (9.5,1.8) -- (9.5,0.8);
+		\node[annot, left] at (9.4,1.25) {$q\cdot \chi$};
 		
 		% -----------------
 		
-		% --------------------
-		% POTENCIAL INTERNO φ_bi
-		% --------------------
-		\draw[<->, thick] (6.5,0.0) -- (6.5,0.6);
-		\node[annot, right] at (6.6,0.3) {$q \cdot \phi_{bi}$};
+	
 		
-		% --------------------
-		% ANCHO DE AGOTAMIENTO W
-		% --------------------
-		
-		\draw[level] (6,-4.2) -- (6,2.4);
-		
-		\draw[<->, thick] (3,-3.2) -- (6,-3.2);
-		\node[annot, below] at (4.5,-3.2) {$W_{d0}$};
-		
+	
 		% --------------------
 		% FUNCIÓN TRABAJO METAL
 		% --------------------
-		\draw[<->, thick] (-2.4,-0.8) -- (-2.4,2.0);
+		\draw[<->, thick] (-2.4,0) -- (-2.4,1.165);
 		\node[annot,left] at (-1.3,0.6) {$q \cdot \Phi_M$};
 		
 		
 		% --------------------
 		% FUNCIÓN TRABAJO GaAs
 		% --------------------
-		\draw[<->, thick] (8,-0.8) -- (8,1.2);
-		\node[annot,left] at (9,-0.4) {$q\cdot \Phi_S$};
+		\draw[<->, thick] (8,0) -- (8,1.8);
+		\node[annot,left] at (9,0.4) {$q\cdot \Phi_S$};
 		
 		
 		% --------------------
 		% EJES
 		% --------------------
-		\draw[axis] (-3,-4) -- (-3,2.4) node[above] {Energía};
-		\draw[axis] (-3,-4) -- (10.4,-4) node[right] {Posición y};
+		\draw[axis] (-3,-3) -- (-3,2.4) node[above] {Energía};
+		\draw[axis] (-3,-3) -- (10.4,-3) node[right] {Posición y};
 		
 		
 		
 		% --------------------
 		% NIVEL DE VACÍO E0
 		% --------------------
-		\draw[thick] (-3,2.0) -- (3,2.0);
+		\draw[thick] (-3,1.165) -- (3,1.165);
 		\draw[band]
-		(3,2.0)
-		.. controls (3.2,2.0) and (4.4,1.2) ..
-		(6,1.2)
-		-- (10.3,1.2);
-		\node[annot, right] at (10.4,1.2) {$E_0$};
+		(3,1.165)
+		.. controls (3.2,1.165) and (4.4,1.8) ..
+		(6,1.8)
+		-- (10.3,1.8);
+		\node[annot, right] at (10.4,1.8) {$E_0$};
 		
 		
 			
 		% --------------------
 		% MATERIALES
 		% --------------------
-		\node[annot] at (-1,-4.6) {Metal: Titanio (Ti)};
-		\node[annot] at (7,-4.6) {Semiconductor: GaAs tipo $N^+$};
+		\node[annot] at (-1,-3.6) {Metal: Titanio (Ti)};
+		\node[annot] at (7,-3.6) {Semiconductor: GaAs tipo $N^+$};
 		
 	\end{tikzpicture}
 	
@@ -1278,16 +1268,35 @@ Se introduce la tensión $V_R =  V(x) - V_{GS} $ que es la responsable de aument
 
 \subsection{Diagrama de bandas bajo régimen de estrangulación}
 
-En este régimen se cumple $V_{GS} > V_P \quad \wedge \quad V_{DS} > V_{DS_{[SAT]}} = V_P + V_{GS} - V_{bi}$, por lo tanto el canal es controlado por $V_{GS}$. 
-Se puede observar como el ancho de la zona de vaciamiento se encuentra en el rango de $ W_{d0} < W_d(0) < a$ mientras que $ W_d(L) = a $ . A medida que  $V_{DS}$ aumenta más allá de  $V_{DS_{[SAT]}}$, la longitud de la región de empobrecimiento crece a lo largo del canal, pero el nivel de $I_D$ permanece igual, es por eso que en esta región $V_{DS}$ no incide en $I_D$. Los portadores atraviesan la región de empobrecimiento debido a el arrastre generado por el campo externo longitudinal.
-
+	En este régimen se cumple $\, V_{GS} > V_P \quad \wedge\quad V_{DS} > V_{DS_{\text{SAT}}} = V_P + V_{GS} - V_{bi}$ , por lo tanto el canal es controlado por $V_{GS}$.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.5\linewidth]{Img/diagrama_bandas_alolargodelcanal}
-	\caption{Diagrama de bandas en $W_D(0) = W_{Ds}$ y $W_D(L) = W_{Dd}$ \parencite{mishra_semiconductor_2008}. }
-	\label{fig:diagramabandasalolargodelcanal}
+	
+	% ---------- Imagen (izquierda) ----------
+	\begin{minipage}[c]{0.45\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/diagrama_bandas_alolargodelcanal}
+		\captionof{figure}{Diagrama de bandas en $W_D(0)=W_{Ds}$ y $W_D(L)=W_{Dd}$ \parencite{mishra_semiconductor_2008}.}
+		\label{fig:diagramabandasalolargodelcanal}
+	\end{minipage}
+	\hfill
+	% ---------- Texto (derecha) ----------
+	\begin{minipage}[c]{0.5\textwidth}
+	
+		Se observa que el ancho de la zona de vaciamiento cumple
+		$W_{d0} < W_d(0) < a$, mientras que $W_d(L) = a$.
+		A medida que $V_{DS}$ aumenta más allá de $V_{DS_{\text{SAT}}}$,
+		la longitud de la región de empobrecimiento crece a lo largo del canal,
+		pero el nivel de $I_D$ permanece constante, razón por la cual
+		$V_{DS}$ no incide en $I_D$ en esta región.
+		
+		Los portadores atraviesan la región de empobrecimiento debido
+		al arrastre generado por el campo eléctrico longitudinal.
+	\end{minipage}
+	
 \end{figure}
+
 
 \begin{figure}[H]
 		\begin{tikzpicture}
@@ -1494,12 +1503,7 @@ Cuando ocurre $0 < V_{DS} < V_{DS_{[SAT]}} $ y $V_{GS} > V_P$, en este escenario
 	\node[annot, right] at (-1.4,-0.6) {$E_{f_{m}}$};
 	
 	
-	% --------------------
-	% Altura barrera VR
-	% --------------------
-	\draw[<->, thick] (1.5,-0.8) -- (1.5,-1.5);
-	\node[annot, right] at (1.6,-1.4) {$q \cdot V_R$};
-	
+
 	% --------------------
 	% BANDA DE VALENCIA (MÁS ABAJO)
 	% --------------------
@@ -1530,7 +1534,7 @@ Cuando ocurre $0 < V_{DS} < V_{DS_{[SAT]}} $ y $V_{GS} > V_P$, en este escenario
 	% --------------------
 	% ALTURA DE BARRERA SCHOTTKY ΦB
 	% --------------------
-	\draw[level] (3,0.6) -- (6.5,0.6);
+
 	\draw[<->, thick] (2.8,0.6) -- (2.8,-0.8);
 	\node[annot, left] at (2.7,0) {$q\cdot \Phi_B$};
 	
@@ -1539,8 +1543,8 @@ Cuando ocurre $0 < V_{DS} < V_{DS_{[SAT]}} $ y $V_{GS} > V_P$, en este escenario
 	% \phi_X
 	% --------------------
 	
-	\draw[<->, thick] (9.5,-0.6) -- (9.5,1.2);
-	\node[annot, left] at (10.35,0.5) {$q\cdot \chi$};
+	\draw[<->, thick] (9.5,0.3) -- (9.5,1.7);
+	\node[annot, left] at (10.35,1) {$q\cdot \chi$};
 	
 	% -----------------
 	
@@ -1549,9 +1553,7 @@ Cuando ocurre $0 < V_{DS} < V_{DS_{[SAT]}} $ y $V_{GS} > V_P$, en este escenario
 	% --------------------
 	
 	
-	\draw[<->, thick] (6.5,-0.6) -- (6.5,0.6);
-	\node[annot, right] at (6.6,0.3) {$q \cdot (\phi_{bi} + V_R )$};
-	
+
 	% --------------------
 	% ANCHO DE AGOTAMIENTO W
 	% --------------------
@@ -1571,8 +1573,8 @@ Cuando ocurre $0 < V_{DS} < V_{DS_{[SAT]}} $ y $V_{GS} > V_P$, en este escenario
 	% --------------------
 	% FUNCIÓN TRABAJO GaAs
 	% --------------------
-	\draw[<->, thick] (8,-1.5) -- (8,1.2);
-	\node[annot,left] at (9,-1) {$q\cdot \Phi_S$};
+	\draw[<->, thick] (8,-0.3) -- (8,1.7);
+	\node[annot,left] at (9,1) {$q\cdot \Phi_S$};
 	
 	
 	% --------------------
@@ -1608,70 +1610,14 @@ Cuando ocurre $0 < V_{DS} < V_{DS_{[SAT]}} $ y $V_{GS} > V_P$, en este escenario
 
 \subsection{Flexión dentro del Canal}
 
-A lo largo del canal, la aplicación de un potencial $V_{DS}$ introduce un potencial longitudinal V(x) que se manifiesta como una inclinación cuasi-lineal de las bandas del semiconductor. Este efecto no está asociado a la juntura Schottky, sino al campo eléctrico longitudinal responsable del transporte de portadores entre source y drain.
+A lo largo del canal, la aplicación de un potencial $V_{DS}$ introduce un potencial longitudinal V(x) que se manifiesta como una inclinación cuasi-lineal de las bandas del semiconductor, como se observa en la figura \ref{fig:inclinacionbandasdebidoavds}. Este efecto no está asociado a la juntura Schottky, sino al campo eléctrico longitudinal responsable del transporte de portadores entre source y drain.
 
-
-\begin{tikzpicture}[
-	>=Latex,
-	axis/.style={->, thick},
-	band/.style={thick},
-	level/.style={dashed, thick},
-	annot/.style={font=\small}
-	]
-	
-	% --------------------
-	% EJE ENERGÍA
-	% --------------------
-	\draw[axis] (0,-0.5) -- (0,3.5) node[above] {Energía};
-	\draw[axis] (0,0) -- (10,0) node[right] {Posición $x$};
-	
-	% --------------------
-	% BANDA DE CONDUCCIÓN Ec(x)
-	% --------------------
-	\draw[band]
-	(0,2.8)
-	-- (3,2.6)
-	-- (7,2.0)
-	-- (10,1.8);
-	
-	\node[annot] at (9.7,2.0) {$E_C(x)$};
-	
-	% --------------------
-	% BANDA DE VALENCIA Ev(x)
-	% --------------------
-	\draw[band]
-	(0,0.8)
-	-- (3,0.6)
-	-- (7,0.0)
-	-- (10,-0.2);
-	
-	\node[annot] at (9.7,0.2) {$E_V(x)$};
-	
-	% --------------------
-	% CUASI NIVEL DE FERMI ELECTRONES
-	% --------------------
-	\draw[level]
-	(0,2.4)
-	-- (3,2.2)
-	-- (7,1.6)
-	-- (10,1.4);
-	
-	\node[annot] at (9.7,1.6) {$E_{Fn}(x)$};
-	
-	% --------------------
-	% ANOTACIONES SOURCE / DRAIN
-	% --------------------
-	\node[annot, below] at (0,0) {Source};
-	\node[annot, below] at (10,0) {Drain};
-	
-	% --------------------
-	% POTENCIAL V(x)
-	% --------------------
-	\draw[<->, thick]
-	(5,1.8) -- (5,2.4);
-	\node[annot, right] at (5.1,2.1) {$qV(x)$};
-	
-\end{tikzpicture}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{Img/inclinación_bandas_debido_aVDS}
+	\caption{Diagrama de bandas a lo largo del canal \parencite{mishra_semiconductor_2008}.}
+	\label{fig:inclinacionbandasdebidoavds}
+\end{figure}
 
 
 \section{Conducción Eléctrica}
