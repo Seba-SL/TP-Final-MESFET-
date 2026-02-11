@@ -27,11 +27,11 @@ V_bi = phi_M - chi_GaAs                    # V
 W_d0 = np.sqrt(2*(eps_s*V_bi/(q*Nd)))
 
 # Tensiones de control
-V_P  =  -(q*Nd*(a**2))/(2*eps_s)         # V  (pinch-off)
+V_P  =  -(q*Nd*(a**2))/(2*eps_s)       # V  (pinch-off)
 
 V_GS = 0
 
-V_DS_SAT  = -V_P  + V_GS  - V_bi 
+V_DS_SAT  =  (-V_P + V_GS - V_bi )
 
 
 IDSS = (Z/L) * (a - W_d0) * q * mu_n * Nd * V_DS_SAT
@@ -64,6 +64,9 @@ ID_corte = np.zeros_like(VGS_corte)
 VGS_estr = np.linspace(V_P, 0, 500)
 ID_estr = IDSS * (1 - VGS_estr / V_P)**2
 
+
+###################################################################################################################
+
 #Modelo completo
 #VGS_completo = np.linspace(V_P - 3, 0, 600)
 go = (q*mu_n*Nd*Z*a)/(L)
@@ -72,47 +75,71 @@ print("go = "+ str(go) + "1/ohm")
 
 VGS = np.linspace(V_P, 0, 500)
 
-VDS_sat = V_P + VGS - V_bi 
+VDS_sat = (-V_P + VGS - V_bi )
 
-arg1 = (VDS_sat + V_bi - VGS)
-arg2 = (V_bi - VGS)
+arg1 = VDS_sat + V_bi - VGS
+arg2 = V_bi - VGS
 
-termino = (2/3) * (np.abs(arg1)**(3/2) - np.abs(arg2)**(3/2)) / np.sqrt(np.abs(V_P))
+termino = ((2)/(3*np.sqrt(np.abs(V_P))))*( (arg1)**(3/2) - (arg2)**(3/2) )
 
-ID_completo = go * ( VDS_sat - termino ) + 0.0066
+ID_completo = go * ( VDS_sat -termino ) 
 
 plt.figure()
-plt.plot(VGS_corte, ID_corte, linewidth=3, label="Corte")
-plt.plot(VGS_estr, ID_estr, linewidth=3, label="Estrangulamiento")
-plt.plot(VGS, ID_completo, linewidth=3, label="Modelo Completo",color = "green" , linestyle = "--")
+plt.plot(VGS_corte, ID_corte, linewidth=4, label="Corte")
+plt.plot(VGS_estr, ID_estr, linewidth=4, label="Estrangulamiento")
+plt.plot(VGS, ID_completo, linewidth=4, label="Modelo Completo",color = "green" , linestyle = "--")
+plt.plot(VGS_corte, ID_corte, linewidth=4,color = "green" , linestyle = "--")
+plt.axvline(V_P, color='gray', linestyle='--', linewidth=2, label=r"$V_P$")
 plt.xlabel(r"$V_{GS}$ [V]")
 plt.ylabel(r"$I_D$ [A]")
-plt.title("Característica de transferencia MESFET")
+plt.title("Curva de transferencia MESFET")
 plt.grid(True)
 plt.legend()
 plt.show()
 
-# =========================
-# REGION OHMICA ID vs VDS
-# =========================
 
-VGS_vals = [-2.0, V_P,-1.5,-1.0, -0.5, 0.0]
+VGS_vals = [-2.0, V_P, -1.5, -1.0, -0.5, 0.0]
 
 plt.figure()
 
 for VGS in VGS_vals:
-    VDS_max = max(VGS - V_P, 0)
-    VDS = np.linspace(0, VDS_max, 300)
 
+    VDS_sat = max(VGS - V_P, 0)
+    VDS = np.linspace(0, VDS_sat, 300)
+
+    # Región óhmica
     ID_ohmico = (2 * IDSS / V_P**2) * (
         (VGS - V_P) * VDS - VDS**2 / 2
     )
 
-    plt.plot(VDS, ID_ohmico, label=rf"$V_{{GS}}={VGS}$ V")
+    # Label
+    if np.isclose(VGS, V_P):
+        label = r"$V_{GS}=V_P$"
+    else:
+        label = rf"$V_{{GS}}={VGS}\,\mathrm{{V}}$"
+
+    plt.plot(VDS, ID_ohmico, linewidth=3, label=label)
+
+    # -------------------------
+    # IDSAT (región saturación)
+    # -------------------------
+    if VGS > V_P:
+        IDSAT = IDSS * (1 - VGS / V_P)**2
+
+        VDS_sat_line = np.linspace(VDS_sat, max(VGS_vals) - V_P + 0.2, 50)
+        ID_sat_line = IDSAT * np.ones_like(VDS_sat_line)
+
+        plt.plot(
+            VDS_sat_line,
+            ID_sat_line,
+            linestyle="--",
+            linewidth=3,
+            color=plt.gca().lines[-1].get_color()
+        )
 
 plt.xlabel(r"$V_{DS}$ [V]")
 plt.ylabel(r"$I_D$ [A]")
-plt.title("Región óhmica del MESFET")
+plt.title("Curva de salida MESFET")
 plt.grid(True)
 plt.legend()
 plt.show()

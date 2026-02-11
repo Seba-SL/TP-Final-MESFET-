@@ -1879,7 +1879,7 @@ Se puede apreciar que se forma la tensión de umbral $V_P = \frac{a^2 \cdot q\cd
 
 \section{Corriente}
 
-El dispositivo bajo conducción forma una densidad de corriente de arrastre de portadores mayoritarios $	J_{arr, n} $ en el eje \textit{x} , debido al campo aplicado $\xi$, de acuerdo a la expresión (\ref{equation:J_corriente_deduccion_1}):
+El dispositivo bajo conducción forma una densidad de corriente de arrastre de portadores mayoritarios $	J_{arr, n} $ en el eje \textit{x} , debido al campo aplicado $\xi$ y asumiendo $ n \approx N_D$, de acuerdo a la expresión (\ref{equation:J_corriente_deduccion_1}) :
 
 \begin{equation}\label{equation:J_corriente_deduccion_1}
 	J_{arr, n} = q \cdot n \cdot \mu_n \cdot \xi  =  q \cdot N_D \cdot \mu_n \cdot (- \frac{dV}{dx})
@@ -1895,127 +1895,107 @@ De la densidad de corriente, se puede despejar la corriente que atraviesa el can
 
 
 \begin{equation}
-	I_D =A_{ch}\cdot J_{arr, n} = (Z\cdot [a - W(x)]) \cdot q \cdot n \cdot \mu_n \cdot \xi  =  q \cdot N_D \cdot \mu_n \cdot (- \frac{dV}{dx})
+	I_D = (Z\cdot [a - W(x)]) \cdot q \cdot N_D \cdot \mu_n \cdot (- \frac{dV}{dx})
+\end{equation}
+
+Debido que la corriente se define positiva entrante al dispositivo.
+
+\begin{equation}
+		I_D =  Z \cdot q \cdot N_D \cdot \mu_n \cdot[a - W(x)] \cdot ( \frac{dV}{dx})
+\end{equation}
+
+
+\begin{equation}
+	I_D \cdot dx = Z\cdot q \cdot N_D \cdot \mu_n \cdot a \cdot dV - Z\cdot q \cdot N_D \cdot \mu_n \cdot W(x) \cdot dV  
+\end{equation}
+
+\begin{equation}
+	\int_0^L I_D \cdot dx =  Z\cdot q \cdot N_D \cdot \mu_n \cdot a 	\int_0^{V_{DS}}  \; dV - Z\cdot q \cdot N_D \cdot \mu_n \cdot 	\int_0^{V_{DS}}  W(x) \cdot dV 
 \end{equation}
 
 
 
 \begin{equation}
-	I_D =A_{ch}\cdot J_{arr, n} = (Z\cdot [a - W(x)]) \cdot q \cdot n \cdot \mu_n \cdot \xi  =  q \cdot N_D \cdot \mu_n \cdot (- \frac{dV}{dx})
+	 I_D \cdot L = Z\cdot q \cdot N_D \cdot \mu_n \cdot 	\left[ 	\int_0^{V_{DS}}  \; dV -  \frac{1}{a} \int_0^{V_{DS}}  W(x) \cdot dV\right]   
 \end{equation}
 
-
-
-Reemplazando $W(x)$ , por su expresión en (\ref{equation: W_d_polarizado}), se llega a .
+Resolviendo la integral:
 
 \begin{equation}
-	I_D
-	=
-	Z \, q \, \mu_n \, N_D
-	\left[
-	a -
-	\sqrt{
-		\frac{2\,\epsilon_s}{q N_D}
-		\left( V_{bi} - V_{GS} + V(x) \right)
-	}
-	\right]
-	\left( - \frac{dV(x)}{dx} \right)
+ \frac{1}{a}	\int_0^{V_{DS}}  W(x) \cdot dV =  \frac{1}{a}	\int_0^{V_{DS}} \sqrt{\frac{2 \cdot \epsilon_s \cdot [  V_{bi} - V_{GS} + V(x)] }{q\cdot N_D}}\cdot dV
 \end{equation}
 
-Se puede operar la expresión para integrar ambos lados 
+Se puede despejar $V_P$ de la siguiente forma: 
+\begin{equation}
+  \sqrt{ \frac{2 \cdot \epsilon_s}{q\cdot N_D \cdot a^2}}	\int_0^{V_{DS}} \sqrt{ (V_{bi} - V_{GS} + V(x))} \; dV
+\end{equation}
 
 \begin{equation}
-	I_D \cdot dx
-	=
-	- Z \, q \, \mu_n \, N_D
-	\left[
-	a -
-	\sqrt{
-		\frac{2\,\epsilon_s}{q N_D}
-		\left( V_{bi} - V_{GS} + V(x) \right)
-	}
-	\right]
-	  dV(x)
+	\sqrt{ \frac{1}{V_P}} \cdot \int_0^{V_{DS}} \sqrt{ (V_{bi} - V_{GS} + V(x))} \; dV
 \end{equation}
+
+\begin{equation}
+	 \frac{1}{\sqrt{V_P}} \cdot \frac{2}{3} \left[ (V_{bi} - V_{GS} + V_{DS} )^{\frac{3}{2}} - ( V_{bi} - V_{GS})^{\frac{3}{2}} \right]
+\end{equation}
+
+
+Definiendo $g_o = \frac{Z\cdot q \cdot N_D \cdot \mu_n \cdot a}{L}$ como la conductancia de canal completo, se puede acomodar la expresión como:
 
 
 \begin{equation}
-	I_D \int_{0}^{L} dx
-	=
-	-Z \cdot q \, \mu_n \, N_D \,
-	\int_{0}^{V_{DS}}
-	\left[
-	a
-	-
-	\left(
-	\frac{2 \epsilon }{q N_D}
-	\left( V(x) + V_{bi} - V_{GS} \right)
-	\right)^{1/2}
-	\right]
-	\, dV
+	I_D = g_o \cdot	\left\{ V_{DS}  - \frac{2}{3 \cdot \sqrt{V_P}} \cdot \left[ (V_{bi} - V_{GS} + V_{DS} )^{\frac{3}{2}} - ( V_{bi} - V_{GS})^{\frac{3}{2}} \right]\right\} 
 \end{equation}
-
-Finalmente se llega a la expresión completa en función de los parámetros de control y del circuito externo.
-
 
 
 \begin{tcolorbox}[colback=black!5!white, colframe=black!75!black, title=Expresión de la corriente ID completa en función de los parámetros de control y del circuito externo]
 
 
 		\begin{equation}
-				I_D
-				=
-				- \frac{Z \, q \, \mu_n \, N_D \, a}{L}
-				\left\{
-				V_{DS}
-				-
-				\frac{2}{3}
-				\frac{
-					\left( V_{DS} + V_{bi} - V_{GS} \right)^{3/2}
-					-
-					\left( V_{bi} - V_{GS} \right)^{3/2}
-				}{
-					\left( \dfrac{q N_D a^2}{2 \epsilon_s } \right)^{1/2}
-				}
-				\right\}
+				I_D = g_o \cdot	\left\{ V_{DS}  - \frac{2}{3 \cdot \sqrt{V_P}} \cdot \left[ (V_{bi} - V_{GS} + V_{DS} )^{\frac{3}{2}} - ( V_{bi} - V_{GS})^{\frac{3}{2}} \right] \right\} 
 		\end{equation}
 	
 
 \end{tcolorbox}
 
-Comunmente se define la conductancia de canal completo $g_o = \frac{Z \, q \, \mu_n \, N_D \, a}{L}  $ y ya conociendo la expresión de tensión $V_p = \frac{q N_D a^2}{2 \epsilon } $, la expresión se puede reescribir como:
 
-
-
-\begin{equation}
-	I_D
-	=
-	g_o
-	\left\{
-	V_{DS}
-	-
-	\frac{2}{3}
-	\frac{
-		\left( V_{DS} + V_{bi} - V_{GS} \right)^{3/2}
-		-
-		\left( V_{bi} - V_{GS} \right)^{3/2}
-	}{
-		\left( V_p  \right)^{1/2}
-	}
-	\right\}
-\end{equation}
 
 \section{Comparación}
 
 \section{Simulación de curvas}
 
 \subsection{Curva de transferencia}
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{Img/curva_transferencia}
+	\caption{}
+	\label{fig:curvatransferencia}
+\end{figure}
+
+
 \subsection{Curva de salida}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{Img/curva_de_salida}
+	\caption{}
+	\label{fig:curvadesalida}
+\end{figure}
+
 
 \section{Efectos no ideales}
 
+En el análisis previo se contemplo un comportamiento ideal, sin contemplar corrientes de fuga, parámetros uniformes, una longitud de canal constante y una movilidad constante.
+
+Cuando un MESFET está polarizado en la región de estrangulamiento, la longitud efectiva del canal eléctrico se determina por la tensión $V_{DS}$. Este efecto no ideal se denomina modulación de longitud de canal. Además, cuando un transistor está polarizado cerca o en la región de estrangulamiento, el campo eléctrico en el canal puede alcanzar la magnitud suficiente para que los portadores mayoritarios alcancen su velocidad de saturación. En este punto, la movilidad deja de ser constante. La magnitud de la corriente de compuerta afectará la impedancia de entrada, lo cual puede ser necesario tener en cuenta en el diseño del circuito \parencite{neamen2012}.
+
 \subsection{Modulación del largo del canal}
-\subsection{Saturación de la velocidad de arrastre }
+
+Para los MESFET de alta frecuencia, las longitudes de canal típicas son del orden de 1 $\mu$m, la modulación de la longitud del canal adquieren gran importancia en dispositivos de canal corto 
+\parencite{neamen2012}.
+
+\subsection{Saturación de la velocidad de arrastre}
 \subsection{Región subumbral}
 \subsection{Efectos de corriente de gate}
 
