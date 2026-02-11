@@ -85,19 +85,19 @@ termino = ((2)/(3*np.sqrt(np.abs(V_P))))*( (arg1)**(3/2) - (arg2)**(3/2) )
 ID_completo = go * ( VDS_sat -termino ) 
 
 
-#Modelo 2
+aux_1 = (2/(3*np.sqrt(np.abs(V_P)))) 
+IDSS_completo = go*(( V_P - V_bi) - aux_1*( ((np.abs(V_P))**(3/2)) - ((V_bi)**(3/2))))
 
 
-ID_norm = (Z * mu_n * (q**2) * (Nd**2) * (a**3)) / (6 * eps_s * L)
-termino_2 = ((VDS_sat + VGS + V_bi)**(3/2) - (VGS - V_bi)**(3/2))
 
-ID_model_2 = ID_norm*(3*VDS_sat/V_P - (2/(V_P**(3/2)))*termino_2 )
+print("I_DSS (modelo completo) = "+ str(-IDSS_completo) +"A")
+
+
 
 plt.figure()
 plt.plot(VGS_corte, ID_corte, linewidth=4, label="Corte")
 plt.plot(VGS_estr, ID_estr, linewidth=4, label="Estrangulamiento")
 plt.plot(VGS, ID_completo, linewidth=4, label="Modelo Completo",color = "green" , linestyle = "--")
-plt.plot(VGS, ID_model_2, linewidth=4, label="Modelo Completo 2",color = "red" , linestyle = "--")
 plt.plot(VGS_corte, ID_corte, linewidth=4,color = "green" , linestyle = "--")
 plt.axvline(V_P, color='gray', linestyle='--', linewidth=2, label=r"$V_P$")
 plt.xlabel(r"$V_{GS}$ [V]")
