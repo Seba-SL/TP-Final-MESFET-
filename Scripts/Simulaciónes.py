@@ -13,7 +13,7 @@ eps_s = eps_r_GaAs * eps0     # F/cm
 # Parámetros del MESFET
 # -----------------------------
 mu_n = 8500               # 8500 cm^2/Vs
-Nd = 2e15                     # cm^-3
+Nd = 4e15                     # cm^-3
 
 
 #Geometricos
@@ -34,7 +34,7 @@ V_GS = 0
 V_DS_SAT  =  (-V_P + V_GS - V_bi )
 
 
-IDSS = (Z/L) * (a - W_d0) * q * mu_n * Nd * V_DS_SAT
+IDSS = (Z/L) * (a - W_d0 ) * q * mu_n * Nd * V_DS_SAT
 
 
 
@@ -73,7 +73,7 @@ go = (q*mu_n*Nd*Z*a)/(L)
 
 print("go = "+ str(go) + "1/ohm")
 
-VGS = np.linspace(V_P, 0, 500)
+VGS = np.linspace(V_P, 0, 1000)
 
 VDS_sat = (-V_P + VGS - V_bi )
 
@@ -84,18 +84,52 @@ termino = ((2)/(3*np.sqrt(np.abs(V_P))))*( (arg1)**(3/2) - (arg2)**(3/2) )
 
 ID_completo = go * ( VDS_sat -termino ) 
 
+
+#Modelo 2
+
+
+ID_norm = (Z * mu_n * (q**2) * (Nd**2) * (a**3)) / (6 * eps_s * L)
+termino_2 = ((VDS_sat + VGS + V_bi)**(3/2) - (VGS - V_bi)**(3/2))
+
+ID_model_2 = ID_norm*(3*VDS_sat/V_P - (2/(V_P**(3/2)))*termino_2 )
+
 plt.figure()
 plt.plot(VGS_corte, ID_corte, linewidth=4, label="Corte")
 plt.plot(VGS_estr, ID_estr, linewidth=4, label="Estrangulamiento")
 plt.plot(VGS, ID_completo, linewidth=4, label="Modelo Completo",color = "green" , linestyle = "--")
+plt.plot(VGS, ID_model_2, linewidth=4, label="Modelo Completo 2",color = "red" , linestyle = "--")
 plt.plot(VGS_corte, ID_corte, linewidth=4,color = "green" , linestyle = "--")
 plt.axvline(V_P, color='gray', linestyle='--', linewidth=2, label=r"$V_P$")
 plt.xlabel(r"$V_{GS}$ [V]")
 plt.ylabel(r"$I_D$ [A]")
 plt.title("Curva de transferencia MESFET")
 plt.grid(True)
+
+# ---- Cartel de parámetros ----
+label_text = (
+    r"MESFET (GaAs / Ti)" "\n"
+    rf"$N_D = {Nd:.2e}\ \mathrm{{cm^{{-3}}}}$" "\n"
+    rf"$\mu_n = {mu_n:.0f}\ \mathrm{{cm^2/Vs}}$" "\n"
+    rf"$a = {a*1e4:.1f}\ \mu\mathrm{{m}}$" "\n"
+    rf"$L = {L*1e4:.1f}\ \mu\mathrm{{m}}$" "\n"
+    rf"$Z = {Z*1e4:.1f}\ \mu\mathrm{{m}}$" "\n"
+    rf"$V_P = {V_P:.1f}\ \mathrm{{V}}$"
+)
+
+plt.text(
+    0.05, 0.5, label_text,
+    transform=plt.gca().transAxes,
+    fontsize=10,
+    verticalalignment='top',
+    bbox=dict(boxstyle="round", facecolor="white", alpha=0.85)
+)
 plt.legend()
 plt.show()
+
+
+
+
+
 
 
 VGS_vals = [-2.0, V_P, -1.5, -1.0, -0.5, 0.0]
