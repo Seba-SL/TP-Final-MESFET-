@@ -18,7 +18,7 @@ Nd = 4e15                     # cm^-3
 
 #Geometricos
 a = 120e-6               # cm
-Z = 1000e-6                     # cm
+Z = 1000e-6                     # cm  (equivalente a )
 L = 200e-6                      # cm
 
 phi_M = 4.33 
@@ -34,7 +34,8 @@ V_GS = 0
 V_DS_SAT  =  (-V_P + V_GS - V_bi )
 
 
-IDSS = (Z/L) * (a - W_d0 ) * q * mu_n * Nd * V_DS_SAT
+IDSS =0.00368
+# (Z/L) * (a - W_d0 ) * q * mu_n * Nd * V_DS_SAT
 
 
 
@@ -84,13 +85,6 @@ termino = ((2)/(3*np.sqrt(np.abs(V_P))))*( (arg1)**(3/2) - (arg2)**(3/2) )
 
 ID_completo = go * ( VDS_sat -termino ) 
 
-
-aux_1 = (2/(3*np.sqrt(np.abs(V_P)))) 
-IDSS_completo = go*(( V_P - V_bi) - aux_1*( ((np.abs(V_P))**(3/2)) - ((V_bi)**(3/2))))
-
-
-
-print("I_DSS (modelo completo) = "+ str(-IDSS_completo) +"A")
 
 
 
