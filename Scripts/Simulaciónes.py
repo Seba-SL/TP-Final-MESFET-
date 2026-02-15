@@ -33,6 +33,7 @@ E_F = E_g/2 + k*T*np.log(Nd/ni)
 
 V_bi = (phi_M - chi_GaAs )   - (E_C - E_F)               # V
 W_d0 = np.sqrt(2*(eps_s*V_bi/(q*Nd)))
+go = (q*mu_n*Nd*Z*a)/(L)
 
 # Tensiones de control
 V_P_0 = -(q*Nd*(a**2))/(2*eps_s)
@@ -43,7 +44,7 @@ V_GS = 0
 V_DS_SAT  =  -V_P_0 + V_GS - V_bi 
 
 
-IDSS =0.00368
+IDSS =go*(V_DS_SAT - (2/(3*np.sqrt(np.abs(V_P_0)) ))*((V_bi + V_DS_SAT)**(3/2) - (V_bi)**(3/2) )        )
 # (Z/L) * (a - W_d0 ) * q * mu_n * Nd * V_DS_SAT
 
 
@@ -81,7 +82,6 @@ ID_estr = IDSS * (1 - VGS_estr / V_P)**2
 
 #Modelo completo
 #VGS_completo = np.linspace(V_P - 3, 0, 600)
-go = (q*mu_n*Nd*Z*a)/(L)
 
 print("go = "+ str(go) + "1/ohm")
 
