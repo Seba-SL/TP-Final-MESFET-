@@ -118,7 +118,8 @@ label_text = (
     rf"$a = {a*1e4:.1f}\ \mu\mathrm{{m}}$" "\n"
     rf"$L = {L*1e4:.1f}\ \mu\mathrm{{m}}$" "\n"
     rf"$Z = {Z*1e4:.1f}\ \mu\mathrm{{m}}$" "\n"
-    rf"$V_P = {V_P:.1f}\ \mathrm{{V}}$"
+    rf"$V_p = {V_P:.1f}\ \mathrm{{V}}$""\n"
+    rf"$IDSS = {IDSS*1e3:.1f}\ \mathrm{{mA}}$"
 )
 
 plt.text(

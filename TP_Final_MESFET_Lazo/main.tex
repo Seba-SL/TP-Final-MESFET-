@@ -1905,7 +1905,7 @@ De la densidad de corriente, se puede despejar la corriente que atraviesa el can
 	I_D = (Z\cdot [a - W(x)]) \cdot q \cdot N_D \cdot \mu_n \cdot (- \frac{dV}{dx})
 \end{equation}
 
-Debido que la corriente se define positiva entrante al dispositivo.
+Debido que la corriente se define positiva entrante al dispositivo, se cambia el signo de la expresión.
 
 \begin{equation}
 		I_D =  Z \cdot q \cdot N_D \cdot \mu_n \cdot[a - W(x)] \cdot ( \frac{dV}{dx})
@@ -1932,17 +1932,17 @@ Resolviendo la integral:
  \frac{1}{a}	\int_0^{V_{DS}}  W(x) \cdot dV =  \frac{1}{a}	\int_0^{V_{DS}} \sqrt{\frac{2 \cdot \epsilon_s \cdot [  V_{bi} - V_{GS} + V(x)] }{q\cdot N_D}}\cdot dV
 \end{equation}
 
-Se puede despejar $V_P$ de la siguiente forma: 
+Se puede despejar $V_{p0}$ de la siguiente forma: 
 \begin{equation}
   \sqrt{ \frac{2 \cdot \epsilon_s}{q\cdot N_D \cdot a^2}}	\int_0^{V_{DS}} \sqrt{ (V_{bi} - V_{GS} + V(x))} \; dV
 \end{equation}
 
 \begin{equation}
-	\sqrt{ \frac{1}{V_P}} \cdot \int_0^{V_{DS}} \sqrt{ (V_{bi} - V_{GS} + V(x))} \; dV
+	\sqrt{ \frac{1}{V_{p0}}} \cdot \int_0^{V_{DS}} \sqrt{ (V_{bi} - V_{GS} + V(x))} \; dV
 \end{equation}
 
 \begin{equation}
-	 \frac{1}{\sqrt{V_P}} \cdot \frac{2}{3} \left[ (V_{bi} - V_{GS} + V_{DS} )^{\frac{3}{2}} - ( V_{bi} - V_{GS})^{\frac{3}{2}} \right]
+	 \frac{1}{\sqrt{V_{p0}}} \cdot \frac{2}{3} \left[ (V_{bi} - V_{GS} + V_{DS} )^{\frac{3}{2}} - ( V_{bi} - V_{GS})^{\frac{3}{2}} \right]
 \end{equation}
 
 
@@ -1950,7 +1950,7 @@ Definiendo $g_o = \frac{Z\cdot q \cdot N_D \cdot \mu_n \cdot a}{L}$ como la cond
 
 
 \begin{equation}
-	I_D = g_o \cdot	\left\{ V_{DS}  - \frac{2}{3 \cdot \sqrt{V_P}} \cdot \left[ (V_{bi} - V_{GS} + V_{DS} )^{\frac{3}{2}} - ( V_{bi} - V_{GS})^{\frac{3}{2}} \right]\right\} 
+	I_D = g_o \cdot	\left\{ V_{DS}  - \frac{2}{3 \cdot \sqrt{V_{p0}}} \cdot \left[ (V_{bi} - V_{GS} + V_{DS} )^{\frac{3}{2}} - ( V_{bi} - V_{GS})^{\frac{3}{2}} \right]\right\} 
 \end{equation}
 
 
@@ -1958,7 +1958,7 @@ Definiendo $g_o = \frac{Z\cdot q \cdot N_D \cdot \mu_n \cdot a}{L}$ como la cond
 
 
 		\begin{equation}
-				I_D = g_o \cdot	\left\{ V_{DS}  - \frac{2}{3 \cdot \sqrt{V_P}} \cdot \left[ (V_{bi} - V_{GS} + V_{DS} )^{\frac{3}{2}} - ( V_{bi} - V_{GS})^{\frac{3}{2}} \right] \right\} 
+				I_D = g_o \cdot	\left\{ V_{DS}  - \frac{2}{3 \cdot \sqrt{V_{p0}}} \cdot \left[ (V_{bi} - V_{GS} + V_{DS} )^{\frac{3}{2}} - ( V_{bi} - V_{GS})^{\frac{3}{2}} \right] \right\} 
 		\end{equation}
 	
 
