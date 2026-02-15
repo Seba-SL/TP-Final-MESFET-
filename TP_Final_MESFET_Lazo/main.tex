@@ -393,6 +393,7 @@ El comportamiento eléctrico del dispositivo se podrá describir con ayuda de la
 		Tensión umbral & $V_p$ & V & Tensión $V_{GS}$ para la cual el dispositivo comienza a conducir. \\ \hline
 		Tensión de pellizco (pinch--off) & $V_{p0}$ & V & Tensión $V_{GS}$ para la cual el canal se estrangula por completo. \\ \hline
 		Corriente de saturación & $I_{DSS}$ & A & Corriente de drenaje para $V_{GS} = 0$ (D-MESFET).\\ \hline
+		Parámetro de modulación del canal & $\lambda$ & $V^{-1}$& Produce un efecto no ideal del transistor.\\ \hline
 	\end{tabular}
 \end{table}
 
@@ -2019,7 +2020,7 @@ Cuando un MESFET está polarizado en la región de estrangulamiento, la longitud
 \subsection{Modulación del largo del canal}
 
 
-
+Previamente obtuvimos la expresión de $I_D$ considerando constante la  longitud del canal $L$. Sin embargo, la longitud efectiva del canal puede variar.
 
 
 \begin{figure}[H]
@@ -2036,12 +2037,37 @@ Cuando un MESFET está polarizado en la región de estrangulamiento, la longitud
 	% ---------- Texto (derecha) ----------
 	\begin{minipage}[c]{0.5\textwidth}
 		
-			Previamente obtuvimos la expresión de $I_D$ considerando constante la  longitud del canal $L$. Sin embargo, la longitud efectiva del canal puede variar. La longitud del canal n neutro disminuye a medida que $V_{DS}$ aumenta; por lo tanto, la corriente de drenador aumentará, tal como se observa en la figura \ref{fig:modulaciondelcanal}. El cambio en la longitud efectiva del canal y el correspondiente cambio en la corriente de drenador se denomina modulación de la longitud del canal \parencite{neamen2012}.
+			 La longitud del canal n neutro disminuye a medida que $V_{DS}$ aumenta; por lo tanto, la corriente de drenador aumentará, tal como se observa en la figura \ref{fig:modulaciondelcanal}. El cambio en la longitud efectiva del canal y el correspondiente cambio en la corriente de drenador se denomina modulación de la longitud del canal \parencite{neamen2012}.
+			
+			Tomando la tensión longitudinal cuando $V_{DS} > V_{DS_{[SAT]}}$, se tiene $V(x) \in [0, V_{DS}] $ y se define una tensión extra tal que $V_{DS} =V_{DS_{[SAT]}} + V'$, del mismo modo que se obtuvo el ancho de agotamiento en la expresión ()\ref{equation: W_d_polarizado}), se puede obtener el $\Delta L$ correspondiente con la modulación del canal debido a $V'$.
+			
+			\begin{equation}
+				V' = ( V_{DS} - V_{DS_{[SAT]} }  ) = \frac{q \cdot N_D \dot (\Delta L)^2 }{2 \cdot \epsilon_s}
+			\end{equation} 
+			
+			
+			\begin{equation}
+				\Delta L = \sqrt{   \frac{2 \cdot \epsilon_s (  V_{DS} - V_{DS_{[SAT]} }   )}{  q \cdot N_D}    }	
+			\end{equation} 
+			
+			De esta forma para la región de saturación del canal, la longitud del canal modula vendria dada por la expresión :
+			
+			\begin{equation}
+				L' = L - \frac{1}{2} \cdot 	\Delta L
+			\end{equation}
+			
+			
 			
 	\end{minipage}
+
 	
 \end{figure}
 
+Por lo tanto la corriente para $V_{DS} > V_{DS_{[SAT]}} $ respondería a la expresión (\ref{equation:ID_SAT_COMPLETA_3} ) multiplicada por un factor que ajuste la nueva longitud. Se define el parámetro de modulación de longitud de canal $\lambda $ para describir este comportamiento.
+	
+	\begin{equation}
+		I_{D_{[SAT]} } ' = I_{D_{[SAT]} } \cdot \frac{L}{L'}  = I_{D_{[SAT]} } \cdot (1 + \lambda \cdot V_{DS})
+	\end{equation}
 
 \subsection{Saturación de la velocidad de arrastre}
 \subsection{Región subumbral}
