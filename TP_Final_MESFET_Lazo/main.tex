@@ -390,7 +390,8 @@ El comportamiento eléctrico del dispositivo se podrá describir con ayuda de la
 		Tensión drenaje--fuente & $V_{DS}$ & V & Tensión aplicada entre drenaje y fuente. \\ \hline
 		Corriente de drenaje & $I_D$ & A & Corriente que circula por el canal del MESFET. \\ \hline
 		Corriente de compuerta & $I_G$ & A & Corriente de fuga de la unión Schottky.\\ \hline
-		Tensión de umbral (pinch--off) & $V_P$ & V & Tensión $V_{GS}$ para la cual el canal se estrangula por completo. \\ \hline
+		Tensión umbral & $V_p$ & V & Tensión $V_{GS}$ para la cual el dispositivo comienza a conducir. \\ \hline
+		Tensión de pellizco (pinch--off) & $V_{p0}$ & V & Tensión $V_{GS}$ para la cual el canal se estrangula por completo. \\ \hline
 		Corriente de saturación & $I_{DSS}$ & A & Corriente de drenaje para $V_{GS} = 0$ (D-MESFET).\\ \hline
 	\end{tabular}
 \end{table}
@@ -469,7 +470,7 @@ La elección del punto $Q$ depende de la aplicación específica del MESFET, ya 
 El modo corte sucede cuando la tensión $V_{GS}$ no supera la tensión $V_p$ o tensión umbral, y el transistor idealmente no tendra corriente a travez de la rama del \textit{drain}, tal como indican las expresiones (\ref{equation:modo_corte}).
 
 \begin{equation}\label{equation:modo_corte}
-		V_{GS} \le V_P \quad \Rightarrow \quad I_D = 0
+		V_{GS} \le V_p \quad \Rightarrow \quad I_D = 0
 \end{equation}
 
 \subsection{Modo en estrangulación}
@@ -479,12 +480,12 @@ El modo estrangulación es el rango en el cual la corriente de \textit{drain} se
 
 \begin{equation}\label{equation:modo_estrangulacion}
 		\begin{cases}
-			V_{GS} > V_P \\
-			V_{DS} \ge V_{GS} - V_P
+			V_{GS} > V_p \\
+			V_{DS} \ge V_{GS} - V_p
 		\end{cases} \quad
 		I_D = I_{DSS}
 		\left(
-		1 - \frac{V_{GS}}{V_P}
+		1 - \frac{V_{GS}}{V_p}
 		\right)^2
 \end{equation}
 
@@ -499,14 +500,14 @@ El modo lineal o óhmico responde linealmente tal como ocurriría con un resisto
 	\begin{aligned}
 		\text{para } \quad
 		\begin{cases}
-			V_{GS} > V_P \\
-			0 \le V_{DS} < V_{GS} - V_P
+			V_{GS} > V_p \\
+			0 \le V_{DS} < V_{GS} - V_p
 		\end{cases}
 		\qquad
 		I_D &=
-		\frac{2 I_{DSS}}{V_P^2}
+		\frac{2 I_{DSS}}{{V_p}^2}
 		\left[
-		\left( V_{GS} - V_P \right) V_{DS}
+		\left( V_{GS} - V_p \right) V_{DS}
 		- \frac{V_{DS}^2}{2}
 		\right]
 	\end{aligned}
@@ -1839,17 +1840,24 @@ Al considerar la polarización del dispositivo se produce un potencial longitudi
 	W_d(x) = \sqrt{\frac{2 \cdot \epsilon_s \cdot [  V_{bi} - V_{GS} + V(x)] }{q\cdot N_D}}
 \end{equation} 
 
-\subsection{Obtención de $V_{P}$}
+\subsection{Obtención de $V_{p0}$ y $V_{p}$}
 
 Partiendo de (\ref{equation: W_d_reposo}) reemplazando $W_d(x) = a $ se obtiene la tensión para la cual el dispositivo comienza a conducir: 
 
 \begin{equation}\label{equation:obtenicon_VP}
-	W_d = \sqrt{\frac{2 \cdot \epsilon_s \cdot V_P }{q\cdot N_D}} = a 
+	W_d = \sqrt{\frac{2 \cdot \epsilon_s \cdot V_{p0} }{q\cdot N_D}} = a 
 \end{equation} 
 
-Llegando finalmente a (\ref{equation:obtenicon_VP_2})
+Llegando finalmente a (\ref{equation:obtenicon_VP_2}), conocida como tensión de \textit{pinchoff}:
 \begin{equation}\label{equation:obtenicon_VP_2}
-		 V_P = \frac{a^2 \cdot q\cdot N_D}{2 \cdot \epsilon_s }
+		 V_{p0} = \frac{a^2 \cdot q\cdot N_D}{2 \cdot \epsilon_s }
+\end{equation}
+
+
+Se define a su vez, la tensión umbral como:
+
+\begin{equation}
+	V_{p} = V_{bi} - V_{p0}  
 \end{equation}
 
 
@@ -1869,10 +1877,10 @@ Mientras que evaluando la expresión del ancho de vaciamiento (\ref{equation: W_
 	 V_{DS}  = \frac{a^2 \cdot q\cdot N_D}{2 \cdot \epsilon_s} + V_{GS} -  V_{bi}
 \end{equation} 
 
-Se puede apreciar que se forma la tensión de umbral $V_P = \frac{a^2 \cdot q\cdot N_D}{2 \cdot \epsilon_s}$, llegando finalmente a la expresión (\ref{equation:obtension_VDS_SAT_4}):
+Se puede apreciar que se forma la tensión de \textit{pinchoff} $ V_{p0}= \frac{a^2 \cdot q\cdot N_D}{2 \cdot \epsilon_s}$, llegando finalmente a la expresión (\ref{equation:obtension_VDS_SAT_4}):
 
 \begin{equation}\label{equation:obtension_VDS_SAT_4}
-	V_{DS_{[sat]}} = V_P + V_{GS} -  V_{bi}
+	V_{DS_{[sat]}} = V_{p0} + V_{GS} -  V_{bi}
 \end{equation} 
 
 
