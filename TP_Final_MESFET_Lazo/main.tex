@@ -317,7 +317,7 @@ Los materiales que forman el dispositivo desprenden diferentes características 
 		Función trabajo $\Phi_M$ [eV] & -- & -- & 4.33 & 4.50 \\ \hline
 		Movilidad electrónica $\mu_n$ [cm$^2$/Vs] & 8500 & -- & -- & -- \\ \hline
 		Campo critico $\xi_{max}$ [$\frac{kV}{cm}$] & $300$ & $300$ & -- & -- \\ \hline
-		Masa efectiva ${m}^*_n$ &$0,0067\cdot m_o$ & -- & -- & -- \\ \hline
+		Masa efectiva ${m}^*_n$ &$0,067\cdot m_o$ & -- & -- & -- \\ \hline
 		Masa efectiva ${m}^*_p$  &$0,47\cdot m_o$& -- & -- & -- \\ \hline
 		Concentración intrínseca de portadores $n_i$ [cm$^{-3}$] & $1,79 \cdot 10^{6}$ &  $1,45 \cdot 10^{10}$ & -- & -- \\ \hline
 		Concentración  $N_D$ [cm$^{-3}$] & $4 \cdot 10 ^{15}$ & -- & -- & -- \\ \hline
@@ -666,7 +666,7 @@ El titanio no tiene brecha entre bandas de conducción y valencia ya que se sola
 		\end{equation}
 		
 		\begin{equation}\label{equation:nivel_fermi_tipon}
-			E_f = \frac{1,42}{2}\, eV + kT\cdot \ln\!\left(\frac{2\cdot 10^{15}}{1.79\cdot 10^{6}}\right) = 1,25 \; eV
+			E_f = \frac{1,42}{2}\, eV + kT\cdot \ln\!\left(\frac{4\cdot 10^{15}}{1.79\cdot 10^{6}}\right) = 1,25 \; eV
 		\end{equation}
 	
 		Para el caso del GaAs fuertemente dopado para las uniones óhmicas de los terminales \textit{drain} y \textit{source} el diagrama sera similar pero con un nivel de Fermi mayor, lo que dara una relación con el metal de $\phi_M < \phi_{SC_{n^+}}$. 
@@ -734,76 +734,76 @@ El titanio no tiene brecha entre bandas de conducción y valencia ya que se sola
 
 
 
-\subsubsection{Semi-aislante: GaAs-Cr}
+%\subsubsection{Semi-aislante: GaAs-Cr}
 
 
-\begin{figure}[H]
-	% --------- Texto (izquierda) ----------
-	\begin{minipage}[c]{0.45\textwidth}
-		Para lograr un semiconductor actuando como semi aislante se le añade como impurezas un metal, en este caso cromo, que forma un nivel en la banda prohibida que recolecta los portadores libres impidiendo que se formen, este nivel se conoce como nivel profundo (\textit{deep level}) que se forma cerca del centro energético, si un electrón llega a la banda de conducción, puede ser capturado por el nivel profundo del Cr, quedando localizado (no contribuye a conducción).
-	\end{minipage}
-	\hfill
+%\begin{figure}[H]
+%	% --------- Texto (izquierda) ----------
+%	\begin{minipage}[c]{0.45\textwidth}
+%		Para lograr un semiconductor actuando como semi aislante se le añade como impurezas un metal, en este caso cromo, que forma un nivel en la banda prohibida que recolecta los portadores libres impidiendo que se formen, este nivel se conoce como nivel profundo (\textit{deep level}) que se forma cerca del centro energético, si un electrón llega a la banda de conducción, puede ser capturado por el nivel profundo del Cr, quedando localizado (no contribuye a conducción).
+%	\end{minipage}
+%	\hfill
 	% --------- Gráfico (derecha) ----------
-	\begin{minipage}[c]{0.5\textwidth}
-		\centering
-		\begin{tikzpicture}[
-			>=Latex,
-			axis/.style={->, thick},
-			band/.style={thick},
-			level/.style={dashed, thick},
-			annot/.style={font=\small}
-			]
+%	\begin{minipage}[c]{0.5\textwidth}
+%		\centering
+%		\begin{tikzpicture}[
+%			>=Latex,
+%			axis/.style={->, thick},
+%			band/.style={thick},
+%			level/.style={dashed, thick},
+%			annot/.style={font=\small}
+%			]
 			
 			
 			
 			% Banda metálica (ocupada)
-			\fill[gray!40](-3,-2) rectangle (2.5,-1.4);
-			\node[annot] at (0,-1.8) {Banda de Valencia};
+%			\fill[gray!40](-3,-2) rectangle (2.5,-1.4);
+%			\node[annot] at (0,-1.8) {Banda de Valencia};
 			
 			% Banda metálica (desocupada)
-			\fill[gray!20] (-3,1.2) rectangle (2.6,2.6);
-			\node[annot] at (0,1.5) {Banda de Conducción};
+	%		\fill[gray!20] (-3,1.2) rectangle (2.6,2.6);
+	%		\node[annot] at (0,1.5) {Banda de Conducción};
 			
 			% Ejes
-			\draw[axis] (-3,-3) -- (-3,3) node[above] {Energía};
+	%		\draw[axis] (-3,-3) -- (-3,3) node[above] {Energía};
 			% Ejes
-			\draw[axis] (-3,-2) -- (3,-2) node[right] {Posición};
+	%		\draw[axis] (-3,-2) -- (3,-2) node[right] {Posición};
 				% Nivel de vacío
-			\draw[level] (-3,2.6) -- (2.5,2.6);
-			\node[annot, right] at (2.5,2.6) {$E_0$};
+	%		\draw[level] (-3,2.6) -- (2.5,2.6);
+	%		\node[annot, right] at (2.5,2.6) {$E_0$};
 			
 			% Banda de conducción
-			\draw[band] (-3,1.2) -- (2.5,1.2);
-			\node[annot, right] at (2.5,1.2) {$E_c$};
+	%		\draw[band] (-3,1.2) -- (2.5,1.2);
+	%		\node[annot, right] at (2.5,1.2) {$E_c$};
 			
 			% Banda de valencia
-			\draw[band] (-3,-1.4) -- (2.5,-1.4);
-			\node[annot, right] at (2.5,-1.4) {$E_v$};
+	%		\draw[band] (-3,-1.4) -- (2.5,-1.4);
+	%		\node[annot, right] at (2.5,-1.4) {$E_v$};
 			
 			% Nivel profundo del Cr
-			\draw[band] (-3,-0.3) -- (2.5,-0.3);
-			\node[annot, right] at (2.5,-0.45) {$E_{Cr}$};
+	%		\draw[band] (-3,-0.3) -- (2.5,-0.3);
+	%		\node[annot, right] at (2.5,-0.45) {$E_{Cr}$};
 			
 			% Nivel de Fermi (casi centrado en el gap)
-			\draw[level] (-3,-0.2) -- (3.4,-0.2);
-			\node[annot, right] at (3.5,-0.2) {$E_i$};
+	%		\draw[level] (-3,-0.2) -- (3.4,-0.2);
+	%		\node[annot, right] at (3.5,-0.2) {$E_i$};
 			
 			% Gap
-			\draw[<->, thick] (-2.1,-1.4) -- (-2.1,1.2);
-			\node[annot, left] at (-2.1,0.5) {$E_g$};
+	%		\draw[<->, thick] (-2.1,-1.4) -- (-2.1,1.2);
+	%		\node[annot, left] at (-2.1,0.5) {$E_g$};
 			
 			% Afinidad electrónica
-			\draw[<->, thick] (2.1,1.2) -- (2.1,2.6);
-			\node[annot, right] at (2.1,1.9) {$q\chi$};
+	%		\draw[<->, thick] (2.1,1.2) -- (2.1,2.6);
+	%		\node[annot, right] at (2.1,1.9) {$q\chi$};
 			
 			% Etiqueta material
-			\node[annot] at (0,-4) {Semiconductor: GaAs semi-aislante (Cr)};
-		\end{tikzpicture}
+	%		\node[annot] at (0,-4) {Semiconductor: GaAs semi-aislante (Cr)};
+	%	\end{tikzpicture}
 		
-	\end{minipage}
+	%\end{minipage}
 	
-	\caption{Diagrama de bandas del sustrato semi-aislante de GaAs dopado con Cr.}
-\end{figure}
+	%\caption{Diagrama de bandas del sustrato semi-aislante de GaAs dopado con Cr.}
+%\end{figure}
 
 
 
@@ -823,7 +823,7 @@ En equilibrio termodinámico la juntura Schottky, formada por el metal-semicondu
 	\item Región plana en el SC.
 \end{itemize}
 
-Se definen la barrera de potencial entre el metal y el semiconductor $\Phi_B$ = ($\Phi_M - \chi$) y barrera de juntura $\Phi_{bi}$ = $\Phi_B - \frac{1}{q} (E_c - E_f)$, también se puede apreciar como la flexión determina la zona de vaciamiento $W_d$ en equilibrio definida como $W_d0$.
+Se definen la barrera de potencial entre el metal y el semiconductor $\Phi_B$ = ($\Phi_M - \chi$) y barrera de juntura $\Phi_{bi}$ = $\Phi_B - \frac{1}{q} (E_c - E_f)$, también se puede apreciar como la flexión determina la zona de vaciamiento $W_d$ en equilibrio definida como $W_d0$. A su vez, se obtiene la tensión de juntura : $ V_bi = \phi_{bi} = \Phi_{M} - \chi_{sc} $. 
 
 
 Unión de barrera Schottky:
@@ -1099,7 +1099,6 @@ Unión de contacto óhmico: Para el caso donde $\Phi_m < \Phi_{s} $ (tipo n), al
 	\end{tikzpicture}
 	
 \end{figure}
-
 
 
 \subsection{Diagrama de bandas bajo régimen de corte}

@@ -8,12 +8,14 @@ q = 1.602e-19                 # C
 eps0 = 88.5e-15              # F/cm
 eps_r_GaAs = 12.9
 eps_s = eps_r_GaAs * eps0     # F/cm
-
+k= 8.617e-5  #eV/K
+T = 300  # K
 # -----------------------------
 # Parámetros del MESFET
 # -----------------------------
 mu_n = 8500               # 8500 cm^2/Vs
 Nd = 4e15                     # cm^-3
+ni= 1.79e6                  # cm^-3
 
 
 #Geometricos
@@ -23,15 +25,22 @@ L = 200e-6                      # cm
 
 phi_M = 4.33 
 chi_GaAs = 4.07
-V_bi = phi_M - chi_GaAs                    # V
+E_g = 1.42   #eV
+
+E_C =E_g 
+
+E_F = E_g/2 + k*T*np.log(Nd/ni)
+
+V_bi = (phi_M - chi_GaAs )   - (E_C - E_F)               # V
 W_d0 = np.sqrt(2*(eps_s*V_bi/(q*Nd)))
 
 # Tensiones de control
-V_P  =  -(q*Nd*(a**2))/(2*eps_s)       # V  (pinch-off)
+V_P_0 = -(q*Nd*(a**2))/(2*eps_s)
+V_P  =  V_P_0  + V_bi     # V  (pinch-off)
 
 V_GS = 0
 
-V_DS_SAT  =  (-V_P + V_GS - V_bi )
+V_DS_SAT  =  -V_P_0 + V_GS - V_bi 
 
 
 IDSS =0.00368
@@ -39,6 +48,8 @@ IDSS =0.00368
 
 
 
+
+print("E_F = "+ str(E_F)+ "eV")
 print("V_bi = "+ str(V_bi)+ "V")
 print("W_d0 = "+ str(W_d0)+ "cm \n")
 
