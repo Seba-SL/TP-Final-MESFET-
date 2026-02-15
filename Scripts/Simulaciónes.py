@@ -87,6 +87,7 @@ print("go = "+ str(go) + "1/ohm")
 
 VGS = np.linspace(V_P, 0, 1000)
 
+
 VDS_sat = (-V_P + VGS - V_bi )
 
 arg1 = VDS_sat + V_bi - VGS
@@ -138,7 +139,7 @@ plt.show()
 
 
 
-VGS_vals = [-2.0, V_P, -1.5, -1.0, -0.5, 0.0]
+VGS_vals = [-3.95,-3.5,-3, -2.0, -1.5, -1.0, -0.5, 0.0]
 
 plt.figure()
 
@@ -148,9 +149,7 @@ for VGS in VGS_vals:
     VDS = np.linspace(0, VDS_sat, 300)
 
     # Región óhmica
-    ID_ohmico = (2 * IDSS / V_P**2) * (
-        (VGS - V_P) * VDS - VDS**2 / 2
-    )
+    ID_ohmico = (2 * IDSS / (V_P**2)) * (   (VGS - V_P) * VDS - VDS**2 / 2)
 
     # Label
     if np.isclose(VGS, V_P):
@@ -159,7 +158,7 @@ for VGS in VGS_vals:
         label = rf"$V_{{GS}}={VGS}\,\mathrm{{V}}$"
 
     plt.plot(VDS, ID_ohmico, linewidth=3, label=label)
-
+    
     # -------------------------
     # IDSAT (región saturación)
     # -------------------------
@@ -177,6 +176,26 @@ for VGS in VGS_vals:
             color=plt.gca().lines[-1].get_color()
         )
 
+
+# ---- Cartel de parámetros ----
+label_text = (
+    r"MESFET (GaAs / Ti)" "\n"
+    rf"$N_D = {Nd:.2e}\ \mathrm{{cm^{{-3}}}}$" "\n"
+    rf"$\mu_n = {mu_n:.0f}\ \mathrm{{cm^2/Vs}}$" "\n"
+    rf"$a = {a*1e4:.1f}\ \mu\mathrm{{m}}$" "\n"
+    rf"$L = {L*1e4:.1f}\ \mu\mathrm{{m}}$" "\n"
+    rf"$Z = {Z*1e4:.1f}\ \mu\mathrm{{m}}$" "\n"
+    rf"$V_p = {V_P:.1f}\ \mathrm{{V}}$""\n"
+    rf"$IDSS = {IDSS*1e3:.1f}\ \mathrm{{mA}}$"
+)
+
+plt.text(
+    0.20, 0.95, label_text,
+    transform=plt.gca().transAxes,
+    fontsize=10,
+    verticalalignment='top',
+    bbox=dict(boxstyle="round", facecolor="white", alpha=0.85)
+)
 plt.xlabel(r"$V_{DS}$ [V]")
 plt.ylabel(r"$I_D$ [A]")
 plt.title("Curva de salida MESFET")
