@@ -474,7 +474,7 @@ El modo corte sucede cuando la tensión $V_{GS}$ no supera la tensión $V_p$ o t
 
 \subsection{Modo en estrangulación}
 
-El modo estrangulación es el rango en el cual la corriente de \textit{drain} se puede controlar mediante la tensión $V_{GS}$, es buscado en aplicaciones de amplificación de señal. En la expresión (\ref{equation:modo_estrangulacion}) se encuentran las condiciones de polarización y la corriente $I_D$ en función de $V_{GS}$ obtenida.
+El modo estrangulación es el rango en el cual la corriente de \textit{drain} se puede controlar mediante la tensión $V_{GS}$, es buscado en aplicaciones de amplificación de señal. En la expresión (\ref{equation:modo_estrangulacion}) se encuentran las condiciones de polarización y la corriente $I_D$ en función de $V_{GS}$ obtenida según el modelo de Shockley, que utiliza un valor experimental de $I_{DSS} $.
 
 
 \begin{equation}\label{equation:modo_estrangulacion}
@@ -493,7 +493,7 @@ El modo estrangulación es el rango en el cual la corriente de \textit{drain} se
 \subsection{Modo óhmico}
 
 
-El modo lineal o óhmico responde linealmente tal como lo haria un resistor y su corriente de \textit{drain} se rige por las condiciones de la expresión (\ref{equation: modo_lineal}).
+El modo lineal o óhmico responde linealmente tal como ocurriría con un resistor y su corriente de \textit{drain} se rige por las condiciones de la expresión (\ref{equation: modo_lineal}) para el modelo clásico de Shockley.
  
 \begin{equation}\label{equation: modo_lineal}
 	\begin{aligned}
@@ -823,7 +823,7 @@ En equilibrio termodinámico la juntura Schottky, formada por el metal-semicondu
 	\item Región plana en el SC.
 \end{itemize}
 
-Se definen la barrera de potencial entre el metal y el semiconductor $\Phi_B$ = ($\Phi_M - \chi$) y barrera de juntura $\Phi_{bi}$ = $\Phi_B - \frac{1}{q} (E_c - E_f)$, también se puede apreciar como la flexión determina la zona de vaciamiento $W_d$ en equilibrio definida como $W_d0$. A su vez, se obtiene la tensión de juntura : $ V_bi = \phi_{bi} = \Phi_{M} - \chi_{sc} $. 
+Se definen la barrera de potencial entre el metal y el semiconductor $\Phi_B$ = ($\Phi_M - \chi$) y barrera de juntura $q\cdot \Phi_{bi}$ = $q\cdot \Phi_B -  (E_c - E_f)$, también se puede apreciar como la flexión determina la zona de vaciamiento $W_d$ en equilibrio definida como $W_{d0}$. A su vez, se obtiene la tensión de juntura : $ V_{bi} = (\Phi_{M} - \chi_{sc} ) - ( \frac{E_c - E_f}{q}) $. 
 
 
 Unión de barrera Schottky:
