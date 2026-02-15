@@ -139,7 +139,7 @@ plt.show()
 
 
 
-VGS_vals = [-3.95,-3.5,-3, -2.0, -1.5, -1.0, -0.5, 0.0]
+VGS_vals = [-3.9,-3.5,-3, -2.0, -1.5, -1.0, -0.5, 0.0]
 
 plt.figure()
 
@@ -165,16 +165,10 @@ for VGS in VGS_vals:
     if VGS > V_P:
         IDSAT = IDSS * (1 - VGS / V_P)**2
 
-        VDS_sat_line = np.linspace(VDS_sat, max(VGS_vals) - V_P + 0.2, 50)
+        VDS_sat_line = np.linspace(VDS_sat,10, 5000)
         ID_sat_line = IDSAT * np.ones_like(VDS_sat_line)
 
-        plt.plot(
-            VDS_sat_line,
-            ID_sat_line,
-            linestyle="--",
-            linewidth=3,
-            color=plt.gca().lines[-1].get_color()
-        )
+        plt.plot(VDS_sat_line,ID_sat_line,linestyle="--",linewidth=3,color=plt.gca().lines[-1].get_color())
 
 
 # ---- Cartel de parámetros ----
@@ -190,7 +184,7 @@ label_text = (
 )
 
 plt.text(
-    0.20, 0.95, label_text,
+    0.8, 0.6, label_text,
     transform=plt.gca().transAxes,
     fontsize=10,
     verticalalignment='top',
