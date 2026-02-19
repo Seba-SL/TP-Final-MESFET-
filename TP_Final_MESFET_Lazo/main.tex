@@ -342,7 +342,7 @@ En la siguiente tabla se presentan los parámetros que describen las dimensiones
 		\textbf{Parámetro} & \textbf{Símbolo} & \textbf{Valor} & \textbf{Descripción} \\ \hline
 		Longitud de la compuerta 
 		& $L$ 
-		& $2 \,\mu m$
+		& $4 \,\mu m$
 		& Longitud del canal en la dirección $x$ (source--drain) \\ \hline
 		
 		Ancho del dispositivo 
@@ -2016,7 +2016,7 @@ Utilizando las expresiones de $I_D$ tomando como variable $V_{GS}$ y utilizando 
 
 En el análisis previo se contemplo un comportamiento ideal, sin contemplar corrientes de fuga, parámetros uniformes, una longitud de canal constante y una movilidad constante.
 
-Cuando un MESFET está polarizado en la región de estrangulamiento, la longitud efectiva del canal eléctrico se determina por la tensión $V_{DS}$. Este efecto no ideal se denomina modulación de longitud de canal. Además, cuando un transistor está polarizado cerca o en la región de estrangulamiento, el campo eléctrico en el canal puede alcanzar la magnitud suficiente para que los portadores mayoritarios alcancen su velocidad de saturación. En este punto, la movilidad deja de ser constante. La magnitud de la corriente de compuerta afectará la impedancia de entrada, lo cual puede ser necesario tener en cuenta en el diseño del circuito \parencite{neamen2012}.
+Cuando un MESFET está polarizado en la región de estrangulamiento, la longitud efectiva del canal eléctrico se determina por la tensión $V_{DS}$. Este efecto no ideal se denomina modulación de longitud de canal. Además, cuando un transistor está polarizado cerca o en la región de estrangulamiento, el campo eléctrico en el canal puede alcanzar la magnitud suficiente para que los portadores mayoritarios alcancen su velocidad de saturación. En este punto, la movilidad deja de ser constante. A su vez la magnitud de la corriente de compuerta afectará la impedancia de entrada, lo cual puede ser necesario tener en cuenta en el diseño de circuitos \parencite{neamen2012}.
 
 \subsection{Modulación del largo del canal}
 
@@ -2064,7 +2064,7 @@ Previamente obtuvimos la expresión de $I_D$ considerando constante la  longitud
 	
 \end{figure}
 
-Por lo tanto la corriente para $V_{DS} > V_{DS_{[SAT]}} $ respondería a la expresión (\ref{equation:ID_SAT_COMPLETA_3} ) multiplicada por un factor que ajuste la nueva longitud. Se define el parámetro de modulación de longitud de canal $\lambda $ tomando una pendiente promedio del efecto descripto, dicho efecto se simulara para un valor determinado de $V_{GS}$ y se vera en la curva de salida para valores superiores a $V_{DS_{[sat]}}$.
+Por lo tanto la corriente para $V_{DS} > V_{DS_{[SAT]}} $ respondería a la expresión (\ref{equation:ID_SAT_COMPLETA_3} ) multiplicada por un factor que ajuste la nueva longitud. Se define el parámetro de modulación de longitud de canal $\lambda $ tomando una pendiente promedio del efecto descripto, dicho efecto se simulara para un valor determinado de $V_{GS}$ y se vera en la curva de salida para valores superiores a $V_{DS_{[sat]}}$ figura \ref{fig:curvadesalidaefectomodulacion}.
 	
 	\begin{equation}
 		I_{D_{[SAT]} } ' = I_{D_{[SAT]} } \cdot \frac{L}{L'}  \approx I_{D_{[SAT]} } \cdot (1 + \lambda \cdot V_{DS})
@@ -2094,7 +2094,7 @@ Se obtiene:
 
 Reemplazando $\Delta L $, finalmente:
 
-\begin{equation}
+\begin{equation}\label{equation:L_Lprima}
 	\frac{L}{L'}
 	\approx
 	1 +
@@ -2102,11 +2102,20 @@ Reemplazando $\Delta L $, finalmente:
 	\sqrt{
 		\frac{2 \varepsilon_s}{q N_D}
 	}
-	\sqrt{V_{DS} - V_{DS_{sat}}}
+	\sqrt{V_{DS} - V_{DS_{sat}}}	\approx
+	1 + \lambda \cdot V_{DS}
 \end{equation}
 
 
 
+Se puede notar en la expresión (\ref{equation:L_Lprima})  que a medida que el canal tenga menor longitud $L$ (canal corto), el efecto sera mayor con lo cual a medida que $L$ aumenta el efecto se podría despreciar para valores bajos de $V_{DS}$ esto se aprecia también en la simulación para un MESFET con una longitud mayor logrando la curva de color naranja.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\linewidth]{Img/curva_de_salida_efectoModulacion}
+	\caption{Curva de salida afectada por la modulación del canal.}
+	\label{fig:curvadesalidaefectomodulacion}
+\end{figure}
 
 
 \subsection{Saturación de la velocidad de arrastre}

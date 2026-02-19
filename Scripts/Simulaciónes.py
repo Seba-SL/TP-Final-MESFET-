@@ -20,7 +20,8 @@ ni= 1.79e6                  # cm^-3
 #Geometricos
 a = 120e-6               # cm
 Z = 1000e-6                     # cm  (equivalente a )
-L = 200e-6                      # cm
+L = 400e-6                      # cm
+
 
 phi_M = 4.33 
 chi_GaAs = 4.07
@@ -232,11 +233,11 @@ ID_completo = go*(VDS - factor * ( (V_bi - VGS + VDS)**(3/2) - (V_bi - VGS)**(3/
 plt.plot(VDS, ID_completo*1e3,linewidth=3,linestyle="-",alpha = 0.9, color="red")
 
 
+
 # Saturación modelo completo
 if VGS > V_P:
 
         
-
         ID_sat_completo = go*(VDS_sat - factor * ((V_bi - VGS + VDS_sat)**(3/2)- (V_bi - VGS)**(3/2)))
 
         VDS_sat_line = np.linspace(VDS_sat, 10, 1000)
@@ -244,22 +245,28 @@ if VGS > V_P:
         Delta_L = np.sqrt(2*eps_s*(VDS_sat_line - VDS_sat)/(q*Nd))
 
 
-        L_prima = L - 0.045*Delta_L
+        L_prima = L - 0.5*Delta_L
 
         ID_sat_line = ID_sat_completo * np.ones_like(VDS_sat_line)
 
         
         ID_sat_line_ch_modulation =ID_sat_line*(L/L_prima)
 
-        plt.plot(VDS_sat_line, ID_sat_line*1e3,linewidth=3,linestyle="--", alpha = 0.6,color="blue")
-        plt.plot(VDS_sat_line, ID_sat_line_ch_modulation*1e3,linewidth=3,linestyle="-", alpha = 0.6,color="red")
+
+        L_prima = L*5 - 0.5*Delta_L
+
+        ID_sat_line_ch_modulation_B = ID_sat_line*(5*L/L_prima)
+
+        plt.plot(VDS_sat_line, ID_sat_line*1e3,linewidth=3.5,linestyle="--", alpha = 0.6,color="blue")
+        plt.plot(VDS_sat_line, ID_sat_line_ch_modulation*1e3,linewidth=3.5,linestyle="-", alpha = 0.6,color="red")
+        plt.plot(VDS_sat_line, ID_sat_line_ch_modulation_B*1e3,linewidth=3.5,linestyle="-", alpha = 0.6,color="orange")
 
       
         # -------------------------
 
 label_text = (
     r"MESFET (GaAs / Ti)" "\n"
-    r"────────  Modelo con efecto de modulación" "\n"
+    r"──────── Modelo con efecto de modulación" "\n"
     r"- - - - -  Modelo completo sin efecto" "\n"
     "\n"
     rf"$N_D = {Nd:.2e}\ \mathrm{{cm^{{-3}}}}$" "\n"
@@ -271,7 +278,13 @@ label_text = (
     rf"$IDSS = {IDSS*1e3:.1f}\ \mathrm{{mA}}$""\n"
 )
 
-plt.text(0.5, 0.5, label_text,transform=plt.gca().transAxes,fontsize=10,verticalalignment='top',bbox=dict(boxstyle="round", facecolor="white", alpha=0.85))
+plt.text(0.6, 0.5, label_text,transform=plt.gca().transAxes,fontsize=10,verticalalignment='top',bbox=dict(boxstyle="round", facecolor="white", alpha=0.85))
+
+
+plt.text(0.04, 0.7, r"Sin modulación",transform=plt.gca().transAxes,fontsize=10,verticalalignment='top',bbox=dict(boxstyle="round", facecolor="blue", alpha=0.5))
+plt.text(0.04, 0.8, r"Modulación para canal largo (L = 20 $\mu m$)",transform=plt.gca().transAxes,fontsize=10,verticalalignment='top',bbox=dict(boxstyle="round", facecolor="orange", alpha=0.5))
+plt.text(0.04, 0.9, r"Modulación para canal corto (L = 4 $\mu m$)",transform=plt.gca().transAxes,fontsize=10,verticalalignment='top',bbox=dict(boxstyle="round", facecolor="red", alpha=0.5))
+# -------------------------
 # -------------------------
 plt.xlabel(r"$V_{DS}$ [V]")
 plt.ylabel(r"$I_D$ [mA]")
@@ -289,7 +302,7 @@ plt.show()
 mu_n = 8500          # cm^2/Vs
 campo_critico = 1e5
 
-VDS = np.linspace(0.01, VDS_sat*3, 5000)
+VDS = np.linspace(0.01, VDS_sat*10, 5000)
 Delta_L = np.sqrt(np.abs(2*eps_s*(VDS - VDS_sat)/(q*Nd)))
 
 L_prima = L- 0.5*Delta_L
@@ -328,18 +341,17 @@ plt.axvspan(xi_ohmica_max, xi_ndm_max,
             color="red", alpha=0.08)
 
 # Región saturación
-plt.axvspan(xi_ndm_max, xi.max(), 
-            color="green", alpha=0.08)
+plt.axvspan(xi_ndm_max, xi.max()*5, color="green", alpha=0.08)
 
 
 # Textos en cada región
-plt.text(4e2, 2e6, "Región de movilidad constante", fontsize=11)
-plt.text(4e3, 2e6, "Movilidad diferencial\nnegativa (NDM)", fontsize=11)
-plt.text(4e4, 2e6, "Saturación\nde velocidad", fontsize=11)
+plt.text(4e1, 1e7, "Región de movilidad constante", fontsize=15)
+plt.text(3e3, 2e6, "Movilidad diferencial\nnegativa (NDM)", fontsize=15)
+plt.text(4e4, 2e6, "Saturación\nde velocidad", fontsize=15)
 
 
-plt.text(xi_p, 1e6,r'$\xi_p$', fontsize=11)
-plt.text(xi_s, 1e6, r'$\xi_s$', fontsize=11)
+plt.text(xi_p, 1e6,r'$\xi_p$', fontsize=15)
+plt.text(xi_s, 1e6, r'$\xi_s$', fontsize=15)
 
 plt.axvline(xi_p, linestyle='--', linewidth=2)
 plt.axvline(xi_s, linestyle='--', linewidth=2)
