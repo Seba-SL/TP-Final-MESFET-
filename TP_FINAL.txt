@@ -1,18 +1,19 @@
-1) Estructura, parámetros característicos y aplicaciones típicas
+Tres temas: JFET(Aureano), MESFET(Lazo) y TBJ(Loñ)
 
-2) Operación básica como transistor que incluye la descripción de sus modos de funcionamiento
+1) Estructura, parámetros característicos y aplicaciones típicas [OK]
 
-3) Diagrama de bandas para cada uno de sus modos de funcionamiento, incluido cuando no hay tensiones aplicadas (en equilibrio)
+2) Operación básica como transistor que incluye la descripción de sus modos de funcionamiento [OK]
 
-4) Obtención de la corriente de salida en función de los parámetros de control y del circuito externo (modelo completo)
+3) Diagrama de bandas para cada uno de sus modos de funcionamiento, incluido cuando no hay tensiones aplicadas (en equilibrio) [OK]
 
-5) Comparación con la expresión 'clásica'
+4) Obtención de la corriente de salida en función de los parámetros de control y del circuito externo (modelo completo) [OK]
+
+5) Comparación con la expresión 'clásica' [OK]
 
 6) Simulación de las curvas de salida (para distintos valores de tensión de control) y de transferencia (para distintos valores de tensión de salida) 
+[OK]
 
 7) Efectos No ideales: explicación y simulación
-7.1) TBJ: Modulación del ancho de la base / Elevada Inyección / Estrechamiento de la banda prohibida del emisor / Tensión de Ruptura
+
 7.2) JFET y MESFET: Modulación del largo del canal / Saturación de la velocidad de arrastre / Región Subumbral / Efectos de corriente de Gate
-
-
 

@@ -317,6 +317,7 @@ Los materiales que forman el dispositivo desprenden diferentes características 
 		Función trabajo $\Phi_M$ [eV] & -- & -- & 4.33 & 4.50 \\ \hline
 		Movilidad electrónica $\mu_n$ [cm$^2$/Vs] & 8500 & -- & -- & -- \\ \hline
 		Campo critico $\xi_{max}$ [$\frac{kV}{cm}$] & $300$ & $300$ & -- & -- \\ \hline
+		Campo de saturación $\xi_{sat}$ [$\frac{kV}{cm}$] & $100$ & $100$ & -- & -- \\ \hline
 		Masa efectiva ${m}^*_n$ &$0,067\cdot m_o$ & -- & -- & -- \\ \hline
 		Masa efectiva ${m}^*_p$  &$0,47\cdot m_o$& -- & -- & -- \\ \hline
 		Concentración intrínseca de portadores $n_i$ [cm$^{-3}$] & $1,79 \cdot 10^{6}$ &  $1,45 \cdot 10^{10}$ & -- & -- \\ \hline
@@ -398,29 +399,29 @@ El comportamiento eléctrico del dispositivo se podrá describir con ayuda de la
 \end{table}
 
 
-\subsection{Parámetros de rendimiento}
+%\subsection{Parámetros de rendimiento}
 
-Para un posterior análisis de funcionamiento detallado contemplando posibles condiciones no ideales, es necesario detallar parámetros de rendimiento como los descriptos por la siguiente tabla (\ref{tab:param_rend_mesfet}). 
+%Para un posterior análisis de funcionamiento detallado contemplando posibles condiciones no ideales, es necesario detallar parámetros de rendimiento como los descriptos por la siguiente tabla (\ref{tab:param_rend_mesfet}). 
 
 
 
-\begin{table}[H]
-	\centering
-	\caption{Parámetros de rendimiento característicos del transistor MESFET}
-	\label{tab:param_rend_mesfet}
-	\begin{tabular}{|l|c|l|}
-		\hline
-		\textbf{Parámetro} & \textbf{Símbolo} & \textbf{Descripción} \\ \hline
-		Ancho de banda útil & $BW$ & Rango de frecuencias de operación efectiva. \\ \hline
-		Factor de ruido & $NF$ & Degradación de la relación señal--ruido introducida por el dispositivo. \\ \hline
-		Temperatura de operación & $T_{op}$ & Rango de temperatura en condiciones nominales. \\ \hline
-		Rango de tensión compuerta--fuente & $V_{GS}$ & Intervalo de polarización segura de la compuerta. \\ \hline
-		Rango de tensión drenaje--fuente & $V_{DS}$ & Intervalo de operación sin ruptura. \\ \hline
-		Rango de corriente de drenaje & $I_D$ & Corriente admisible en régimen continuo. \\ \hline
-		Región de operación recomendada & -- & Lineal, saturación o corte. \\ \hline
-		Potencia máxima disipada  & $P_{max}$ & Potencia máxima admisible sin degradación. \\ \hline
-	\end{tabular}
-\end{table}
+%\begin{table}[H]
+%	\centering
+%	\caption{Parámetros de rendimiento característicos del transistor MESFET}
+%	\label{tab:param_rend_mesfet}
+%	\begin{tabular}{|l|c|l|}
+%		\hline
+%		\textbf{Parámetro} & \textbf{Símbolo} & \textbf{Descripción} \\ \hline
+%		Ancho de banda útil & $BW$ & Rango de frecuencias de operación efectiva. \\ \hline
+%		Factor de ruido & $NF$ & Degradación de la relación señal--ruido introducida por el dispositivo. \\ \hline
+%		Temperatura de operación & $T_{op}$ & Rango de temperatura en condiciones nominales. \\ \hline
+%		Rango de tensión compuerta--fuente & $V_{GS}$ & Intervalo de polarización segura de la compuerta. \\ \hline
+%		Rango de tensión drenaje--fuente & $V_{DS}$ & Intervalo de operación sin ruptura. \\ \hline
+%		Rango de corriente de drenaje & $I_D$ & Corriente admisible en régimen continuo. \\ \hline
+%		Región de operación recomendada & -- & Lineal, saturación o corte. \\ \hline
+%		Potencia máxima disipada  & $P_{max}$ & Potencia máxima admisible sin degradación. \\ \hline
+%	\end{tabular}
+%\end{table}
 
 
 
@@ -536,7 +537,7 @@ Existen tres clasificaciones principales para los solidos: Aislantes, semiconduc
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=1\linewidth]{Img/Bandas_individuales}
+	\includegraphics[width=0.7\linewidth]{Img/Bandas_individuales}
 	\caption{ Diagramas de bandas de los tres principales tipos de solidos \parencite{boylestad2013}.}
 	\label{fig:bandasindividuales}
 \end{figure}
@@ -1890,7 +1891,7 @@ Se puede apreciar que se forma la tensión de \textit{pinchoff} $ V_{p0}= \frac{
 El dispositivo bajo conducción forma una densidad de corriente de arrastre de portadores mayoritarios $	J_{arr, n} $ en el eje \textit{x} , debido al campo aplicado $\xi$ y asumiendo $ n \approx N_D$, de acuerdo a la expresión (\ref{equation:J_corriente_deduccion_1}) :
 
 \begin{equation}\label{equation:J_corriente_deduccion_1}
-	J_{arr, n} = q \cdot n \cdot \mu_n \cdot \xi  =  q \cdot N_D \cdot \mu_n \cdot (- \frac{dV}{dx})
+	J_{arr, n} = q\cdot n\cdot 	v_{arr}  =q \cdot n \cdot \mu_n \cdot \xi  =  q \cdot N_D \cdot \mu_n \cdot (- \frac{dV}{dx})
 \end{equation}
 
 Se puede utilizar nuevamente la relación (\ref{equation:relacion_P_E}) y utilizar el gradiente del potencial.
@@ -2052,7 +2053,7 @@ Previamente obtuvimos la expresión de $I_D$ considerando constante la  longitud
 			
 			De esta forma para la región de saturación del canal, la longitud del canal modula vendria dada por la expresión :
 			
-			\begin{equation}
+			\begin{equation}\label{equation:L_Modulada}
 				L' = L - \frac{1}{2} \cdot 	\Delta L
 			\end{equation}
 			
@@ -2063,32 +2064,146 @@ Previamente obtuvimos la expresión de $I_D$ considerando constante la  longitud
 	
 \end{figure}
 
-Por lo tanto la corriente para $V_{DS} > V_{DS_{[SAT]}} $ respondería a la expresión (\ref{equation:ID_SAT_COMPLETA_3} ) multiplicada por un factor que ajuste la nueva longitud. Se define el parámetro de modulación de longitud de canal $\lambda $ para describir este comportamiento.
+Por lo tanto la corriente para $V_{DS} > V_{DS_{[SAT]}} $ respondería a la expresión (\ref{equation:ID_SAT_COMPLETA_3} ) multiplicada por un factor que ajuste la nueva longitud. Se define el parámetro de modulación de longitud de canal $\lambda $ tomando una pendiente promedio del efecto descripto, dicho efecto se simulara para un valor determinado de $V_{GS}$ y se vera en la curva de salida para valores superiores a $V_{DS_{[sat]}}$.
 	
 	\begin{equation}
-		I_{D_{[SAT]} } ' = I_{D_{[SAT]} } \cdot \frac{L}{L'}  = I_{D_{[SAT]} } \cdot (1 + \lambda \cdot V_{DS})
+		I_{D_{[SAT]} } ' = I_{D_{[SAT]} } \cdot \frac{L}{L'}  \approx I_{D_{[SAT]} } \cdot (1 + \lambda \cdot V_{DS})
 	\end{equation}
 
+
+Factorizando $L$ en el denominador:
+
+\begin{equation}
+	\frac{L}{L'} =
+	\frac{L}{L \left( 1 - \frac{\Delta L}{2L} \right)}
+	=
+	\frac{1}{1 - \frac{\Delta L}{2L}}
+\end{equation}
+
+Si se cumple que $\Delta L \ll L$, puede utilizarse el desarrollo en serie de Taylor:
+
+\begin{equation}
+	\frac{1}{1-x} \approx 1 + x \qquad \text{para } |x| \ll 1 \quad \quad 	x = \frac{\Delta L}{2L}
+\end{equation}
+
+Se obtiene:
+
+\begin{equation}
+	\frac{L}{L'} \approx 1 + \frac{\Delta L}{2L}
+\end{equation}
+
+Reemplazando $\Delta L $, finalmente:
+
+\begin{equation}
+	\frac{L}{L'}
+	\approx
+	1 +
+	\frac{1}{2L}
+	\sqrt{
+		\frac{2 \varepsilon_s}{q N_D}
+	}
+	\sqrt{V_{DS} - V_{DS_{sat}}}
+\end{equation}
+
+
+
+
+
 \subsection{Saturación de la velocidad de arrastre}
+
+La velocidad de arrastre de un portador en un semiconductor se satura al aumentar el campo eléctrico, tal como se aprecia en la figura \ref{fig:varrvscampo}. Este efecto de saturación de la velocidad implica que la movilidad no es constante tal como indica la expresión (\ref{equation:mu_definicin}) para el rango lineal de la velocidad en función del campo.
+
+
+
+
+
+
+\begin{figure}[H]
+	\centering
+	
+	% ---------- Imagen (izquierda) ----------
+	\begin{minipage}[c]{0.45\textwidth}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=1\linewidth]{Img/v_arr_vs_campo}
+		\caption{Velocidad de arrastre en función del campo aplicado para diferentes semiconductores \parencite{neamen2012}.}
+		\label{fig:varrvscampo}
+	\end{figure}
+	\end{minipage}
+	\hfill
+	% ---------- Texto (derecha) ----------
+	\begin{minipage}[c]{0.5\textwidth}
+		
+		
+		\begin{equation}\label{equation:mu_definicin}
+			\mu_n = \frac{v_{arr,n}}{\xi } \quad \quad \text{ $v_{arr,n}$: Velocidad de arrastre promedio.}
+		\end{equation}
+		
+		Se aprecia también la figura \ref{fig:varrvscampo} un sobre pico previo a la saturación de la velocidad de arrastre en el caso del GaAs y una región con pendiente negativa para la velocidad de arrastre, esto puede explicarse distinguiendo en el diagrama de la energía de los portadores libres en función del vector de onda, a medida que se incrementa el campo, la banda de conducción de los electrones se excita desde el valle inferior de alta movilidad hasta el valle superior de baja movilidad , incrementando la población de electrones del valle superior a expensas de la del inferior. Esto provoca que la velocidad global de arrastre disminuya , efecto aprovechado para crear amplificadores de potencia de microondas y osciladores locales.
+		
+	\end{minipage}
+	
+	
+\end{figure}
+
+
+Se simulara este efecto reemplazando la expresión de la velocidad de arrastre de (\ref{equation:J_corriente_deduccion_1}), por la expresión (\ref{equation:v_arr_enfuncion_de_E}) función del campo eléctrico aplicado y utilizando $v_{sat} = 6.8\cdot 10^6 \, \frac{cm}{s}$ junto con constantes de aproximación y la expresión del largo del canal (\ref{equation:L_Modulada}). La curva simulada sera la de salida, es decir la corriente $I_D$ en función de $V_{DS}$ ya que es la que es capaz de forzar el campo de saturación.
+
+\begin{equation}\label{equation:v_arr_enfuncion_de_E}
+v_{arr}(\xi) =
+\frac{\mu_n \, \xi}{1 + \left(\dfrac{\xi}{\xi_p}\right)^2}
++
+v_{sat} \,
+\frac{\left(\dfrac{\xi}{\xi_s}\right)^2}{1 + \left(\dfrac{\xi}{\xi_s}\right)^2}\quad \quad,\quad \xi \approx \frac{V_{DS}}{L'}
+\end{equation}
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\linewidth]{Img/vel_arrastre_func_campo}
+	\caption{}
+	\label{fig:velarrastrefunccampo}
+\end{figure}
+
+
+
 \subsection{Región subumbral}
+La corriente subumbral es la corriente de drenaje en el MESFET que existe cuando la tensión de compuerta está por debajo del valor de pinzamiento o umbral $ V_{GS} < V_p$ esta idealmente es cero, pero cerca del umbral, la aproximación de agotamiento abrupto no modela con precisión la región del canal. Se debe utilizar un perfil de potencial más detallado en la región de carga espacial. La ecuación (\ref{equation:ID_SAT_COMPLETA}) no describe adecuadamente los resultados experimentales cerca del voltaje umbral.
+
+
 \subsection{Efectos de corriente de gate}
+
+Cuando la tensión de compuerta se encuentra aproximadamente entre $0,5\,V$ y $1,0 \,V $ por debajo del umbral en un MESFET de canal n, la corriente de drenador alcanza un valor mínimo y luego aumenta lentamente a medida que disminuye la tensión de compuerta.
+
+\begin{figure}[H]
+	\centering
+	
+	% ---------- Imagen (izquierda) ----------
+	\begin{minipage}[c]{0.4\textwidth}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1\linewidth]{Img/efectos_corr_gate.png}
+			\caption{Medida de corriente en función de $V_{GS}$ para un MESFET de GaAs, mostrando la corriente $I_D$ para tres regiones normal, subumbral y corrientes de compuerta \parencite{neamen2012}.}
+			\label{fig:efectos_corr_gate}
+		\end{figure}
+	\end{minipage}
+	\hfill
+	% ---------- Texto (derecha) ----------
+	\begin{minipage}[c]{0.55\textwidth}
+		
+		 La corriente de drenador en esta región se denomina corriente de fuga de compuerta. La Figura \ref{fig:efectos_corr_gate} muestra un gráfico de la corriente de drenador en función de $V_{GS}$ para las tres regiones.
+		
+		
+		
+	\end{minipage}
+	
+	
+\end{figure}
+
+
 
 \section{Conclusión} 
 
-
-Ejemplo referenicias\\
-El comportamiento del MOSFET en saturación está bien modelado
-por la ecuación cuadrática \parencite{sedra2015}.
-
-Según \textcite{boylestad2013}, la tensión umbral depende del dopado.
-El comportamiento de los portadores en semiconductores puede
-modelarse a partir de principios cuánticos \parencite{neamen2012}.
-
-Según \textcite{sze2021}, el MOSFET moderno requiere modelos
-avanzados de canal corto.
-
-El nivel de Fermi se introduce naturalmente desde la física
-del estado sólido \parencite{mckelvey1996}.
 
 \printbibliography
 

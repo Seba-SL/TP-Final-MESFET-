@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2026.1.2)  15 FEB 2026 18:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2026.1.2)  19 FEB 2026 10:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1183,23 +1183,18 @@ File: Img/Tipos_MESFET.png Graphic file (type png)
 Package pdftex.def Info: Img/Tipos_MESFET.png  used on input line 278.
 (pdftex.def)             Requested size: 130.6004pt x 111.97813pt.
 
-Overfull \hbox (12.58742pt too wide) in paragraph at lines 310--327
+Overfull \hbox (12.58742pt too wide) in paragraph at lines 310--328
  [][] 
  []
 
 [5 <../Imagenes/GaAs-MESFET-Class-AB-RFPA-schematic-diagram.png> <./Img/Tipos_M
 ESFET.png>]
-Overfull \hbox (16.49884pt too wide) in paragraph at lines 339--374
+Overfull \hbox (16.49884pt too wide) in paragraph at lines 340--375
  [][] 
  []
 
 
-Overfull \hbox (38.29976pt too wide) in paragraph at lines 386--398
- [][] 
- []
-
-
-Overfull \hbox (24.36708pt too wide) in paragraph at lines 411--423
+Overfull \hbox (38.29976pt too wide) in paragraph at lines 387--399
  [][] 
  []
 
@@ -1207,101 +1202,127 @@ Overfull \hbox (24.36708pt too wide) in paragraph at lines 411--423
 <Img/simbolo_mas_esquema.jpg, id=66, 1071.0414pt x 489.9906pt>
 File: Img/simbolo_mas_esquema.jpg Graphic file (type jpg)
 <use Img/simbolo_mas_esquema.jpg>
-Package pdftex.def Info: Img/simbolo_mas_esquema.jpg  used on input line 453.
+Package pdftex.def Info: Img/simbolo_mas_esquema.jpg  used on input line 454.
 (pdftex.def)             Requested size: 358.50317pt x 164.00768pt.
- [7 <./Img/simbolo_mas_esquema.jpg>] [8]
-<Img/Bandas_individuales.png, id=75, 981.6675pt x 397.485pt>
+ [7 <./Img/simbolo_mas_esquema.jpg>]
+<Img/Bandas_individuales.png, id=71, 981.6675pt x 397.485pt>
 File: Img/Bandas_individuales.png Graphic file (type png)
 <use Img/Bandas_individuales.png>
-Package pdftex.def Info: Img/Bandas_individuales.png  used on input line 539.
-(pdftex.def)             Requested size: 512.14963pt x 207.37874pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 556--558
+Package pdftex.def Info: Img/Bandas_individuales.png  used on input line 540.
+(pdftex.def)             Requested size: 358.50317pt x 145.15663pt.
+ [8 <./Img/Bandas_individuales.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 557--559
 
  []
 
-[9 <./Img/Bandas_individuales.png>] [10] [11]
+[9] [10] [11]
 <Img/diagrama_bandas_alolargodelcanal.png, id=95, 593.21625pt x 337.26pt>
 File: Img/diagrama_bandas_alolargodelcanal.png Graphic file (type png)
 <use Img/diagrama_bandas_alolargodelcanal.png>
 Package pdftex.def Info: Img/diagrama_bandas_alolargodelcanal.png  used on inpu
-t line 1281.
+t line 1282.
 (pdftex.def)             Requested size: 230.46576pt x 131.02654pt.
- [12] [13 <./Img/diagrama_bandas_alolargodelcanal.png>]
-<Img/inclinación_bandas_debido_aVDS.png, id=105, 678.535pt x 137.51375pt>
+ [12 <./Img/diagrama_bandas_alolargodelcanal.png>]
+<Img/inclinación_bandas_debido_aVDS.png, id=101, 678.535pt x 137.51375pt>
 File: Img/inclinación_bandas_debido_aVDS.png Graphic file (type png)
 <use Img/inclinación_bandas_debido_aVDS.png>
 Package pdftex.def Info: Img/inclinación_bandas_debido_aVDS.png  used on input
- line 1617.
+ line 1618.
 (pdftex.def)             Requested size: 358.50317pt x 72.65532pt.
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
-628.
- (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+629.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
-)
-[14 <./Img/inclinación_bandas_debido_aVDS.png>]
-Overfull \hbox (2.1999pt too wide) detected at line 1787
+) [13 <./Img/inclinación_bandas_debido_aVDS.png>]
+Overfull \hbox (2.1999pt too wide) detected at line 1788
 []\OML/cmm/m/it/10 ^^^\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x; y\OT1/cmr/m/n/10 ) =
  []
  []
 
-[15] [16]
+[14] [15] [16]
 <Img/curva_transferencia.png, id=120, 987.2082pt x 471.9231pt>
 File: Img/curva_transferencia.png Graphic file (type png)
 <use Img/curva_transferencia.png>
-Package pdftex.def Info: Img/curva_transferencia.png  used on input line 1998.
+Package pdftex.def Info: Img/curva_transferencia.png  used on input line 1999.
 (pdftex.def)             Requested size: 512.14963pt x 244.82533pt.
- [17]
-<Img/curva_de_salida.png, id=124, 987.2082pt x 471.9231pt>
+<Img/curva_de_salida.png, id=121, 987.2082pt x 471.9231pt>
 File: Img/curva_de_salida.png Graphic file (type png)
 <use Img/curva_de_salida.png>
-Package pdftex.def Info: Img/curva_de_salida.png  used on input line 2008.
+Package pdftex.def Info: Img/curva_de_salida.png  used on input line 2009.
 (pdftex.def)             Requested size: 512.14963pt x 244.82533pt.
- [18 <./Img/curva_transferencia.png> <./Img/curva_de_salida.png>]
-<Img/modulacion_del_canal.png, id=130, 455.7025pt x 508.90125pt>
+ [17 <./Img/curva_transferencia.png>]
+<Img/modulacion_del_canal.png, id=126, 455.7025pt x 508.90125pt>
 File: Img/modulacion_del_canal.png Graphic file (type png)
 <use Img/modulacion_del_canal.png>
-Package pdftex.def Info: Img/modulacion_del_canal.png  used on input line 2032.
+Package pdftex.def Info: Img/modulacion_del_canal.png  used on input line 2033.
 
 (pdftex.def)             Requested size: 230.46576pt x 257.37747pt.
-[19 <./Img/modulacion_del_canal.png>] [20]
-Overfull \hbox (38.96579pt too wide) in paragraph at lines 2148--2148
+ [18 <./Img/curva_de_salida.png>]
+<Img/v_arr_vs_campo.png, id=131, 541.02126pt x 429.605pt>
+File: Img/v_arr_vs_campo.png Graphic file (type png)
+<use Img/v_arr_vs_campo.png>
+Package pdftex.def Info: Img/v_arr_vs_campo.png  used on input line 2128.
+(pdftex.def)             Requested size: 230.46576pt x 183.00252pt.
+ [19 <./Img/modulacion_del_canal.png>]
+<Img/vel_arrastre_func_campo.png, id=137, 987.2082pt x 471.9231pt>
+File: Img/vel_arrastre_func_campo.png Graphic file (type png)
+<use Img/vel_arrastre_func_campo.png>
+Package pdftex.def Info: Img/vel_arrastre_func_campo.png  used on input line 21
+63.
+(pdftex.def)             Requested size: 512.14963pt x 244.82533pt.
+ [20 <./Img/v_arr_vs_campo.png> <./Img/vel_arrastre_func_campo.png>]
+<Img/efectos_corr_gate.png, id=143, 531.9875pt x 369.38pt>
+File: Img/efectos_corr_gate.png Graphic file (type png)
+<use Img/efectos_corr_gate.png>
+Package pdftex.def Info: Img/efectos_corr_gate.png  used on input line 2185.
+(pdftex.def)             Requested size: 204.85672pt x 142.23709pt.
+ [21 <./Img/efectos_corr_gate.png>]
+Overfull \hbox (38.96579pt too wide) in paragraph at lines 2263--2263
 []\T1/cmtt/m/n/10 IDSS =go*(V_DS_SAT - (2/(3*np.sqrt(np.abs(V_P_0)) ))*((V_bi +
  V_DS_SAT)**(3/2) - (V_bi)**(3/2) )        )[] 
  []
 
-[21]
-Overfull \hbox (91.45297pt too wide) in paragraph at lines 2182--2182
+[22]
+Overfull \hbox (91.45297pt too wide) in paragraph at lines 2297--2297
 []\T1/cmtt/m/n/10 #############################################################
 ######################################################[] 
  []
 
 
-Overfull \hbox (7.47348pt too wide) in paragraph at lines 2207--2207
+Overfull \hbox (7.47348pt too wide) in paragraph at lines 2322--2322
 []\T1/cmtt/m/n/10 plt.plot(VGS, ID_completo, linewidth=4, label="Modelo Complet
 o",color = "green" , linestyle = "--")[] 
  []
 
-[22]
-Overfull \hbox (7.47348pt too wide) in paragraph at lines 2272--2272
+[23]
+Overfull \hbox (7.47348pt too wide) in paragraph at lines 2387--2387
 []\T1/cmtt/m/n/10 plt.plot(VDS_sat_line,ID_sat_line,linestyle="--",linewidth=3,
 color=plt.gca().lines[-1].get_color())[] 
  []
 
-[23] [24] (./main.aux
+[24] [25] (./main.aux
 LaTeX Info: Redefining \sptext on input line 27.
 LaTeX Info: Redefining \. on input line 27.
 LaTeX Info: Redefining \% on input line 27.
 )
+
+LaTeX Warning: There were undefined references.
+
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                main
+(biblatex)                and rerun LaTeX afterwards.
+
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 29299 strings out of 476091
- 592686 string characters out of 5794082
+ 29328 strings out of 476091
+ 593620 string characters out of 5794082
  1882330 words of memory out of 5000000
- 49241 multiletter control sequences out of 15000+600000
+ 49267 multiletter control sequences out of 15000+600000
  528864 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  83i,13n,89p,1771b,2809s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1331,10 +1352,10 @@ are/texmf/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/type
 rm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1728.pfb></usr/sha
 re/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1
 /public/cm-super/sftt1000.pfb>
-Output written on main.pdf (24 pages, 1714211 bytes).
+Output written on main.pdf (25 pages, 1837808 bytes).
 PDF statistics:
- 272 PDF objects out of 1000 (max. 8388607)
- 146 compressed objects within 2 object streams
+ 282 PDF objects out of 1000 (max. 8388607)
+ 149 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 118 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 133 words of extra memory for PDF output out of 10000 (max. 10000000)
 
