@@ -407,6 +407,7 @@ Al igual que en los diodos Schottky polarizados en inversa, esta unión da lugar
 
 
 \section{Operación básica}
+\label{sec:modelo_clasico}
 
 El dispositivo se opera generalmente como conmutador o como parte de un circuito amplificador de señal. A partir de las referencias de tensión y corriente inspiradas en la figura \ref{fig:simbolomasesquema}, se introduce a continuación el principio de operación del MESFET, mientras que en las secciones siguientes se desarrollará su funcionamiento en mayor detalle.
 
@@ -1859,6 +1860,7 @@ Se puede apreciar que se forma la tensión de \textit{pinchoff} $ V_{p0}= \frac{
 
 
 \section{Corriente}
+\label{sec:modelo_completo}
 
 El dispositivo bajo conducción forma una densidad de corriente de arrastre de portadores mayoritarios $	J_{arr, n} $ en el eje \textit{x} , debido al campo aplicado $\xi$ y asumiendo $ n \approx N_D$, de acuerdo a la expresión (\ref{equation:J_corriente_deduccion_1}) :
 
@@ -1935,7 +1937,7 @@ Definiendo $g_o = \frac{Z\cdot q \cdot N_D \cdot \mu_n \cdot a}{L}$ como la cond
 				I_D = g_o \cdot	\left\{ V_{DS}  - \frac{2}{3 \cdot \sqrt{V_{p0}}} \cdot \left[ (V_{bi} - V_{GS} + V_{DS} )^{\frac{3}{2}} - ( V_{bi} - V_{GS})^{\frac{3}{2}} \right] \right\} 
 		\end{equation}
 	
-
+	Valida para $V_{DS} > V_{SAT}$.
 \end{tcolorbox}
 
 
@@ -1956,7 +1958,7 @@ Para la obtención de $I_{D_{[SAT]}}$, se reemplaza en la expresión (\ref{equat
 	
 \section{Comparación}
 
-Una vez obtenida la expresión completa (\ref{equation:Expresion_Completa}) se puede comparar con el modelo clásico de Schockley (\ref{equation:modo_estrangulacion}), se puede apreciar que el modelo clásico es una buena aproximación a grandes rasgos pero a medida que se contemplan efectos no ideales esta deja de ser valida.  
+Utilizando las expresiones del modelo clásico de $I_D$ presentadas en la sección \ref{sec:modelo_clasico} y la del modelo completo deducido en la sección \ref{sec:modelo_completo} se pueden llevar a cabo análisis y evaluaciones de las curvas que forman, apreciando de esta forma como el modelo clásico es una buena aproximación a grandes rasgos pero a medida que se contemplan efectos no ideales esta deja de ser valida.  
 
 \section{Simulación de curvas}
 
@@ -1964,7 +1966,7 @@ Utilizando un código de \textit{Python} detallado en el Apéndice~\ref{sec:apen
 
 \subsection{Curva de transferencia}
 
-Utilizando las expresiones de $I_D$ tomando como variable $V_{GS}$ y utilizando $V_{DS} = V_{DS_{[SAT]}}$ , se obtienen las curvas \ref{fig:curvatransferencia}:
+Se toma como variable la tensión $V_{GS}$ y se utiliza la tensión $V_{DS} = V_{DS_{[SAT]}}$, obteniendo de esta forma las curvas de la figura \ref{fig:curvatransferencia}:
 
 \begin{figure}[H]
 	\centering
@@ -1973,13 +1975,11 @@ Utilizando las expresiones de $I_D$ tomando como variable $V_{GS}$ y utilizando 
 	\label{fig:curvatransferencia}
 \end{figure}
 
-Se puede contemplar como el modelo completo forma una curva tomando valores inferiores en relación del modelo clásico para el rango de estrangulación.
-
+Se puede contemplar como el modelo completo forma una curva tomando valores inferiores en relación del modelo clásico para el rango de estrangulación, mientras que ambas son coincidentes entorno a $V_{GS} = 0$. 
 
 
 \subsection{Curva de salida}
-
-Utilizando las expresiones de $I_D$ en función de la tensión de $V_{DS}$ para diferentes valores de la tensión de control $V_{GS}$, tanto el modelo clásico de Schockley como la expresión deducida en (\ref{equation:ID_SAT_COMPLETA_3}) ¸se obtienen las curvas de la figura \ref{fig:curvadesalida}:
+Para la curva de salida se evaluad $I_D$ en función de la tensión $V_DS$ para un rango de valores de $V_{GS}$¸ se obtienen las curvas de la figura \ref{fig:curvadesalida}:
 
 \begin{figure}[H]
 	\centering
@@ -1988,6 +1988,8 @@ Utilizando las expresiones de $I_D$ en función de la tensión de $V_{DS}$ para 
 	\label{fig:curvadesalida}
 \end{figure}
 
+
+Se puede observar que en este caso la aproximación clásica es convergente para el valor de $V_{GS} = 0 $ en la región de saturación, para el caso de tensiones de control menores se corresponde con corrientes de saturación mas altas en comparación con las obtenidas por el modelo completo.                                                     
 
 \section{Efectos no ideales}
 
@@ -2151,7 +2153,16 @@ v_{sat} \,
 	\label{fig:velarrastrefunccampo}
 \end{figure}
 
-Utilizando la relación $ {I_D}' = I_D\cdot \frac{v_{arr}(\xi)}{\mu_n \cdot \xi}$, siendo ${I_D}'$ la corriente contemplando la saturación de $v_{arr}$ se llega a la curva:
+Utilizando la relación $ {I_D}' = I_D\cdot \frac{v_{arr}(\xi)}{\mu_n \cdot \xi}$, siendo ${I_D}'$ la corriente contemplando la saturación de $v_{arr}$ se llega a la curva de la figura \ref{fig:modulacioncanalmuvariable}:
+
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\linewidth]{Img/modulacion_canal_mu_variable}
+	\caption{Curva de salida semilogaritmica con efectos no ideales para canal corto y canal largo.}
+	\label{fig:modulacioncanalmuvariable}
+\end{figure}
 
 
 
