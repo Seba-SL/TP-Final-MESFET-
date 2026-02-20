@@ -296,17 +296,14 @@ plt.show()
 
 
 ################################# Saturación de la velocidad de arrastre #########################################################################################
-# --------------------------------------------------
-# Parámetros físicos típicos para GaAs (300 K)
-# --------------------------------------------------
-mu_n = 8500          # cm^2/Vs
+
 campo_critico = 1e5
 
-VDS = np.linspace(0.01, VDS_sat*10, 5000)
+VDS = np.linspace(0.01, VDS_sat*10, 1000)
 Delta_L = np.sqrt(np.abs(2*eps_s*(VDS - VDS_sat)/(q*Nd)))
 
 L_prima = L- 0.5*Delta_L
-vsat =  6.8e6
+vsat =  6.8e6  # cm/s
 
 print("Valor de vsat "+ str(vsat) )
 # Parámetros de ajuste del modelo
@@ -321,7 +318,7 @@ xi = VDS/L_prima
 # --------------------------------------------------
 # Modelo con pico
 # --------------------------------------------------
-v_arr = (mu_n * xi / (1 + (xi/xi_p)**2) + vsat*((xi/xi_s)**2) / (1 + (xi/xi_s)**2))
+v_arr =  (mu_n * xi / (1 + (xi/xi_p)**2) + vsat*((xi/xi_s)**2) / (1 + (xi/xi_s)**2))
 
 # --------------------------------------------------
 # Gráfico
@@ -392,3 +389,68 @@ plt.show()
 
 
 ################### Curva de salida con efectos no ideales 1, y 2
+VGS_vals = [-1.5]
+
+VDS_sat = max(VGS - V_P, 0)
+VDS = np.linspace(0.01, VDS_sat, 1000)
+
+factor = (2/(3*np.sqrt(V_P_0)))
+
+ID_completo = go*(VDS - factor * ( (V_bi - VGS + VDS)**(3/2) - (V_bi - VGS)**(3/2) ))
+
+plt.plot(VDS, ID_completo*1e3,linewidth=3,linestyle="-",alpha = 0.9, color="red")
+
+# Saturación modelo completo
+if VGS > V_P:
+
+        
+        ID_sat_completo = go*(VDS_sat - factor * ((V_bi - VGS + VDS_sat)**(3/2)- (V_bi - VGS)**(3/2)))
+
+        VDS_sat_line = np.linspace(VDS_sat, 10, 1000)
+        Delta_L = np.sqrt(2*eps_s*(VDS_sat_line - VDS_sat)/(q*Nd))
+
+
+        L_prima = L - 0.5*Delta_L
+
+        ID_sat_line = ID_sat_completo * np.ones_like(VDS_sat_line)
+
+        
+        ID_sat_line_ch_modulation =ID_sat_line*(L/L_prima)*(vsat/(campo_critico*mu_n))
+
+        plt.plot(VDS_sat_line, ID_sat_line*1e3,linewidth=3.5,linestyle="--", alpha = 0.6,color="blue")
+        plt.plot(VDS_sat_line, ID_sat_line_ch_modulation*1e3,linewidth=3.5,linestyle="-", alpha = 0.6,color="red")
+       
+      
+        # -------------------------
+
+label_text = (
+    r"MESFET (GaAs / Ti)" "\n"
+    r"──────── Modelo con efecto de modulación" "\n"
+    r"- - - - -  Modelo completo sin efecto" "\n"
+    "\n"
+    rf"$N_D = {Nd:.2e}\ \mathrm{{cm^{{-3}}}}$" "\n"
+    rf"$\mu_n = {mu_n:.0f}\ \mathrm{{cm^2/Vs}}$" "\n"
+    rf"$a = {a*1e4:.1f}\ \mu\mathrm{{m}}$" "\n"
+    rf"$L = {L*1e4:.1f}\ \mu\mathrm{{m}}$" "\n"
+    rf"$Z = {Z*1e4:.1f}\ \mu\mathrm{{m}}$" "\n"
+    rf"$V_p = {V_P:.1f}\ \mathrm{{V}}$" "\n"
+    rf"$IDSS = {IDSS*1e3:.1f}\ \mathrm{{mA}}$""\n"
+)
+
+#plt.text(0.6, 0.5, label_text,transform=plt.gca().transAxes,fontsize=10,verticalalignment='top',bbox=dict(boxstyle="round", facecolor="white", alpha=0.85))
+
+
+
+
+plt.text(0.04, 0.7, r"Sin modulación",transform=plt.gca().transAxes,fontsize=10,verticalalignment='top',bbox=dict(boxstyle="round", facecolor="blue", alpha=0.5))
+#plt.text(0.04, 0.8, r"Modulación para canal largo (L = 20 $\mu m$)",transform=plt.gca().transAxes,fontsize=10,verticalalignment='top',bbox=dict(boxstyle="round", facecolor="orange", alpha=0.5))
+plt.text(0.04, 0.9, r"Modulación para canal corto (L = 4 $\mu m$)",transform=plt.gca().transAxes,fontsize=10,verticalalignment='top',bbox=dict(boxstyle="round", facecolor="red", alpha=0.5))
+# -------------------------
+# -------------------------
+plt.xlabel(r"$V_{DS}$ [V]")
+plt.ylabel(r"$I_D$ [mA]")
+plt.title(r"Curva de salida MESFET (con afectada por la saturación de $v_{arr}$ )")
+plt.grid(True)
+plt.legend()
+plt.show()
+

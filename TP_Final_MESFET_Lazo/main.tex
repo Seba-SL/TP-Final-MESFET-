@@ -141,29 +141,29 @@ Los MESFET's se construyen a partir de una delgada capa epitaxial de GaAs de tip
 
 
 
-Sobre el sustrato semi-aislante se encuentra la región activa del dispositivo, conformada por la capa de GaAs dopada ligeramente, en ella se forma el canal por el cual circulan los portadores mayoritarios cuando el dispositivo está en conducción, esto se aprecia en la figura \ref{fig:neamen_strucutre}.
+Sobre el sustrato semi-aislante se encuentra la región activa del dispositivo, conformada por la capa de GaAs dopada ligeramente, en ella se forma el canal por el cual circulan los portadores mayoritarios cuando el dispositivo está en conducción.
 
 En las zonas correspondientes a \textit{source} y \textit{drain}, esta misma capa se dopa fuertemente con las mismas impurezas de tipo n para obtener contactos óhmicos de baja resistencia, facilitando así la inyección y recolección de portadores.
 
-\begin{figure}[H]
-    \centering
+%\begin{figure}[H]
+ %   \centering
 
-    \begin{minipage}{0.4\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{Img/neamen_structure.png}
-        \caption{Estructura del transistor MESFET de GaAs \parencite{neamen2012}.}
-       \label{fig:neamen_strucutre}
+  %  \begin{minipage}{0.4\textwidth}
+   %     \centering
+    %    \includegraphics[width=\linewidth]{Img/neamen_structure.png}
+     %   \caption{Estructura del transistor MESFET de GaAs \parencite{neamen2012}.}
+      % \label{fig:neamen_strucutre}
        
-    \end{minipage}
-    \hfill
-    \begin{minipage}{0.4\textwidth}
+    %\end{minipage}
+    %\hfill
+    %\begin{minipage}{0.4\textwidth}
     
-        \includegraphics[width=\linewidth]{Img/estructura_microwave.png}
-        \caption{Estructura del transistor MESFET \parencite{giannini2009high}.}
-       \label{fig:giannini_MESFET_structure}
-    \end{minipage}
+     %   \includegraphics[width=\linewidth]{Img/estructura_microwave.png}
+       % \caption{Estructura del transistor MESFET \parencite{giannini2009high}.}
+      % \label{fig:giannini_MESFET_structure}
+   % \end{minipage}
 
-\end{figure}
+%\end{figure}%
 
 
 
@@ -171,7 +171,7 @@ Finalmente, en la región correspondiente a la terminal \textit{gate}, se deposi
 
 
 
-En la figura \ref{fig:giannini_MESFET_structure} se detalla su estructura en tres dimensiones, también se detalla una capa opcional de material tipo p conocido como \textit{p-buffer} con el propósito de mejorar el acople, aislando mejor el canal, reduciendo corrientes de fuga hacia el sustrato y mejorando la estabilidad del dispositivo.
+Es posible que se contemple la inclusión de una capa opcional de material tipo p conocido como \textit{p-buffer} con el propósito de mejorar el acople, aislando mejor el canal, reduciendo corrientes de fuga hacia el sustrato y mejorando la estabilidad del dispositivo.
 
 
 
@@ -180,28 +180,29 @@ El dispositivo frente a una elevada temperatura disminuye su corriente evitando 
 
 
 \begin{figure}[H]
-    \centering
-
-    \begin{minipage}{0.45\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{Img/6W_MESFET_circuito_integrado.png}
-         \caption{Imagen donde se observa un arreglo integrado de MESFET's de GaAs \parencite{giannini2009high} .}
-    \label{fig:giannini_MESFETs}
-   
-    \includegraphics[width=\linewidth]{Img/esquematico_de_paper}
-         \caption{ Esquema conceptual de polarización del MESFET \parencite{Belgat2004_MESFET_Interface}.}
-    \label{fig:esquematico_de_paper}
-    
+	\centering
+	
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		\includegraphics[width=0.8\linewidth]{Img/6W_MESFET_circuito_integrado.png}
+		\caption{Arreglo integrado de MESFETs de GaAs \parencite{giannini2009high}.}
+		\label{fig:giannini_MESFETs}
+		\vspace{0.3cm}
+		
+		\includegraphics[width=0.8\linewidth]{Img/esquematico_de_paper}
+		\caption{Esquema conceptual de polarización del MESFET \parencite{Belgat2004_MESFET_Interface}.}
+		\label{fig:esquematico_de_paper}
 	\end{minipage}
-    \hfill
-    \begin{minipage}{0.45\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{Img/Microscopio_MESFET_MISHRA.png}
-         \caption{(Arriba) Una sección transversal de corte de un MESFET de 0,1 $\mu m$. (Abajo) Vista superior de la MESFET \parencite{mishra_semiconductor_2008}.}
-    \label{fig:mishra_microscopio}
-    \end{minipage}
-
+	\hfill
+	\begin{minipage}{0.42\textwidth}
+		\centering
+		\includegraphics[width=0.8\linewidth]{Img/Microscopio_MESFET_MISHRA.png}
+		\caption{Sección transversal (arriba) y vista superior (abajo) de un MESFET de 0,1 $\mu m$ \parencite{mishra_semiconductor_2008}.}
+		\label{fig:mishra_microscopio}
+	\end{minipage}
+	
 \end{figure}
+
 
 \subsubsection{Características del semiconductor y su dopaje}
 
@@ -231,38 +232,9 @@ En el caso del arseniuro de galio, es un solido semiconductor compuesto cuya red
 \subsection{Aplicaciones típicas}
 	
 	
-	Es empleado en sistemas de comunicación por microondas, amplificadores, radiotelescopios hasta antenas parabólicas domésticas, sistemas satélitales y teléfonos celulares operando en frecuencias por encima de 3 GHz. En la figura \ref{fig:gaas-mesfet-class-ab-rfpa-schematic-diagram} se implementa un MESFET en un amplificador clase AB.
+	Es empleado en sistemas de comunicación por microondas, amplificadores, radiotelescopios hasta antenas parabólicas domésticas, sistemas satélitales y teléfonos celulares operando en frecuencias por encima de 3 GHz. 	
+	 La tecnología MESFET es relevante en aplicaciones especializadas de alta potencia y alta temperatura, se suelen adoptar para frecuencias de hasta 18-20 GHz, mientras que la adopción de dispositivos de heterojunción (principalmente del tipo HEMT) se hace obligatoria para frecuencias de operación más altas \parencite{giannini2009high}.
 	
-
-\begin{figure}[H]
-	\centering
-	\begin{minipage}[t]{0.52\textwidth}
-		\vspace{0.5 cm}
-		 
-		 La tecnología MESFET es relevante en aplicaciones especializadas de alta potencia y alta temperatura, se suelen adoptar para frecuencias de hasta 18-20 GHz, mientras que la adopción de dispositivos de heterojunción (principalmente del tipo HEMT) se hace obligatoria para frecuencias de operación más altas \parencite{giannini2009high}.
-		 
-		 \vspace{1cm}
-		 	
-		 \begin{itemize}
-		 	\item 	Radares
-		 	\item 	Equipos de radiocomunicación
-		 	\item 	Tacómetros
-		 	\item 	Satélites
-		 	\item 	Microondas
-		 \end{itemize}
-		 
-	
-	\end{minipage}
-	\hfill
-	\begin{minipage}[t]{0.43\textwidth}
-		\vspace{0pt}
-		\centering
-		\includegraphics[width=1\linewidth]{../Imagenes/GaAs-MESFET-Class-AB-RFPA-schematic-diagram}
-		\caption{Diagrama esquemático de un amplificador Class-AB RFPA implementando un GaAs MESFET.}
-		\label{fig:gaas-mesfet-class-ab-rfpa-schematic-diagram}
-		\vspace{0pt}
-	\end{minipage}
-\end{figure}
 
 
 \subsection{Tipos de MESFET}
@@ -451,7 +423,7 @@ Como ejemplo, la tensión entre \textit{gate} y \textit{source} puede expresarse
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.7\linewidth]{Img/simbolo_mas_esquema}
+	\includegraphics[width=0.45\linewidth]{Img/simbolo_mas_esquema}
 	\caption{Simbología tipica y esquema \parencite{Sharma_Metal_Semiconductor}. }
 	\label{fig:simbolomasesquema}
 \end{figure}
@@ -546,9 +518,9 @@ Cuando un solido no es dopado, se dice que es un material intrínseco, al añadi
 
 Como ya se menciono el MESFET se forma principalmente con metal (conductor), semiconductor dopado tipo n, y un semi-aislante (Semiconductor GaAs con cromo como impureza). Al doparse el semiconductor, se forma un nivel donor y/o aceptor dentro de la banda prohibida de acuerdo al tipo de dopaje.
 
-\subsection{Portadores}
+%\subsection{Portadores}
 
-Un electrón excitado (por ejemplo, mediante agitación térmica) dentro de la banda de conducción es una carga libre negativa que se mueve a través de todo el cristal bajo la influencia de gradientes de temperatura o potencial, normalmente denotada como \textit{n}. La deficiencia de carga de valencia producida en la banda de conducción por la excitación de un electrón es su contratarte como carga positiva, denominada hueco o \textit{p}.
+%Un electrón excitado (por ejemplo, mediante agitación térmica) dentro de la banda de conducción es una carga libre negativa que se mueve a través de todo el cristal bajo la influencia de gradientes de temperatura o potencial, normalmente denotada como \textit{n}. La deficiencia de carga de valencia producida en la banda de conducción por la excitación de un electrón es su contratarte como carga positiva, denominada hueco o \textit{p}.
 
 
 
@@ -1984,11 +1956,11 @@ Para la obtención de $I_{D_{[SAT]}}$, se reemplaza en la expresión (\ref{equat
 	
 \section{Comparación}
 
-Una vez obtenida la expresión completa (\ref{equation:Expresion_Completa}) se puede comparar con el modelo clásico de Schockley (\ref{equation:modo_estrangulacion}).  
+Una vez obtenida la expresión completa (\ref{equation:Expresion_Completa}) se puede comparar con el modelo clásico de Schockley (\ref{equation:modo_estrangulacion}), se puede apreciar que el modelo clásico es una buena aproximación a grandes rasgos pero a medida que se contemplan efectos no ideales esta deja de ser valida.  
 
 \section{Simulación de curvas}
 
-Utilizando un código adecuado de \textit{Python} detallado en el Apéndice~\ref{sec:apendice_codigo}, se obtienen las curvas características del dispositivo.
+Utilizando un código de \textit{Python} detallado en el Apéndice~\ref{sec:apendice_codigo}, se obtienen las curvas características del dispositivo.
 
 \subsection{Curva de transferencia}
 
@@ -2001,13 +1973,18 @@ Utilizando las expresiones de $I_D$ tomando como variable $V_{GS}$ y utilizando 
 	\label{fig:curvatransferencia}
 \end{figure}
 
+Se puede contemplar como el modelo completo forma una curva tomando valores inferiores en relación del modelo clásico para el rango de estrangulación.
+
+
 
 \subsection{Curva de salida}
+
+Utilizando las expresiones de $I_D$ en función de la tensión de $V_{DS}$ para diferentes valores de la tensión de control $V_{GS}$, tanto el modelo clásico de Schockley como la expresión deducida en (\ref{equation:ID_SAT_COMPLETA_3}) ¸se obtienen las curvas de la figura \ref{fig:curvadesalida}:
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{Img/curva_de_salida}
-	\caption{}
+	\caption{Curvas de salida para distintos valores de $V_{S}$ para ambos modelos.}
 	\label{fig:curvadesalida}
 \end{figure}
 
@@ -2100,9 +2077,9 @@ Reemplazando $\Delta L $, finalmente:
 	1 +
 	\frac{1}{2L}
 	\sqrt{
-		\frac{2 \varepsilon_s}{q N_D}
+		\frac{2 \epsilon_s}{q N_D}
 	}
-	\sqrt{V_{DS} - V_{DS_{sat}}}	\approx
+	\sqrt{V_{DS} - V_{DS_{[SAT]}}}	\approx
 	1 + \lambda \cdot V_{DS}
 \end{equation}
 
@@ -2174,10 +2151,37 @@ v_{sat} \,
 	\label{fig:velarrastrefunccampo}
 \end{figure}
 
+Utilizando la relación $ {I_D}' = I_D\cdot \frac{v_{arr}(\xi)}{\mu_n \cdot \xi}$, siendo ${I_D}'$ la corriente contemplando la saturación de $v_{arr}$ se llega a la curva:
+
 
 
 \subsection{Región subumbral}
-La corriente subumbral es la corriente de drenaje en el MESFET que existe cuando la tensión de compuerta está por debajo del valor de pinzamiento o umbral $ V_{GS} < V_p$ esta idealmente es cero, pero cerca del umbral, la aproximación de agotamiento abrupto no modela con precisión la región del canal. Se debe utilizar un perfil de potencial más detallado en la región de carga espacial. La ecuación (\ref{equation:ID_SAT_COMPLETA}) no describe adecuadamente los resultados experimentales cerca del voltaje umbral.
+
+
+\begin{figure}[H]
+	\centering
+	
+	% ---------- Imagen (izquierda) ----------
+	\begin{minipage}[c]{0.45\textwidth}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\linewidth]{"../../../../Imágenes/Capturas de pantalla/corriente_sub_umbral"}
+			\caption{}
+			\label{fig:corrientesubumbral}
+		\end{figure}
+	\end{minipage}
+	\hfill
+	% ---------- Texto (derecha) ----------
+	\begin{minipage}[c]{0.5\textwidth}
+		
+	La corriente subumbral es la corriente de drenaje en el MESFET que existe cuando la tensión de compuerta está por debajo del valor de pinzamiento o umbral $ V_{GS} < V_p$ esta idealmente es cero, pero cerca del umbral, la aproximación de agotamiento abrupto no modela con precisión la región del canal. Se debe utilizar un perfil de potencial más detallado en la región de carga espacial. La ecuación (\ref{equation:ID_SAT_COMPLETA}) no describe adecuadamente los resultados experimentales cerca del voltaje umbral.
+	
+		
+	\end{minipage}
+	
+	
+\end{figure}
+
 
 
 \subsection{Efectos de corriente de gate}
@@ -2213,6 +2217,9 @@ Cuando la tensión de compuerta se encuentra aproximadamente entre $0,5\,V$ y $1
 
 \section{Conclusión} 
 
+El transistor MESFET es un ejemplo de como el conocimiento de los semiconductores y los fenómenos físicos entorno a ellos es de importancia para dar con dispositivos adecuados para distintos escenarios y rendimientos requeridos. Los conocimientos teóricos adquiridos ayudaron a comprender su funcionamiento, los prácticos ayudaron a deducir las expresiones analíticas partiendo de las relaciones físicas iniciales. La deducción de la corriente mediante el modelo completo permitió comparar con el modelo clásico y verificar en que escenarios se puede considerar valido.  
+
+El modelo clásico es conveniente para la aplicación de transistores en aplicaciones que requieran poca sensibilidad, tensiones bajas de operación y frecuencias que no lleven al limite el modelo. Mientras que el modelo completo se deberá contemplar a la hora del diseño de los mismos transistores y circuitos integrados como también los efectos no ideales tratados en las ultimas secciones del informe. A su vez se resalta como la longitud del canal y la temperatura de operación son de importancia para el comportamiento del dispositivo.
 
 \printbibliography
 
