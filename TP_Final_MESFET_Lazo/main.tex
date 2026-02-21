@@ -2142,7 +2142,7 @@ v_{arr}(\xi) =
 \frac{\mu_n \, \xi}{1 + \left(\dfrac{\xi}{\xi_p}\right)^2}
 +
 v_{sat} \,
-\frac{\left(\dfrac{\xi}{\xi_s}\right)^2}{1 + \left(\dfrac{\xi}{\xi_s}\right)^2}\quad \quad,\quad \xi \approx \frac{V_{DS}}{L'}
+\frac{\left(\dfrac{\xi}{\xi_s}\right)^2}{1 + \left(\dfrac{\xi}{\xi_s}\right)^2}\quad \quad,\quad \xi \approx \frac{V_{DS}}{L}
 \end{equation}
 
 
@@ -2153,8 +2153,7 @@ v_{sat} \,
 	\label{fig:velarrastrefunccampo}
 \end{figure}
 
-Utilizando la relación $ {I_D}' = I_D\cdot \frac{v_{arr}(\xi)}{\mu_n \cdot \xi}$, siendo ${I_D}'$ la corriente contemplando la saturación de $v_{arr}$ se llega a la curva de la figura \ref{fig:modulacioncanalmuvariable}:
-
+De la velocidad modelada en (\ref{equation:v_arr_enfuncion_de_E}), la cual se basa en el gráfico del libro \parencite{neamen2012} figura \ref{fig:varrvscampo}, se tomara la aproximación de $\mu_n$ constante tomando la pendiente de la curva desde $\xi = 0$ hasta $\xi=\xi_p$ (se comprueba que es cercano a los $8000\, \frac{cm^2}{V\cdot s}$ teóricos) , luego se hará un barrido hasta el valor obtenido en saturación de la velocidad de arrastre comenzando desde el valor de $V_{DS} = (\xi_p \cdot L)$, se obtiene de esta forma la curva de la figura \ref{fig:modulacioncanalmuvariable} que simula el efecto no ideal que se compara con la curva obtenida con $\mu_n$ constante. 
 
 
 \begin{figure}[H]
@@ -2168,6 +2167,8 @@ Utilizando la relación $ {I_D}' = I_D\cdot \frac{v_{arr}(\xi)}{\mu_n \cdot \xi}
 
 \subsection{Región subumbral}
 
+	La corriente subumbral es un efecto no ideal que ocurre en la región $ V_{GS} < V_p$ observable en la figura \ref{fig:corrientesubumbral}, la aproximación de agotamiento abrupto no modela con precisión la región del canal es por eso que la ecuación (\ref{equation:ID_SAT_COMPLETA}) no describe adecuadamente los resultados experimentales cerca del voltaje umbral. Esta corriente se debe a la onducción parcial en la región no totalmente vaciada, corrientes de difusión de portadores y corriente termoiónica sobre la barrera Schottky. Se simulo una corriente subumbral de corriente máxima $I_0$ en la figura \ref{fig:corrientesubumbral_simulacion}.
+
 
 \begin{figure}[H]
 	\centering
@@ -2176,20 +2177,28 @@ Utilizando la relación $ {I_D}' = I_D\cdot \frac{v_{arr}(\xi)}{\mu_n \cdot \xi}
 	\begin{minipage}[c]{0.45\textwidth}
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=0.7\linewidth]{"../../../../Imágenes/Capturas de pantalla/corriente_sub_umbral"}
-			\caption{}
+			\includegraphics[width=0.85\linewidth]{"../../../../Imágenes/Capturas de pantalla/corriente_sub_umbral"}
+			\caption{Ejemplo gráfico de corriente subumbral contrastada con la curva ideal \parencite{neamen2012}.}
 			\label{fig:corrientesubumbral}
 		\end{figure}
 	\end{minipage}
 	\hfill
-	% ---------- Texto (derecha) ----------
+	% ---------- Imagen (derecha) ----------
 	\begin{minipage}[c]{0.5\textwidth}
 		
-	La corriente subumbral es la corriente en el terminal \textit{drain} que existe cuando la tensión de control está por debajo del valor umbral $ V_{GS} < V_p$ esta idealmente es cero, sin embargo la aproximación de agotamiento abrupto no modela con precisión la región del canal. Se debe utilizar un perfil de potencial más detallado en la región de carga espacial. La ecuación (\ref{equation:ID_SAT_COMPLETA}) no describe adecuadamente los resultados experimentales cerca del voltaje umbral.
+
 	
-		
+			\begin{minipage}[c]{0.85\textwidth}
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=\linewidth]{Img/corriente_subumbral_simulacion}
+				\caption[]{Simulación de corriente subumbral de característica exponencial con magnitud del orden de $10^{-9}$ A.}
+				\label{fig:corrientesubumbral_simulacion}
+			\end{figure}
+		\end{minipage}
+
 	\end{minipage}
-	
+		
 	
 \end{figure}
 
@@ -2197,7 +2206,7 @@ Utilizando la relación $ {I_D}' = I_D\cdot \frac{v_{arr}(\xi)}{\mu_n \cdot \xi}
 
 \subsection{Efectos de corriente de gate}
 
-Dejando de lado los modelos ideales, donde la corriente en el terminal \textit{gate} es cero ($I_G = 0 $), en la unión schottky, sin embargo, existen corrientes de compuerta apreciables o no de acuerdo a la sensibilidad de la implementación y las condiciónes de funcionamiento, estas son debido a fenómenos como tunealamiento, emisión termoionica, corrientes de ruptura y generación y recombinación de portadores. 
+Nuevamente dejando de lado los modelos ideales, donde la corriente en el terminal \textit{gate} es cero ($I_G = 0 $), en la unión schottky  existen corrientes de compuerta apreciables o no de acuerdo a la sensibilidad de la implementación y las condiciónes de funcionamiento, estas son debido a fenómenos como tunealamiento, emisión termoionica, corrientes de ruptura y generación y recombinación de portadores. 
 
 
 \begin{figure}[H]
@@ -2227,7 +2236,7 @@ Dejando de lado los modelos ideales, donde la corriente en el terminal \textit{g
 
 \section{Conclusión} 
 
-El transistor MESFET es un ejemplo de como el conocimiento de los semiconductores y los fenómenos físicos entorno a ellos es de importancia para dar con dispositivos adecuados para distintos escenarios y rendimientos requeridos. Los conocimientos teóricos adquiridos ayudaron a comprender su funcionamiento, los prácticos ayudaron a deducir las expresiones analíticas partiendo de las relaciones físicas iniciales. La deducción de la corriente mediante el modelo completo permitió comparar con el modelo clásico y verificar en que escenarios se puede considerar valido.  
+El transistor MESFET ejemplifica como el estudio de los semiconductores y los fenómenos físicos entorno a ellos es de importancia para dar con dispositivos adecuados para distintos escenarios y rendimientos objetivos. Los conocimientos teóricos adquiridos en la materia ayudaron a comprender su funcionamiento, mientras que los prácticos ayudaron a deducir las expresiones analíticas partiendo de las relaciones físicas iniciales y dar con simulaciones adecuadas. La deducción de la corriente mediante el modelo completo permitió comparar con el modelo clásico y verificar en que escenarios se puede considerar valido.  
 
 El modelo clásico es conveniente para la aplicación de transistores en aplicaciones que requieran poca sensibilidad, tensiones bajas de operación y frecuencias que no lleven al limite el modelo. Mientras que el modelo completo se deberá contemplar a la hora del diseño de los mismos transistores y circuitos integrados como también los efectos no ideales tratados en las ultimas secciones del informe. A su vez se resalta como la longitud del canal y la temperatura de operación son de importancia para el comportamiento del dispositivo.
 

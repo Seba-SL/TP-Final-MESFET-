@@ -297,7 +297,6 @@ plt.xlabel(r"$V_{DS}$ [V]")
 plt.ylabel(r"$I_D$ [mA]")
 plt.title("Curva de salida MESFET (con efecto de modulación del canal)")
 plt.grid(True)
-plt.legend()
 plt.show()
 
 
@@ -314,7 +313,6 @@ Delta_L = np.sqrt(np.abs(2*eps_s*(VDS - VDS_sat)/(q*Nd)))
 L_prima = L- 0.5*Delta_L
 vsat =  6.8e6  # cm/s
 
-print("Valor de vsat "+ str(vsat) )
 # Parámetros de ajuste del modelo
 xi_p = 3e3           # V/cm  (posición del pico)
 xi_s = 2e4           # V/cm  (campo donde se estabiliza vsat)
@@ -391,82 +389,191 @@ plt.xlabel("Campo eléctrico ξ [V/cm]")
 plt.ylabel("Velocidad de arrastre v [cm/s]")
 plt.title("Velocidad de arrastre en GaAs ")
 plt.grid(True, which="both")
-
+plt.legend(["Velocidad de arrastre en función del campo"])
 plt.show()
 
 
 
 
-########################################   Corriente ID con corriente    ######################################################3
-VGS_vals = [-1.5]           # Valor de ejemplo de tensión de control mayor a VP
-
-VDS_sat = max(VGS - V_P, 0)                 
-VDS = np.linspace(0.01, VDS_sat, 300)
-
-L_largo = 5*L
-
-factor = (2/(3*np.sqrt(V_P_0)))
-
-go = (q*mu_n*Nd*Z*a)/(L)                            # 1/ohm : Conductancia del canal
-
-#Corriente
-
-ID_completo = go*(VDS - factor * ( (V_bi - VGS + VDS)**(3/2) - (V_bi - VGS)**(3/2) ))
-
-ID_completo_B = go*(VDS - factor * ( (V_bi - VGS + VDS)**(3/2) - (V_bi - VGS)**(3/2) ))*(L/L_largo)
-
-plt.plot(VDS, ID_completo*1e3,linewidth=3, color= "blue")
-plt.plot(VDS, ID_completo_B*1e3,linewidth=3,color = "orange")
+########################################   Corriente ID con corriente    ######################################################
 
 
+import numpy as np
+import matplotlib.pyplot as plt
 
-    # Saturación modelo completo
-if VGS > V_P:
+# --- Parámetros ---
+mu_1 = 7326
+mu_sat = 340
 
-        VDS_sat = V_P_0 + VGS - V_bi
+# parámetros del dispositivo (ejemplo)
 
-        ID_sat_completo = go*(VDS_sat - factor * ((V_bi - VGS + VDS_sat)**(3/2)- (V_bi - VGS)**(3/2)))
-
-        ID_sat_line = ID_sat_completo * np.ones_like(VDS_sat_line)
-
-        VDS_sat_line = np.linspace(VDS_sat, 10, 300)
-
-        Delta_L = np.sqrt(2*eps_s*(VDS_sat_line - VDS_sat)/(q*Nd))
-
-
-        L_prima = L - 0.5*Delta_L
-
-        ID_sat_line = ID_sat_completo * np.ones_like(VDS_sat_line)
-
-        
-        ID_sat_line_ch_modulation =ID_sat_line*(L/L_prima)
-
-        plt.plot(VDS_sat_line, ID_sat_line_ch_modulation*1e3,linewidth=3, color= "blue")
+Nd = 4e15
+#Geometricos
+a = 120e-6                      # cm
+Z = 1000e-6                     # cm  
+L = 2000e-6                      # cm
 
 
-        # -------------------------
+V1 = xi_p*L              # comienzo caída movilidad
+deltaV = 20       # suavidad transición
+
+
+E_C =E_g                                            # eV: Altura de banda de conducción
+E_F = E_g/2 + k*T*np.log(Nd/ni)                     # eV: Nivel de Fermi del GaAs
+
+V_bi = (phi_M - chi_GaAs )   - (E_C - E_F)          # V : Teorico
+W_d0 = np.sqrt(2*(eps_s*V_bi/(q*Nd)))               # cm : Ancho de vaciamiento en equilibrio
+
+
+
+V_bi = (phi_M - chi_GaAs )   - (E_C - E_F)          # V : Teorico
+VGS = 0
+V_P  =  V_bi - V_P_0                                # V: Tensión umbral
+                                         # V: Tensión en equilibrio
+V_DS_SAT  =  V_P_0 + V_GS_0 - V_bi                  # V: Tensión de saturación
+
+factor = 2/(3*np.sqrt(V_P_0))
+
+# --- Barrido ---
+VDS = np.linspace(0.01, 12, 1000)
+
+# --- Movilidad suave ---
+mu_eff = np.where( VDS < V1,  mu_1, mu_sat + (mu_1 - mu_sat)*np.exp(-(VDS - V1)/deltaV))
+
+# --- Conductancia dependiente de mu ---
+go = (q*mu_eff*Nd*Z*a)/L
+
+# --- Corriente región lineal ---
+ID = go*(VDS - factor*((V_bi - VGS + VDS)**(3/2)- (V_bi - VGS)**(3/2)))
+
+# --- Saturación ---
+VDS_sat = max(VGS - V_P, 0)
+
+ID_sat = go*(VDS_sat - factor*((V_bi - VGS + VDS_sat)**(3/2)  - (V_bi - VGS)**(3/2)))
+
+ID = np.where(VDS > VDS_sat, ID_sat, ID)
+
+
+## Curva de salida con mu teoorico de 80000
+mu_n = 8000
+go_cste = (q*mu_n*Nd*Z*a)/L
+
+ID_cste = go_cste*(VDS - factor*((V_bi - VGS + VDS)**(3/2)
+                - (V_bi - VGS)**(3/2)))
+
+ID_cste = np.where(VDS > VDS_sat,
+                   go_cste*(VDS_sat - factor*((V_bi - VGS + VDS_sat)**(3/2)
+                   - (V_bi - VGS)**(3/2))),
+                   ID_cste)
+   
+
+
+# --- Graficar ---
+plt.figure()
+
+plt.plot(VDS, ID_cste*1e3, label="Modelo μ constante",alpha=0.8, linewidth = 4,color="blue", linestyle= "--")
+plt.plot(VDS, ID*1e3, label="Modelo μ variable", linewidth = 4, color ="red")
+
+plt.axvline(V1, linestyle="--", alpha=0.5, label= rf"Inicio caída μ: $V_{{DS}} = \xi_p \cdot L  = $ {V1:.1f}", linewidth = 3)
 
 label_text = (
     r"MESFET (GaAs / Ti)" "\n"
-    r"────────  Modelo Completo" "\n"
-    r"- - - - -  Modelo Clásico" "\n"
-    "\n"
+    rf"$N_D = {Nd/(1e15):.0f}\ \mathrm{{\cdot 10^{{15}} \, cm^{{-3}}}}$" "\n"
+    rf"$a = {a*1e4:.0f}\ \mu\mathrm{{m}}$" "\n"
+    rf"$L = {L*1e4:.0f}\ \mu\mathrm{{m}}$" "\n"
+    rf"$Z = {Z*1e4:.0f}\ \mu\mathrm{{m}}$" "\n"
+    rf"$V_p = {V_P:.1f}\ \mathrm{{V}}$""\n"
+    f"Movilidad teorica (cte): $\mu_n  = {mu_n:.0f}\ \mathrm{{cm^2/Vs}}$" "\n"
+    rf"Movilidad inicial (cte): $\mu_{{n_i}}  = {mu_1:.0f}\ \mathrm{{cm^2/Vs}}$" "\n"
+    rf"Movilidad de saturación : $\mu_{{n_{{sat}}}}= {mu_sat:.0f}\ \mathrm{{cm^2/Vs}}$" "\n"
+)
+
+
+plt.text(
+    0.6, 0.5, label_text,
+    transform=plt.gca().transAxes,
+    fontsize=12,
+    verticalalignment='top',
+    bbox=dict(boxstyle="round", facecolor="white", alpha=0.85)
+)
+
+plt.legend()
+plt.xlabel("VDS (V)")
+plt.ylabel("ID (mA)")
+plt.show()
+
+
+
+
+############################## corriente subumbral 
+
+VGS = np.linspace(V_P, 0, 1000)
+
+VDS_sat = (-V_P + VGS - V_bi )                                
+
+arg1 = VDS_sat + V_bi - VGS
+arg2 = V_bi - VGS
+
+termino = ((2)/(3*np.sqrt(np.abs(V_P))))*( (arg1)**(3/2) - (arg2)**(3/2) )
+
+ID_completo = go * ( VDS_sat - termino ) 
+
+
+
+
+I_sub_umbral =0.0002020879/(1e3)  #corriente de 1 nA
+
+VGS_sub = np.linspace(V_P-10, V_P, 1000)
+
+# Corriente subumbral
+ID_sub = I_sub_umbral * np.exp((VGS_sub - V_P)/(2))
+
+# Corte ideal
+VGS_corte = np.linspace(V_P - 10, V_P, 1000)
+ID_corte = np.zeros_like(VGS_corte)
+
+
+plt.figure()
+# Región Corte
+plt.axvspan(V_P-10, V_P,   color="gray", hatch="xxx",alpha=0.2, label = "Región de Corte")
+
+# Región Estranulación
+plt.axvspan(V_P, 0, color="white",  alpha=0.6, label = "Región de Estrangulación")
+
+
+#plt.plot(VGS*1e3, ID_completo*1e12, linewidth=1,color = "green")
+plt.plot(VGS_sub, ID_sub*1e12, linewidth=3, label="Modelo Completo: Corriente sub-umbral",color = "red")
+plt.plot(VGS_sub, ID_corte*1e12, linewidth=3, label="Modelo ideal",color = "green", linestyle = "--")
+
+
+plt.axvline(V_P, color='gray', linestyle='--', linewidth=2, label=r"$V_P$")
+plt.xlabel(r"$V_{GS}$ [mV]")
+plt.ylabel(r"$I_D$ [pA]")
+plt.title("Curva de transferencia MESFET: Corriente subumbral")
+
+
+plt.grid(True)
+
+
+label_text = (
+    r"MESFET (GaAs / Ti)" "\n"
     rf"$N_D = {Nd/(1e15):.0f}\ \mathrm{{\cdot 10^{{15}} \, cm^{{-3}}}}$" "\n"
     rf"$\mu_n = {mu_n:.0f}\ \mathrm{{cm^2/Vs}}$" "\n"
     rf"$a = {a*1e4:.0f}\ \mu\mathrm{{m}}$" "\n"
     rf"$L = {L*1e4:.0f}\ \mu\mathrm{{m}}$" "\n"
     rf"$Z = {Z*1e4:.0f}\ \mu\mathrm{{m}}$" "\n"
     rf"$V_p = {V_P:.1f}\ \mathrm{{V}}$""\n"
-    rf"$IDSS = {IDSS*1e3:.0f}\ \mathrm{{mA}}$"
+    rf"$I_0= {I_sub_umbral*1e9:.0f}\ \mathrm{{nA}}$" 
 )
 
+plt.text(
+    0.1, 0.65, label_text,
+    transform=plt.gca().transAxes,
+    fontsize=10,
+    verticalalignment='top',
+    bbox=dict(boxstyle="round", facecolor="white", alpha=0.85)
+)
 
-plt.text(0.75, 0.75, label_text,transform=plt.gca().transAxes,fontsize=10,verticalalignment='top',bbox=dict(boxstyle="round", facecolor="white", alpha=0.85))
-# -------------------------
-plt.xlabel(r"$V_{DS}$ [V]")
-plt.ylabel(r"$I_D$ [mA]")
-plt.title("Curva de salida MESFET")
-plt.grid(True)
 plt.legend()
 plt.show()
 
