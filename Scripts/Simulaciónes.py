@@ -236,7 +236,6 @@ ID_completo = go*(VDS - factor * ( (V_bi - VGS + VDS)**(3/2) - (V_bi - VGS)**(3/
 plt.plot(VDS, ID_completo*1e3,linewidth=3,linestyle="-",alpha = 0.9, color="red")
 
 
-
 # Saturación modelo completo
 if VGS > V_P:
 
@@ -250,15 +249,20 @@ if VGS > V_P:
 
         L_prima = L - 0.5*Delta_L
 
-        ID_sat_line = ID_sat_completo * np.ones_like(VDS_sat_line)
+        ID_sat_line = ID_sat_completo * np.ones_like(VDS_sat_line)  
 
         
         ID_sat_line_ch_modulation =ID_sat_line*(L/L_prima)
 
         #Ejemplo canal largo
-        L_prima = L*5 - 0.5*Delta_L
 
-        ID_sat_line_ch_modulation_B = ID_sat_line*(5*L/L_prima)
+        L_B = L*5
+
+        L_prima_B = L_B- 0.5*Delta_L
+
+        ID_sat_line_B = ID_sat_completo* np.ones_like(VDS_sat_line)
+
+        ID_sat_line_ch_modulation_B = ID_sat_line*(L_B/L_prima_B)
 
         plt.plot(VDS_sat_line, ID_sat_line*1e3,linewidth=3.5,linestyle="--", alpha = 0.6,color="blue")
         plt.plot(VDS_sat_line, ID_sat_line_ch_modulation*1e3,linewidth=3.5,linestyle="-", alpha = 0.6,color="red")
@@ -399,19 +403,31 @@ VGS_vals = [-1.5]           # Valor de ejemplo de tensión de control mayor a VP
 VDS_sat = max(VGS - V_P, 0)                 
 VDS = np.linspace(0.01, VDS_sat, 300)
 
+L_largo = 5*L
+
 factor = (2/(3*np.sqrt(V_P_0)))
+
+go = (q*mu_n*Nd*Z*a)/(L)                            # 1/ohm : Conductancia del canal
+
+#Corriente
 
 ID_completo = go*(VDS - factor * ( (V_bi - VGS + VDS)**(3/2) - (V_bi - VGS)**(3/2) ))
 
-#canal corto
-plt.plot(VDS, ID_completo*1e3,linewidth=3,linestyle="-",alpha = 0.9, color="blue")
+ID_completo_B = go*(VDS - factor * ( (V_bi - VGS + VDS)**(3/2) - (V_bi - VGS)**(3/2) ))*(L/L_largo)
+
+plt.plot(VDS, ID_completo*1e3,linewidth=3, color= "blue")
+plt.plot(VDS, ID_completo_B*1e3,linewidth=3,color = "orange")
 
 
-# Saturación modelo completo
+
+    # Saturación modelo completo
 if VGS > V_P:
 
-        
+        VDS_sat = V_P_0 + VGS - V_bi
+
         ID_sat_completo = go*(VDS_sat - factor * ((V_bi - VGS + VDS_sat)**(3/2)- (V_bi - VGS)**(3/2)))
+
+        ID_sat_line = ID_sat_completo * np.ones_like(VDS_sat_line)
 
         VDS_sat_line = np.linspace(VDS_sat, 10, 300)
 
@@ -422,62 +438,35 @@ if VGS > V_P:
 
         ID_sat_line = ID_sat_completo * np.ones_like(VDS_sat_line)
 
-        xi_sat = VDS_sat_line/L_prima
-
-        v_arr_sat = (mu_n * xi_sat / (1 + (xi_sat/xi_p)**2) + vsat*((xi_sat/xi_s)**2) / (1 + (xi_sat/xi_s)**2))
-
-            
+        
         ID_sat_line_ch_modulation =ID_sat_line*(L/L_prima)
-        
-        #Recordando constantes de ID
-        #go = (q*mu_n*Nd*Z*a)/(L)                            # 1/ohm : Conductancia del canal
 
-        #Multiplico
-        #go = (q*mu_n*Nd*Z*a)/(L)   divido por la mu constante y multiplico por la mu(VDS) = v_arr(vVDS)/campoE(VDS) = v_arr/(VDS/L_prima)     
-
-        ID_sat_line_ch_modulation_mu_var = ID_sat_line_ch_modulation*(v_arr/(mu_n*(VDS/L_prima)))
+        plt.plot(VDS_sat_line, ID_sat_line_ch_modulation*1e3,linewidth=3, color= "blue")
 
 
-        #Ejemplo canal largo
-        L_prima = L*10 - 0.5*Delta_L
-
-        ID_sat_line_ch_modulation_B = ID_sat_line*(10*L/L_prima)
-        
-        ID_sat_line_ch_modulation_mu_var_B = ID_sat_line_ch_modulation_B*(v_arr/(mu_n*(VDS/L_prima)))
-
-        plt.plot(VDS_sat_line, ID_sat_line_ch_modulation*1e3,linewidth=3.5,linestyle="--", alpha = 0.6,color="blue",label=r"$\mu_n$ constante (canal corto)")
-        plt.plot(VDS_sat_line, ID_sat_line_ch_modulation_mu_var*1e3,linewidth=3.5,linestyle="-", alpha = 0.6,color="red",label=r"$\mu_n$ variable (canal corto)")
-
-        
-        plt.plot(VDS_sat_line, ID_sat_line_ch_modulation_B*1e3,linewidth=3.5,linestyle="--", alpha = 0.6,color="green",label=r"$\mu_n$ constante (canal largo )")
-        plt.plot(VDS_sat_line, ID_sat_line_ch_modulation_mu_var_B*1e3,linewidth=3.5,linestyle="-", alpha = 0.6,color="green",label=r"$\mu_n$ variable (canal largo)")
-
-      
         # -------------------------
 
 label_text = (
     r"MESFET (GaAs / Ti)" "\n"
-    r"──────── Modelo con efecto de modulación" "\n"
-    r"- - - - -  Modelo completo sin efecto" "\n"
+    r"────────  Modelo Completo" "\n"
+    r"- - - - -  Modelo Clásico" "\n"
     "\n"
-    rf"$N_D = {Nd:.2e}\ \mathrm{{cm^{{-3}}}}$" "\n"
+    rf"$N_D = {Nd/(1e15):.0f}\ \mathrm{{\cdot 10^{{15}} \, cm^{{-3}}}}$" "\n"
     rf"$\mu_n = {mu_n:.0f}\ \mathrm{{cm^2/Vs}}$" "\n"
-    rf"$\mu_n(V_{{DS}}) = v_{{arr}}(V_{{DS}})  \cdot 1/\xi(V_{{DS}})   \ \mathrm{{cm^2/Vs}}$" "\n"
-    rf"$a = {a*1e4:.1f}\ \mu\mathrm{{m}}$" "\n"
-    rf"$L = {L*1e4:.1f}\ \mu\mathrm{{m}}$" "\n"
-    rf"$L(largo) = {10*L*1e4:.1f}\ \mu\mathrm{{m}}$" "\n"
-    rf"$Z = {Z*1e4:.1f}\ \mu\mathrm{{m}}$" "\n"
-    rf"$V_p = {V_P:.1f}\ \mathrm{{V}}$" "\n"
-    rf"$IDSS = {IDSS*1e3:.1f}\ \mathrm{{mA}}$""\n"
+    rf"$a = {a*1e4:.0f}\ \mu\mathrm{{m}}$" "\n"
+    rf"$L = {L*1e4:.0f}\ \mu\mathrm{{m}}$" "\n"
+    rf"$Z = {Z*1e4:.0f}\ \mu\mathrm{{m}}$" "\n"
+    rf"$V_p = {V_P:.1f}\ \mathrm{{V}}$""\n"
+    rf"$IDSS = {IDSS*1e3:.0f}\ \mathrm{{mA}}$"
 )
 
-plt.text(0.05, 0.7, label_text,transform=plt.gca().transAxes,fontsize=10,verticalalignment='top',bbox=dict(boxstyle="round", facecolor="white", alpha=0.85))
 
+plt.text(0.75, 0.75, label_text,transform=plt.gca().transAxes,fontsize=10,verticalalignment='top',bbox=dict(boxstyle="round", facecolor="white", alpha=0.85))
 # -------------------------
-plt.yscale("log")
 plt.xlabel(r"$V_{DS}$ [V]")
 plt.ylabel(r"$I_D$ [mA]")
-plt.title(r"Curva de salida MESFET (con efecto de modulación del canal y $\mu_n$ variable)")
+plt.title("Curva de salida MESFET")
 plt.grid(True)
 plt.legend()
 plt.show()
+

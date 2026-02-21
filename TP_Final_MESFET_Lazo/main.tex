@@ -2087,7 +2087,7 @@ Reemplazando $\Delta L $, finalmente:
 
 
 
-Se puede notar en la expresión (\ref{equation:L_Lprima})  que a medida que el canal tenga menor longitud $L$ (canal corto), el efecto sera mayor con lo cual a medida que $L$ aumenta el efecto se podría despreciar para valores bajos de $V_{DS}$ esto se aprecia también en la simulación para un MESFET con una longitud mayor logrando la curva de color naranja.
+Se puede notar en la expresión (\ref{equation:L_Lprima})  que a medida que el canal tenga menor longitud $L$ (canal corto), el efecto sera mayor con lo cual a medida que $L$ aumenta el efecto se podría despreciar para valores bajos de $V_{DS}$ esto se aprecia también en la simulación para un MESFET con una longitud mayor logrando la curva de color naranja (se asume que el resto de parámetros se ajusten para que coincidan en su valor de $I_{D_{[SAT]}}$).
 
 \begin{figure}[H]
 	\centering
@@ -2185,7 +2185,7 @@ Utilizando la relación $ {I_D}' = I_D\cdot \frac{v_{arr}(\xi)}{\mu_n \cdot \xi}
 	% ---------- Texto (derecha) ----------
 	\begin{minipage}[c]{0.5\textwidth}
 		
-	La corriente subumbral es la corriente de drenaje en el MESFET que existe cuando la tensión de compuerta está por debajo del valor de pinzamiento o umbral $ V_{GS} < V_p$ esta idealmente es cero, pero cerca del umbral, la aproximación de agotamiento abrupto no modela con precisión la región del canal. Se debe utilizar un perfil de potencial más detallado en la región de carga espacial. La ecuación (\ref{equation:ID_SAT_COMPLETA}) no describe adecuadamente los resultados experimentales cerca del voltaje umbral.
+	La corriente subumbral es la corriente en el terminal \textit{drain} que existe cuando la tensión de control está por debajo del valor umbral $ V_{GS} < V_p$ esta idealmente es cero, sin embargo la aproximación de agotamiento abrupto no modela con precisión la región del canal. Se debe utilizar un perfil de potencial más detallado en la región de carga espacial. La ecuación (\ref{equation:ID_SAT_COMPLETA}) no describe adecuadamente los resultados experimentales cerca del voltaje umbral.
 	
 		
 	\end{minipage}
@@ -2197,7 +2197,8 @@ Utilizando la relación $ {I_D}' = I_D\cdot \frac{v_{arr}(\xi)}{\mu_n \cdot \xi}
 
 \subsection{Efectos de corriente de gate}
 
-Cuando la tensión de compuerta se encuentra aproximadamente entre $0,5\,V$ y $1,0 \,V $ por debajo del umbral en un MESFET de canal n, la corriente de drenador alcanza un valor mínimo y luego aumenta lentamente a medida que disminuye la tensión de compuerta.
+Dejando de lado los modelos ideales, donde la corriente en el terminal \textit{gate} es cero ($I_G = 0 $), en la unión schottky, sin embargo, existen corrientes de compuerta apreciables o no de acuerdo a la sensibilidad de la implementación y las condiciónes de funcionamiento, estas son debido a fenómenos como tunealamiento, emisión termoionica, corrientes de ruptura y generación y recombinación de portadores. 
+
 
 \begin{figure}[H]
 	\centering
@@ -2214,8 +2215,6 @@ Cuando la tensión de compuerta se encuentra aproximadamente entre $0,5\,V$ y $1
 	\hfill
 	% ---------- Texto (derecha) ----------
 	\begin{minipage}[c]{0.55\textwidth}
-		
-		 La corriente de drenador en esta región se denomina corriente de fuga de compuerta. La Figura \ref{fig:efectos_corr_gate} muestra un gráfico de la corriente de drenador en función de $V_{GS}$ para las tres regiones.
 		
 		
 		

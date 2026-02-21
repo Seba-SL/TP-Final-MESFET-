@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2026.1.2)  20 FEB 2026 09:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2026.1.2)  20 FEB 2026 20:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1277,29 +1277,29 @@ g>]
 <Img/efectos_corr_gate.png, id=139, 531.9875pt x 369.38pt>
 File: Img/efectos_corr_gate.png Graphic file (type png)
 <use Img/efectos_corr_gate.png>
-Package pdftex.def Info: Img/efectos_corr_gate.png  used on input line 2209.
+Package pdftex.def Info: Img/efectos_corr_gate.png  used on input line 2210.
 (pdftex.def)             Requested size: 204.85672pt x 142.23709pt.
  [20 <../../../../Imágenes/Capturas de pantalla/corriente_sub_umbral.png> <./I
 mg/efectos_corr_gate.png>] [21]
-Overfull \hbox (38.96579pt too wide) in paragraph at lines 2290--2290
+Overfull \hbox (38.96579pt too wide) in paragraph at lines 2289--2289
 []\T1/cmtt/m/n/10 IDSS =go*(V_DS_SAT - (2/(3*np.sqrt(np.abs(V_P_0)) ))*((V_bi +
  V_DS_SAT)**(3/2) - (V_bi)**(3/2) )        )[] 
  []
 
 [22]
-Overfull \hbox (91.45297pt too wide) in paragraph at lines 2324--2324
+Overfull \hbox (91.45297pt too wide) in paragraph at lines 2323--2323
 []\T1/cmtt/m/n/10 #############################################################
 ######################################################[] 
  []
 
 
-Overfull \hbox (7.47348pt too wide) in paragraph at lines 2349--2349
+Overfull \hbox (7.47348pt too wide) in paragraph at lines 2348--2348
 []\T1/cmtt/m/n/10 plt.plot(VGS, ID_completo, linewidth=4, label="Modelo Complet
 o",color = "green" , linestyle = "--")[] 
  []
 
 [23]
-Overfull \hbox (7.47348pt too wide) in paragraph at lines 2414--2414
+Overfull \hbox (7.47348pt too wide) in paragraph at lines 2413--2413
 []\T1/cmtt/m/n/10 plt.plot(VDS_sat_line,ID_sat_line,linestyle="--",linewidth=3,
 color=plt.gca().lines[-1].get_color())[] 
  []
@@ -1355,7 +1355,7 @@ are/texmf/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/type
 rm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1728.pfb></usr/sha
 re/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1
 /public/cm-super/sftt1000.pfb>
-Output written on main.pdf (25 pages, 1937745 bytes).
+Output written on main.pdf (25 pages, 1939928 bytes).
 PDF statistics:
  282 PDF objects out of 1000 (max. 8388607)
  149 compressed objects within 2 object streams
