@@ -2252,6 +2252,16 @@ En esta situación tenemos que tener en cuenta la generación térmica de pares 
 \end{figure}
 
 
+\section{Tensión de ruptura }
+Para los MESFET de GaAs, los mecanismos de ruptura son mucho más complejos que con los JFET. Generalmente presentan valores de ruptura ($V_{B}$) más bajos tal como se ve en la figura \ref{fig:tensionderuptura}. Un factor que reduce la tensión de ruptura en los MESFET se debe a la corriente de túnel asociada al contacto de la compuerta de la barrera Schottky. En campos altos, esta corriente de túnel proviene de la emisión del campo termoiónico, que depende de la temperatura. La corriente de compuerta puede iniciar la multiplicación por avalancha e induce una menor tensión de ruptura del drenador. Con una corriente de canal más alta, el nodo interno se encuentra a una temperatura más alta, lo que desencadena una ruptura por avalancha más temprana, iniciada por la corriente de compuerta. Esto puede ser responsable de una $V_{GS}$ menor a una $V_{GS}$ mayor, como se muestra en la Fig. \ref{fig:tensionderuptura}. Otro factor es que los MESFET de GaAs suelen tener mayor corriente y transconductancia que los dispositivos de Si debido a su mayor movilidad. La mayor corriente de canal puede iniciar la avalancha a una tensión más baja o producir los efectos de temperatura que desencadenan una ruptura más temprana, como se mencionó. La tensión de ruptura se puede mejorar ampliando la región entre la compuerta y el drenador \parencite{sze2021}..
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{../Imagenes/Tension_de_Ruptura}
+	\caption{Datos experimentales que muestran que la tensión de ruptura del drenador (a) aumenta con $V_{GS}$, en JFET de Si, pero (b) disminuye con $V_{GS}$, en MESFET de GaAs \parencite{sze2021}.}
+	\label{fig:tensionderuptura}
+\end{figure}
+
 
 \section{Conclusión} 
 
