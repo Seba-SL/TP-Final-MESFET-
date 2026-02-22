@@ -200,7 +200,7 @@ label_text = (
     r"──────── Modelo con efecto de modulación" "\n"
     r"- - - - -  Modelo completo sin efecto" "\n"
     "\n"
-    rf"$N_D = {Nd:.2e}\ \mathrm{{cm^{{-3}}}}$" "\n"
+    rf"$N_D = {Nd/(1e15):.0f}\ \cdot 10^{{15}} \mathrm{{cm^{{-3}}}}$" "\n"
     rf"$\mu_n = {mu_n:.0f}\ \mathrm{{cm^2/Vs}}$" "\n"
     rf"$a = {a*1e4:.1f}\ \mu\mathrm{{m}}$" "\n"
     rf"$L = {L*1e4:.1f}\ \mu\mathrm{{m}}$" "\n"
@@ -212,9 +212,9 @@ label_text = (
 plt.text(0.6, 0.5, label_text,transform=plt.gca().transAxes,fontsize=10,verticalalignment='top',bbox=dict(boxstyle="round", facecolor="white", alpha=0.85))
 
 
-plt.text(0.04, 0.7, r"Sin modulación",transform=plt.gca().transAxes,fontsize=10,verticalalignment='top',bbox=dict(boxstyle="round", facecolor="blue", alpha=0.5))
-plt.text(0.04, 0.8, r"Modulación para canal largo (L = 20 $\mu m$)",transform=plt.gca().transAxes,fontsize=10,verticalalignment='top',bbox=dict(boxstyle="round", facecolor="orange", alpha=0.5))
-plt.text(0.04, 0.9, r"Modulación para canal corto (L = 4 $\mu m$)",transform=plt.gca().transAxes,fontsize=10,verticalalignment='top',bbox=dict(boxstyle="round", facecolor="red", alpha=0.5))
+plt.text(0.04, 0.75, r"Sin modulación",transform=plt.gca().transAxes,fontsize=10,verticalalignment='top',bbox=dict(boxstyle="round", facecolor="blue", alpha=0.5))
+plt.text(0.04, 0.85, r"Modulación para canal largo (L = 20 $\mu m$)",transform=plt.gca().transAxes,fontsize=10,verticalalignment='top',bbox=dict(boxstyle="round", facecolor="orange", alpha=0.5))
+plt.text(0.04, 0.95, r"Modulación para canal corto (L = 4 $\mu m$)",transform=plt.gca().transAxes,fontsize=10,verticalalignment='top',bbox=dict(boxstyle="round", facecolor="red", alpha=0.5))
 # -------------------------
 # -------------------------
 plt.xlabel(r"$V_{DS}$ [V]")
