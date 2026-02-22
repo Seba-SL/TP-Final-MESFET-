@@ -255,9 +255,10 @@ Al diseñar un MESFET canal n, se puede optar por una determinada concentración
 	\end{minipage}
 	\hfill
 	\begin{minipage}[t]{0.65\textwidth}
-	De esta forma se pueden clasificar en dos tipos de MESFET por cada tipo de canal, los mismos comúnmente se diferencian con ayuda de los símbolos que se presentan en la figura \ref{fig:tiposmesfet}.
-	Es importante tener en cuenta, sin embargo, que el canal debe ser de material tipo n en un MESFET. La movilidad de los huecos en GaAs es relativamente baja comparada con la de portadores de carga negativa por lo que se pierde la ventaja de utilizar GaAs en aplicaciones de alta velocidad. El resultado es:
-	Los MESFET tipo empobrecimiento y tipo enriquecimiento se hacen con un canal n entre el drenaje y la fuente y, por consiguiente, sólo los MESFET tipo n son comerciales \parencite{BoylestadNashelsky2015}.
+		\vspace{0.5cm}
+		De esta forma se pueden clasificar en dos tipos de MESFET por cada tipo de canal, los mismos comúnmente se diferencian con ayuda de los símbolos que se presentan en la figura \ref{fig:tiposmesfet}.
+		Es importante tener en cuenta, sin embargo, que el canal debe ser de material tipo n en un MESFET. La movilidad de los huecos en GaAs es relativamente baja comparada con la de portadores de carga negativa por lo que se pierde la ventaja de utilizar GaAs en aplicaciones de alta velocidad. El resultado es:
+		Los MESFET tipo empobrecimiento y tipo enriquecimiento se hacen con un canal n entre el drenaje y la fuente y, por consiguiente, sólo los MESFET tipo n son comerciales \parencite{BoylestadNashelsky2015}.
 	
 	\end{minipage}
 \end{figure}
@@ -490,6 +491,8 @@ El modo lineal o óhmico responde linealmente tal como ocurriría con un resisto
 
 \section{Diagrama de bandas}
 
+
+
 El análisis en profundidad parte de las bandas de energía de los materiales que conforman el dispositivo, como se comportan en las interfases entre ellos, en equilibrio termodinámico y bajo potenciales externos.
 
 En la física del estado sólido, los átomos se modelan mediante niveles de energía en donde es probable encontrar sus electrones, pero cuando estos átomos forman redes cristalinas periódicas, como en el caso de los solidos usados en dispositivos semiconductores, los niveles mas alejados del núcleo de cada átomo individual se solapan con los del resto formando el concepto de bandas de energía con el cual se estudiaran los fenómenos físicos de los dispositivos. Se definen dos bandas características en el caso de los semiconductores y aislantes separadas por una banda prohibida (\textit{bandgap}), donde en principio idealmente no hay niveles de energía disponibles para portadores libres. La banda donde los electrones están más ligados al sólido es la banda de valencia, esta se encuentra normalmente llena de electrones y separada por la banda prohibida se encuentra la banda de conducción, normalmente vacía. Para esta sección se hará uso de los valores indicados en la tabla \ref{tab:param_fis_mesfet}.
@@ -502,11 +505,12 @@ En la física del estado sólido, los átomos se modelan mediante niveles de ene
 	\item $\phi = E_o - E_f$ : Función trabajo 
 	\item $ E_v$ : Nivel de energía superior de la banda de valencia, usualmente usado de referencia.
 	\item $ E_c$ : Nivel de energía inferior de la banda de conducción.
-	\item $E_g = E_c - E_v$ : La energía de \textit{gap} es la diferencia entre la banda de valencia y de conducción.
+	\item $E_g = E_c - E_v$ : La energía de \textit{gap}, la diferencia entre la banda de valencia y de conducción.
 \end{itemize}
 
+\begin{comment}
 
-Existen tres clasificaciones principales para los solidos: Aislantes, semiconductores y conductores, y sus diagramas de bandas típicos se encuentran en la figura \ref{fig:bandasindividuales}, se puede observar como en un aislante la diferencia de energía entre la banda de valencia y de conducción es considerablemente mayor que en la de un semiconductor, mientras que en el caso del conductor ambas bandas se encuentran solapadas siendo indistinguible un $E_{g}$.
+Existen tres clasificaciones principales para los solidos: Aislantes, semiconductores y conductores, y sus diagramas de bandas típicos se encuentran en la figura \ref{fig:bandasindividuales}:
 
 \begin{figure}[H]
 	\centering
@@ -515,15 +519,8 @@ Existen tres clasificaciones principales para los solidos: Aislantes, semiconduc
 	\label{fig:bandasindividuales}
 \end{figure}
 
-Cuando un solido no es dopado, se dice que es un material intrínseco, al añadirle impurezas el diagrama de bandas de este solido se modifica de acuerdo a la concentración y el tipo de estas impurezas. 
 
 Como ya se menciono el MESFET se forma principalmente con metal (conductor), semiconductor dopado tipo n, y un semi-aislante (Semiconductor GaAs con cromo como impureza). Al doparse el semiconductor, se forma un nivel donor y/o aceptor dentro de la banda prohibida de acuerdo al tipo de dopaje.
-
-%\subsection{Portadores}
-
-%Un electrón excitado (por ejemplo, mediante agitación térmica) dentro de la banda de conducción es una carga libre negativa que se mueve a través de todo el cristal bajo la influencia de gradientes de temperatura o potencial, normalmente denotada como \textit{n}. La deficiencia de carga de valencia producida en la banda de conducción por la excitación de un electrón es su contratarte como carga positiva, denominada hueco o \textit{p}.
-
-
 
 \subsection{Distribución de energía en un solido }
 
@@ -555,7 +552,7 @@ Cuando el semiconductor tiene impurezas ya sean de tipo p o de tipo n, su nivel 
 		E_{i} - kT \ln\!\left(\dfrac{N_D - N_A}{n_i}\right), & \text{si } N_D < N_A
 	\end{cases}
 \end{equation}
-
+\end{comment}
 \subsection{Diagramas de banda aislados}
 A continuación se presentan los diagramas de los distintos materiales que componen las junturas del transistor de forma aislada.
 
@@ -1678,11 +1675,8 @@ La carga se formara en el semiconductor y en la superficie del metal, formando u
 
 \subsection{Campo eléctrico}
 
-Para obtener el campo eléctrico (\ref{equation:campo_electrico}), utilizamos la ley de Gauss (\ref{equation:ley_gauss}):
+Para obtener el campo eléctrico (\ref{equation:campo_electrico}), utilizamos la ley de Gauss ($	\xi = \frac{Q}{\epsilon_s}$):
 
-\begin{equation}\label{equation:ley_gauss}
-	\mathcal{E} = \frac{Q}{\epsilon_s}
-\end{equation} 
 
 \begin{figure}[h]
 	\centering
@@ -1823,17 +1817,12 @@ Partiendo de (\ref{equation: W_d_reposo}) reemplazando $W_d(x) = a $ se obtiene 
 	W_d = \sqrt{\frac{2 \cdot \epsilon_s \cdot V_{p0} }{q\cdot N_D}} = a 
 \end{equation} 
 
-Llegando finalmente a (\ref{equation:obtenicon_VP_2}), conocida como tensión de \textit{pinchoff}:
+Llegando finalmente a (\ref{equation:obtenicon_VP_2}), conocida como tensión de \textit{pinchoff} y la tensión umbral como $V_{p}$:
 \begin{equation}\label{equation:obtenicon_VP_2}
-		 V_{p0} = \frac{a^2 \cdot q\cdot N_D}{2 \cdot \epsilon_s }
+		 V_{p0} = \frac{a^2 \cdot q\cdot N_D}{2 \cdot \epsilon_s } \quad \wedge \quad 	V_{p} = V_{bi} - V_{p0}  
 \end{equation}
 
 
-Se define a su vez, la tensión umbral como:
-
-\begin{equation}
-	V_{p} = V_{bi} - V_{p0}  
-\end{equation}
 
 
 
@@ -2135,7 +2124,7 @@ La velocidad de arrastre de un portador en un semiconductor se satura al aumenta
 \end{figure}
 
 
-Se simulara este efecto reemplazando la expresión de la velocidad de arrastre de (\ref{equation:J_corriente_deduccion_1}), por la expresión (\ref{equation:v_arr_enfuncion_de_E}) función del campo eléctrico aplicado y utilizando $v_{sat} = 6.8\cdot 10^6 \, \frac{cm}{s}$ junto con constantes de aproximación y la expresión del largo del canal (\ref{equation:L_Modulada}). La curva simulada sera la de salida, es decir la corriente $I_D$ en función de $V_{DS}$ ya que es la que es capaz de forzar el campo de saturación.
+Se simulara este efecto tomando como referencia la relación de la figura \ref{fig:varrvscampo} utilizando $v_{sat} = 6.8\cdot 10^6 \, \frac{cm}{s}$ junto con constantes de aproximación y el largo de canal $L$. La curva formada por la corriente $I_D$ en función de $V_{DS}$ permitirá ver este efecto.
 
 \begin{equation}\label{equation:v_arr_enfuncion_de_E}
 v_{arr}(\xi) =
@@ -2207,7 +2196,7 @@ De la velocidad modelada en (\ref{equation:v_arr_enfuncion_de_E}), la cual se ba
 \subsection{Efectos de corriente de gate}
 
 Nuevamente dejando de lado los modelos ideales, donde la corriente en el terminal \textit{gate} es cero ($I_G = 0 $), en la unión schottky  existen corrientes de compuerta apreciables o no de acuerdo a la sensibilidad de la implementación y las condiciónes de funcionamiento, estas son debido a fenómenos como tunealamiento, emisión termoionica, corrientes de ruptura y generación y recombinación de portadores. 
-
+En esta situación tenemos que tener en cuenta la generación térmica de pares electrón-hueco. Los pocos electrones generados térmicamente pierden energía y bajan del metal a el canal n, es una "Corriente Inversa" (IS) que es muy pequeña. Estos fenomenos se incrementan con la temperatura, por lo tanto se simulo el efecto para distintos valores de temperatura figura \ref{fig:efectosdecorrientesgate} (tomando como referencia las corrientes en una unión Schottky en inversa que presentaría un diodo).
 
 \begin{figure}[H]
 	\centering
@@ -2223,10 +2212,18 @@ Nuevamente dejando de lado los modelos ideales, donde la corriente en el termina
 	\end{minipage}
 	\hfill
 	% ---------- Texto (derecha) ----------
-	\begin{minipage}[c]{0.55\textwidth}
+	\begin{minipage}[c]{0.5\textwidth}
 		
 		
 		
+			
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=1\linewidth]{Img/efectos_de_corrientes_gate}
+		\caption{Corrientes de fuga en una unión metal semiconductor en inversa.}
+		\label{fig:efectosdecorrientesgate}
+	\end{figure}
+			
 	\end{minipage}
 	
 	
@@ -2251,74 +2248,63 @@ El modelo clásico es conveniente para la aplicación de transistores en aplicac
 \begin{verbatim}
 		import numpy as np
 		import matplotlib.pyplot as plt
+		import matplotlib.ticker as ticker
 		
 		# -----------------------------
-		# Constantes físicas
+		# Constantes físicas utilizadas
 		# -----------------------------
+		
 		q = 1.602e-19                 # C
 		eps0 = 88.5e-15              # F/cm
 		eps_r_GaAs = 12.9
 		eps_s = eps_r_GaAs * eps0     # F/cm
 		k= 8.617e-5  #eV/K
 		T = 300  # K
+		
 		# -----------------------------
 		# Parámetros del MESFET
 		# -----------------------------
-		mu_n = 8500               # 8500 cm^2/Vs
-		Nd = 4e15                     # cm^-3
-		ni= 1.79e6                  # cm^-3
 		
+		mu_n = 8500                   # 8500 cm^2/Vs
+		Nd = 4e15                     # cm^-3
+		ni= 1.79e6                    # cm^-3
 		
 		#Geometricos
-		a = 120e-6               # cm
-		Z = 1000e-6                     # cm  (equivalente a )
-		L = 200e-6                      # cm
+		a = 120e-6                      # cm
+		Z = 1000e-6                     # cm  
+		L = 400e-6                      # cm
 		
-		phi_M = 4.33 
-		chi_GaAs = 4.07
-		E_g = 1.42   #eV
 		
-		E_C =E_g 
+		phi_M = 4.33                 # eV : Función Trabajo del Ti
+		chi_GaAs = 4.07              # eV : Afinidad electronica del GaAs
+		E_g = 1.42                   # eV: Energia de Gap                                    
 		
-		E_F = E_g/2 + k*T*np.log(Nd/ni)
+		E_C =E_g                                            # eV: Altura de banda de conducción
+		E_F = E_g/2 + k*T*np.log(Nd/ni)                     # eV: Nivel de Fermi del GaAs
 		
-		V_bi = (phi_M - chi_GaAs )   - (E_C - E_F)               # V
-		W_d0 = np.sqrt(2*(eps_s*V_bi/(q*Nd)))
-		go = (q*mu_n*Nd*Z*a)/(L)
+		V_bi = (phi_M - chi_GaAs )   - (E_C - E_F)          # V : Teorico
+		W_d0 = np.sqrt(2*(eps_s*V_bi/(q*Nd)))               # cm : Ancho de vaciamiento en equilibrio
+		go = (q*mu_n*Nd*Z*a)/(L)                            # 1/ohm : Conductancia del canal
 		
 		# Tensiones de control
-		V_P_0 = -(q*Nd*(a**2))/(2*eps_s)
-		V_P  =  V_P_0  + V_bi     # V  (pinch-off)
+		V_P_0 = (q*Nd*(a**2))/(2*eps_s)                     # V: Tensión de pinch-off
+		V_P  =  V_bi - V_P_0                                # V: Tensión umbral
 		
-		V_GS = 0
+		V_GS_0 = 0                                          # V: Tensión en equilibrio.
 		
-		V_DS_SAT  =  -V_P_0 + V_GS - V_bi 
+		V_DS_SAT  =  V_P_0 + V_GS_0 - V_bi                  # V: Tensión de saturación
 		
+		# Variables comunes
 		
-		IDSS =go*(V_DS_SAT - (2/(3*np.sqrt(np.abs(V_P_0)) ))*((V_bi + V_DS_SAT)**(3/2) - (V_bi)**(3/2) )        )
-		# (Z/L) * (a - W_d0 ) * q * mu_n * Nd * V_DS_SAT
+		VGS = np.linspace(V_P, 0, 1000)
 		
+		############### Modelo Clasico #######################################################################################
 		
-		
-		
-		print("E_F = "+ str(E_F)+ "eV")
-		print("V_bi = "+ str(V_bi)+ "V")
-		print("W_d0 = "+ str(W_d0)+ "cm \n")
-		
-		print("Vp = "+ str(V_P) + "V")
-		
-		print("VDS_[sat] = "+ str(V_DS_SAT ) + "V")
-		
-		
-		
-		print("I_DSS = "+ str(-IDSS) +"A")
+		## IDSS tomada del modelo completo, se tomaria experimentalmente para modelo clasico
+		IDSS =go*(V_DS_SAT - (2/(3*np.sqrt(V_P_0) ))*((V_bi + V_DS_SAT)**(3/2) - (V_bi)**(3/2) )        )
 		
 		# Rango de VGS
 		VGS_estrangulamiento = np.linspace(V_P , 0, 500)
-		
-		
-		
-		
 		
 		# Corte
 		VGS_corte = np.linspace(V_P - 3, V_P, 300)
@@ -2329,49 +2315,51 @@ El modelo clásico es conveniente para la aplicación de transistores en aplicac
 		ID_estr = IDSS * (1 - VGS_estr / V_P)**2
 		
 		
-		###################################################################################################################
 		
-		#Modelo completo
-		#VGS_completo = np.linspace(V_P - 3, 0, 600)
+		############### Modelo Completo #######################################################################################
 		
-		print("go = "+ str(go) + "1/ohm")
-		
-		VGS = np.linspace(V_P, 0, 1000)
-		
-		
-		VDS_sat = (-V_P + VGS - V_bi )
+		VDS_sat = (-V_P + VGS - V_bi )                                
 		
 		arg1 = VDS_sat + V_bi - VGS
 		arg2 = V_bi - VGS
 		
 		termino = ((2)/(3*np.sqrt(np.abs(V_P))))*( (arg1)**(3/2) - (arg2)**(3/2) )
 		
-		ID_completo = go * ( VDS_sat -termino ) 
+		ID_completo = go * ( VDS_sat - termino ) 
 		
 		
-		
+		############### Curvas de Transferencia ################################################################################
 		
 		plt.figure()
-		plt.plot(VGS_corte, ID_corte, linewidth=4, label="Corte")
-		plt.plot(VGS_estr, ID_estr, linewidth=4, label="Estrangulamiento")
-		plt.plot(VGS, ID_completo, linewidth=4, label="Modelo Completo",color = "green" , linestyle = "--")
-		plt.plot(VGS_corte, ID_corte, linewidth=4,color = "green" , linestyle = "--")
+		plt.plot(VGS_corte, ID_corte*1e3, linewidth=4, color = "orange",linestyle= "--")
+		plt.plot(VGS_corte, ID_corte*1e3, linewidth=4,color = "green")
+		
+		plt.plot(VGS_estr, ID_estr*1e3, linewidth=4, label="Modelo Clásico", color = "orange",linestyle= "--")
+		plt.plot(VGS, ID_completo*1e3, linewidth=4, label="Modelo Completo",color = "green")
+		
 		plt.axvline(V_P, color='gray', linestyle='--', linewidth=2, label=r"$V_P$")
 		plt.xlabel(r"$V_{GS}$ [V]")
-		plt.ylabel(r"$I_D$ [A]")
+		plt.ylabel(r"$I_D$ [mA]")
 		plt.title("Curva de transferencia MESFET")
+		
+		# Región Corte
+		plt.axvspan(V_P - 3, V_P,   color="gray", hatch="xxx",alpha=0.2, label = "Región de Corte")
+		
+		# Región Estranulación
+		plt.axvspan(V_P, 0, color="white",  alpha=0.6, label = "Región de Estrangulación")
+		
 		plt.grid(True)
 		
 		# ---- Cartel de parámetros ----
 		label_text = (
 		r"MESFET (GaAs / Ti)" "\n"
-		rf"$N_D = {Nd:.2e}\ \mathrm{{cm^{{-3}}}}$" "\n"
+		rf"$N_D = {Nd/(1e15):.0f}\ \mathrm{{\cdot 10^{{15}} \, cm^{{-3}}}}$" "\n"
 		rf"$\mu_n = {mu_n:.0f}\ \mathrm{{cm^2/Vs}}$" "\n"
-		rf"$a = {a*1e4:.1f}\ \mu\mathrm{{m}}$" "\n"
-		rf"$L = {L*1e4:.1f}\ \mu\mathrm{{m}}$" "\n"
-		rf"$Z = {Z*1e4:.1f}\ \mu\mathrm{{m}}$" "\n"
+		rf"$a = {a*1e4:.0f}\ \mu\mathrm{{m}}$" "\n"
+		rf"$L = {L*1e4:.0f}\ \mu\mathrm{{m}}$" "\n"
+		rf"$Z = {Z*1e4:.0f}\ \mu\mathrm{{m}}$" "\n"
 		rf"$V_p = {V_P:.1f}\ \mathrm{{V}}$""\n"
-		rf"$IDSS = {IDSS*1e3:.1f}\ \mathrm{{mA}}$"
+		rf"$IDSS = {IDSS*1e3:.0f}\ \mathrm{{mA}}$"
 		)
 		
 		plt.text(
@@ -2388,9 +2376,10 @@ El modelo clásico es conveniente para la aplicación de transistores en aplicac
 		
 		
 		
+		############### Curvas de Salida ################################################################################
 		
 		
-		VGS_vals = [-3.9,-3.5,-3, -2.0, -1.5, -1.0, -0.5, 0.0]
+		VGS_vals = [-3.9,-3.5,-3, -2.0, -1.5, -1.0, -0.5, 0.0]    # Valores de VGS evaluados
 		
 		plt.figure()
 		
@@ -2399,54 +2388,444 @@ El modelo clásico es conveniente para la aplicación de transistores en aplicac
 		VDS_sat = max(VGS - V_P, 0)
 		VDS = np.linspace(0, VDS_sat, 300)
 		
-		# Región óhmica
-		ID_ohmico = (2 * IDSS / (V_P**2)) * (   (VGS - V_P) * VDS - VDS**2 / 2)
+		# -------------------------
+		# MODELO SHOCKLEY
+		# -------------------------
+		ID_ohmico = (2 * IDSS / (V_P**2)) * (
+		(VGS - V_P) * VDS - VDS**2 / 2
+		)
 		
-		# Label
 		if np.isclose(VGS, V_P):
 		label = r"$V_{GS}=V_P$"
 		else:
 		label = rf"$V_{{GS}}={VGS}\,\mathrm{{V}}$"
 		
-		plt.plot(VDS, ID_ohmico, linewidth=3, label=label)
 		
-		# -------------------------
-		# IDSAT (región saturación)
-		# -------------------------
+		line, = plt.plot(VDS, ID_ohmico*1e3,linestyle="--", linewidth=3, label=label)
+		
+		color_actual = line.get_color()
+		
+		# Saturación Shockley
 		if VGS > V_P:
 		IDSAT = IDSS * (1 - VGS / V_P)**2
-		
-		VDS_sat_line = np.linspace(VDS_sat,10, 5000)
+		VDS_sat_line = np.linspace(VDS_sat, 10, 300)
 		ID_sat_line = IDSAT * np.ones_like(VDS_sat_line)
 		
-		plt.plot(VDS_sat_line,ID_sat_line,linestyle="--",linewidth=3,color=plt.gca().lines[-1].get_color())
+		plt.plot(VDS_sat_line, ID_sat_line*1e3,linewidth=3,linestyle="--", color=color_actual)
 		
+		# -------------------------
+		# MODELO COMPLETO
+		# -------------------------
+		factor = (2/(3*np.sqrt(V_P_0)))
 		
-		# ---- Cartel de parámetros ----
+		ID_completo = go*(VDS - factor * ( (V_bi - VGS + VDS)**(3/2) -(V_bi - VGS)**(3/2)))
+		
+		plt.plot(VDS, ID_completo*1e3,linewidth=3, color=color_actual)
+		
+		# Saturación modelo completo
+		if VGS > V_P:
+		
+		VDS_sat = V_P_0 + VGS - V_bi
+		
+		ID_sat_completo = go*(VDS_sat - factor * ((V_bi - VGS + VDS_sat)**(3/2)- (V_bi - VGS)**(3/2)))
+		
+		ID_sat_line = ID_sat_completo * np.ones_like(VDS_sat_line)
+		
+		plt.plot(VDS_sat_line, ID_sat_line*1e3,linewidth=3,color=color_actual)
+		# -------------------------
+		
 		label_text = (
 		r"MESFET (GaAs / Ti)" "\n"
-		rf"$N_D = {Nd:.2e}\ \mathrm{{cm^{{-3}}}}$" "\n"
+		r"_________  Modelo Completo" "\n"
+		r"- - - - -  Modelo Clásico" "\n"
+		"\n"
+		rf"$N_D = {Nd/(1e15):.0f}\ \mathrm{{\cdot 10^{{15}} \, cm^{{-3}}}}$" "\n"
 		rf"$\mu_n = {mu_n:.0f}\ \mathrm{{cm^2/Vs}}$" "\n"
-		rf"$a = {a*1e4:.1f}\ \mu\mathrm{{m}}$" "\n"
-		rf"$L = {L*1e4:.1f}\ \mu\mathrm{{m}}$" "\n"
-		rf"$Z = {Z*1e4:.1f}\ \mu\mathrm{{m}}$" "\n"
+		rf"$a = {a*1e4:.0f}\ \mu\mathrm{{m}}$" "\n"
+		rf"$L = {L*1e4:.0f}\ \mu\mathrm{{m}}$" "\n"
+		rf"$Z = {Z*1e4:.0f}\ \mu\mathrm{{m}}$" "\n"
 		rf"$V_p = {V_P:.1f}\ \mathrm{{V}}$""\n"
-		rf"$IDSS = {IDSS*1e3:.1f}\ \mathrm{{mA}}$"
+		rf"$IDSS = {IDSS*1e3:.0f}\ \mathrm{{mA}}$"
 		)
 		
+		
 		plt.text(
-		0.8, 0.6, label_text,
+		0.75, 0.75, label_text,
 		transform=plt.gca().transAxes,
 		fontsize=10,
 		verticalalignment='top',
 		bbox=dict(boxstyle="round", facecolor="white", alpha=0.85)
 		)
+		# -------------------------
 		plt.xlabel(r"$V_{DS}$ [V]")
-		plt.ylabel(r"$I_D$ [A]")
+		plt.ylabel(r"$I_D$ [mA]")
 		plt.title("Curva de salida MESFET")
 		plt.grid(True)
 		plt.legend()
 		plt.show()
+		
+		
+		
+		
+		################################################################################################################################################################################
+		
+		# Modelo Completo + Efectos no ideales 
+		
+		################################- Modulación  del Canal (Sobre curva de salida) #########################################################################################
+		VGS_vals = [-1.5]           # Valor de ejemplo de tensión de control mayor a VP
+		
+		VDS_sat = max(VGS - V_P, 0)                 
+		VDS = np.linspace(0.01, VDS_sat, 300)
+		
+		factor = (2/(3*np.sqrt(V_P_0)))
+		
+		ID_completo = go*(VDS - factor * ( (V_bi - VGS + VDS)**(3/2) - (V_bi - VGS)**(3/2) ))
+		
+		plt.plot(VDS, ID_completo*1e3,linewidth=3,linestyle="-",alpha = 0.9, color="red")
+		
+		
+		# Saturación modelo completo
+		if VGS > V_P:
+		
+		
+		ID_sat_completo = go*(VDS_sat - factor * ((V_bi - VGS + VDS_sat)**(3/2)- (V_bi - VGS)**(3/2)))
+		
+		VDS_sat_line = np.linspace(VDS_sat, 10, 300)
+		
+		Delta_L = np.sqrt(2*eps_s*(VDS_sat_line - VDS_sat)/(q*Nd))
+		
+		
+		L_prima = L - 0.5*Delta_L
+		
+		ID_sat_line = ID_sat_completo * np.ones_like(VDS_sat_line)  
+		
+		
+		ID_sat_line_ch_modulation =ID_sat_line*(L/L_prima)
+		
+		#Ejemplo canal largo
+		
+		L_B = L*5
+		
+		L_prima_B = L_B- 0.5*Delta_L
+		
+		ID_sat_line_B = ID_sat_completo* np.ones_like(VDS_sat_line)
+		
+		ID_sat_line_ch_modulation_B = ID_sat_line*(L_B/L_prima_B)
+		
+		plt.plot(VDS_sat_line, ID_sat_line*1e3,linewidth=3.5,linestyle="--", alpha = 0.6,color="blue")
+		plt.plot(VDS_sat_line, ID_sat_line_ch_modulation*1e3,linewidth=3.5,linestyle="-", alpha = 0.6,color="red")
+		plt.plot(VDS_sat_line, ID_sat_line_ch_modulation_B*1e3,linewidth=3.5,linestyle="-", alpha = 0.6,color="orange")
+		
+		
+		# -------------------------
+		
+		label_text = (
+		r"MESFET (GaAs / Ti)" "\n"
+		r"Modelo con efecto de modulación" "\n"
+		r"- - - - -  Modelo completo sin efecto" "\n"
+		"\n"
+		rf"$N_D = {Nd:.2e}\ \mathrm{{cm^{{-3}}}}$" "\n"
+		rf"$\mu_n = {mu_n:.0f}\ \mathrm{{cm^2/Vs}}$" "\n"
+		rf"$a = {a*1e4:.1f}\ \mu\mathrm{{m}}$" "\n"
+		rf"$L = {L*1e4:.1f}\ \mu\mathrm{{m}}$" "\n"
+		rf"$Z = {Z*1e4:.1f}\ \mu\mathrm{{m}}$" "\n"
+		rf"$V_p = {V_P:.1f}\ \mathrm{{V}}$" "\n"
+		rf"$IDSS = {IDSS*1e3:.1f}\ \mathrm{{mA}}$""\n"
+		)
+		
+		plt.text(0.6, 0.5, label_text,transform=plt.gca().transAxes,fontsize=10,verticalalignment='top',bbox=dict(boxstyle="round", facecolor="white", alpha=0.85))
+		
+		
+		plt.text(0.04, 0.7, r"Sin modulación",transform=plt.gca().transAxes,fontsize=10,verticalalignment='top',bbox=dict(boxstyle="round", facecolor="blue", alpha=0.5))
+		plt.text(0.04, 0.8, r"Modulación para canal largo (L = 20 $\mu m$)",transform=plt.gca().transAxes,fontsize=10,verticalalignment='top',bbox=dict(boxstyle="round", facecolor="orange", alpha=0.5))
+		plt.text(0.04, 0.9, r"Modulación para canal corto (L = 4 $\mu m$)",transform=plt.gca().transAxes,fontsize=10,verticalalignment='top',bbox=dict(boxstyle="round", facecolor="red", alpha=0.5))
+		# -------------------------
+		# -------------------------
+		plt.xlabel(r"$V_{DS}$ [V]")
+		plt.ylabel(r"$I_D$ [mA]")
+		plt.title("Curva de salida MESFET (con efecto de modulación del canal)")
+		plt.grid(True)
+		plt.show()
+		
+		
+		
+		################################# Saturación de la velocidad de arrastre #########################################################################################
+		
+		
+		## Velocidad de arrastre en función del campo
+		campo_critico = 1e5
+		
+		VDS = np.linspace(0.01, VDS_sat*10, 300)
+		Delta_L = np.sqrt(np.abs(2*eps_s*(VDS - VDS_sat)/(q*Nd)))
+		
+		L_prima = L- 0.5*Delta_L
+		vsat =  6.8e6  # cm/s
+		
+		# Parámetros de ajuste del modelo
+		xi_p = 3e3           # V/cm  (posición del pico)
+		xi_s = 2e4           # V/cm  (campo donde se estabiliza vsat)
+		
+		# --------------------------------------------------
+		# Rango de campo eléctrico (logarítmico)
+		# --------------------------------------------------
+		xi = VDS/L_prima      
+		
+		# --------------------------------------------------
+		# Modelo con pico
+		# --------------------------------------------------
+		v_arr =  (mu_n * xi / (1 + (xi/xi_p)**2) + vsat*((xi/xi_s)**2) / (1 + (xi/xi_s)**2))
+		
+		# --------------------------------------------------
+		# Gráfico
+		# --------------------------------------------------
+		plt.figure(figsize=(7,5))
+		plt.plot(xi, v_arr, linewidth = 4 )
+		
+		xi_ohmica_max = 2e3
+		xi_ndm_max = 1.5e4
+		
+		# Región óhmica
+		plt.axvspan(xi.min(), xi_ohmica_max,  color="blue", alpha=0.08)
+		
+		# Región NDM
+		plt.axvspan(xi_ohmica_max, xi_ndm_max, color="red", alpha=0.08)
+		
+		# Región saturación
+		plt.axvspan(xi_ndm_max, xi.max()*5, color="green", alpha=0.08)
+		
+		
+		# Textos en cada región
+		plt.text(4e1, 1e7, "Región de movilidad constante", fontsize=15)
+		plt.text(3e3, 2e6, "Movilidad diferencial\nnegativa (NDM)", fontsize=15)
+		plt.text(4e4, 2e6, "Saturación\nde velocidad", fontsize=15)
+		
+		
+		plt.text(xi_p, 1e6,r'$\xi_p$', fontsize=15)
+		plt.text(xi_s, 1e6, r'$\xi_s$', fontsize=15)
+		
+		plt.axvline(xi_p, linestyle='--', linewidth=2)
+		plt.axvline(xi_s, linestyle='--', linewidth=2)
+		
+		plt.text(xi_p, plt.ylim()[0]*2, r'$\xi_p$', rotation=90)
+		plt.text(xi_s, plt.ylim()[0]*2, r'$\xi_s$', rotation=90)
+		
+		
+		# Obtener ticks actuales
+		ax = plt.gca()
+		ticks = ax.get_xticks()
+		
+		# Añadir los característicos
+		special_ticks = [xi_p, xi_s]
+		all_ticks = sorted(list(set(ticks.tolist() + special_ticks)))
+		
+		ax.set_xticks(all_ticks)
+		
+		# Formateador personalizado
+		def log_formatter(x, pos):
+		if np.isclose(x, xi_p):
+		return r'$\xi_p$'
+		elif np.isclose(x, xi_s):
+		return r'$\xi_s$'
+		else:
+		return ticker.LogFormatterMathtext()(x)
+		
+		ax.xaxis.set_major_formatter(ticker.FuncFormatter(log_formatter))
+		
+		plt.xscale("log")
+		plt.yscale("log")
+		plt.xlabel(r"Campo eléctrico $\xi$ [V/cm]")
+		plt.ylabel("Velocidad de arrastre v [cm/s]")
+		plt.title("Velocidad de arrastre en GaAs ")
+		plt.grid(True, which="both")
+		plt.legend(["Velocidad de arrastre en función del campo"])
+		plt.show()
+		
+		
+		
+		
+		########################################   Corriente ID con corriente    ######################################################
+		
+		
+		import numpy as np
+		import matplotlib.pyplot as plt
+		
+		# --- Parámetros ---
+		mu_1 = 7326
+		mu_sat = 340
+		
+		# parámetros del dispositivo (ejemplo)
+		
+		Nd = 4e15
+		#Geometricos
+		a = 120e-6                      # cm
+		Z = 1000e-6                     # cm  
+		L = 2000e-6                      # cm
+		
+		
+		V1 = xi_p*L              # comienzo caída movilidad
+		deltaV = 20       # suavidad transición
+		
+		
+		E_C =E_g                                            # eV: Altura de banda de conducción
+		E_F = E_g/2 + k*T*np.log(Nd/ni)                     # eV: Nivel de Fermi del GaAs
+		
+		V_bi = (phi_M - chi_GaAs )   - (E_C - E_F)          # V : Teorico
+		W_d0 = np.sqrt(2*(eps_s*V_bi/(q*Nd)))               # cm : Ancho de vaciamiento en equilibrio
+		
+		
+		
+		V_bi = (phi_M - chi_GaAs )   - (E_C - E_F)          # V : Teorico
+		VGS = 0
+		V_P  =  V_bi - V_P_0                                # V: Tensión umbral
+		# V: Tensión en equilibrio
+		V_DS_SAT  =  V_P_0 + V_GS_0 - V_bi                  # V: Tensión de saturación
+		
+		factor = 2/(3*np.sqrt(V_P_0))
+		
+		# --- Barrido ---
+		VDS = np.linspace(0.01, 12, 1000)
+		
+		# --- Movilidad suave ---
+		mu_eff = np.where( VDS < V1,  mu_1, mu_sat + (mu_1 - mu_sat)*np.exp(-(VDS - V1)/deltaV))
+		
+		# --- Conductancia dependiente de mu ---
+		go = (q*mu_eff*Nd*Z*a)/L
+		
+		# --- Corriente región lineal ---
+		ID = go*(VDS - factor*((V_bi - VGS + VDS)**(3/2)- (V_bi - VGS)**(3/2)))
+		
+		# --- Saturación ---
+		VDS_sat = max(VGS - V_P, 0)
+		
+		ID_sat = go*(VDS_sat - factor*((V_bi - VGS + VDS_sat)**(3/2)  - (V_bi - VGS)**(3/2)))
+		
+		ID = np.where(VDS > VDS_sat, ID_sat, ID)
+		
+		
+		## Curva de salida con mu teoorico de 80000
+		mu_n = 8000
+		go_cste = (q*mu_n*Nd*Z*a)/L
+		
+		ID_cste = go_cste*(VDS - factor*((V_bi - VGS + VDS)**(3/2)
+		- (V_bi - VGS)**(3/2)))
+		
+		ID_cste = np.where(VDS > VDS_sat,
+		go_cste*(VDS_sat - factor*((V_bi - VGS + VDS_sat)**(3/2)
+		- (V_bi - VGS)**(3/2))),
+		ID_cste)
+		
+		
+		
+		# --- Graficar ---
+		plt.figure()
+		
+		plt.plot(VDS, ID_cste*1e3, label=r"Modelo $\mu$ constante",alpha=0.8, linewidth = 4,color="blue", linestyle= "--")
+		plt.plot(VDS, ID*1e3, label=r"Modelo $\mu$ variable", linewidth = 4, color ="red")
+		
+		plt.axvline(V1, linestyle="--", alpha=0.5, label= rf"Inicio caída $\mu$: $V_{{DS}} = \xi_p \cdot L  = $ {V1:.1f}", linewidth = 3)
+		
+		label_text = (
+		r"MESFET (GaAs / Ti)" "\n"
+		rf"$N_D = {Nd/(1e15):.0f}\ \mathrm{{\cdot 10^{{15}} \, cm^{{-3}}}}$" "\n"
+		rf"$a = {a*1e4:.0f}\ \mu\mathrm{{m}}$" "\n"
+		rf"$L = {L*1e4:.0f}\ \mu\mathrm{{m}}$" "\n"
+		rf"$Z = {Z*1e4:.0f}\ \mu\mathrm{{m}}$" "\n"
+		rf"$V_p = {V_P:.1f}\ \mathrm{{V}}$""\n"
+		f"Movilidad teorica (cte): $\mu_n  = {mu_n:.0f}\ \mathrm{{cm^2/Vs}}$" "\n"
+		rf"Movilidad inicial (cte): $\mu_{{n_i}}  = {mu_1:.0f}\ \mathrm{{cm^2/Vs}}$" "\n"
+		rf"Movilidad de saturación : $\mu_{{n_{{sat}}}}= {mu_sat:.0f}\ \mathrm{{cm^2/Vs}}$" "\n"
+		)
+		
+		
+		plt.text(
+		0.6, 0.5, label_text,
+		transform=plt.gca().transAxes,
+		fontsize=12,
+		verticalalignment='top',
+		bbox=dict(boxstyle="round", facecolor="white", alpha=0.85)
+		)
+		
+		plt.legend()
+		plt.xlabel("VDS (V)")
+		plt.ylabel("ID (mA)")
+		plt.show()
+		
+		
+		
+		
+		############################## corriente subumbral 
+		
+		VGS = np.linspace(V_P, 0, 1000)
+		
+		VDS_sat = (-V_P + VGS - V_bi )                                
+		
+		arg1 = VDS_sat + V_bi - VGS
+		arg2 = V_bi - VGS
+		
+		termino = ((2)/(3*np.sqrt(np.abs(V_P))))*( (arg1)**(3/2) - (arg2)**(3/2) )
+		
+		ID_completo = go * ( VDS_sat - termino ) 
+		
+		
+		
+		
+		I_sub_umbral =0.0002020879/(1e3)  #corriente de 1 nA
+		
+		VGS_sub = np.linspace(V_P-10, V_P, 1000)
+		
+		# Corriente subumbral
+		ID_sub = I_sub_umbral * np.exp((VGS_sub - V_P)/(2))
+		
+		# Corte ideal
+		VGS_corte = np.linspace(V_P - 10, V_P, 1000)
+		ID_corte = np.zeros_like(VGS_corte)
+		
+		
+		plt.figure()
+		# Región Corte
+		plt.axvspan(V_P-10, V_P,   color="gray", hatch="xxx",alpha=0.2, label = "Región de Corte")
+		
+		# Región Estranulación
+		plt.axvspan(V_P, 0, color="white",  alpha=0.6, label = "Región de Estrangulación")
+		
+		
+		#plt.plot(VGS*1e3, ID_completo*1e12, linewidth=1,color = "green")
+		plt.plot(VGS_sub, ID_sub*1e12, linewidth=3, label="Modelo Completo: Corriente sub-umbral",color = "red")
+		plt.plot(VGS_sub, ID_corte*1e12, linewidth=3, label="Modelo ideal",color = "green", linestyle = "--")
+		
+		
+		plt.axvline(V_P, color='gray', linestyle='--', linewidth=2, label=r"$V_P$")
+		plt.xlabel(r"$V_{GS}$ [mV]")
+		plt.ylabel(r"$I_D$ [pA]")
+		plt.title("Curva de transferencia MESFET: Corriente subumbral")
+		
+		
+		plt.grid(True)
+		
+		
+		label_text = (
+		r"MESFET (GaAs / Ti)" "\n"
+		rf"$N_D = {Nd/(1e15):.0f}\ \mathrm{{\cdot 10^{{15}} \, cm^{{-3}}}}$" "\n"
+		rf"$\mu_n = {mu_n:.0f}\ \mathrm{{cm^2/Vs}}$" "\n"
+		rf"$a = {a*1e4:.0f}\ \mu\mathrm{{m}}$" "\n"
+		rf"$L = {L*1e4:.0f}\ \mu\mathrm{{m}}$" "\n"
+		rf"$Z = {Z*1e4:.0f}\ \mu\mathrm{{m}}$" "\n"
+		rf"$V_p = {V_P:.1f}\ \mathrm{{V}}$""\n"
+		rf"$I_0= {I_sub_umbral*1e9:.0f}\ \mathrm{{nA}}$" 
+		)
+		
+		plt.text(
+		0.1, 0.65, label_text,
+		transform=plt.gca().transAxes,
+		fontsize=10,
+		verticalalignment='top',
+		bbox=dict(boxstyle="round", facecolor="white", alpha=0.85)
+		)
+		
+		plt.legend()
+		plt.show()
+		
+		
 
 \end{verbatim}
 

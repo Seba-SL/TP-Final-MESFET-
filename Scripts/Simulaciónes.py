@@ -577,3 +577,62 @@ plt.text(
 plt.legend()
 plt.show()
 
+
+
+
+################################################### Corriente de fuga en gate
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Constantes físicas
+q = 1.602e-19      # carga del electrón [C]
+k = 1.381e-23      # constante de Boltzmann [J/K]
+phi_B =  (0.8 )*q   # barrera Schottky típica [eV]
+n = 1.5            # factor de idealidad
+
+print(r"\phi_B : " +str(phi_B) + "eV" )
+
+# Tensiones de gate (inversa)
+V = np.linspace(0, -5, 500)
+
+# Temperaturas en Kelvin
+temps_C = [25, 75, 125]
+temps_K = [t + 273.15 for t in temps_C]
+
+plt.figure()
+
+for T, T_C in zip(temps_K, temps_C):
+    
+    # Corriente de saturación dependiente de temperatura
+    Is = (T**2) * np.exp(-phi_B / (k * T))
+    
+    # Corriente inversa (modelo simplificado)
+    I = -Is * (np.exp(q * V / (n * k * T)) - 1)
+    
+    plt.semilogy(np.abs(V), np.abs(I*1e3), label=f"{T_C} °C", linewidth = 4)
+
+plt.xscale("log")
+plt.xlabel(r"$|V_{GS}|\, [V]$")
+plt.ylabel(r"$|I_G| \, [mA]$")
+plt.title("Efectos de corriente de Gate - Union Schottky")
+
+
+label_text = (
+    r"Unión Shcottky (en inversa)" "\n"
+    rf"Factor de idealidad n = {n:.1f}""\n"
+    rf"Barrera Schottky típica = {phi_B/q:.1f} eV"
+)
+
+
+plt.text(
+    0.05, 0.4, label_text,
+    transform=plt.gca().transAxes,
+    fontsize=12,
+    verticalalignment='top',
+    bbox=dict(boxstyle="round", facecolor="white", alpha=0.85)
+)
+
+plt.legend()
+plt.grid(True)
+plt.show()
