@@ -2,90 +2,48 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 
-# -----------------------------
-# Constantes físicas utilizadas
-# -----------------------------
+# ============================================================
+# 1) SIMULACIÓN DE CURVAS DE TRANSFERENCIA Y SALIDA
+#    Comparando modelo clásico y completo
+# ============================================================
 
-q = 1.602e-19                 # C
-eps0 = 88.5e-15              # F/cm
-eps_r_GaAs = 12.9
-eps_s = eps_r_GaAs * eps0     # F/cm
-k= 8.617e-5  #eV/K
-T = 300  # K
+# ----------------- Constantes físicas -----------------
+q=1.602e-19; eps0=88.5e-15; eps_r_GaAs=12.9
+eps_s=eps_r_GaAs*eps0; k=8.617e-5; T=300
 
-# -----------------------------
-# Parámetros del MESFET
-# -----------------------------
+# ----------------- Parámetros MESFET -----------------
+mu_n=8500; Nd=4e15; ni=1.79e6
+a=120e-6; Z=1000e-6; L=400e-6
+phi_M=4.33; chi_GaAs=4.07; E_g=1.42
 
-mu_n = 8500                   # 8500 cm^2/Vs
-Nd = 4e15                     # cm^-3
-ni= 1.79e6                    # cm^-3
+E_C=E_g
+E_F=E_g/2 + k*T*np.log(Nd/ni)
+V_bi=(phi_M-chi_GaAs)-(E_C-E_F)
+W_d0=np.sqrt(2*(eps_s*V_bi/(q*Nd)))
+go=(q*mu_n*Nd*Z*a)/L
 
-#Geometricos
-a = 120e-6                      # cm
-Z = 1000e-6                     # cm  
-L = 400e-6                      # cm
+V_P_0=(q*Nd*(a**2))/(2*eps_s)
+V_P=V_bi-V_P_0
+V_GS_0=0
+V_DS_SAT=V_P_0+V_GS_0-V_bi
 
+# ----------------- Modelo Clásico -----------------
+IDSS=go*(V_DS_SAT-(2/(3*np.sqrt(V_P_0)))*((V_bi+V_DS_SAT)**(3/2)-(V_bi)**(3/2)))
+VGS=np.linspace(V_P,0,1000)
+VGS_corte=np.linspace(V_P-3,V_P,300); ID_corte=np.zeros_like(VGS_corte)
+VGS_estr=np.linspace(V_P,0,500)
+ID_estr=IDSS*(1-VGS_estr/V_P)**2
 
-phi_M = 4.33                 # eV : Función Trabajo del Ti
-chi_GaAs = 4.07              # eV : Afinidad electronica del GaAs
-E_g = 1.42                   # eV: Energia de Gap                                    
+# ----------------- Modelo Completo -----------------
+VDS_sat=(-V_P+VGS-V_bi)
+arg1=VDS_sat+V_bi-VGS; arg2=V_bi-VGS
+termino=(2/(3*np.sqrt(np.abs(V_P))))*((arg1)**(3/2)-(arg2)**(3/2))
+ID_completo=go*(VDS_sat-termino)
 
-E_C =E_g                                            # eV: Altura de banda de conducción
-E_F = E_g/2 + k*T*np.log(Nd/ni)                     # eV: Nivel de Fermi del GaAs
-
-V_bi = (phi_M - chi_GaAs )   - (E_C - E_F)          # V : Teorico
-W_d0 = np.sqrt(2*(eps_s*V_bi/(q*Nd)))               # cm : Ancho de vaciamiento en equilibrio
-go = (q*mu_n*Nd*Z*a)/(L)                            # 1/ohm : Conductancia del canal
-
-# Tensiones de control
-V_P_0 = (q*Nd*(a**2))/(2*eps_s)                     # V: Tensión de pinch-off
-V_P  =  V_bi - V_P_0                                # V: Tensión umbral
-
-V_GS_0 = 0                                          # V: Tensión en equilibrio.
-
-V_DS_SAT  =  V_P_0 + V_GS_0 - V_bi                  # V: Tensión de saturación
-
-# Variables comunes
-
-VGS = np.linspace(V_P, 0, 1000)
-
-############### Modelo Clasico #######################################################################################
-
-## IDSS tomada del modelo completo, se tomaria experimentalmente para modelo clasico
-IDSS =go*(V_DS_SAT - (2/(3*np.sqrt(V_P_0) ))*((V_bi + V_DS_SAT)**(3/2) - (V_bi)**(3/2) )        )
-
-# Rango de VGS
-VGS_estrangulamiento = np.linspace(V_P , 0, 500)
-
-# Corte
-VGS_corte = np.linspace(V_P - 3, V_P, 300)
-ID_corte = np.zeros_like(VGS_corte)
-
-# Estrangulamiento (Shockley)
-VGS_estr = np.linspace(V_P, 0, 500)
-ID_estr = IDSS * (1 - VGS_estr / V_P)**2
-
-
-
-############### Modelo Completo #######################################################################################
-
-VDS_sat = (-V_P + VGS - V_bi )                                
-
-arg1 = VDS_sat + V_bi - VGS
-arg2 = V_bi - VGS
-
-termino = ((2)/(3*np.sqrt(np.abs(V_P))))*( (arg1)**(3/2) - (arg2)**(3/2) )
-
-ID_completo = go * ( VDS_sat - termino ) 
-
-
-############### Curvas de Transferencia ################################################################################
-
+# ----------------- Curva Transferencia -----------------
 plt.figure()
 plt.plot(VGS_corte, ID_corte*1e3, linewidth=4, color = "orange",linestyle= "--")
 plt.plot(VGS_corte, ID_corte*1e3, linewidth=4,color = "green")
-
 plt.plot(VGS_estr, ID_estr*1e3, linewidth=4, label="Modelo Clásico", color = "orange",linestyle= "--")
 plt.plot(VGS, ID_completo*1e3, linewidth=4, label="Modelo Completo",color = "green")
 
@@ -93,13 +51,8 @@ plt.axvline(V_P, color='gray', linestyle='--', linewidth=2, label=r"$V_P$")
 plt.xlabel(r"$V_{GS}$ [V]")
 plt.ylabel(r"$I_D$ [mA]")
 plt.title("Curva de transferencia MESFET")
-
-# Región Corte
 plt.axvspan(V_P - 3, V_P,   color="gray", hatch="xxx",alpha=0.2, label = "Región de Corte")
-
-# Región Estranulación
 plt.axvspan(V_P, 0, color="white",  alpha=0.6, label = "Región de Estrangulación")
-
 plt.grid(True)
 
 # ---- Cartel de parámetros ----
@@ -113,25 +66,14 @@ label_text = (
     rf"$V_p = {V_P:.1f}\ \mathrm{{V}}$""\n"
     rf"$IDSS = {IDSS*1e3:.0f}\ \mathrm{{mA}}$"
 )
-
-plt.text(
-    0.05, 0.5, label_text,
-    transform=plt.gca().transAxes,
-    fontsize=10,
-    verticalalignment='top',
-    bbox=dict(boxstyle="round", facecolor="white", alpha=0.85)
-)
+plt.text(0.05, 0.5, label_text,transform=plt.gca().transAxes,fontsize=10,verticalalignment='top',bbox=dict(boxstyle="round", facecolor="white", alpha=0.85))
 plt.legend()
 plt.show()
 
 
+#### ----------------- Curva de Salida -----------------
 
-
-
-############### Curvas de Salida ################################################################################
-
-
-VGS_vals = [-3.9,-3.5,-3, -2.0, -1.5, -1.0, -0.5, 0.0]    # Valores de VGS evaluados
+VGS_vals=[-3.9,-3.5,-3,-2.0,-1.5,-1.0,-0.5,0.0]
 
 plt.figure()
 
@@ -141,11 +83,9 @@ for VGS in VGS_vals:
     VDS = np.linspace(0, VDS_sat, 300)
 
     # -------------------------
-    # MODELO SHOCKLEY
+    # MODELO CLASICO
     # -------------------------
-    ID_ohmico = (2 * IDSS / (V_P**2)) * (
-        (VGS - V_P) * VDS - VDS**2 / 2
-    )
+    ID_ohmico = (2 * IDSS / (V_P**2)) * ((VGS - V_P) * VDS - VDS**2 / 2)
 
     if np.isclose(VGS, V_P):
         label = r"$V_{GS}=V_P$"
@@ -156,8 +96,9 @@ for VGS in VGS_vals:
     line, = plt.plot(VDS, ID_ohmico*1e3,linestyle="--", linewidth=3, label=label)
 
     color_actual = line.get_color()
-
-    # Saturación Shockley
+    # -------------------------
+    # MODELO CLASICO
+    # -------------------------
     if VGS > V_P:
         IDSAT = IDSS * (1 - VGS / V_P)**2
         VDS_sat_line = np.linspace(VDS_sat, 10, 300)
@@ -200,14 +141,7 @@ label_text = (
     rf"$IDSS = {IDSS*1e3:.0f}\ \mathrm{{mA}}$"
 )
 
-
-plt.text(
-    0.75, 0.75, label_text,
-    transform=plt.gca().transAxes,
-    fontsize=10,
-    verticalalignment='top',
-    bbox=dict(boxstyle="round", facecolor="white", alpha=0.85)
-)
+plt.text(0.75, 0.75, label_text,transform=plt.gca().transAxes,fontsize=10,verticalalignment='top',bbox=dict(boxstyle="round", facecolor="white", alpha=0.85))
 # -------------------------
 plt.xlabel(r"$V_{DS}$ [V]")
 plt.ylabel(r"$I_D$ [mA]")
@@ -219,19 +153,17 @@ plt.show()
 
 
 
-################################################################################################################################################################################
+##### ============================================================
+##### 2) EFECTOS NO IDEALES
+##### ============================================================
 
-# Modelo Completo + Efectos no ideales 
-
-################################- Modulación  del Canal (Sobre curva de salida) #########################################################################################
-VGS_vals = [-1.5]           # Valor de ejemplo de tensión de control mayor a VP
-
-VDS_sat = max(VGS - V_P, 0)                 
-VDS = np.linspace(0.01, VDS_sat, 300)
-
-factor = (2/(3*np.sqrt(V_P_0)))
-
-ID_completo = go*(VDS - factor * ( (V_bi - VGS + VDS)**(3/2) - (V_bi - VGS)**(3/2) ))
+#### ------------------------------------------------------------
+#### 2.1 Modulación del canal
+#### ------------------------------------------------------------
+VGS=-1.5; VDS_sat=max(VGS-V_P,0)
+VDS=np.linspace(0.01,VDS_sat,300)
+factor=(2/(3*np.sqrt(V_P_0)))
+ID_completo=go*(VDS-factor*((V_bi-VGS+VDS)**(3/2)-(V_bi-VGS)**(3/2)))
 
 plt.plot(VDS, ID_completo*1e3,linewidth=3,linestyle="-",alpha = 0.9, color="red")
 
@@ -245,30 +177,22 @@ if VGS > V_P:
         VDS_sat_line = np.linspace(VDS_sat, 10, 300)
 
         Delta_L = np.sqrt(2*eps_s*(VDS_sat_line - VDS_sat)/(q*Nd))
-
-
         L_prima = L - 0.5*Delta_L
 
         ID_sat_line = ID_sat_completo * np.ones_like(VDS_sat_line)  
 
-        
         ID_sat_line_ch_modulation =ID_sat_line*(L/L_prima)
 
         #Ejemplo canal largo
-
         L_B = L*5
-
         L_prima_B = L_B- 0.5*Delta_L
-
         ID_sat_line_B = ID_sat_completo* np.ones_like(VDS_sat_line)
-
         ID_sat_line_ch_modulation_B = ID_sat_line*(L_B/L_prima_B)
 
         plt.plot(VDS_sat_line, ID_sat_line*1e3,linewidth=3.5,linestyle="--", alpha = 0.6,color="blue")
         plt.plot(VDS_sat_line, ID_sat_line_ch_modulation*1e3,linewidth=3.5,linestyle="-", alpha = 0.6,color="red")
         plt.plot(VDS_sat_line, ID_sat_line_ch_modulation_B*1e3,linewidth=3.5,linestyle="-", alpha = 0.6,color="orange")
 
-      
         # -------------------------
 
 label_text = (
@@ -300,57 +224,42 @@ plt.grid(True)
 plt.show()
 
 
-
-################################# Saturación de la velocidad de arrastre #########################################################################################
-
+#### ------------------------------------------------------------
+####  2.2 Saturación velocidad de arrastre
+#### ------------------------------------------------------------
 
 ## Velocidad de arrastre en función del campo
-campo_critico = 1e5
+campo_critico = 1e5;xi_ohmica_max = 2e3;xi_ndm_max = 1.5e4
+xi_p = 3e3;xi_s = 2e4;vsat = 6.8e6    
 
 VDS = np.linspace(0.01, VDS_sat*10, 300)
 Delta_L = np.sqrt(np.abs(2*eps_s*(VDS - VDS_sat)/(q*Nd)))
-
 L_prima = L- 0.5*Delta_L
-vsat =  6.8e6  # cm/s
 
-# Parámetros de ajuste del modelo
-xi_p = 3e3           # V/cm  (posición del pico)
-xi_s = 2e4           # V/cm  (campo donde se estabiliza vsat)
-
-# --------------------------------------------------
-# Rango de campo eléctrico (logarítmico)
-# --------------------------------------------------
 xi = VDS/L_prima      
 
-# --------------------------------------------------
-# Modelo con pico
-# --------------------------------------------------
-v_arr =  (mu_n * xi / (1 + (xi/xi_p)**2) + vsat*((xi/xi_s)**2) / (1 + (xi/xi_s)**2))
+## --------------------------------------------------
+## Modelo de velocidad de arrastre
+## --------------------------------------------------
 
+
+v_arr =  (mu_n * xi / (1 + (xi/xi_p)**2) + vsat*((xi/xi_s)**2) / (1 + (xi/xi_s)**2))
 # --------------------------------------------------
 # Gráfico
 # --------------------------------------------------
 plt.figure(figsize=(7,5))
 plt.plot(xi, v_arr, linewidth = 4 )
 
-xi_ohmica_max = 2e3
-xi_ndm_max = 1.5e4
-
 # Región óhmica
 plt.axvspan(xi.min(), xi_ohmica_max,  color="blue", alpha=0.08)
-
 # Región NDM
 plt.axvspan(xi_ohmica_max, xi_ndm_max, color="red", alpha=0.08)
-
 # Región saturación
 plt.axvspan(xi_ndm_max, xi.max()*5, color="green", alpha=0.08)
 
-
-# Textos en cada región
 plt.text(4e1, 1e7, "Región de movilidad constante", fontsize=15)
 plt.text(3e3, 2e6, "Movilidad diferencial\nnegativa (NDM)", fontsize=15)
 plt.text(4e4, 2e6, "Saturación\nde velocidad", fontsize=15)
-
 
 plt.text(xi_p, 1e6,r'$\xi_p$', fontsize=15)
 plt.text(xi_s, 1e6, r'$\xi_s$', fontsize=15)
@@ -362,17 +271,12 @@ plt.text(xi_p, plt.ylim()[0]*2, r'$\xi_p$', rotation=90)
 plt.text(xi_s, plt.ylim()[0]*2, r'$\xi_s$', rotation=90)
 
 
-# Obtener ticks actuales
 ax = plt.gca()
 ticks = ax.get_xticks()
-
-# Añadir los característicos
 special_ticks = [xi_p, xi_s]
 all_ticks = sorted(list(set(ticks.tolist() + special_ticks)))
-
 ax.set_xticks(all_ticks)
 
-# Formateador personalizado
 def log_formatter(x, pos):
     if np.isclose(x, xi_p):
         return r'$\xi_p$'
@@ -393,13 +297,10 @@ plt.legend(["Velocidad de arrastre en función del campo"])
 plt.show()
 
 
+#### ------------------------------------------------------------
+####  2.2 Corriente con \mu variable
+#### ------------------------------------------------------------
 
-
-########################################   Corriente ID con corriente    ######################################################
-
-
-import numpy as np
-import matplotlib.pyplot as plt
 
 # --- Parámetros ---
 mu_1 = 7326
@@ -502,58 +403,44 @@ plt.xlabel("VDS (V)")
 plt.ylabel("ID (mA)")
 plt.show()
 
-
-
-
-############################## corriente subumbral 
-
+# ------------------------------------------------------------
+# 2.3 Región sub-umbral
+# ------------------------------------------------------------
+# --- Barrido VGS ---
 VGS = np.linspace(V_P, 0, 1000)
-
-VDS_sat = (-V_P + VGS - V_bi )                                
-
+VDS_sat = -V_P + VGS - V_bi
 arg1 = VDS_sat + V_bi - VGS
 arg2 = V_bi - VGS
 
-termino = ((2)/(3*np.sqrt(np.abs(V_P))))*( (arg1)**(3/2) - (arg2)**(3/2) )
+factor = 2/(3*np.sqrt(np.abs(V_P)))
+termino = factor * (arg1**(3/2) - arg2**(3/2))
 
-ID_completo = go * ( VDS_sat - termino ) 
+ID_completo = go * (VDS_sat - termino)
 
-
-
-
-I_sub_umbral =0.0002020879/(1e3)  #corriente de 1 nA
+# --- Subumbral ---
+I_sub_umbral = 0.0002020879 / 1e3  # 1 nA
 
 VGS_sub = np.linspace(V_P-10, V_P, 1000)
+ID_sub = I_sub_umbral * np.exp((VGS_sub - V_P)/2)
 
-# Corriente subumbral
-ID_sub = I_sub_umbral * np.exp((VGS_sub - V_P)/(2))
+# Corte ideal (mismo eje)
+ID_corte = np.zeros_like(VGS_sub)
 
-# Corte ideal
-VGS_corte = np.linspace(V_P - 10, V_P, 1000)
-ID_corte = np.zeros_like(VGS_corte)
-
-
+# --- Gráfico ---
 plt.figure()
-# Región Corte
-plt.axvspan(V_P-10, V_P,   color="gray", hatch="xxx",alpha=0.2, label = "Región de Corte")
+# Regiones
+plt.axvspan(V_P-10, V_P, color="gray",hatch="xxx", alpha=0.2, label="Región de Corte")
+plt.axvspan(V_P, 0, color="white",alpha=0.6, label="Región de Estrangulación")
+# Curvas
+plt.plot(VGS_sub, ID_sub*1e9, linewidth=3,label="Modelo Completo: Corriente sub-umbral",color="red")
+plt.plot(VGS_sub, ID_corte*1e9, linewidth=3, label="Modelo ideal", color="green", linestyle="--")
 
-# Región Estranulación
-plt.axvspan(V_P, 0, color="white",  alpha=0.6, label = "Región de Estrangulación")
-
-
-#plt.plot(VGS*1e3, ID_completo*1e12, linewidth=1,color = "green")
-plt.plot(VGS_sub, ID_sub*1e9, linewidth=3, label="Modelo Completo: Corriente sub-umbral",color = "red")
-plt.plot(VGS_sub, ID_corte*1e9, linewidth=3, label="Modelo ideal",color = "green", linestyle = "--")
-
-
-plt.axvline(V_P, color='gray', linestyle='--', linewidth=2, label=r"$V_P$")
+plt.axvline(V_P, color='gray',linestyle='--', linewidth=2,label=r"$V_P$")
 plt.xlabel(r"$V_{GS}$ [mV]")
 plt.ylabel(r"$I_D$ [nA]")
 plt.title("Curva de transferencia MESFET: Corriente subumbral")
 
-
 plt.grid(True)
-
 
 label_text = (
     r"MESFET (GaAs / Ti)" "\n"
@@ -562,60 +449,41 @@ label_text = (
     rf"$a = {a*1e4:.0f}\ \mu\mathrm{{m}}$" "\n"
     rf"$L = {L*1e4:.0f}\ \mu\mathrm{{m}}$" "\n"
     rf"$Z = {Z*1e4:.0f}\ \mu\mathrm{{m}}$" "\n"
-    rf"$V_p = {V_P:.1f}\ \mathrm{{V}}$""\n"
-    rf"$I_0= {I_sub_umbral*1e9:.0f}\ \mathrm{{nA}}$" 
+    rf"$V_p = {V_P:.1f}\ \mathrm{{V}}$" "\n"
+    rf"$I_0 = {I_sub_umbral*1e9:.0f}\ \mathrm{{nA}}$"
 )
 
-plt.text(
-    0.1, 0.65, label_text,
-    transform=plt.gca().transAxes,
-    fontsize=10,
-    verticalalignment='top',
-    bbox=dict(boxstyle="round", facecolor="white", alpha=0.85)
-)
+plt.text(0.1, 0.65, label_text,transform=plt.gca().transAxes,fontsize=10,verticalalignment='top',bbox=dict(boxstyle="round",facecolor="white",alpha=0.85))
 
 plt.legend()
 plt.show()
 
 
-
-
-################################################### Corriente de fuga en gate
-
-import numpy as np
-import matplotlib.pyplot as plt
-
+# ------------------------------------------------------------
+# 2.4 Corriente de fuga en Gate (Unión Schottky)
+# ------------------------------------------------------------
 # Constantes físicas
 q = 1.602e-19      # carga del electrón [C]
 k = 1.381e-23      # constante de Boltzmann [J/K]
 phi_B =  (0.8 )*q   # barrera Schottky típica [eV]
 n = 1.5            # factor de idealidad
 
-print(r"\phi_B : " +str(phi_B) + "eV" )
-
 # Tensiones de gate (inversa)
 V = np.linspace(0, -5, 500)
 
 # Temperaturas en Kelvin
-temps_C = [25, 75, 125]
-temps_K = [t + 273.15 for t in temps_C]
+temps_C = [25, 75, 125];temps_K = [t + 273.15 for t in temps_C]
 
 plt.figure()
 
 for T, T_C in zip(temps_K, temps_C):
-    
     # Corriente de saturación dependiente de temperatura
     Is = (T**2) * np.exp(-phi_B / (k * T))
-    
     # Corriente inversa (modelo simplificado)
     I = -Is * (np.exp(q * V / (n * k * T)) - 1)
-    
+
     plt.semilogy(np.abs(V), np.abs(I*1e3), label=f"{T_C} °C", linewidth = 4)
 
-plt.xscale("log")
-plt.xlabel(r"$|V|\, [V]$")
-plt.ylabel(r"$|I_G| \, [mA]$")
-plt.title("Efectos de corriente de Gate - Union Schottky")
 
 
 label_text = (
@@ -624,15 +492,12 @@ label_text = (
     rf"Barrera Schottky típica = {phi_B/q:.1f} eV"
 )
 
+plt.text(0.05, 0.4, label_text,transform=plt.gca().transAxes,fontsize=12,verticalalignment='top',bbox=dict(boxstyle="round", facecolor="white", alpha=0.85))
 
-plt.text(
-    0.05, 0.4, label_text,
-    transform=plt.gca().transAxes,
-    fontsize=12,
-    verticalalignment='top',
-    bbox=dict(boxstyle="round", facecolor="white", alpha=0.85)
-)
-
+plt.xscale("log")
+plt.xlabel(r"$|V|\, [V]$")
+plt.ylabel(r"$|I_G| \, [mA]$")
+plt.title("Efectos de corriente de Gate - Union Schottky")
 plt.legend()
 plt.grid(True)
 plt.show()

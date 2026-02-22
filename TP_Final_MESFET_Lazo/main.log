@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2026.1.2)  22 FEB 2026 08:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2026.1.2)  22 FEB 2026 11:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1182,24 +1182,24 @@ Overfull \hbox (38.29976pt too wide) in paragraph at lines 360--372
 <Img/simbolo_mas_esquema.jpg, id=57, 1071.0414pt x 489.9906pt>
 File: Img/simbolo_mas_esquema.jpg Graphic file (type jpg)
 <use Img/simbolo_mas_esquema.jpg>
-Package pdftex.def Info: Img/simbolo_mas_esquema.jpg  used on input line 428.
-(pdftex.def)             Requested size: 230.46576pt x 105.43564pt.
+Package pdftex.def Info: Img/simbolo_mas_esquema.jpg  used on input line 429.
+(pdftex.def)             Requested size: 307.2929pt x 140.58334pt.
  [6 <./Img/simbolo_mas_esquema.jpg>] [7] [8]
 <Img/diagrama_bandas_alolargodelcanal.png, id=77, 593.21625pt x 337.26pt>
 File: Img/diagrama_bandas_alolargodelcanal.png Graphic file (type png)
 <use Img/diagrama_bandas_alolargodelcanal.png>
 Package pdftex.def Info: Img/diagrama_bandas_alolargodelcanal.png  used on inpu
-t line 1252.
+t line 1254.
 (pdftex.def)             Requested size: 230.46576pt x 131.02654pt.
  [9] [10 <./Img/diagrama_bandas_alolargodelcanal.png>]
 <Img/inclinaci贸n_bandas_debido_aVDS.png, id=86, 678.535pt x 137.51375pt>
 File: Img/inclinaci贸n_bandas_debido_aVDS.png Graphic file (type png)
 <use Img/inclinaci贸n_bandas_debido_aVDS.png>
 Package pdftex.def Info: Img/inclinaci贸n_bandas_debido_aVDS.png  used on input
- line 1588.
+ line 1590.
 (pdftex.def)             Requested size: 358.50317pt x 72.65532pt.
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
-599.
+601.
  (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
@@ -1207,7 +1207,7 @@ File: t1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [11 <./Img/inclinaci贸n_bandas_debido_aVDS.png>]
-Overfull \hbox (2.1999pt too wide) detected at line 1755
+Overfull \hbox (2.1999pt too wide) detected at line 1757
 []\OML/cmm/m/it/10 ^^^\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x; y\OT1/cmr/m/n/10 ) =
  []
  []
@@ -1216,19 +1216,19 @@ Overfull \hbox (2.1999pt too wide) detected at line 1755
 <Img/curva_transferencia.png, id=102, 987.2082pt x 471.9231pt>
 File: Img/curva_transferencia.png Graphic file (type png)
 <use Img/curva_transferencia.png>
-Package pdftex.def Info: Img/curva_transferencia.png  used on input line 1962.
+Package pdftex.def Info: Img/curva_transferencia.png  used on input line 1977.
 (pdftex.def)             Requested size: 512.14963pt x 244.82533pt.
  [14]
 <Img/curva_de_salida.png, id=106, 987.2082pt x 471.9231pt>
 File: Img/curva_de_salida.png Graphic file (type png)
 <use Img/curva_de_salida.png>
-Package pdftex.def Info: Img/curva_de_salida.png  used on input line 1975.
+Package pdftex.def Info: Img/curva_de_salida.png  used on input line 1990.
 (pdftex.def)             Requested size: 512.14963pt x 244.82533pt.
  [15 <./Img/curva_transferencia.png> <./Img/curva_de_salida.png>]
 <Img/modulacion_del_canal.png, id=112, 455.7025pt x 508.90125pt>
 File: Img/modulacion_del_canal.png Graphic file (type png)
 <use Img/modulacion_del_canal.png>
-Package pdftex.def Info: Img/modulacion_del_canal.png  used on input line 2001.
+Package pdftex.def Info: Img/modulacion_del_canal.png  used on input line 2016.
 
 (pdftex.def)             Requested size: 230.46576pt x 257.37747pt.
 [16 <./Img/modulacion_del_canal.png>]
@@ -1236,25 +1236,25 @@ Package pdftex.def Info: Img/modulacion_del_canal.png  used on input line 2001.
 File: Img/curva_de_salida_efectoModulacion.png Graphic file (type png)
 <use Img/curva_de_salida_efectoModulacion.png>
 Package pdftex.def Info: Img/curva_de_salida_efectoModulacion.png  used on inpu
-t line 2083.
+t line 2098.
 (pdftex.def)             Requested size: 512.14963pt x 244.82533pt.
 <Img/v_arr_vs_campo.png, id=118, 541.02126pt x 429.605pt>
 File: Img/v_arr_vs_campo.png Graphic file (type png)
 <use Img/v_arr_vs_campo.png>
-Package pdftex.def Info: Img/v_arr_vs_campo.png  used on input line 2105.
+Package pdftex.def Info: Img/v_arr_vs_campo.png  used on input line 2120.
 (pdftex.def)             Requested size: 230.46576pt x 183.00252pt.
  [17 <./Img/curva_de_salida_efectoModulacion.png> <./Img/v_arr_vs_campo.png>]
 <Img/vel_arrastre_func_campo.png, id=124, 987.2082pt x 471.9231pt>
 File: Img/vel_arrastre_func_campo.png Graphic file (type png)
 <use Img/vel_arrastre_func_campo.png>
 Package pdftex.def Info: Img/vel_arrastre_func_campo.png  used on input line 21
-40.
+55.
 (pdftex.def)             Requested size: 512.14963pt x 244.82533pt.
 <Img/modulacion_canal_mu_variable.png, id=125, 987.2082pt x 471.9231pt>
 File: Img/modulacion_canal_mu_variable.png Graphic file (type png)
 <use Img/modulacion_canal_mu_variable.png>
 Package pdftex.def Info: Img/modulacion_canal_mu_variable.png  used on input li
-ne 2150.
+ne 2165.
 (pdftex.def)             Requested size: 512.14963pt x 244.82533pt.
  [18 <./Img/vel_arrastre_func_campo.png> <./Img/modulacion_canal_mu_variable.pn
 g>]
@@ -1264,149 +1264,117 @@ File: ../../../../Im谩genes/Capturas de pantalla/corriente_sub_umbral.png Graph
 ic file (type png)
 <use ../../../../Im谩genes/Capturas de pantalla/corriente_sub_umbral.png>
 Package pdftex.def Info: ../../../../Im谩genes/Capturas de pantalla/corriente_s
-ub_umbral.png  used on input line 2169.
+ub_umbral.png  used on input line 2184.
 (pdftex.def)             Requested size: 195.8973pt x 188.74667pt.
 <Img/corriente_subumbral_simulacion.png, id=132, 462.528pt x 346.896pt>
 File: Img/corriente_subumbral_simulacion.png Graphic file (type png)
 <use Img/corriente_subumbral_simulacion.png>
 Package pdftex.def Info: Img/corriente_subumbral_simulacion.png  used on input 
-line 2183.
+line 2198.
 (pdftex.def)             Requested size: 217.66515pt x 163.24757pt.
 <Img/efectos_corr_gate.png, id=133, 531.9875pt x 369.38pt>
 File: Img/efectos_corr_gate.png Graphic file (type png)
 <use Img/efectos_corr_gate.png>
-Package pdftex.def Info: Img/efectos_corr_gate.png  used on input line 2208.
+Package pdftex.def Info: Img/efectos_corr_gate.png  used on input line 2230.
 (pdftex.def)             Requested size: 204.85672pt x 142.23709pt.
 <Img/efectos_de_corrientes_gate.png, id=134, 462.528pt x 346.896pt>
 File: Img/efectos_de_corrientes_gate.png Graphic file (type png)
 <use Img/efectos_de_corrientes_gate.png>
 Package pdftex.def Info: Img/efectos_de_corrientes_gate.png  used on input line
- 2222.
-(pdftex.def)             Requested size: 256.07481pt x 192.06375pt.
+ 2244.
+(pdftex.def)             Requested size: 245.82962pt x 184.37273pt.
  [19 <../../../../Im谩genes/Capturas de pantalla/corriente_sub_umbral.png> <./I
 mg/corriente_subumbral_simulacion.png> <./Img/efectos_corr_gate.png> <./Img/efe
 ctos_de_corrientes_gate.png>] [20]
-Overfull \hbox (107.19913pt too wide) in paragraph at lines 2301--2301
-[]\T1/cmtt/m/n/10 ############### Modelo Clasico ##############################
-#########################################################[] 
- []
-
-[21]
-Overfull \hbox (112.44785pt too wide) in paragraph at lines 2319--2319
-[]\T1/cmtt/m/n/10 ############### Modelo Completo #############################
-##########################################################[] 
- []
-
-
-Overfull \hbox (117.69656pt too wide) in paragraph at lines 2331--2331
-[]\T1/cmtt/m/n/10 ############### Curvas de Transferencia #####################
-###########################################################[] 
- []
-
-
-Overfull \hbox (23.21964pt too wide) in paragraph at lines 2337--2337
+Overfull \hbox (23.21964pt too wide) in paragraph at lines 2317--2317
 []\T1/cmtt/m/n/10 plt.plot(VGS_estr, ID_estr*1e3, linewidth=4, label="Modelo Cl
 醩ico", color = "orange",linestyle= "--")[] 
  []
 
+[21]
+Overfull \hbox (306.65042pt too wide) in paragraph at lines 2339--2339
+[]\T1/cmtt/m/n/10 plt.text(0.05, 0.5, label_text,transform=plt.gca().transAxes,
+fontsize=10,verticalalignment='top',bbox=dict(boxstyle="round", facecolor="whit
+e", alpha=0.85))[] 
+ []
+
 [22]
-Overfull \hbox (80.95554pt too wide) in paragraph at lines 2379--2379
-[]\T1/cmtt/m/n/10 ############### Curvas de Salida ############################
-####################################################[] 
- []
-
-[23]
-Overfull \hbox (411.62479pt too wide) in paragraph at lines 2470--2470
-[]\T1/cmtt/m/n/10 #############################################################
-###############################################################################
-####################################[] 
+Overfull \hbox (311.89914pt too wide) in paragraph at lines 2414--2414
+[]\T1/cmtt/m/n/10 plt.text(0.75, 0.75, label_text,transform=plt.gca().transAxes
+,fontsize=10,verticalalignment='top',bbox=dict(boxstyle="round", facecolor="whi
+te", alpha=0.85))[] 
  []
 
 
-Overfull \hbox (374.88376pt too wide) in paragraph at lines 2474--2474
-[]\T1/cmtt/m/n/10 ################################- Modulaci髇  del Canal (Sobr
-e curva de salida) ############################################################
-#############################[] 
- []
-
-[24]
-Overfull \hbox (44.21451pt too wide) in paragraph at lines 2516--2516
+Overfull \hbox (44.21451pt too wide) in paragraph at lines 2458--2458
 []\T1/cmtt/m/n/10 plt.plot(VDS_sat_line, ID_sat_line_ch_modulation*1e3,linewidt
 h=3.5,linestyle="-", alpha = 0.6,color="red")[] 
  []
 
-
-Overfull \hbox (70.4581pt too wide) in paragraph at lines 2517--2517
+[23]
+Overfull \hbox (70.4581pt too wide) in paragraph at lines 2459--2459
 []\T1/cmtt/m/n/10 plt.plot(VDS_sat_line, ID_sat_line_ch_modulation_B*1e3,linewi
 dth=3.5,linestyle="-", alpha = 0.6,color="orange")[] 
  []
 
 
-Overfull \hbox (301.4017pt too wide) in paragraph at lines 2536--2536
+Overfull \hbox (301.4017pt too wide) in paragraph at lines 2477--2477
 []\T1/cmtt/m/n/10 plt.text(0.6, 0.5, label_text,transform=plt.gca().transAxes,f
 ontsize=10,verticalalignment='top',bbox=dict(boxstyle="round", facecolor="white
 ", alpha=0.85))[] 
  []
 
 
-Overfull \hbox (332.89401pt too wide) in paragraph at lines 2539--2539
+Overfull \hbox (332.89401pt too wide) in paragraph at lines 2480--2480
 []\T1/cmtt/m/n/10 plt.text(0.04, 0.7, r"Sin modulaci髇",transform=plt.gca().tra
 nsAxes,fontsize=10,verticalalignment='top',bbox=dict(boxstyle="round", facecolo
 r="blue", alpha=0.5))[] 
  []
 
 
-Overfull \hbox (500.853pt too wide) in paragraph at lines 2540--2540
+Overfull \hbox (500.853pt too wide) in paragraph at lines 2481--2481
 []\T1/cmtt/m/n/10 plt.text(0.04, 0.8, r"Modulaci髇 para canal largo (L = 20 $\m
 u m$)",transform=plt.gca().transAxes,fontsize=10,verticalalignment='top',bbox=d
 ict(boxstyle="round", facecolor="orange", alpha=0.5))[] 
  []
 
 
-Overfull \hbox (479.85812pt too wide) in paragraph at lines 2541--2541
+Overfull \hbox (479.85812pt too wide) in paragraph at lines 2482--2482
 []\T1/cmtt/m/n/10 plt.text(0.04, 0.9, r"Modulaci髇 para canal corto (L = 4 $\mu
  m$)",transform=plt.gca().transAxes,fontsize=10,verticalalignment='top',bbox=di
 ct(boxstyle="round", facecolor="red", alpha=0.5))[] 
  []
 
-
-Overfull \hbox (338.14273pt too wide) in paragraph at lines 2552--2552
-[]\T1/cmtt/m/n/10 ################################# Saturaci髇 de la velocidad 
-de arrastre ###################################################################
-######################[] 
- []
-
-[25] [26]
-Overfull \hbox (154.43759pt too wide) in paragraph at lines 2646--2646
-[]\T1/cmtt/m/n/10 ########################################   Corriente ID con c
-orriente    ######################################################[] 
- []
-
-[27]
-Overfull \hbox (86.20425pt too wide) in paragraph at lines 2722--2722
+[24] [25]
+Overfull \hbox (86.20425pt too wide) in paragraph at lines 2628--2628
 []\T1/cmtt/m/n/10 plt.plot(VDS, ID_cste*1e3, label=r"Modelo $\mu$ constante",al
 pha=0.8, linewidth = 4,color="blue", linestyle= "--")[] 
  []
 
 
-Overfull \hbox (164.93503pt too wide) in paragraph at lines 2725--2725
+Overfull \hbox (86.20425pt too wide) in paragraph at lines 2631--2631
 []\T1/cmtt/m/n/10 plt.axvline(V1, linestyle="--", alpha=0.5, label= rf"Inicio c
-a韉a $\mu$: $V_{{DS}} = \xi_p \cdot L  = $ {V1:.1f}", linewidth = 3)[] 
+a韉a $\mu$: $V_{{DS}} = \xi_p \cdot L  = $ {V1:.1f}",[] 
  []
 
-[28]
-Overfull \hbox (33.71707pt too wide) in paragraph at lines 2793--2793
-[]\T1/cmtt/m/n/10 plt.plot(VGS_sub, ID_sub*1e12, linewidth=3, label="Modelo Com
-pleto: Corriente sub-umbral",color = "red")[] 
+[26]
+Overfull \hbox (12.7222pt too wide) in paragraph at lines 2688--2688
+[]\T1/cmtt/m/n/10 plt.plot(VGS_sub, ID_sub*1e9, linewidth=3,label="Modelo Compl
+eto: Corriente sub-umbral",color="red")[] 
  []
 
 
-Overfull \hbox (17.97092pt too wide) in paragraph at lines 2794--2794
-[]\T1/cmtt/m/n/10 plt.plot(VGS_sub, ID_corte*1e12, linewidth=3, label="Modelo i
-deal",color = "green", linestyle = "--")[] 
+Overfull \hbox (138.69144pt too wide) in paragraph at lines 2709--2709
+[]\T1/cmtt/m/n/10 plt.text(0.1, 0.65, label_text,transform=plt.gca().transAxes,
+fontsize=10,verticalalignment='top',bbox=dict(boxstyle="round",[] 
  []
 
-[29] [30] (./main.aux
+[27]
+LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 
+2734.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmtt.fd
+File: ts1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
+) [28] (./main.aux
 LaTeX Info: Redefining \sptext on input line 27.
 LaTeX Info: Redefining \. on input line 27.
 LaTeX Info: Redefining \% on input line 27.
@@ -1424,42 +1392,43 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 29350 strings out of 476091
- 594838 string characters out of 5794082
+ 29368 strings out of 476091
+ 595425 string characters out of 5794082
  1882330 words of memory out of 5000000
- 49289 multiletter control sequences out of 15000+600000
- 528864 words of font info for 76 fonts, out of 8000000 for 9000
+ 49303 multiletter control sequences out of 15000+600000
+ 529161 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  83i,13n,89p,1771b,2809s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-mi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmsy9.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb>
-</usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fo
-nts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-
-super/sfrm0500.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0700.pfb><
-/usr/share/texmf/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf/fon
-ts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-s
-uper/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1728.pfb></
-usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/font
-s/type1/public/cm-super/sftt1000.pfb>
-Output written on main.pdf (30 pages, 1968477 bytes).
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/share/texmf
+/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+sy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb
+></usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/f
+onts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm
+-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0500.pfb>
+</usr/share/texmf/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf/fo
+nts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/type1/public/cm-
+super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb><
+/usr/share/texmf/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf/fon
+ts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-s
+uper/sftt1000.pfb>
+Output written on main.pdf (28 pages, 1966768 bytes).
 PDF statistics:
- 294 PDF objects out of 1000 (max. 8388607)
- 156 compressed objects within 2 object streams
+ 292 PDF objects out of 1000 (max. 8388607)
+ 155 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  138 words of extra memory for PDF output out of 10000 (max. 10000000)
 
