@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2026.1.2)  22 FEB 2026 15:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2026.1.2)  23 FEB 2026 08:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1101,7 +1101,7 @@ File: ../../../../Imágenes/Capturas de pantalla/TablaProp_SC_transistores.png
 Graphic file (type png)
 <use ../../../../Imágenes/Capturas de pantalla/TablaProp_SC_transistores.png>
 Package pdftex.def Info: ../../../../Imágenes/Capturas de pantalla/TablaProp_S
-C_transistores.png  used on input line 85.
+C_transistores.png  used on input line 84.
 (pdftex.def)             Requested size: 307.2929pt x 142.98427pt.
  [1
 
@@ -1110,17 +1110,17 @@ C_transistores.png  used on input line 85.
 <Img/primer_Mesfet.png, id=19, 853.1875pt x 463.7325pt>
 File: Img/primer_Mesfet.png Graphic file (type png)
 <use Img/primer_Mesfet.png>
-Package pdftex.def Info: Img/primer_Mesfet.png  used on input line 106.
+Package pdftex.def Info: Img/primer_Mesfet.png  used on input line 105.
 (pdftex.def)             Requested size: 230.46576pt x 125.26605pt.
 <Img/estr_S_M_ SZE.png, id=20, 606.265pt x 398.48875pt>
 File: Img/estr_S_M_ SZE.png Graphic file (type png)
 <use Img/estr_S_M_ SZE.png>
-Package pdftex.def Info: Img/estr_S_M_ SZE.png  used on input line 128.
+Package pdftex.def Info: Img/estr_S_M_ SZE.png  used on input line 127.
 (pdftex.def)             Requested size: 245.82962pt x 161.58163pt.
 <Img/estructura_MESFET_SZE.png, id=21, 479.7925pt x 284.06125pt>
 File: Img/estructura_MESFET_SZE.png Graphic file (type png)
 <use Img/estructura_MESFET_SZE.png>
-Package pdftex.def Info: Img/estructura_MESFET_SZE.png  used on input line 135.
+Package pdftex.def Info: Img/estructura_MESFET_SZE.png  used on input line 134.
 
 (pdftex.def)             Requested size: 245.82962pt x 145.54547pt.
  [2 <./Img/primer_Mesfet.png> <./Img/estr_S_M_ SZE.png> <./Img/estructura_MESFE
@@ -1129,18 +1129,18 @@ T_SZE.png>]
 File: Img/6W_MESFET_circuito_integrado.png Graphic file (type png)
 <use Img/6W_MESFET_circuito_integrado.png>
 Package pdftex.def Info: Img/6W_MESFET_circuito_integrado.png  used on input li
-ne 187.
+ne 186.
 (pdftex.def)             Requested size: 184.3733pt x 51.52574pt.
 <Img/esquematico_de_paper.png, id=33, 365.365pt x 207.77625pt>
 File: Img/esquematico_de_paper.png Graphic file (type png)
 <use Img/esquematico_de_paper.png>
-Package pdftex.def Info: Img/esquematico_de_paper.png  used on input line 192.
+Package pdftex.def Info: Img/esquematico_de_paper.png  used on input line 191.
 (pdftex.def)             Requested size: 184.3733pt x 104.8485pt.
 <Img/Microscopio_MESFET_MISHRA.png, id=34, 352.31625pt x 502.87875pt>
 File: Img/Microscopio_MESFET_MISHRA.png Graphic file (type png)
 <use Img/Microscopio_MESFET_MISHRA.png>
 Package pdftex.def Info: Img/Microscopio_MESFET_MISHRA.png  used on input line 
-199.
+198.
 (pdftex.def)             Requested size: 172.08217pt x 245.62239pt.
 <../../../../Imágenes/Capturas de pantalla/zincblenda.png, id=35, 507.8975pt x
  421.575pt>
@@ -1148,33 +1148,33 @@ File: ../../../../Imágenes/Capturas de pantalla/zincblenda.png Graphic file (t
 ype png)
 <use ../../../../Imágenes/Capturas de pantalla/zincblenda.png>
 Package pdftex.def Info: ../../../../Imágenes/Capturas de pantalla/zincblenda.
-png  used on input line 218.
+png  used on input line 217.
 (pdftex.def)             Requested size: 179.2555pt x 148.78853pt.
 <Img/red_GaAs.png, id=36, 437.635pt x 479.7925pt>
 File: Img/red_GaAs.png Graphic file (type png)
 <use Img/red_GaAs.png>
-Package pdftex.def Info: Img/red_GaAs.png  used on input line 225.
+Package pdftex.def Info: Img/red_GaAs.png  used on input line 224.
 (pdftex.def)             Requested size: 140.84192pt x 154.40793pt.
  [3 <./Img/6W_MESFET_circuito_integrado.png> <./Img/esquematico_de_paper.png> <
 ./Img/microscopio_MESFET_MISHRA.png>]
 <Img/Tipos_MESFET.png, id=44, 563.10374pt x 482.80376pt>
 File: Img/Tipos_MESFET.png Graphic file (type png)
 <use Img/Tipos_MESFET.png>
-Package pdftex.def Info: Img/Tipos_MESFET.png  used on input line 250.
+Package pdftex.def Info: Img/Tipos_MESFET.png  used on input line 249.
 (pdftex.def)             Requested size: 130.6004pt x 111.97813pt.
 
-Overfull \hbox (12.58742pt too wide) in paragraph at lines 283--301
+Overfull \hbox (12.58742pt too wide) in paragraph at lines 282--300
  [][] 
  []
 
 [4 <../../../../Imágenes/Capturas de pantalla/zincblenda.png> <./Img/red_GaAs.
 png> <./Img/Tipos_MESFET.png>]
-Overfull \hbox (16.49884pt too wide) in paragraph at lines 313--348
+Overfull \hbox (16.49884pt too wide) in paragraph at lines 312--347
  [][] 
  []
 
 
-Overfull \hbox (38.29976pt too wide) in paragraph at lines 360--372
+Overfull \hbox (38.29976pt too wide) in paragraph at lines 359--371
  [][] 
  []
 
@@ -1182,24 +1182,24 @@ Overfull \hbox (38.29976pt too wide) in paragraph at lines 360--372
 <Img/simbolo_mas_esquema.jpg, id=57, 1071.0414pt x 489.9906pt>
 File: Img/simbolo_mas_esquema.jpg Graphic file (type jpg)
 <use Img/simbolo_mas_esquema.jpg>
-Package pdftex.def Info: Img/simbolo_mas_esquema.jpg  used on input line 429.
+Package pdftex.def Info: Img/simbolo_mas_esquema.jpg  used on input line 428.
 (pdftex.def)             Requested size: 307.2929pt x 140.58334pt.
  [6 <./Img/simbolo_mas_esquema.jpg>] [7] [8]
 <Img/diagrama_bandas_alolargodelcanal.png, id=77, 593.21625pt x 337.26pt>
 File: Img/diagrama_bandas_alolargodelcanal.png Graphic file (type png)
 <use Img/diagrama_bandas_alolargodelcanal.png>
 Package pdftex.def Info: Img/diagrama_bandas_alolargodelcanal.png  used on inpu
-t line 1254.
+t line 1253.
 (pdftex.def)             Requested size: 230.46576pt x 131.02654pt.
  [9] [10 <./Img/diagrama_bandas_alolargodelcanal.png>]
 <Img/inclinación_bandas_debido_aVDS.png, id=86, 678.535pt x 137.51375pt>
 File: Img/inclinación_bandas_debido_aVDS.png Graphic file (type png)
 <use Img/inclinación_bandas_debido_aVDS.png>
 Package pdftex.def Info: Img/inclinación_bandas_debido_aVDS.png  used on input
- line 1590.
+ line 1589.
 (pdftex.def)             Requested size: 358.50317pt x 72.65532pt.
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
-601.
+600.
  (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
@@ -1207,7 +1207,7 @@ File: t1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [11 <./Img/inclinación_bandas_debido_aVDS.png>]
-Overfull \hbox (2.1999pt too wide) detected at line 1757
+Overfull \hbox (2.1999pt too wide) detected at line 1756
 []\OML/cmm/m/it/10 ^^^\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x; y\OT1/cmr/m/n/10 ) =
  []
  []
@@ -1216,19 +1216,19 @@ Overfull \hbox (2.1999pt too wide) detected at line 1757
 <Img/curva_transferencia.png, id=102, 987.2082pt x 471.9231pt>
 File: Img/curva_transferencia.png Graphic file (type png)
 <use Img/curva_transferencia.png>
-Package pdftex.def Info: Img/curva_transferencia.png  used on input line 1977.
+Package pdftex.def Info: Img/curva_transferencia.png  used on input line 1976.
 (pdftex.def)             Requested size: 512.14963pt x 244.82533pt.
  [14]
 <Img/curva_de_salida.png, id=106, 987.2082pt x 471.9231pt>
 File: Img/curva_de_salida.png Graphic file (type png)
 <use Img/curva_de_salida.png>
-Package pdftex.def Info: Img/curva_de_salida.png  used on input line 1990.
+Package pdftex.def Info: Img/curva_de_salida.png  used on input line 1989.
 (pdftex.def)             Requested size: 512.14963pt x 244.82533pt.
  [15 <./Img/curva_transferencia.png> <./Img/curva_de_salida.png>]
 <Img/modulacion_del_canal.png, id=112, 455.7025pt x 508.90125pt>
 File: Img/modulacion_del_canal.png Graphic file (type png)
 <use Img/modulacion_del_canal.png>
-Package pdftex.def Info: Img/modulacion_del_canal.png  used on input line 2016.
+Package pdftex.def Info: Img/modulacion_del_canal.png  used on input line 2017.
 
 (pdftex.def)             Requested size: 230.46576pt x 257.37747pt.
 [16 <./Img/modulacion_del_canal.png>]
@@ -1236,25 +1236,25 @@ Package pdftex.def Info: Img/modulacion_del_canal.png  used on input line 2016.
 File: Img/curva_de_salida_efectoModulacion.png Graphic file (type png)
 <use Img/curva_de_salida_efectoModulacion.png>
 Package pdftex.def Info: Img/curva_de_salida_efectoModulacion.png  used on inpu
-t line 2098.
+t line 2099.
 (pdftex.def)             Requested size: 512.14963pt x 244.82533pt.
 <Img/v_arr_vs_campo.png, id=118, 541.02126pt x 429.605pt>
 File: Img/v_arr_vs_campo.png Graphic file (type png)
 <use Img/v_arr_vs_campo.png>
-Package pdftex.def Info: Img/v_arr_vs_campo.png  used on input line 2120.
+Package pdftex.def Info: Img/v_arr_vs_campo.png  used on input line 2121.
 (pdftex.def)             Requested size: 230.46576pt x 183.00252pt.
  [17 <./Img/curva_de_salida_efectoModulacion.png> <./Img/v_arr_vs_campo.png>]
 <Img/vel_arrastre_func_campo.png, id=124, 987.2082pt x 471.9231pt>
 File: Img/vel_arrastre_func_campo.png Graphic file (type png)
 <use Img/vel_arrastre_func_campo.png>
 Package pdftex.def Info: Img/vel_arrastre_func_campo.png  used on input line 21
-55.
+56.
 (pdftex.def)             Requested size: 512.14963pt x 244.82533pt.
 <Img/modulacion_canal_mu_variable.png, id=125, 987.2082pt x 471.9231pt>
 File: Img/modulacion_canal_mu_variable.png Graphic file (type png)
 <use Img/modulacion_canal_mu_variable.png>
 Package pdftex.def Info: Img/modulacion_canal_mu_variable.png  used on input li
-ne 2165.
+ne 2166.
 (pdftex.def)             Requested size: 512.14963pt x 244.82533pt.
  [18 <./Img/vel_arrastre_func_campo.png> <./Img/modulacion_canal_mu_variable.pn
 g>]
@@ -1264,124 +1264,123 @@ File: ../../../../Imágenes/Capturas de pantalla/corriente_sub_umbral.png Graph
 ic file (type png)
 <use ../../../../Imágenes/Capturas de pantalla/corriente_sub_umbral.png>
 Package pdftex.def Info: ../../../../Imágenes/Capturas de pantalla/corriente_s
-ub_umbral.png  used on input line 2184.
+ub_umbral.png  used on input line 2185.
 (pdftex.def)             Requested size: 195.8973pt x 188.74667pt.
 <Img/corriente_subumbral_simulacion.png, id=132, 462.528pt x 346.896pt>
 File: Img/corriente_subumbral_simulacion.png Graphic file (type png)
 <use Img/corriente_subumbral_simulacion.png>
 Package pdftex.def Info: Img/corriente_subumbral_simulacion.png  used on input 
-line 2198.
+line 2199.
 (pdftex.def)             Requested size: 217.66515pt x 163.24757pt.
 <Img/efectos_corr_gate.png, id=133, 531.9875pt x 369.38pt>
 File: Img/efectos_corr_gate.png Graphic file (type png)
 <use Img/efectos_corr_gate.png>
-Package pdftex.def Info: Img/efectos_corr_gate.png  used on input line 2230.
+Package pdftex.def Info: Img/efectos_corr_gate.png  used on input line 2231.
 (pdftex.def)             Requested size: 204.85672pt x 142.23709pt.
 <Img/efectos_de_corrientes_gate.png, id=134, 462.528pt x 346.896pt>
 File: Img/efectos_de_corrientes_gate.png Graphic file (type png)
 <use Img/efectos_de_corrientes_gate.png>
 Package pdftex.def Info: Img/efectos_de_corrientes_gate.png  used on input line
- 2244.
+ 2245.
 (pdftex.def)             Requested size: 245.82962pt x 184.37273pt.
  [19 <../../../../Imágenes/Capturas de pantalla/corriente_sub_umbral.png> <./I
 mg/corriente_subumbral_simulacion.png> <./Img/efectos_corr_gate.png> <./Img/efe
 ctos_de_corrientes_gate.png>]
-<../Imagenes/Tension_de_Ruptura.png, id=143, 815.045pt x 401.5pt>
-File: ../Imagenes/Tension_de_Ruptura.png Graphic file (type png)
-<use ../Imagenes/Tension_de_Ruptura.png>
-Package pdftex.def Info: ../Imagenes/Tension_de_Ruptura.png  used on input line
- 2260.
-(pdftex.def)             Requested size: 358.50317pt x 176.59927pt.
- [20 <../Imagenes/Tension_de_Ruptura.png>] [21]
-Overfull \hbox (23.21964pt too wide) in paragraph at lines 2327--2327
+<Img/Tension_de_Ruptura.png, id=143, 709.65125pt x 335.2525pt>
+File: Img/Tension_de_Ruptura.png Graphic file (type png)
+<use Img/Tension_de_Ruptura.png>
+Package pdftex.def Info: Img/Tension_de_Ruptura.png  used on input line 2272.
+(pdftex.def)             Requested size: 245.82962pt x 116.13286pt.
+ [20 <./Img/Tension_de_Ruptura.png>]
+Overfull \hbox (23.21964pt too wide) in paragraph at lines 2347--2347
 []\T1/cmtt/m/n/10 plt.plot(VGS_estr, ID_estr*1e3, linewidth=4, label="Modelo Cl
 �sico", color = "orange",linestyle= "--")[] 
  []
 
-[22]
-Overfull \hbox (306.65042pt too wide) in paragraph at lines 2349--2349
+[21]
+Overfull \hbox (306.65042pt too wide) in paragraph at lines 2369--2369
 []\T1/cmtt/m/n/10 plt.text(0.05, 0.5, label_text,transform=plt.gca().transAxes,
 fontsize=10,verticalalignment='top',bbox=dict(boxstyle="round", facecolor="whit
 e", alpha=0.85))[] 
  []
 
-[23]
-Overfull \hbox (311.89914pt too wide) in paragraph at lines 2424--2424
+[22]
+Overfull \hbox (311.89914pt too wide) in paragraph at lines 2444--2444
 []\T1/cmtt/m/n/10 plt.text(0.75, 0.75, label_text,transform=plt.gca().transAxes
 ,fontsize=10,verticalalignment='top',bbox=dict(boxstyle="round", facecolor="whi
 te", alpha=0.85))[] 
  []
 
 
-Overfull \hbox (44.21451pt too wide) in paragraph at lines 2468--2468
+Overfull \hbox (44.21451pt too wide) in paragraph at lines 2488--2488
 []\T1/cmtt/m/n/10 plt.plot(VDS_sat_line, ID_sat_line_ch_modulation*1e3,linewidt
 h=3.5,linestyle="-", alpha = 0.6,color="red")[] 
  []
 
-[24]
-Overfull \hbox (70.4581pt too wide) in paragraph at lines 2469--2469
+[23]
+Overfull \hbox (70.4581pt too wide) in paragraph at lines 2489--2489
 []\T1/cmtt/m/n/10 plt.plot(VDS_sat_line, ID_sat_line_ch_modulation_B*1e3,linewi
 dth=3.5,linestyle="-", alpha = 0.6,color="orange")[] 
  []
 
 
-Overfull \hbox (301.4017pt too wide) in paragraph at lines 2487--2487
+Overfull \hbox (301.4017pt too wide) in paragraph at lines 2507--2507
 []\T1/cmtt/m/n/10 plt.text(0.6, 0.5, label_text,transform=plt.gca().transAxes,f
 ontsize=10,verticalalignment='top',bbox=dict(boxstyle="round", facecolor="white
 ", alpha=0.85))[] 
  []
 
 
-Overfull \hbox (332.89401pt too wide) in paragraph at lines 2490--2490
+Overfull \hbox (332.89401pt too wide) in paragraph at lines 2510--2510
 []\T1/cmtt/m/n/10 plt.text(0.04, 0.7, r"Sin modulaci�n",transform=plt.gca().tra
 nsAxes,fontsize=10,verticalalignment='top',bbox=dict(boxstyle="round", facecolo
 r="blue", alpha=0.5))[] 
  []
 
 
-Overfull \hbox (500.853pt too wide) in paragraph at lines 2491--2491
+Overfull \hbox (500.853pt too wide) in paragraph at lines 2511--2511
 []\T1/cmtt/m/n/10 plt.text(0.04, 0.8, r"Modulaci�n para canal largo (L = 20 $\m
 u m$)",transform=plt.gca().transAxes,fontsize=10,verticalalignment='top',bbox=d
 ict(boxstyle="round", facecolor="orange", alpha=0.5))[] 
  []
 
 
-Overfull \hbox (479.85812pt too wide) in paragraph at lines 2492--2492
+Overfull \hbox (479.85812pt too wide) in paragraph at lines 2512--2512
 []\T1/cmtt/m/n/10 plt.text(0.04, 0.9, r"Modulaci�n para canal corto (L = 4 $\mu
  m$)",transform=plt.gca().transAxes,fontsize=10,verticalalignment='top',bbox=di
 ct(boxstyle="round", facecolor="red", alpha=0.5))[] 
  []
 
-[25] [26]
-Overfull \hbox (86.20425pt too wide) in paragraph at lines 2638--2638
+[24] [25]
+Overfull \hbox (86.20425pt too wide) in paragraph at lines 2658--2658
 []\T1/cmtt/m/n/10 plt.plot(VDS, ID_cste*1e3, label=r"Modelo $\mu$ constante",al
 pha=0.8, linewidth = 4,color="blue", linestyle= "--")[] 
  []
 
 
-Overfull \hbox (86.20425pt too wide) in paragraph at lines 2641--2641
+Overfull \hbox (86.20425pt too wide) in paragraph at lines 2661--2661
 []\T1/cmtt/m/n/10 plt.axvline(V1, linestyle="--", alpha=0.5, label= rf"Inicio c
 a�da $\mu$: $V_{{DS}} = \xi_p \cdot L  = $ {V1:.1f}",[] 
  []
 
-[27]
-Overfull \hbox (12.7222pt too wide) in paragraph at lines 2698--2698
+[26]
+Overfull \hbox (12.7222pt too wide) in paragraph at lines 2718--2718
 []\T1/cmtt/m/n/10 plt.plot(VGS_sub, ID_sub*1e9, linewidth=3,label="Modelo Compl
 eto: Corriente sub-umbral",color="red")[] 
  []
 
 
-Overfull \hbox (138.69144pt too wide) in paragraph at lines 2719--2719
+Overfull \hbox (138.69144pt too wide) in paragraph at lines 2739--2739
 []\T1/cmtt/m/n/10 plt.text(0.1, 0.65, label_text,transform=plt.gca().transAxes,
 fontsize=10,verticalalignment='top',bbox=dict(boxstyle="round",[] 
  []
 
-[28]
+[27]
 LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 
-2744.
+2764.
  (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmtt.fd
 File: ts1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
-) [29] (./main.aux
+) [28] (./main.aux
 LaTeX Info: Redefining \sptext on input line 27.
 LaTeX Info: Redefining \. on input line 27.
 LaTeX Info: Redefining \% on input line 27.
@@ -1400,10 +1399,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
  29382 strings out of 476091
- 595879 string characters out of 5794082
+ 595796 string characters out of 5794082
  1882330 words of memory out of 5000000
  49315 multiletter control sequences out of 15000+600000
- 529161 words of font info for 77 fonts, out of 8000000 for 9000
+ 529925 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  83i,13n,89p,1771b,2809s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/share/texmf
@@ -1432,10 +1431,10 @@ super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb><
 /usr/share/texmf/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf/fon
 ts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-s
 uper/sftt1000.pfb>
-Output written on main.pdf (29 pages, 2005385 bytes).
+Output written on main.pdf (28 pages, 1989569 bytes).
 PDF statistics:
- 297 PDF objects out of 1000 (max. 8388607)
- 157 compressed objects within 2 object streams
+ 294 PDF objects out of 1000 (max. 8388607)
+ 155 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  143 words of extra memory for PDF output out of 10000 (max. 10000000)
 

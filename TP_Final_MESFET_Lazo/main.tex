@@ -68,12 +68,11 @@
 
 \section{Resumen}
 
-En el presente informe se aplican los conocimientos adquiridos en la materia Dispositivos Semiconductores para el estudió y análisis del dispositivo conocido como MESFET (Metal Semiconductor Field Effect Transistor). Se abordan su estructura, parámetros característicos, aplicaciones típicas, modos de operación, así como su modelo clásico y su modelo completo. Se presentan diagramas de bandas para cada modo de operación, curvas características y se discuten los efectos no ideales que influyen en su comportamiento real. 
+Se analiza el transistor MESFET (Metal Semiconductor Field Effect Transistor). Se aborda su estructura, parámetros característicos, aplicaciones típicas, modos de operación, así como su modelo clásico y su modelo completo partiendo de la condición de neutralidad. Se presentan diagramas de bandas para cada modo de operación, curvas características y se discuten los efectos no ideales que influyen en su comportamiento real.
 
 \section{Introducción al dispositivo}
 
-El transistor MESFET es un dispositivo multijuntura de tres terminales: fuente, drenaje y compuerta, su estructura forma un canal por el cual fluyen los portadores desde el terminal fuente hacia el terminal de drenaje. La conductividad del canal es modulada por el potencial eléctrico aplicado en el terminal de compuerta. Puede clasificarse como una variación del transistor MOSFET, con la diferencia de que no posee una capa de óxido aislante entre la compuerta y el sustrato, característica que también comparte con el transistor JFET. Con respecto a este último, difieren en el material de la compuerta, ya que en el MESFET no es de material semiconductor, sino metálica, empleándose metales como aluminio, titanio, oro, níquel o platino.
-
+El transistor MESFET es un dispositivo de tres terminales: fuente, drenaje y compuerta. Su estructura forma un canal por el cual fluyen los portadores desde el terminal fuente hacia el terminal de drenaje. La conductividad del canal es modulada por el potencial eléctrico aplicado en el terminal de compuerta. Pertenece a la familia de los FET (transistores de efecto de campo), con la diferencia de que no posee una capa de óxido aislante entre la compuerta y el sustrato como en el caso del MOSFET, característica que también comparte con el transistor JFET. Con respecto a este último, difieren en el material de la compuerta, ya que en el MESFET no es de material semiconductor, sino metálica, entre los metales utilizados se encuentran el aluminio, titanio, oro, níquel o platino entre otros.
 
 \subsection{Motivación de su desarrollo}
 
@@ -1798,14 +1797,14 @@ Dada la relación entre el campo eléctrico y el gradiente del potencial eléctr
 
 \subsection{Ancho de zona de vaciamiento}
 
-Relacionando el campo eléctrico (\ref{equation:campo_electrico}) junto con el potencial (\ref{equation:potencial_electrostatico}) se puede despejar el ancho de la zona de agotamiento o vaciamiento en reposo y equilibrio térmico.
+Relacionando el campo eléctrico (\ref{equation:campo_electrico}) junto con el potencial (\ref{equation:potencial_electrostatico}) se puede despejar el ancho de la zona de agotamiento o vaciamiento en reposo y equilibrio térmico (\ref{equation: W_d_reposo}).
 
 \begin{equation}\label{equation: W_d_reposo}
 	W_{d0} = \sqrt{\frac{2 \cdot \epsilon_s \cdot \phi_{bi}}{q\cdot N_D}}
 \end{equation} 
 
 
-Al considerar la polarización del dispositivo se produce un potencial longitudinal $V(x) \in [0 ,V_{DS}]$ y el potencial externo trasversal al canal entre \textit{gate} y \textit{source} $V_{GS}$, que afectaran a la modulación de la zona de vaciamiento, nombramos $ \phi_{bi} = V_{bi}$.
+Al considerar la polarización del dispositivo se produce un potencial longitudinal $V(x) \in [0 ,V_{DS}]$ y el potencial externo trasversal al canal entre \textit{gate} y \textit{source} $V_{GS}$, que afectaran a la modulación de la zona de vaciamiento (\ref{equation: W_d_polarizado}), nombramos $ \phi_{bi} = V_{bi}$.
 
 \begin{equation}\label{equation: W_d_polarizado}
 	W_d(x) = \sqrt{\frac{2 \cdot \epsilon_s \cdot [  V_{bi} - V_{GS} + V(x)] }{q\cdot N_D}}
@@ -1813,7 +1812,7 @@ Al considerar la polarización del dispositivo se produce un potencial longitudi
 
 \subsection{Obtención de $V_{p0}$ y $V_{p}$}
 
-Partiendo de (\ref{equation: W_d_reposo}) reemplazando $W_d(x) = a $ se obtiene la tensión para la cual el dispositivo comienza a conducir: 
+Partiendo de (\ref{equation: W_d_reposo}) reemplazando $W_d(x) = a $ se obtiene la tensión para la cual el dispositivo comienza a conducir \ref{equation:obtenicon_VP}: 
 
 \begin{equation}\label{equation:obtenicon_VP}
 	W_d = \sqrt{\frac{2 \cdot \epsilon_s \cdot V_{p0} }{q\cdot N_D}} = a 
@@ -1853,7 +1852,7 @@ Se puede apreciar que se forma la tensión de \textit{pinchoff} $ V_{p0}= \frac{
 \section{Corriente}
 \label{sec:modelo_completo}
 
-El dispositivo bajo conducción forma una densidad de corriente de arrastre de portadores mayoritarios $	J_{arr, n} $ en el eje \textit{x} , debido al campo aplicado $\xi$ y asumiendo $ n \approx N_D$, de acuerdo a la expresión (\ref{equation:J_corriente_deduccion_1}) :
+El dispositivo bajo conducción forma una densidad de corriente de arrastre de portadores mayoritarios $J_{arr, n} $ en el eje \textit{x}, debido al campo aplicado $\xi$ y asumiendo $ n \approx N_D$, de acuerdo a la expresión (\ref{equation:J_corriente_deduccion_1}) :
 
 \begin{equation}\label{equation:J_corriente_deduccion_1}
 	J_{arr, n} = q\cdot n\cdot 	v_{arr}  =q \cdot n \cdot \mu_n \cdot \xi  =  q \cdot N_D \cdot \mu_n \cdot (- \frac{dV}{dx})
@@ -1932,7 +1931,7 @@ Definiendo $g_o = \frac{Z\cdot q \cdot N_D \cdot \mu_n \cdot a}{L}$ como la cond
 \end{tcolorbox}
 
 
-Para la obtención de $I_{D_{[SAT]}}$, se reemplaza en la expresión (\ref{equation:Expresion_Completa} ), $ V_{DS} = V_{DS_{[SAT]}} =  V_{p0} + V_{GS} - V_{bi}$, tal como indica la expresión (\ref{equation:obtension_VDS_SAT_4}), llegando a : 
+Para la obtención de $I_{D_{[SAT]}}$, se reemplaza en la expresión (\ref{equation:Expresion_Completa}), $ V_{DS} = V_{DS_{[SAT]}} =  V_{p0} + V_{GS} - V_{bi}$, tal como indica la expresión (\ref{equation:obtension_VDS_SAT_4}), llegando a : 
 	
 	\begin{equation} \label{equation:ID_SAT_COMPLETA}
 		I_{D_{[SAT]}} = g_o \cdot	\left\{[V_{p0} + V_{GS} -  V_{bi}]  - \frac{2}{3 \cdot \sqrt{V_{p0}}} \cdot \left[ (V_{bi} - V_{GS} + [V_{p0} + V_{GS} -  V_{bi}] )^{\frac{3}{2}} - ( V_{bi} - V_{GS})^{\frac{3}{2}} \right] \right\} 
@@ -1999,8 +1998,10 @@ Se puede observar que en este caso la aproximación clásica es convergente para
 
 En el análisis previo se contemplo un comportamiento ideal, sin contemplar corrientes de fuga, parámetros uniformes, una longitud de canal constante y una movilidad constante.
 
-Cuando un MESFET está polarizado en la región de estrangulamiento, la longitud efectiva del canal eléctrico se determina por la tensión $V_{DS}$. Este efecto no ideal se denomina modulación de longitud de canal. Además, cuando un transistor está polarizado cerca o en la región de estrangulamiento, el campo eléctrico en el canal puede alcanzar la magnitud suficiente para que los portadores mayoritarios alcancen su velocidad de saturación. En este punto, la movilidad deja de ser constante. A su vez la magnitud de la corriente de compuerta afectará la impedancia de entrada, lo cual puede ser necesario tener en cuenta en el diseño de circuitos \parencite{neamen2012}.
 
+
+Cuando un MESFET está polarizado en la región de estrangulamiento, la longitud efectiva del canal eléctrico se determina por la tensión $V_{DS}$. Este efecto no ideal se denomina modulación de longitud de canal. Además, cuando un transistor está polarizado cerca o en la región de estrangulamiento, el campo eléctrico en el canal puede alcanzar la magnitud suficiente para que los portadores mayoritarios alcancen su velocidad de saturación. En este punto, la movilidad deja de ser constante. A su vez la magnitud de la corriente de compuerta afectará la impedancia de entrada, lo cual puede ser necesario tener en cuenta en el diseño de circuitos \parencite{neamen2012}.
+	
 \subsection{Modulación del largo del canal}
 
 
@@ -2210,7 +2211,7 @@ De la velocidad modelada en (\ref{equation:v_arr_enfuncion_de_E}), la cual se ba
 
 \subsection{Efectos de corriente de gate}
 
-Nuevamente dejando de lado los modelos ideales, donde la corriente en el terminal \textit{gate} es cero ($I_G = 0 $), en la unión Schottky  existen corrientes de compuerta apreciables o no de acuerdo a la sensibilidad de la implementación y las condiciones de funcionamiento, estas son debido a fenómenos como tunealamiento, emisión termoionica, corrientes de ruptura y generación y recombinación de portadores. 
+Nuevamente dejando de lado los modelos ideales, donde la corriente en el terminal \textit{gate} es cero ($I_G = 0 $), en la unión Schottky existen corrientes de compuerta apreciables o no de acuerdo a la sensibilidad de la implementación y las condiciones de funcionamiento, estas son debido a fenómenos como tunealamiento, emisión termoionica, corrientes de ruptura y generación y recombinación de portadores. 
 En esta situación tenemos que tener en cuenta la generación térmica de pares electrón-hueco. Los pocos electrones generados térmicamente pierden energía y bajan del metal a el canal n, siendo una corriente inversa $I_s$ que es muy pequeña. Estos fenómenos se incrementan con la temperatura, por lo tanto se simulo el efecto para distintos valores de temperatura figura \ref{fig:efectosdecorrientesgate} (tomando como referencia las corrientes en una unión Schottky en inversa que presentaría un diodo en función de la temperatura (\ref{equation:corriente_inversa_diodo_Schottky}), con $V = V_G - V(x)$ ).
 
 
@@ -2253,13 +2254,31 @@ En esta situación tenemos que tener en cuenta la generación térmica de pares 
 
 
 \section{Tensión de ruptura }
-Para los MESFET de GaAs, los mecanismos de ruptura son mucho más complejos que con los JFET. Generalmente presentan valores de ruptura ($V_{B}$) más bajos tal como se ve en la figura \ref{fig:tensionderuptura}. Un factor que reduce la tensión de ruptura en los MESFET se debe a la corriente de túnel asociada al contacto de la compuerta de la barrera Schottky. En campos altos, esta corriente de túnel proviene de la emisión del campo termoiónico, que depende de la temperatura. La corriente de compuerta puede iniciar la multiplicación por avalancha e induce una menor tensión de ruptura del drenador. Con una corriente de canal más alta, el nodo interno se encuentra a una temperatura más alta, lo que desencadena una ruptura por avalancha más temprana, iniciada por la corriente de compuerta. Esto puede ser responsable de una $V_{GS}$ menor a una $V_{GS}$ mayor, como se muestra en la Fig. \ref{fig:tensionderuptura}. Otro factor es que los MESFET de GaAs suelen tener mayor corriente y transconductancia que los dispositivos de Si debido a su mayor movilidad. La mayor corriente de canal puede iniciar la avalancha a una tensión más baja o producir los efectos de temperatura que desencadenan una ruptura más temprana, como se mencionó. La tensión de ruptura se puede mejorar ampliando la región entre la compuerta y el drenador \parencite{sze2021}..
+Para los MESFET de GaAs, los mecanismos de ruptura son mucho más complejos que con los JFET. Generalmente presentan valores de ruptura ($V_{B}$) más bajos tal como se ve en la figura \ref{fig:tensionderuptura}. Un factor que reduce la tensión de ruptura se debe a la corriente de túnel asociada al contacto de la compuerta de la barrera Schottky. En campos altos, esta corriente de túnel proviene de la emisión del campo termoiónico, que depende de la temperatura. La corriente de compuerta puede iniciar la multiplicación por avalancha e induce una menor tensión de ruptura del drenador. 
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.7\linewidth]{../Imagenes/Tension_de_Ruptura}
-	\caption{Datos experimentales que muestran que la tensión de ruptura del drenador (a) aumenta con $V_{GS}$, en JFET de Si, pero (b) disminuye con $V_{GS}$, en MESFET de GaAs \parencite{sze2021}.}
-	\label{fig:tensionderuptura}
+	
+	% ---------- Imagen (izquierda) ----------
+	\begin{minipage}[c]{0.4\textwidth}
+		Con una corriente de canal más alta, el nodo interno se encuentra a una temperatura más alta, lo que desencadena una ruptura por avalancha más temprana, iniciada por la corriente de compuerta. Esto puede ser responsable de una $V_{GS}$ menor a una $V_{GS}$ mayor, como se muestra en la Fig. \ref{fig:tensionderuptura}. Otro factor es que los MESFET de GaAs suelen tener mayor corriente y transconductancia que los dispositivos de Si debido a su mayor movilidad. La mayor corriente de canal puede iniciar la avalancha a una tensión más baja o producir los efectos de temperatura que desencadenan una ruptura más temprana, como se mencionó. La tensión de ruptura se puede mejorar ampliando la región entre la compuerta y el drenador \parencite{sze2021}..
+		
+	\end{minipage}
+	\hfill
+	% ---------- Texto (derecha) ----------
+	\begin{minipage}[c]{0.48\textwidth}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=\linewidth]{Img/Tension_de_Ruptura}
+			\caption{Datos experimentales que muestran que la tensión de ruptura del drenador (a) aumenta con $V_{GS}$, en JFET de Si, pero (b) disminuye con $V_{GS}$, en MESFET de GaAs \parencite{sze2021}.}
+			\label{fig:tensionderuptura}
+		\end{figure}
+		
+		
+	
+	\end{minipage}
+	
+	
 \end{figure}
 
 
@@ -2269,9 +2288,10 @@ El transistor MESFET ejemplifica como el estudio de los semiconductores y los fe
 
 El modelo clásico es conveniente para la aplicación de transistores en aplicaciones que requieran poca sensibilidad, tensiones bajas de operación y frecuencias que no lleven al limite el modelo. Mientras que el modelo completo se deberá contemplar a la hora del diseño de los mismos transistores y circuitos integrados como también los efectos no ideales tratados en las ultimas secciones del informe. A su vez se resalta como la longitud del canal y la temperatura de operación son de importancia para el comportamiento del dispositivo.
 
-\printbibliography
 
-
+{\footnotesize
+	\printbibliography
+}
 \newpage
 \appendix
 \section{Código (Python)}
